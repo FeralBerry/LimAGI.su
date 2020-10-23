@@ -30,7 +30,7 @@
             @if(isset($b->img))
                 @if(empty($b->img) !== true)
                     <a href="{{ route('blog-post', $b->id) }}" class="animsition-link">
-                        <img src="{{ asset('images/blog/') }}/{{ $b->img }}" alt="{{ $b->title }}">
+                        <img src="{{ asset('images/blog/img/') }}/{{ $b->img }}" alt="{{ $b->title }}">
                     </a>
                 @endif
             @endif
@@ -38,13 +38,13 @@
                 @if(empty($b->video_img) !== true)
                     <figure class="vimeo">
                         <a href="{{ $b->video }}">
-                            <img src="{{ asset('images/blog/') }}/{{ $b->video_img }}" alt="{{ $b->title }}" />
+                            <img src="{{ asset('images/blog/video-img/') }}/{{ $b->video_img }}" alt="{{ $b->title }}" />
                         </a>
                     </figure>
                 @endif
             @endif
             <h6>{{ $b->title }}</h6>
-            <div class="p-box"><p>{{ $b->brief }}</p></div>
+            <div class="p-box"><p>{!! $b->brief !!}</p></div>
             <a href="{{ route('blog-post', $b->id) }}" class="animsition-link blog-link chaffle" data-lang="en">Подробнее</a>
         </div>
         @endforeach

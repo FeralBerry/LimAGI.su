@@ -63,7 +63,7 @@
             }
         </style>
     </head>
-    <body>
+    <body onload="timer()">
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
@@ -78,23 +78,92 @@
                     @endauth
                 </div>
             @endif
-
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+                <form action="" method="post">
+                    <input type="button" onclick="up()">
+                    <input type="button" onclick="down()">
+                    <input type="hidden" id="price" value="100">
+                </form>
+                <input id="count" type="button" value="">
+                Секунд прошло <input id="countPrice" type="button" value="">
+                <script type="text/javascript">
+                    /*var c = 0;
+                    var price = 0;
+                    var countPrice = 0;
+                    function down() {
+                        c--;
+                        if(c <= 1){
+                            c = 0;
+                        }
+                        document.getElementById('count').value = c;
+                        price = document.getElementById('price').value;
+                        countPrice = c * price;
+                        document.getElementById('countPrice').value = countPrice;
+                    }
+                    function up() {
+                        c++;
+                        document.getElementById('count').value = c;
+                        price = document.getElementById("price").value;
+                        countPrice = c * price;
+                        document.getElementById('countPrice').value = countPrice;
+                    }*/// функция рассета стоимости товара с пересчетом по назатию пользователя
 
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+                    //document.write("<br />Hello World!"); написать в самом документе
+                    //document.writeln("<br />Hello World!"); написать в самом документе
+                    // var number = 21; назначение переменной
+                  /* var x = 5;
+                   var y = 5;
+                   var result;
+                   result = x + y;
+                   document.write("<br />" + result);
+                   result += x;
+                   document.write("<br />" + result);
+                   result *= x;
+                   document.write("<br />" + result);
+                   document.write("<br />" + x + "+" + y + "=" + (x+y) + "<br />");// соединение строки и числа
+                   var str_1 = "12";
+                   var str_2 = "24";
+                   document.write(Number(str_1) + Number(str_2)); // перевод строки в число
+                   document.write("<br />");
+                   var z = 6;
+                   var d = 7;
+                   bool = z < d;
+                   document.write(bool); // вывод булевой функции правда и неправда
+                   document.write("<br />");
+                   document.write(10 + " % " + 7 + " = " + (10 % 7));// */ // действия с переменными
+                   /*var id = setInterval("myFunction_1()", 1000);
+                   var counter = 0;
+                   function myFunction_1() {
+                       counter++;
+                       alert("Секунд прошло - " + counter);
+                       if(counter == 3) clearInterval(id);
+                   }*/
+                   /*var counter = 0;
+                   function timer() {
+                        counter++;
+                        document.getElementById('count').innerHTML = counter;
+                        setTimeout("timer()", 1000);
+                   }*///счетчик
+                    /*var date = new Date();
+                    text = "Год сегодня - " + date.getFullYear();
+                    text += "\nМесяц сейчас - " + date.getMonth();
+                    text += "\nДень сегодня - " + date.getDate();
+                    text += "\nЧас сейчас - " + date.getHours();
+                    text += "\nМинут сейчас - " + date.getMinutes();
+                    text += "\nСекунд сейчас  - " + date.getSeconds();
+                    document.write(text);*/// функции даты
+                    /*var string = "Небольшая строка";
+
+                    text = "Длина строки равна - " + string.length;
+                    text += "\nСтрока в верхнем регистре - " + string.toUpperCase();
+                    text += "\nСтрока в нижнем регистре - " + string.toLowerCase();
+                    text += "\nОбрезанная строка - " + string.substring(0, 5);
+                    text += "\n3-й символ это - " + string.charAt(2);
+                    text += "\n'Стро' начинается с индекса - " + string.indexOf("стро");
+                    alert(text);*/// функции строк
+                </script>
             </div>
         </div>
+
     </body>
 </html>

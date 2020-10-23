@@ -15,12 +15,15 @@
     <div class="container">
         <div class="nine columns">
             <div class="img-wrap">
-                <img src="{{ asset('images/blog/2.jpg') }}" alt="">
+                @foreach($blog as $b)
+                    <img src="{{ asset('images/blog/title_img/') }}/{{ $b->title_img }}" alt="{{ $b->title }}">
+                @endforeach
             </div>
             <div class="post-block">
                 @foreach($blog as $b)
                     {!! $b->desc !!}
                 @endforeach
+                <div class="link-tag"><a href="{{ route('blog') }}">Вернуться ко всем статьям</a></div>
                 <div class="tags-block grey-background">
                     @foreach($tag_page as $tag => $k)
                         @foreach($blog_tags as $t)
@@ -30,7 +33,7 @@
                         @endforeach
                     @endforeach
                     @foreach($blog as $b)
-                            <a href="#" class="autor-link">{!! $b->author !!}</a>
+                        <a href="{{ route('blog') }}" class="autor-link">{!! $b->author !!}</a>
                     @endforeach
                 </div>
                 <div class="clear"></div>
@@ -52,11 +55,9 @@
                     <div class="error text-align-center" id="err-timedout">Время ожидания истекло!</div>
                     <div class="error" id="err-state"></div>
                 </form>
-
                 <div class="clear"></div>
                 <div id="ajaxsuccess">Успешно отправлено!!</div>
                 <div class="clear"></div>
-
             </div>
         </div>
         <div class="three columns">
@@ -66,17 +67,17 @@
                 <h6>Последние посты</h6>
                 <div class="link-recents">
                     @foreach($recents as $recent)
-                    <a href="{{ route('blog-post', $recent->id) }}">{{ $recent->title }}</a>
+                        <a href="{{ route('blog-post', $recent->id) }}">{{ $recent->title }}</a>
                     @endforeach
                 </div>
-                <div class="separator-sidebar"></div>
+                {{--<div class="separator-sidebar"></div>
                 <h6>Latest Projects</h6>
                 <div class="lat-pro">
                     <a href="#"><div class="lat-pro-img"><img  src="{{ asset('images/portfolio/a1.jpg') }}" alt="" /></div></a>
                     <a href="#"><div class="lat-pro-img"><img  src="{{ asset('images/portfolio/a2.jpg') }}" alt="" /></div></a>
                     <a href="#"><div class="lat-pro-img"><img  src="{{ asset('images/portfolio/b1.jpg') }}" alt="" /></div></a>
                     <a href="#"><div class="lat-pro-img"><img  src="{{ asset('images/portfolio/b2.jpg') }}" alt="" /></div></a>
-                </div>
+                </div>--}}
                 <div class="separator-sidebar"></div>
                 <h6>Tags</h6>
                 <div class="link-tag">

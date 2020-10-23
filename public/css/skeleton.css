@@ -182,13 +182,13 @@
         .container .one.column,
         .container .one.columns                     { width: 44px; }
         .container .two.columns                     { width: 108px; }
-        .container .three.columns                   { width: 172px; }
-        .container .four.columns                    { width: 236px; }
+        .container .three.columns                   { width: 320px; }
+        .container .four.columns                    { width: 340px; }
         .container .five.columns                    { width: 300px; }
         .container .six.columns                     { width: 364px; }
         .container .seven.columns                   { width: 428px; }
         .container .eight.columns                   { width: 492px; }
-        .container .nine.columns                    { width: 556px; }
+        .container .nine.columns                    { width: 500px; }
         .container .ten.columns                     { width: 620px; }
         .container .eleven.columns                  { width: 684px; }
         .container .twelve.columns                  { width: 748px; }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\BlogCategories;
 use App\Models\BlogTags;
+use App\Models\About;
 use App\Models\Portfolio;
 use DB;
 use phpDocumentor\Reflection\DocBlock\Tags\Method;
@@ -27,7 +28,7 @@ class IndexController extends Controller
                     ->withErrors(['msg' => 'Вы не ввели имя'])
                     ->withInput();
             }
-            
+
             return view('base.index', $data);
         }
         $data = [
@@ -44,9 +45,17 @@ class IndexController extends Controller
         return view('base.portfolio', $data);
     }
     public function about(){
+        $about = About::all();
+        $blog = Blog::all();
+        foreach ($about as $ab){
+            $link = explode(',', $ab->link);
+        }
         $title = 'PWS - about';
         $data = [
+            'blog' => $blog,
             'title' => $title,
+            'about' => $about,
+            'link' => $link,
         ];
         return view('base.about', $data);
     }
@@ -63,7 +72,7 @@ class IndexController extends Controller
     }
     public function blogPost($id){
         $recent = DB::table('blog')->latest('created_at')->limit(6)->get();
-        $recents = $recent->SortByDesc('id');
+        $recents = $recent->SortByDesc('created_at');
         $title = 'PWS - blogName';
         $blog = Blog::all()->where('id', $id);
         foreach ($blog as $b){
@@ -81,11 +90,22 @@ class IndexController extends Controller
         ];
         return view('base.blog-post', $data);
     }
-    public function contact(){
+    public function contact(Request $request){
         $title = 'PWS - contact';
         $data = [
             'title' => $title,
         ];
+        if($request->isMethod('post')){
+            $title = 'PWS - contact';
+            $data = [
+                'title' => $title,
+            ];
+            return back();
+        }
         return view('base.contact', $data);
+
+    }
+    public function welcome(){
+        return view('welcome');
     }
 }

@@ -11,7 +11,7 @@
 <div class="clear"></div>
 <div class="section">
     <div class="container">
-        <form name="ajax-form" id="ajax-form" action="mail-it.php" method="post">
+        <form name="ajax-form" id="ajax-form" action="{{ route('contact') }}" method="post">
             <div class="six columns">
                 <label for="name">
                     <span class="error" id="err-name">Пожалуйства введите ваше имя</span>
@@ -36,14 +36,13 @@
                 <textarea name="message" id="message" placeholder="Опишите что вас интересует"></textarea>
             </div>
             <div class="twelve columns">
-                <div id="button-con"><button class="send_message button button--moema button--text-thick button--text-upper button--size-s" id="send" data-lang="en">Отправить</button></div>
+                <div id="button-con"><button type="submit" class="send_message button button--moema button--text-thick button--text-upper button--size-s" id="send" data-lang="en">Отправить</button></div>
             </div>
             <div class="clear"></div>
             <div class="error text-align-center" id="err-form">Проверьте правильность заполнения формы!</div>
             <div class="error text-align-center" id="err-timedout">Время ожидания истекло!</div>
             <div class="error" id="err-state"></div>
         </form>
-
         <div class="clear"></div>
         <div id="ajaxsuccess">Успешно отправлено!!</div>
         <div class="clear"></div>

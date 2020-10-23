@@ -13,7 +13,7 @@
                         <div class="form-group row">
                             <div class="col-sm-3"></div>
                             <div class="col-sm-6">
-                                <p style="background: #ffffff61;border-radius: 10px;">Закажите <b style="color: #ffab01">бесплатный</b> рассчет стоимости вашего сайта</p>
+                                <p>Закажите <b style="color: #ffab01">бесплатный</b> рассчет стоимости вашего сайта</p>
                             </div>
                             <div class="col-sm-3"></div>
                         </div>

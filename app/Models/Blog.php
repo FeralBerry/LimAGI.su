@@ -17,7 +17,9 @@ class Blog extends Model
         'blog_cat_id',
         'author',
         'img',
+        'title_img',
         'video',
+        'video_img',
         'created_at',
         'updated_at',
     ];

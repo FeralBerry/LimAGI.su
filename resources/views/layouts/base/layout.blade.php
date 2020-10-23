@@ -55,6 +55,7 @@
 @yield('header')
 @yield('content')
 @yield('footer')
+
 <!-- JAVASCRIPT
 ================================================== -->
 <script type="text/javascript" src="{{ asset('js/jquery-2.1.1.js') }}"></script>
@@ -71,7 +72,6 @@
         });
     })(jQuery);
 </script>
-<script type="text/javascript" src="{{ asset('js/retina-1.1.0.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/jquery.easing.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/menu.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/velocity.min.js') }}"></script>
@@ -80,7 +80,11 @@
 <script type="text/javascript" src="{{ asset('js/owl.carousel.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/home-scroll.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/custom-home.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/canvas.js') }}"></script>
+@if(isset($cfg))
+    @if($cfg == 1)
+        <script type="text/javascript" src="{{ asset('js/canvas.js') }}"></script>
+    @endif
+@endif
 <script type="text/javascript" src="{{ asset('js/jquery.chaffle.min.js') }}"></script>
 <script type="text/javascript">
     (function($) { "use strict";

@@ -7,42 +7,35 @@
             <div class="logo-wrap">
                 <a href="{{ route('index') }}"><img src="{{ asset('images/logo.png') }}" alt="PWS"></a>
             </div>
+            <div class="head_contact">
+                <a href="#">Телефон: +7(999)987-65-43</a><br>
+                <a href="#">Email: pusiket90@yandex.ru</a>
+            </div>
             <a class="cd-primary-nav-trigger" href="#0">
                 <span class="cd-menu-text"></span><span class="cd-menu-icon"></span>
             </a>
         </div>
     </div>
 </header>
-
 <nav>
     <div class="cd-primary-nav">
         <ul class="cd-scndr-nav">
-            <li class="cd-label"><a href="{{ route('index') }}">Главная</a></li>
-            <li class="cd-label"><a href="{{ route('portfolio') }}" class="curent-nav-color">Портфолио</a>
-                {{--<ul>
-                    <li><a href="index.html" class="curent-nav-color">Fullscreen Scroll Scale Down</a></li>
-                    <li><a href="index1.html">Fullscreen Scroll Rotate</a></li>
-                    <li><a href="index2.html">Fullscreen Scroll Catch</a></li>
-                    <li><a href="index3.html">Fullscreen Scroll Opacity</a></li>
-                    <li><a href="index4.html">Fullscreen Scroll Parallax</a></li>
-                    <li><a href="index5.html">Scroll Scale Down</a></li>
-                    <li><a href="index6.html">Scroll Rotate</a></li>
-                    <li><a href="index7.html">Scroll Catch</a></li>
-                    <li><a href="index8.html">Scroll Opacity</a></li>
-                    <li><a href="index9.html">Scroll Parallax</a></li>
-                    <li><a href="index10.html">Fullscreen Scroll Video Parallax</a></li>
-                    <li><a href="index11.html">Scroll Video Parallax</a></li>
-                </ul>--}}
+            <li class="cd-label">
+                <a href="{{ route('index') }}" @if(Request::path() == '/')class="curent-nav-color"@endif>Главная</a>
             </li>
-
-            <li class="cd-label"><a href="{{ route('about') }}">Обо мне</a></li>
-
-            <li class="cd-label"><a href="{{ route('blog') }}">Блог</a></li>
-
-            <li class="cd-label"><a href="{{ route('contact') }}">Контакты</a></li>
-
+            <li class="cd-label">
+                <a href="{{ route('portfolio') }}" @if(Request::path() == 'portfolio')class="curent-nav-color"@endif>Портфолио</a>
+            </li>
+            <li class="cd-label">
+                <a href="{{ route('about') }}" @if(Request::path() == 'about')class="curent-nav-color"@endif>Обо мне</a>
+            </li>
+            <li class="cd-label">
+                <a href="{{ route('blog') }}" @if(Request::path() == 'blog')class="curent-nav-color"@endif>Блог</a>
+            </li>
+            <li class="cd-label">
+                <a href="{{ route('contact') }}" @if(Request::path() == 'contact')class="curent-nav-color"@endif>Контакты</a>
+            </li>
         </ul>
-
         <div class="social-nav">
             <ul class="list-social-nav">
                 <li class="icon-soc-nav tipped" data-title="twitter"  data-tipper-options='{"direction":"top","follow":"true"}'>
@@ -89,6 +82,5 @@
                 </li>
             </ul>
         </div>
-
     </div>
 </nav>

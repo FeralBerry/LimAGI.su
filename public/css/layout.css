@@ -632,7 +632,7 @@ body::before {
   z-index: 2;
 }
 .cd-section:first-of-type > div {
-  background-image: url('../images/1.gif');
+  background-image: url('../images/1.jpg');
 }
 .cd-section:nth-of-type(2) > div {
   background-image: url('../images/2.jpg');
@@ -792,7 +792,6 @@ body::before {
 	transform: translateY(-50%);
 }
 .hero-top h2{
-    background: #ffffff61;
     padding-bottom: 15px;
     font-size: 80px;
     text-align: center;
@@ -801,7 +800,7 @@ body::before {
     padding-left: 25px;
     text-transform: uppercase;
     color: #080808;
-    text-shadow: 0 0 15px rgba(0,0,0,0.3);
+    text-shadow: 2px 2px 3px #f8f9fa, 0 0 0 #444;
     z-index: 10;
     border-radius: 10px;
 }
@@ -817,23 +816,19 @@ body::before {
     display: block;
     width: 100%;
 }
-
-
-
 .hero-top p{
-	font-family: 'Inconsolata';
-	text-transform:uppercase;
-	text-align:center;
-	font-weight:400;
-	margin-top:6px;
-	font-size: 22px;
-	line-height:36px;
-	letter-spacing:6px;
-	color: rgba(0, 0, 0, 0.86);
-	margin-bottom:6px;
-	z-index:10;
-
-
+    font-family: 'Inconsolata';
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 400;
+    margin-top: 6px;
+    font-size: 22px;
+    line-height: 36px;
+    letter-spacing: 6px;
+    color: rgb(255 255 255 / 86%);
+    text-shadow: 1px 1px 1px #000, 0 0 0 #feaa06;
+    margin-bottom: 6px;
+    z-index: 10;
 }
 .hero-top p span{
 	font-size: 14px;
@@ -1377,7 +1372,7 @@ video#video-background {
       transform: translateX(-100%); }
   @media only screen and (min-width: 1024px) {
     .cd-slider {
-      cursor: pointer; }
+       }
       .cd-slider::before {
         /* never visible - this is used in jQuery to check the current MQ */
         content: 'desktop'; }
@@ -1390,7 +1385,6 @@ video#video-background {
         left: 0;
         height: 100%;
         width: 100%;
-	background: rgba(0,0,0,.5) url("../images/cd-icon-zoom.svg") no-repeat center center;
         /* size of the icon */
         background-size: 48px;
         opacity: 0;
@@ -3065,4 +3059,26 @@ body.body--hidden .footer{
     left: 0;
     z-index: 1;
 }
-
+.cd-slider li.best{
+    position: relative;
+    z-index: 2;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0)
+}
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+    #ajax-form {
+        margin: 49px auto;
+    }
+}
+.head_contact a{
+    text-decoration: none;
+    color: #cfa144;
+}
+@media (max-width: 767px) {
+    .head_contact a{
+        display: none;
+    }
+}
