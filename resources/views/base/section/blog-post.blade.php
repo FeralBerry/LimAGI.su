@@ -25,12 +25,10 @@
                 @endforeach
                 <div class="link-tag"><a href="{{ route('blog') }}">Вернуться ко всем статьям</a></div>
                 <div class="tags-block grey-background">
-                    @foreach($tag_page as $tag => $k)
-                        @foreach($blog_tags as $t)
-                            @if($k == $t->id)
-                                <a href="#">{{ $t->name }}</a>
-                            @endif
-                        @endforeach
+                    @foreach($blog_cat as $cat)
+                        @if($cat->id == $b->blog_cat_id)
+                            <a href="{{ route('blog') }}">{{ $cat->cat_name }}</a>
+                        @endif
                     @endforeach
                     @foreach($blog as $b)
                         <a href="{{ route('blog') }}" class="autor-link">{!! $b->author !!}</a>

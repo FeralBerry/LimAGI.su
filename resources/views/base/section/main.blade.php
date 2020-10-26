@@ -18,6 +18,7 @@
                             <div class="col-sm-3"></div>
                         </div>
                         <form action="{{ route('index') }}" method="POST">
+                            @csrf
                             <div class="form-group row">
                                 <div class="col-sm-3"></div>
                                 <div class="col-sm-6">
@@ -128,3 +129,8 @@
     </nav> <!-- .cd-vertical-nav -->
 
 </main>
+@if(isset($status))
+    <script>
+        alert('Ваша заявка принята с вами свзяжутся в ближайшее время')
+    </script>
+@endif

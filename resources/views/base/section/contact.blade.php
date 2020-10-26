@@ -12,6 +12,7 @@
 <div class="section">
     <div class="container">
         <form name="ajax-form" id="ajax-form" action="{{ route('contact') }}" method="post">
+            @csrf
             <div class="six columns">
                 <label for="name">
                     <span class="error" id="err-name">Пожалуйства введите ваше имя</span>
