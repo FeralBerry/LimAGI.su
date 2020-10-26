@@ -15,6 +15,11 @@
             <a href="{{ route('admin-blogTags') }}">{{ $breadcrumb_blog_tags }}</a>
         </li>
     @endif
+    @if(isset($breadcrumb_blog_cat))
+        <li @if(!isset($second_breadcrumb))class="active"@endif>
+            <a href="{{ route('admin-blogCat') }}">{{ $breadcrumb_blog_cat }}</a>
+        </li>
+    @endif
     @if(isset($second_breadcrumb))
         <li class="active">
             <a href="
@@ -22,10 +27,13 @@
                 {{ route('admin-users-edit',$id) }}
             @endif
             @if(isset($breadcrumb_blog))
-                {{ route('admin-blog-edit',$id) }}
+                {{ route('admin-blog-add') }}
             @endif
             @if(isset($breadcrumb_blog_tags))
-                {{ route('admin-blogTags-edit',$id) }}
+                {{ route('admin-blogTags-add') }}
+            @endif
+            @if(isset($breadcrumb_blog_tags))
+                {{ route('admin-blogCat-add') }}
             @endif">
                 {{ $second_breadcrumb }}</a>
         </li>

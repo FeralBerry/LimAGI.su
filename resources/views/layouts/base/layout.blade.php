@@ -8,8 +8,9 @@
   ================================================== -->
     <meta charset="utf-8">
     <title>{{ $title }}</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="{{ $description ?? 'PWS - разработка выших сайтов любой сложности' }}">
+    <meta name="keywords" content="{{ $keywords ?? '' }}">
+    <meta name="author" content="{{ 'PWS' }}">
 
     <!-- Mobile Specific Metas
   ================================================== -->

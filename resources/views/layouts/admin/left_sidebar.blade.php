@@ -40,9 +40,9 @@
                                 <li><a href="{{ route('admin-blog') }}">Все статьи</a></li>
                                 <li><a href="{{ route('admin-blog-add') }}">Добавить статью блога</a></li>
                                 <li><a href="{{ route('admin-blogTags') }}">Просмотреть теги для блога</a></li>
-                                <li><a href="#">Добавить теги для блога</a></li>
-                                <li><a href="#">Просмотреть фильтры для блога</a></li>
-                                <li><a href="#">Добавить фильт для блога</a></li>
+                                <li><a href="{{ route('admin-blogTags-add') }}">Добавить теги для блога</a></li>
+                                <li><a href="{{ route('admin-blogCat') }}">Просмотреть категории</a></li>
+                                <li><a href="{{ route('admin-blogCat-add') }}">Добавить категории</a></li>
                             </ul>
                         </li>
                         <li>
@@ -211,7 +211,6 @@
                                 </li>
                             </ul>
                         </li>
-
                     </ul>
                 </nav>
             </div>

@@ -45,6 +45,11 @@ $groupData = [
         Route::match(['GET','POST'],'/blogTags/edit/{id?}', ['uses' => 'BlogTagsController@blogTagsEdit', 'as' => 'admin-blogTags-edit']);
         Route::match(['GET','POST'],'/blogTags/delete/{id}', ['uses' => 'BlogTagsController@blogTagsDelete', 'as' => 'admin-blogTags-delete']);
         Route::match(['GET','POST'],'/blogTags/add', ['uses' => 'BlogTagsController@blogTagsAdd', 'as' => 'admin-blogTags-add']);
+        //Blog categories Admin
+        Route::match(['GET','POST'],'/blogCat', ['uses' => 'BlogCategoriesController@index', 'as' => 'admin-blogCat']);
+        Route::match(['GET','POST'],'/blogCat/edit/{id?}', ['uses' => 'BlogCategoriesController@categoriesEdit', 'as' => 'admin-blogCat-edit']);
+        Route::match(['GET','POST'],'/blogCat/delete/{id}', ['uses' => 'BlogCategoriesController@categoriesDelete', 'as' => 'admin-blogCat-delete']);
+        Route::match(['GET','POST'],'/blogCat/add', ['uses' => 'BlogCategoriesController@categoriesAdd', 'as' => 'admin-blogCat-add']);
     });
 });
 

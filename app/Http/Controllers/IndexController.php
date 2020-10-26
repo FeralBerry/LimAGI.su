@@ -9,7 +9,6 @@ use App\Models\BlogTags;
 use App\Models\About;
 use App\Models\Portfolio;
 use DB;
-use phpDocumentor\Reflection\DocBlock\Tags\Method;
 use Mail;
 
 class IndexController extends Controller
@@ -24,6 +23,8 @@ class IndexController extends Controller
     }
     public function index(Request $request){
         $title = 'PWS';
+        $description = '';
+        $keywords = '';
         $cfg = 1;
         if($request->isMethod('post')) {
             $messages = [
@@ -63,19 +64,27 @@ class IndexController extends Controller
         $data = [
             'title' => $title,
             'cfg' => $cfg,
+            'description' => $description,
+            'keywords' => $keywords,
         ];
         return view('base.index', $data);
     }
     public function portfolio(){
         $title = 'PWS - portfolio';
+        $description = '';
+        $keywords = '';
         $data = [
             'title' => $title,
+            'description' => $description,
+            'keywords' => $keywords,
         ];
         return view('base.portfolio', $data);
     }
     public function about(){
         $about = About::all();
         $blog = Blog::all();
+        $description = '';
+        $keywords = '';
         foreach ($about as $ab){
             $link = explode(',', $ab->link);
         }
@@ -85,16 +94,22 @@ class IndexController extends Controller
             'title' => $title,
             'about' => $about,
             'link' => $link,
+            'description' => $description,
+            'keywords' => $keywords,
         ];
         return view('base.about', $data);
     }
     public function blog(){
         $title = 'PWS - blog';
         $blog = Blog::all();
+        $description = '';
+        $keywords = '';
         $data = [
             'title' => $title,
             'blog' => $blog,
             'blog_cat' => $this->blogCat(),
+            'description' => $description,
+            'keywords' => $keywords,
         ];
         return view('base.blog', $data);
     }
@@ -110,6 +125,18 @@ class IndexController extends Controller
             $tags = explode(',', $b->tags);
             $tag_page = explode(',', $b->tag_page);
             $title = 'PWS - '.$b->title;
+            $description = $b->brief;
+            $tag = explode(',',$b->tags);
+            $count_tags = count($tag);
+            $keywords = 'PWS';
+            $blog_tags = BlogTags::all();
+            foreach ($blog_tags as $bt){
+                for($i=0;$i<$count_tags;$i++){
+                    if($bt->id == $tag[$i]){
+                        $keywords = $keywords.','.$bt->name;
+                    }
+                }
+            }
         }
         $data = [
             'title' => $title,
@@ -119,6 +146,8 @@ class IndexController extends Controller
             'tags' => $tags,
             'tag_page' => $tag_page,
             'recents' => $recents,
+            'description' => $description,
+            'keywords' => $keywords,
         ];
         return view('base.blog-post', $data);
     }

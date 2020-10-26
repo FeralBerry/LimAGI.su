@@ -89,6 +89,6 @@ class BlogTagsController extends Controller
             'second_breadcrumb' => $second_breadcrumb,
             'breadcrumb_blog_tags' => $this->breadcrumb_blog_tags,
         ];
-        return view('admin.blog_tag_edit', $data);
+        return view('admin.blog_tag_add', $data);
     }
 }

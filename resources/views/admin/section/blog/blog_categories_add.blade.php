@@ -12,19 +12,19 @@
         </div>
         <div class="panel-editbox" data-widget-controls=""></div>
         <div class="panel-body">
-            <form action="{{ route('admin-blogTags-add') }}" class="form-horizontal row-border" method="post" enctype="multipart/form-data">
+            <form action="{{ route('admin-blogCat-add') }}" class="form-horizontal row-border" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Название тега</label>
+                    <label class="col-sm-2 control-label">Название категории</label>
                     <div class="col-sm-8">
-                        <input type="text" name="name" class="form-control" placeholder="Название тега" value="">
+                        <input type="text" name="cat_name" class="form-control" placeholder="Название категории" value="">
                     </div>
                 </div>
                 <div class="panel-footer">
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2">
                             <button type="submit" class="btn-success btn">Добавить</button>
-                            <a href="{{ route('admin-blogTags') }}"><button class="btn-default btn">Отменить редактирование</button></a>
+                            <a href="{{ route('admin-blogCat') }}"><button class="btn-default btn">Отменить редактирование</button></a>
                         </div>
                     </div>
                 </div>
