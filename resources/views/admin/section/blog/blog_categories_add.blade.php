@@ -15,7 +15,7 @@
             <form action="{{ route('admin-blogCat-add') }}" class="form-horizontal row-border" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Название категории</label>
+                    <label for="cat_name" class="col-sm-2 control-label">Название категории</label>
                     <div class="col-sm-8">
                         <input type="text" name="cat_name" class="form-control" placeholder="Название категории" value="">
                     </div>

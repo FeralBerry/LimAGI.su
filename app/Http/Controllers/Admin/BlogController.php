@@ -88,7 +88,7 @@ class BlogController extends Controller
                 $image->move($destinationPath, $title_img);
             } else {
                 foreach ($blog as $item){
-                    $title_img = $item->video;
+                    $title_img = $item->title_img;
                 }
             }
             Blog::where('id', $id)->update([
@@ -98,7 +98,7 @@ class BlogController extends Controller
                 'author' => $request['author'],
                 'desc' => $request['ckeditor'],
                 'id' => $request['id'],
-                'brief' => $request['brief'],
+                'brief' => Str::limit($request['brief'], 600).'...',
                 'img' => $img_name,
                 'video' => $video,
                 'video_img' => $video_img_name,
@@ -148,6 +148,12 @@ class BlogController extends Controller
                 $destinationPath = public_path('/images/blog/img');
                 $image->move($destinationPath, $img_name);
             }
+            if ($request->hasFile('title_img')) {
+                $image = $request->file('title_img');
+                $title_img = time().'.'.$image->getClientOriginalExtension();
+                $destinationPath = public_path('/images/blog/title_img/');
+                $image->move($destinationPath, $title_img);
+            }
             if ($request->hasFile('videoImg')) {
                 $image = $request->file('videoImg');
                 $video_img_name = time().'.'.$image->getClientOriginalExtension();
@@ -160,12 +166,6 @@ class BlogController extends Controller
                 $destinationPath = public_path('/images/blog/video');
                 $image->move($destinationPath, $video);
             }
-            if ($request->hasFile('title_img')) {
-                $image = $request->file('title_img');
-                $title_img = time().'.'.$image->getClientOriginalExtension();
-                $destinationPath = public_path('/images/blog/title_img/');
-                $image->move($destinationPath, $title_img);
-            }
             Blog::create([
                 'id' => $request['id'],
                 'title' => $request['title'],
@@ -173,7 +173,7 @@ class BlogController extends Controller
                 'author' => $request['author'],
                 'desc' => $request['ckeditor'],
                 'tags' => $tag,
-                'brief' => $request['brief'],
+                'brief' => Str::limit($request['brief'], 600).'...',
                 'img' => $img_name,
                 'video_img' => $video_img_name,
                 'video' => $video,

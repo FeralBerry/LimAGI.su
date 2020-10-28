@@ -13,6 +13,9 @@ use Mail;
 
 class IndexController extends Controller
 {
+    protected $perpage = 12;
+    protected $description = '';
+    protected $keywords = '';
     protected function blogTags(){
         $blog_tags = BlogTags::all();
         return $blog_tags;
@@ -23,8 +26,6 @@ class IndexController extends Controller
     }
     public function index(Request $request){
         $title = 'PWS';
-        $description = '';
-        $keywords = '';
         $cfg = 1;
         if($request->isMethod('post')) {
             $messages = [
@@ -64,19 +65,21 @@ class IndexController extends Controller
         $data = [
             'title' => $title,
             'cfg' => $cfg,
-            'description' => $description,
-            'keywords' => $keywords,
+            'description' => $this->description,
+            'keywords' => $this->keywords,
         ];
         return view('base.index', $data);
     }
     public function portfolio(){
         $title = 'PWS - portfolio';
+        $portfolio = DB::table('portfolio')->paginate($this->perpage);
         $description = '';
         $keywords = '';
         $data = [
             'title' => $title,
-            'description' => $description,
-            'keywords' => $keywords,
+            'description' => $this->description,
+            'keywords' => $this->keywords,
+            'portfolio' => $portfolio,
         ];
         return view('base.portfolio', $data);
     }
@@ -94,8 +97,8 @@ class IndexController extends Controller
             'title' => $title,
             'about' => $about,
             'link' => $link,
-            'description' => $description,
-            'keywords' => $keywords,
+            'description' => $this->description,
+            'keywords' => $this->keywords,
         ];
         return view('base.about', $data);
     }
@@ -108,8 +111,8 @@ class IndexController extends Controller
             'title' => $title,
             'blog' => $blog,
             'blog_cat' => $this->blogCat(),
-            'description' => $description,
-            'keywords' => $keywords,
+            'description' => $this->description,
+            'keywords' => $this->keywords,
         ];
         return view('base.blog', $data);
     }
@@ -155,6 +158,8 @@ class IndexController extends Controller
         $title = 'PWS - contact';
         $data = [
             'title' => $title,
+            'description' => $this->description,
+            'keywords' => $this->keywords,
         ];
         if($request->isMethod('post')) {
             $messages = [

@@ -20,6 +20,11 @@
             <a href="{{ route('admin-blogCat') }}">{{ $breadcrumb_blog_cat }}</a>
         </li>
     @endif
+    @if(isset($breadcrumb_portfolio))
+        <li @if(!isset($second_breadcrumb))class="active"@endif>
+            <a href="{{ route('admin-portfolio') }}">{{ $breadcrumb_portfolio }}</a>
+        </li>
+    @endif
     @if(isset($second_breadcrumb))
         <li class="active">
             <a href="
@@ -34,6 +39,9 @@
             @endif
             @if(isset($breadcrumb_blog_tags))
                 {{ route('admin-blogCat-add') }}
+            @endif
+            @if(isset($breadcrumb_portfolio))
+            {{ route('admin-portfolio-add') }}
             @endif">
                 {{ $second_breadcrumb }}</a>
         </li>
@@ -53,6 +61,9 @@
             @endif
             @if(isset($breadcrumb_blog_tags))
                 {{ $breadcrumb_blog_tags }}
+            @endif
+            @if(isset($breadcrumb_portfolio))
+                {{ $breadcrumb_portfolio }}
             @endif
             @else
             {{ $second_breadcrumb }}

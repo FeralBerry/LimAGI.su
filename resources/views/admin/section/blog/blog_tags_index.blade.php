@@ -33,6 +33,7 @@
                         @endforeach
                         </tbody>
                     </table>
+                    @if($blog_tags->isEmpty())<a href="{{ route('admin-portfolio-add') }}"><i class="fa fa-database" style="font-size:60px; color: green"></i></a>@endif
                     {{ $blog_tags->links() }}
                 </div>
             </div>

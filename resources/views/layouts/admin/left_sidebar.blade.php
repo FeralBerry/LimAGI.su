@@ -50,11 +50,10 @@
                                 <i class="fa fa-briefcase"></i><span>Портфолио</span>{{--<span class="badge badge-primary">8</span>--}}
                             </a>
                             <ul class="acc-menu">
-                                <li><a href="#">Всё портфолио</a></li>
-                                <li><a href="#">Добавить портфолио</a></li>
+                                <li><a href="{{ route('admin-portfolio') }}">Всё портфолио</a></li>
+                                <li><a href="{{ route('admin-portfolio-add') }}">Добавить портфолио</a></li>
                             </ul>
                         </li>
-
                         <li class="nav-separator">Plugins</li>
                         <li><a href="javascript:;"><i class="fa fa-random"></i><span>Components</span></a>
                             <ul class="acc-menu">

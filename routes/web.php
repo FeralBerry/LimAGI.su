@@ -50,6 +50,12 @@ $groupData = [
         Route::match(['GET','POST'],'/blogCat/edit/{id?}', ['uses' => 'BlogCategoriesController@categoriesEdit', 'as' => 'admin-blogCat-edit']);
         Route::match(['GET','POST'],'/blogCat/delete/{id}', ['uses' => 'BlogCategoriesController@categoriesDelete', 'as' => 'admin-blogCat-delete']);
         Route::match(['GET','POST'],'/blogCat/add', ['uses' => 'BlogCategoriesController@categoriesAdd', 'as' => 'admin-blogCat-add']);
+        //Portfolio Admin
+        Route::match(['GET','POST'],'/portfolio', ['uses' => 'PortfolioController@index', 'as' => 'admin-portfolio']);
+        Route::match(['GET','POST'],'/portfolio/edit/{id?}', ['uses' => 'PortfolioController@portfolioEdit', 'as' => 'admin-portfolio-edit']);
+        Route::match(['GET','POST'],'/portfolio/delete/{id}', ['uses' => 'PortfolioController@portfolioDelete', 'as' => 'admin-portfolio-delete']);
+        Route::match(['GET','POST'],'/portfolio/add', ['uses' => 'PortfolioController@portfolioAdd', 'as' => 'admin-portfolio-add']);
+        Route::match(['GET','POST'],'/portfolio/deleteImg/{id}', ['uses' => 'PortfolioController@deleteImg', 'as' => 'admin-portfolio-image-delete']);
     });
 });
 

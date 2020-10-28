@@ -45,7 +45,7 @@
 
 </head>
 <!-- hijacking: on/off - animation: none/scaleDown/rotate/gallery/catch/opacity/fixed/parallax -->
-<body @if(isset($cfg))@if($cfg == 1)class="royal_loader" data-hijacking="on" data-animation="scaleDown"@endif@else class="royal_loader" @endif>
+<body @if(isset($cfg))@if($cfg == 1)class="royal_loader" data-hijacking="on" data-animation="scaleDown" @endif @else class="royal_loader" @endif>
 
 <!-- Primary Page Layout
 ================================================== -->

@@ -2264,7 +2264,22 @@ body.body--hidden .cd-header{
 	position: absolute;
 	overflow: hidden;
 }
-
+.portfolio_img {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    background: #000;
+    z-index: 1;
+    opacity: 0.5;
+}
+.portfolio_img:hover {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    background: #000;
+    z-index: 1;
+    opacity: 0;
+}
 .card__image {
 	position: relative;
 	left: 50%;
@@ -2298,16 +2313,17 @@ body.body--hidden .cd-header{
 }
 
 .card__caption {
-	font-size: 2em;
-	max-width: 900px;
-	margin: 0 auto;
-	padding: 35px 30px 0px;
+    position: absolute;
+    z-index: 5;
+    color: #fff;
+    font-size: 2em;
+    left: 25px;
+    top: 200px;
 }
 
 .card__container--closed .card__caption {
 	font-size: 1em;
 	max-width: none;
-	padding: 30px 10px;
 	-webkit-transform: translateY(-100%);
 	-ms-transform: translateY(-100%);
 	transform: translateY(-100%);
@@ -2352,12 +2368,6 @@ body.body--hidden .cd-header{
 	max-width: 100%;
 	margin: 0 auto;
 }
-
-
-
-
-
-
 .card__btn-close {
 	font-size: 48px;
 	position: absolute;
@@ -3082,3 +3092,13 @@ body.body--hidden .footer{
         display: none;
     }
 }
+.post-block p {
+    text-align: justify;
+    text-indent: 25px;
+    margin-bottom: 20px;
+    font-family: revert;
+}
+.post-block h1{
+    margin-bottom: 30px;
+}
+

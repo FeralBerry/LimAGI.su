@@ -15,7 +15,7 @@
             <form action="{{ route('admin-blogTags-add') }}" class="form-horizontal row-border" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
-                    <label class="col-sm-2 control-label">Название тега</label>
+                    <label for="name" class="col-sm-2 control-label">Название тега</label>
                     <div class="col-sm-8">
                         <input type="text" name="name" class="form-control" placeholder="Название тега" value="">
                     </div>

@@ -33,6 +33,7 @@
                         @endforeach
                         </tbody>
                     </table>
+                    @if($blogCat->isEmpty())<a href="{{ route('admin-portfolio-add') }}"><i class="fa fa-database" style="font-size:60px; color: green"></i></a>@endif
                     {{ $blogCat->links() }}
                 </div>
             </div>
