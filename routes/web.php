@@ -60,6 +60,9 @@ $groupData = [
         Route::match(['GET','POST'],'/blogComments', ['uses' => 'CommentsController@blogCommentsIndex', 'as' => 'admin-blog-comments']);
         Route::match(['GET','POST'],'/blogComments/edit/{id?}', ['uses' => 'CommentsController@blogCommentsEdit', 'as' => 'admin-blog-comments-edit']);
         Route::match(['GET','POST'],'/blogComments/delete/{id}', ['uses' => 'CommentsController@blogCommentsDelete', 'as' => 'admin-blog-comments-delete']);
+        //About Admin
+        Route::match(['GET','POST'],'/about', ['uses' => 'AboutController@index', 'as' => 'admin-about']);
+        Route::match(['GET','POST'],'/about/edit/{id?}', ['uses' => 'AboutController@aboutEdit', 'as' => 'admin-about-edit']);
     });
 });
 

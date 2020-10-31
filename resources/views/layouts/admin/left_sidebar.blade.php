@@ -55,23 +55,10 @@
                                 <li><a href="{{ route('admin-portfolio-add') }}">Добавить портфолио</a></li>
                             </ul>
                         </li>
-                        <li class="nav-separator">Plugins</li>
-                        <li><a href="javascript:;"><i class="fa fa-random"></i><span>Components</span></a>
+                        <li class="nav-separator">Статичные страницы</li>
+                        <li><a href="javascript:;"><i class="fa fa-files-o"></i><span>Обо мне</span></a>
                             <ul class="acc-menu">
-                                <li><a href="#">Tiles</a></li>
-                                <li><a href="#">Page Progress Bar</a></li>
-                                <li><a href="#">Bootbox</a></li>
-                                <li><a href="#">Date Paginator</a></li>
-                                <li><a href="#">Pines Notification</a></li>
-                                <li><a href="#">Notific8 Notification</a></li>
-                                <li><a href="#">Pulsating Elements</a></li>
-                                <li><a href="#">jQuery Knob</a></li>
-                                <li><a href="#">jQueryUI Widgets</a></li>
-                                <li><a href="#">Ion Range Slider</a></li>
-                                <li><a href="#">Tour</a></li>
-                                <li><a href="#">Nestable Lists</a></li>
-                                <li><a href="#">Tree View</a></li>
-                                <li><a href="#">Weather</a></li>
+                                <li><a href="{{ route('admin-about') }}">Просмотреть</a></li>
                             </ul>
                         </li>
                         <li><a href="javascript:;"><i class="fa fa-pencil"></i><span>Forms</span></a>

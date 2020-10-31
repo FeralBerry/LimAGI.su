@@ -8,8 +8,7 @@
                 <a href="{{ route('index') }}"><img src="{{ asset('images/logo.png') }}" alt="One-Page"></a>
             </div>
             <div class="head_contact">
-                <a href="tel: 79687106270">Телефон: +7(968)710-62-70</a>
-                <br>
+                <a href="tel: 79687106270">Телефон: +7(968)710-62-70</a><br>
                 <a href="mailto:info@one-page.su">Email: info@one-page.su</a>
             </div>
             <a class="cd-primary-nav-trigger" href="#0">

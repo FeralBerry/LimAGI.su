@@ -1,13 +1,20 @@
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]>
-<!--><html class="no-js" lang="en"><!--<![endif]-->
+<!--[if IE 6]>
+<html id="ie6" lang="ru-RU">
+<![endif]-->
+<!--[if IE 7]>
+<html id="ie7" lang="ru-RU">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="ru-RU">
+<![endif]-->
+<html class="no-js" lang="ru-RU">
 <head>
 
     <!-- Basic Page Needs
   ================================================== -->
     <meta charset="utf-8">
-    <title>{{ $title }}</title>
+    <title>{{ $title ?? 'One-Page' }}</title>
     <meta name="description" content="{{ $description ?? 'One-Page - разработка выших сайтов любой сложности' }}">
     <meta name="keywords" content="{{ $keywords ?? '' }}">
     <meta name="author" content="{{ 'One-Page' }}">
@@ -41,7 +48,20 @@
     <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('apple-touch-icon-114x114.png') }}">
 
     <script type="text/javascript" src="{{ asset('js/modernizr.custom.js') }}"></script>
-
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    
+       ym(68858455, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true
+       });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/68858455" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
 
 </head>
 <!-- hijacking: on/off - animation: none/scaleDown/rotate/gallery/catch/opacity/fixed/parallax -->
@@ -65,7 +85,7 @@
     (function($) { "use strict";
         Royal_Preloader.config({
             mode:           'text', // 'number', "text" or "logo"
-            text:           'One-Page',
+            text:           "One-Page",
             timeout:        0,
             showInfo:       true,
             opacity:        1,

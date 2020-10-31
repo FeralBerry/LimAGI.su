@@ -54,13 +54,13 @@
                                     <a href="https://wa.me/79687106270"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
                                 </li>
                                 <li class="icon-soc tipped" data-title="VK"  data-tipper-options='{"direction":"top","follow":"true"}'>
-                                    <a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a>
+                                    <a href="https://vk.com/id338990548"><i class="fa fa-vk" aria-hidden="true"></i></a>
                                 </li>
                                 <li class="icon-soc tipped" data-title="github"  data-tipper-options='{"direction":"top","follow":"true"}'>
-                                    <a href="#"><i class="fa fa-github" aria-hidden="true"></i></a>
+                                    <a href="https://github.com/FeralBerry/admin-panel"><i class="fa fa-github" aria-hidden="true"></i></a>
                                 </li>
                                 <li class="icon-soc tipped" data-title="google +"  data-tipper-options='{"direction":"top","follow":"true"}'>
-                                    <a href="#"><i class="fa fa-google" aria-hidden="true"></i></a>
+                                    <a href="mailto:evakomarova90@gmail.com"><i class="fa fa-google" aria-hidden="true"></i></a>
                                 </li>
                             </ul>
                         </div>

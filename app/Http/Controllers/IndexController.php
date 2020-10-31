@@ -15,8 +15,8 @@ use Mail;
 class IndexController extends Controller
 {
     protected $perpage = 12;
-    protected $description = '';
-    protected $keywords = '';
+    protected $description = 'Разработка сайта под ключ. Уникальный дизайн. Современные технологии разработки. Анализ конкурентов вашего бизнеса.';
+    protected $keywords = 'сайт, разработка, визитка, магазин, дизайн,современная, лучшая,лендинг';
     protected function blogTags(){
         $blog_tags = BlogTags::all();
         return $blog_tags;
@@ -87,8 +87,6 @@ class IndexController extends Controller
     public function about(){
         $about = About::all();
         $blog = Blog::all();
-        $description = '';
-        $keywords = '';
         foreach ($about as $ab){
             $link = explode(',', $ab->link);
         }
@@ -106,8 +104,6 @@ class IndexController extends Controller
     public function blog(){
         $title = 'One-Page - blog';
         $blog = Blog::orderBy('updated_at','DESC')->get();
-        $description = '';
-        $keywords = '';
         $data = [
             'title' => $title,
             'blog' => $blog,

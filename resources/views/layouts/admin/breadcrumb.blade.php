@@ -25,6 +25,11 @@
             <a href="{{ route('admin-portfolio') }}">{{ $breadcrumb_portfolio }}</a>
         </li>
     @endif
+    @if(isset($breadcrumb_about))
+        <li @if(!isset($second_breadcrumb))class="active"@endif>
+            <a href="{{ route('admin-about') }}">{{ $breadcrumb_about }}</a>
+        </li>
+    @endif
     @if(isset($second_breadcrumb))
         <li class="active">
             <a href="

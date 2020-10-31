@@ -25,7 +25,7 @@ class BlogController extends Controller
     }
     public function index(){
         $blog = DB::table('blog')->paginate($this->perpage);
-        $title = 'PWS редактирование статей блога';
+        $title = 'One-Page редактирование статей блога';
         $data = [
             'title' => $title,
             'breadcrumb_blog' => $this->breadcrumb_blog,
@@ -107,7 +107,7 @@ class BlogController extends Controller
             return redirect()->route('admin-blog');
         }
         $blog = Blog::all()->where('id', $id);
-        $title = 'PWS редактирование статьи блога';
+        $title = 'One-Page редактирование статьи блога';
         foreach ($blog as $item) {
             $second_breadcrumb = 'Редактирование статьи ' . $item->title;
         }
@@ -182,7 +182,7 @@ class BlogController extends Controller
             return redirect()->route('admin-blog');
         }
         $second_breadcrumb = 'Добавление статьи блога';
-        $title = 'PWS добавление статьи блога';
+        $title = 'One-Page добавление статьи блога';
         $blog = Blog::all();
         foreach ($blog as $item){
             $max_id = $item->id +1;
