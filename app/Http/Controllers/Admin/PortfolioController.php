@@ -13,7 +13,7 @@ class PortfolioController extends Controller
     protected $breadcrumb_portfolio = 'Портфолио';
     public function index(){
         $portfolio = DB::table('portfolio')->paginate($this->perpage);
-        $title = 'PWS - админ панель портфолио';
+        $title = 'One-Page - админ панель портфолио';
         $data = [
             'title' => $title,
             'portfolio' => $portfolio,
@@ -43,7 +43,7 @@ class PortfolioController extends Controller
             return redirect()->route('admin-portfolio');
         }
         $portfolio = Portfolio::all()->where('id', $id);
-        $title = 'PWS - админ панель портфолио';
+        $title = 'One-Page - админ панель портфолио';
         foreach ($portfolio as $p){
             $second_breadcrumb = 'Редактирование портфолио'.$p->title;
         }
@@ -72,7 +72,7 @@ class PortfolioController extends Controller
             ]);
             return redirect()->route('admin-portfolio');
         }
-        $title = 'PWS - админ панель портфолио';
+        $title = 'One-Page - админ панель портфолио';
         $second_breadcrumb = 'Добавление портфолио';
         $portfolio = Portfolio::all();
         foreach ($portfolio as $item){

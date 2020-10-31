@@ -56,6 +56,10 @@ $groupData = [
         Route::match(['GET','POST'],'/portfolio/delete/{id}', ['uses' => 'PortfolioController@portfolioDelete', 'as' => 'admin-portfolio-delete']);
         Route::match(['GET','POST'],'/portfolio/add', ['uses' => 'PortfolioController@portfolioAdd', 'as' => 'admin-portfolio-add']);
         Route::match(['GET','POST'],'/portfolio/deleteImg/{id}', ['uses' => 'PortfolioController@deleteImg', 'as' => 'admin-portfolio-image-delete']);
+        //Blog comments Admin
+        Route::match(['GET','POST'],'/blogComments', ['uses' => 'CommentsController@blogCommentsIndex', 'as' => 'admin-blog-comments']);
+        Route::match(['GET','POST'],'/blogComments/edit/{id?}', ['uses' => 'CommentsController@blogCommentsEdit', 'as' => 'admin-blog-comments-edit']);
+        Route::match(['GET','POST'],'/blogComments/delete/{id}', ['uses' => 'CommentsController@blogCommentsDelete', 'as' => 'admin-blog-comments-delete']);
     });
 });
 

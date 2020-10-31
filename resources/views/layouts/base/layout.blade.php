@@ -8,9 +8,9 @@
   ================================================== -->
     <meta charset="utf-8">
     <title>{{ $title }}</title>
-    <meta name="description" content="{{ $description ?? 'PWS - разработка выших сайтов любой сложности' }}">
+    <meta name="description" content="{{ $description ?? 'One-Page - разработка выших сайтов любой сложности' }}">
     <meta name="keywords" content="{{ $keywords ?? '' }}">
-    <meta name="author" content="{{ 'PWS' }}">
+    <meta name="author" content="{{ 'One-Page' }}">
 
     <!-- Mobile Specific Metas
   ================================================== -->
@@ -18,7 +18,7 @@
 
     <!-- Font
   ================================================== -->
-    <link href='http://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
     <!-- CSS
   ================================================== -->
@@ -65,7 +65,7 @@
     (function($) { "use strict";
         Royal_Preloader.config({
             mode:           'text', // 'number', "text" or "logo"
-            text:           'PWS',
+            text:           'One-Page',
             timeout:        0,
             showInfo:       true,
             opacity:        1,

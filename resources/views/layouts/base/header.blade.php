@@ -2,14 +2,15 @@
     <div class="container">
         <div class="twelve columns" style="margin-top: 20px">
             <div class="logo-wrap">
-                <a href="{{ route('index') }}"><img style="width: 50px" src="{{ asset('images/logo.gif') }}" alt="PWS"></a>
+                <a href="{{ route('index') }}"><img style="width: 50px" src="{{ asset('images/logo.gif') }}" alt="One-Page"></a>
             </div>
             <div class="logo-wrap">
-                <a href="{{ route('index') }}"><img src="{{ asset('images/logo.png') }}" alt="PWS"></a>
+                <a href="{{ route('index') }}"><img src="{{ asset('images/logo.png') }}" alt="One-Page"></a>
             </div>
             <div class="head_contact">
-                <a href="#">Телефон: +7(999)987-65-43</a><br>
-                <a href="#">Email: pusiket90@yandex.ru</a>
+                <a href="tel: 79687106270">Телефон: +7(968)710-62-70</a>
+                <br>
+                <a href="mailto:info@one-page.su">Email: info@one-page.su</a>
             </div>
             <a class="cd-primary-nav-trigger" href="#0">
                 <span class="cd-menu-text"></span><span class="cd-menu-icon"></span>

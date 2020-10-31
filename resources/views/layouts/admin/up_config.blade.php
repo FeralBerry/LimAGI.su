@@ -1,14 +1,14 @@
-<link href='http://fonts.googleapis.com/css?family=RobotoDraft:300,400,400italic,500,700' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=RobotoDraft:300,400,400italic,500,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,400italic,600,700' rel='stylesheet' type='text/css'>
 <!--[if lt IE 10]>
     <script type="text/javascript" src="{{ asset('admin/js/media.match.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('admin/js/placeholder.min.js') }}"></script>
 <![endif]-->
 <!--[if lt IE 9]>
     <link type="text/css" href="{{ asset('admin/css/ie8.css') }}" rel="stylesheet">
-    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.1.0/respond.min.js"></script>
     <script type="text/javascript" src="{{ asset('admin/plugins/charts-flot/excanvas.min.js') }}"></script>
-    <script type="text/javascript" src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <script type="text/javascript" src="https://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
     <link type="text/css" href="{{ asset('admin/css/styles.css') }}" rel="stylesheet">                                     <!-- Core CSS with all styles -->
     <link type="text/css" href="{{ asset('admin/fonts/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">        <!-- Font Awesome -->

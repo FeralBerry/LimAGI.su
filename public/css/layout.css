@@ -799,8 +799,8 @@ body::before {
     letter-spacing: 25px;
     padding-left: 25px;
     text-transform: uppercase;
-    color: #080808;
-    text-shadow: 2px 2px 3px #f8f9fa, 0 0 0 #444;
+    color: #f7a601;
+    text-shadow: 2px 2px 3px #212529, 0 0 0 #fff;
     z-index: 10;
     border-radius: 10px;
 }
@@ -852,7 +852,7 @@ body::before {
     padding:0;
     list-style: none;
 	text-align:center;
-	width:32px;
+    width: 50px;
     display: inline-block;
 	cursor:pointer;
 	margin-left:4px;
@@ -867,9 +867,9 @@ body::before {
 
 .list-social li.icon-soc a {
 	font-family: 'FontAwesome';
-	font-size: 12px;
-	line-height: 32px;
-	width:32px;
+    font-size: 40px;
+    line-height: 50px;
+    width: 60px;
 	color:#fff;
 	opacity:1;
 	margin:0;

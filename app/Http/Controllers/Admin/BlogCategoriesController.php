@@ -13,7 +13,7 @@ class BlogCategoriesController extends Controller
     protected $breadcrumb_blog_cat = 'Категории блога';
     public function index(){
         $blogCat = DB::table('blog_category')->paginate($this->perpage);
-        $title = 'PWS - категории блога';
+        $title = 'One-Page - категории блога';
         $data = [
             'title' => $title,
             'blogCat' => $blogCat,
@@ -31,7 +31,7 @@ class BlogCategoriesController extends Controller
         foreach ($blogCat as $item) {
             $second_breadcrumb = 'Редактирование категории ' . $item->name;
         }
-        $title = 'PWS - редактирование категории блога';
+        $title = 'One-Page - редактирование категории блога';
         $data = [
             'title' => $title,
             'blogCat' => $blogCat,
@@ -47,7 +47,7 @@ class BlogCategoriesController extends Controller
             ]);
             return redirect()->route('admin-blogCat');
         }
-        $title = 'PWS - категории блога';
+        $title = 'One-Page - категории блога';
         $second_breadcrumb = 'Добавление новой категории блога';
         $data = [
             'title' => $title,

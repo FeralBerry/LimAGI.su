@@ -23,7 +23,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $title = 'PWS';
+        $title = 'One-Page';
         $data = [
             'title' => $title,
         ];

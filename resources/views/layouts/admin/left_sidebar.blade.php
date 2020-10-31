@@ -43,6 +43,7 @@
                                 <li><a href="{{ route('admin-blogTags-add') }}">Добавить теги для блога</a></li>
                                 <li><a href="{{ route('admin-blogCat') }}">Просмотреть категории</a></li>
                                 <li><a href="{{ route('admin-blogCat-add') }}">Добавить категории</a></li>
+                                <li><a href="{{ route('admin-blog-comments') }}">Комментарии к статьям</a></li>
                             </ul>
                         </li>
                         <li>

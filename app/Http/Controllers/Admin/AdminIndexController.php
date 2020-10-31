@@ -13,7 +13,7 @@ class AdminIndexController extends Controller
     protected $perpage = 10;//количество выводимых записей
     protected $breadcrumb_user = 'Позьлователи';
     public function index(){
-        $title = 'PWS admin panel';
+        $title = 'One-Page admin panel';
         $data = [
             'title' => $title,
         ];
@@ -21,7 +21,7 @@ class AdminIndexController extends Controller
     }
     public function users(){
         $users = DB::table('users')->paginate($this->perpage);
-        $title = 'PWS admin panel table Users';
+        $title = 'One-Page admin panel table Users';
         $data = [
             'title' => $title,
             'users' => $users,
@@ -47,7 +47,7 @@ class AdminIndexController extends Controller
         foreach ($user as $item){
             $second_breadcrumb = 'Редактирование пользователя - '. $item->name;
         }
-        $title = 'PWS admin panel table Users';
+        $title = 'One-Page admin panel table Users';
         $data = [
             'title' => $title,
             'user' => $user,

@@ -50,17 +50,17 @@
                         </form>
                         <div class="social-top">
                             <ul class="list-social">
-                                <li class="icon-soc tipped" data-title="twitter"  data-tipper-options='{"direction":"top","follow":"true"}'>
-                                    <a href="#">&#xf099;</a>
+                                <li class="icon-soc tipped" data-title="WhatsApp"  data-tipper-options='{"direction":"top","follow":"true"}'>
+                                    <a href="https://wa.me/79687106270"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
                                 </li>
-                                <li class="icon-soc tipped" data-title="facebook"  data-tipper-options='{"direction":"top","follow":"true"}'>
-                                    <a href="#">&#xf09a;</a>
+                                <li class="icon-soc tipped" data-title="VK"  data-tipper-options='{"direction":"top","follow":"true"}'>
+                                    <a href="#"><i class="fa fa-vk" aria-hidden="true"></i></a>
                                 </li>
                                 <li class="icon-soc tipped" data-title="github"  data-tipper-options='{"direction":"top","follow":"true"}'>
-                                    <a href="#">&#xf09b;</a>
+                                    <a href="#"><i class="fa fa-github" aria-hidden="true"></i></a>
                                 </li>
                                 <li class="icon-soc tipped" data-title="google +"  data-tipper-options='{"direction":"top","follow":"true"}'>
-                                    <a href="#">&#xf0d5;</a>
+                                    <a href="#"><i class="fa fa-google" aria-hidden="true"></i></a>
                                 </li>
                             </ul>
                         </div>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\BlogCategories;
 use App\Models\BlogTags;
+use App\Models\BlogComments;
 use App\Models\About;
 use App\Models\Portfolio;
 use DB;
@@ -25,7 +26,7 @@ class IndexController extends Controller
         return $blog_cat;
     }
     public function index(Request $request){
-        $title = 'PWS';
+        $title = 'One-Page';
         $cfg = 1;
         if($request->isMethod('post')) {
             $messages = [
@@ -40,7 +41,7 @@ class IndexController extends Controller
             $data_contact = $request->all();
             $result = Mail::send('emails.contact_email',['data_contact' => $data_contact], function($message) use ($data_contact){
                 $mail_admin = env('MAIL_ADMIN');
-                $message->from($data_contact['email'],$data_contact['name']);
+                $message->from($mail_admin,$data_contact['name']);
                 $message->to($mail_admin)->subject('Заявка на рассчет сайта');
             });
             $token_t = "807035350:AAFMLs54vlYmH5TJCo0If87EXhX-1zPmYRs";
@@ -71,7 +72,7 @@ class IndexController extends Controller
         return view('base.index', $data);
     }
     public function portfolio(){
-        $title = 'PWS - portfolio';
+        $title = 'One-Page - portfolio';
         $portfolio = DB::table('portfolio')->paginate($this->perpage);
         $description = '';
         $keywords = '';
@@ -91,7 +92,7 @@ class IndexController extends Controller
         foreach ($about as $ab){
             $link = explode(',', $ab->link);
         }
-        $title = 'PWS - about';
+        $title = 'One-Page - about';
         $data = [
             'blog' => $blog,
             'title' => $title,
@@ -103,8 +104,8 @@ class IndexController extends Controller
         return view('base.about', $data);
     }
     public function blog(){
-        $title = 'PWS - blog';
-        $blog = Blog::all();
+        $title = 'One-Page - blog';
+        $blog = Blog::orderBy('updated_at','DESC')->get();
         $description = '';
         $keywords = '';
         $data = [
@@ -116,7 +117,19 @@ class IndexController extends Controller
         ];
         return view('base.blog', $data);
     }
-    public function blogPost($id){
+    public function blogPost(Request $request,$id){
+        if($request->isMethod('post')){
+            BlogComments::create([
+                'blog_post_id' => $id,
+                'name' => $request['name'],
+                'email' => $request['email'],
+                'comments' => $request['message']
+            ]);
+            return back()->with(['msg' => 'Комментарий добавлени']);
+        }
+        $blog_comments = DB::table('blog_comments')
+            ->where('blog_post_id', $id)
+            ->paginate($this->perpage);
         $recent = DB::table('blog')
             ->latest('updated_at')
             ->latest('created_at')
@@ -146,16 +159,18 @@ class IndexController extends Controller
             'blog' => $blog,
             'blog_cat' => $this->blogCat(),
             'blog_tags' => $this->blogTags(),
+            'blog_comments' => $blog_comments,
             'tags' => $tags,
             'tag_page' => $tag_page,
             'recents' => $recents,
             'description' => $description,
             'keywords' => $keywords,
+            'id' => $id,
         ];
         return view('base.blog-post', $data);
     }
     public function contact(Request $request){
-        $title = 'PWS - contact';
+        $title = 'One-Page - contact';
         $data = [
             'title' => $title,
             'description' => $this->description,
@@ -175,7 +190,7 @@ class IndexController extends Controller
             $data_contact = $request->all();
             $result = Mail::send('emails.contact_email',['data_contact' => $data_contact], function($message) use ($data_contact){
                 $mail_admin = env('MAIL_ADMIN');
-                $message->from($data_contact['email'],$data_contact['name']);
+                $message->from($mail_admin,$data_contact['name']);
                 $message->to($mail_admin)->subject($data_contact['message']);
             });
             $token_t = "807035350:AAFMLs54vlYmH5TJCo0If87EXhX-1zPmYRs";

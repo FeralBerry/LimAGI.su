@@ -35,18 +35,19 @@
                     @endforeach
                 </div>
                 <div class="clear"></div>
-                <form name="ajax-form" id="ajax-form" action="" method="post">
+                <form name="ajax-form" id="ajax-form" action="{{ route('blog-post', $id) }}" method="post">
+                    @csrf
                     <label for="name">
                         <span class="error" id="err-name">Пожалуйства введите ваше имя</span>
                     </label>
-                    <input name="name" id="name" type="text"   placeholder="Ваше имя: *"/>
+                    <input name="name" id="name" type="text"   placeholder="Ваше имя: *" minlength="3" required>
                     <label for="email">
                         <span class="error" id="err-email">пожалуйста введите ваш e-mail</span>
                         <span class="error" id="err-emailvld">e-mail имеет не верный формат</span>
                     </label>
-                    <input name="email" id="email" type="text"  placeholder="E-Mail: *"/>
+                    <input name="email" id="email" type="text"  placeholder="E-Mail: *" pattern="([A-z0-9_.-]{1,})@([A-z0-9_.-]{1,}).([A-z]{2,8})" required >
                     <label for="message"></label>
-                    <textarea name="message" id="message" placeholder="Комментарий"></textarea>
+                    <textarea name="message" id="message" placeholder="Комментарий" minlength="20"></textarea>
                     <div id="button-con"><button class="send_message button button--moema button--text-thick button--text-upper button--size-s" id="send" data-lang="en">Отправить</button></div>
                     <div class="clear"></div>
                     <div class="error text-align-center" id="err-form">Проверьте правильность заполнения формы!</div>
@@ -56,6 +57,21 @@
                 <div class="clear"></div>
                 <div id="ajaxsuccess">Успешно отправлено!!</div>
                 <div class="clear"></div>
+                @if(isset($blog_comments))
+                    @foreach($blog_comments as $comment)
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div style="margin-top: 10px;margin-bottom: 10px" class="tags-block grey-background">
+                                    <a href="#">{{ $comment->name }}</a>
+                                    <a href="mailto:{{ $comment->email }}"class="autor-link">{{ $comment->email }}</a>
+                                </div>
+                                <p>
+                                    {{ $comment->comments }}
+                                </p>
+                            </div>
+                        </div>
+                    @endforeach
+                @endif
             </div>
         </div>
         <div class="three columns">
