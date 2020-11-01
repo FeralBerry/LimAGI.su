@@ -368,7 +368,7 @@ Main components
 }
 @media only screen and (min-width: 768px) {
   .cd-primary-nav-trigger {
-    width: 100px;
+    width: 50px;
     padding-left: 1em;
     background-color: transparent;
     height: 30px;
@@ -3102,3 +3102,80 @@ body.body--hidden .footer{
     margin-bottom: 30px;
 }
 
+.login{
+    position: absolute;
+    top: 25%;
+    right: 12%;
+    color: #cfa144;
+    text-decoration: none;
+}
+.reg{
+    top: 55%;
+    right: 12%;
+    position: absolute;
+    color: #cfa144;
+    text-decoration: none;
+}
+.login:hover{
+    text-decoration: none;
+    color: #9d0006;
+}
+.reg:hover{
+    text-decoration: none;
+    color: #9d0006;
+}
+.user-log{
+    position: absolute;
+    top: 33%;
+    right: 13%;
+}
+.menu-right{
+    left: 16px !important;
+    top:18px !important;
+}
+@media (max-width: 480px) {
+    .pre-logo{
+        display: none !important;
+    }
+    .logo-wrap {
+        display: block;
+        float: left;
+        position: absolute;
+        left: -15px;
+    }
+    .reg {
+        top: 50%;
+        right: 20%;
+    }
+    .login {
+        top: 10%;
+        right: 20%;
+    }
+}
+.login-form{
+    width: 100%;
+    margin-top:30%;
+}
+.card-header {
+    padding: 0.75rem 1.25rem;
+    margin-bottom: 0;
+    background-color: rgb(218 160 46);
+    border-bottom: 1px solid rgb(0 0 0);
+    color: #fff;
+}
+.forgot-pass{
+    color: #cfa144;
+    text-decoration: none;
+}
+.forgot-pass:hover{
+    text-decoration: none;
+    color: #9d0006;
+}
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+    border: 2px solid #060606;
+    border-radius: 0px 0px 10px 10px;
+}

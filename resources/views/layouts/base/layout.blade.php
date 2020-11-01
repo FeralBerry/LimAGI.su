@@ -10,7 +10,6 @@
 <![endif]-->
 <html class="no-js" lang="ru-RU">
 <head>
-
     <!-- Basic Page Needs
   ================================================== -->
     <meta charset="utf-8">
@@ -18,15 +17,12 @@
     <meta name="description" content="{{ $description ?? 'One-Page - разработка выших сайтов любой сложности' }}">
     <meta name="keywords" content="{{ $keywords ?? '' }}">
     <meta name="author" content="{{ 'One-Page' }}">
-
     <!-- Mobile Specific Metas
   ================================================== -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
     <!-- Font
   ================================================== -->
     <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-
     <!-- CSS
   ================================================== -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}"/>
@@ -37,23 +33,18 @@
     <link rel="stylesheet" href="{{ asset('css/retina.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/owl.transitions.css') }}"/>
-
-
-
     <!-- Favicons
     ================================================== -->
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
     <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
     <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('apple-touch-icon-72x72.png') }}">
     <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('apple-touch-icon-114x114.png') }}">
-
     <script type="text/javascript" src="{{ asset('js/modernizr.custom.js') }}"></script>
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-    
        ym(68858455, "init", {
             clickmap:true,
             trackLinks:true,
@@ -62,7 +53,7 @@
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/68858455" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
-
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 <!-- hijacking: on/off - animation: none/scaleDown/rotate/gallery/catch/opacity/fixed/parallax -->
 <body @if(isset($cfg))@if($cfg == 1)class="royal_loader" data-hijacking="on" data-animation="scaleDown" @endif @else class="royal_loader" @endif>

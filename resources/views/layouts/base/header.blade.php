@@ -1,7 +1,7 @@
 <header class="cd-header">
     <div class="container">
         <div class="twelve columns" style="margin-top: 20px">
-            <div class="logo-wrap">
+            <div class="logo-wrap pre-logo">
                 <a href="{{ route('index') }}"><img style="width: 50px" src="{{ asset('images/logo.gif') }}" alt="One-Page"></a>
             </div>
             <div class="logo-wrap">
@@ -11,6 +11,29 @@
                 <a href="tel: 79687106270">Телефон: +7(968)710-62-70</a><br>
                 <a href="mailto:info@one-page.su">Email: info@one-page.su</a>
             </div>
+            @guest
+                <a class="login" href="{{ route('login') }}">{{ __('Login') }}</a>
+                @if (Route::has('register'))
+                    <a class="reg" href="{{ route('register') }}">{{ __('Register') }}</a>
+                @endif
+            @else
+                <div class="user-log dropdown">
+                    <a id="navbarDropdown" class="login dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                        {{ Auth::user()->name }} <span class="caret"></span>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right menu-right" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{{ route('home') }}">В меню пользователя</a>
+                        <a class="dropdown-item" href="{{ route('logout') }}"
+                           onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                            {{ __('Выйти') }}
+                        </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                            @csrf
+                        </form>
+                    </div>
+                </div>
+            @endguest
             <a class="cd-primary-nav-trigger" href="#0">
                 <span class="cd-menu-text"></span><span class="cd-menu-icon"></span>
             </a>

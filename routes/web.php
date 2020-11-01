@@ -20,7 +20,7 @@ Route::match(['GET','POST'],'/portfolio', ['uses' => 'IndexController@portfolio'
 Route::match(['GET','POST'],'/blog', ['uses' => 'IndexController@blog', 'as' => 'blog']);
 Route::match(['GET','POST'],'/blog-post/{id}', ['uses' => 'IndexController@blogPost', 'as' => 'blog-post']);
 Auth::routes();
-Route::group(['middleware' => ['auth', 'check']], function(){
+Route::group(['middleware' => ['auth', 'checkAdmin']], function(){
 $groupData = [
     'namespace' => 'Admin',
     'prefix' => 'redaction',

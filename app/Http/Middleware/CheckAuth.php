@@ -9,21 +9,9 @@ class CheckAuth
 {
     public function handle($request, Closure $next)
     {
-
-        if(isset(Auth::user()->role) == 'user'){
-            if(isset(Auth::user()->role) == 'admin'){
-                return $next($request);
-            }
-            $title = 'PWS';
-            $data = [
-                'title' => $title
-            ];
-            return view('base.index', $data);
+        if(Auth::user() && Auth::user()->role == 'admin'){
+            return $next($request);
         }
-        $title = 'PWS';
-        $data = [
-            'title' => $title
-        ];
-        return view('base.index', $data);
+        return redirect()->route('login');
     }
 }
