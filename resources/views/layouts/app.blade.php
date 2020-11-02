@@ -58,9 +58,9 @@
                 <a href="mailto:info@one-page.su">Email: info@one-page.su</a>
             </div>
             @guest
-                <a class="login" href="{{ route('login') }}">{{ __('Login') }}</a>
+                <a class="login" href="{{ route('login') }}">{{ __('Вход') }}</a>
                 @if (Route::has('register'))
-                    <a class="reg" href="{{ route('register') }}">{{ __('Register') }}</a>
+                    <a class="reg" href="{{ route('register') }}">{{ __('Регистрация') }}</a>
                 @endif
             @else
                 <div class="user-log dropdown">

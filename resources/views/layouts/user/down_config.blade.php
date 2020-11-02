@@ -1,6 +1,6 @@
 <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script> -->
-<script type="text/javascript" src="{{ asset('admin/js/jquery-1.10.2.min.js') }}"></script> 							        <!-- Load jQuery -->
+<script type="text/javascript" src="{{ asset('admin/js/jquery-3.5.1.js') }}"></script> 							        <!-- Load jQuery -->
 <script type="text/javascript" src="{{ asset('admin/js/jqueryui-1.9.2.min.js') }}"></script> 							        <!-- Load jQueryUI -->
 <script type="text/javascript" src="{{ asset('admin/js/bootstrap.min.js') }}"></script> 								        <!-- Load Bootstrap -->
 <script type="text/javascript" src="{{ asset('admin/plugins/easypiechart/jquery.easypiechart.js') }}"></script> 		        <!-- EasyPieChart-->

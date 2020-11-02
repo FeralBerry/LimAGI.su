@@ -374,7 +374,7 @@ Main components
     height: 30px;
     line-height: 30px;
     right: 2.2em;
-    top: 50%;
+    top: 45%;
     bottom: auto;
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
@@ -3179,3 +3179,5 @@ body.body--hidden .footer{
     border: 2px solid #060606;
     border-radius: 0px 0px 10px 10px;
 }
+
+

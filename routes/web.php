@@ -65,5 +65,15 @@ $groupData = [
         Route::match(['GET','POST'],'/about/edit/{id?}', ['uses' => 'AboutController@aboutEdit', 'as' => 'admin-about-edit']);
     });
 });
+Route::group(['middleware' => ['auth']], function() {
+    $groupData = [
+        'namespace' => 'User',
+        'prefix' => 'user',
+    ];
+    Route::group($groupData, function () {
+        Route::match(['GET','POST'],'/', ['uses' => 'UserIndexController@index', 'as' => 'user-index']);
+        Route::match(['GET','POST'],'/info', ['uses' => 'UserIndexController@info', 'as' => 'user-info']);
+    });
+});
 
 Route::match(['GET','POST'],'/home', 'HomeController@index')->name('home');

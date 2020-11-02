@@ -28,11 +28,12 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/base.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/skeleton.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/layout.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}" />
     <link rel="stylesheet" href="{{ asset('css/retina.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}"/>
     <link rel="stylesheet" href="{{ asset('css/owl.transitions.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/layout.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('css/usermenu.css') }}"/>
     <!-- Favicons
     ================================================== -->
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
@@ -53,7 +54,6 @@
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/68858455" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 </head>
 <!-- hijacking: on/off - animation: none/scaleDown/rotate/gallery/catch/opacity/fixed/parallax -->
 <body @if(isset($cfg))@if($cfg == 1)class="royal_loader" data-hijacking="on" data-animation="scaleDown" @endif @else class="royal_loader" @endif>
@@ -72,6 +72,7 @@
 ================================================== -->
 <script type="text/javascript" src="{{ asset('js/jquery-2.1.1.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/royal_preloader.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/UserMenu.js') }}"></script>
 <script type="text/javascript">
     (function($) { "use strict";
         Royal_Preloader.config({

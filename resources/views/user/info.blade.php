@@ -12,7 +12,7 @@
     @include('layouts.user.breadcrumb')
 @endsection
 @section('content')
-    @include('user.index')
+    @include('user.section.info.index')
 @endsection
 @section('footer')
     @include('layouts.user.footer')

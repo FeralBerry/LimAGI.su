@@ -13,5 +13,7 @@ class About extends Model
         'desc',
         'link',
         'img',
+        'updated_at',
+        'created_at',
     ];
 }

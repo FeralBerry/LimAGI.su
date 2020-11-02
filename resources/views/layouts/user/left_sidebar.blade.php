@@ -21,13 +21,12 @@
                             <a href="{{ route('index') }}"><i class="fa fa-flag"></i><span>На сайт</span></a>
                         </li>
                         <li class="nav-separator">Базовые настройки</li>
-                        <li><a href="{{ route('admin-index') }}"><i class="fa fa-home"></i><span>На главную</span></a></li>
-                        <li><a href="{{ route('admin-users') }}"><i class="fa fa-user"></i><span>Настройки пользователи</span></a>
-                        </li>
-                        <li class="nav-separator">Статьи</li>
+                        <li><a href="{{ route('user-index') }}"><i class="fa fa-home"></i><span>На главную</span></a></li>
+                        <li><a href="{{ route('user-info') }}"><i class="fa fa-user"></i><span>Настройки пользователи</span></a></li>
+                        {{--<li class="nav-separator">Статьи</li>
                         <li>
                             <a href="javascript:;">
-                                <i class="fa fa-columns"></i><span>Блог</span>{{--<span class="badge badge-primary">8</span>--}}
+                                <i class="fa fa-columns"></i><span>Блог</span>--}}{{--<span class="badge badge-primary">8</span>--}}{{--
                             </a>
                             <ul class="acc-menu">
                                 <li><a href="{{ route('admin-blog') }}">Все статьи</a></li>
@@ -38,17 +37,21 @@
                                 <li><a href="{{ route('admin-blogCat-add') }}">Добавить категории</a></li>
                                 <li><a href="{{ route('admin-blog-comments') }}">Комментарии к статьям</a></li>
                             </ul>
-                        </li>
+                        </li>--}}
                         <li>
                             <a href="javascript:;">
-                                <i class="fa fa-briefcase"></i><span>Портфолио</span>{{--<span class="badge badge-primary">8</span>--}}
+                                <i class="fa fa-briefcase"></i><span>Бесплатное курсы</span>
                             </a>
                             <ul class="acc-menu">
-                                <li><a href="{{ route('admin-portfolio') }}">Всё портфолио</a></li>
-                                <li><a href="{{ route('admin-portfolio-add') }}">Добавить портфолио</a></li>
+                                <li><a href="#">HTML\CSS</a></li>
+                                <li><a href="#">PHP</a></li>
+                                <li><a href="#">Git\GitHub</a></li>
+                                <li><a href="#">JavaScript</a></li>
+                                <li><a href="#">Bootstrap</a></li>
+                                <li><a href="#">Laravel</a></li>
                             </ul>
                         </li>
-                        <li class="nav-separator">Статичные страницы</li>
+                        {{--<li class="nav-separator">Статичные страницы</li>
                         <li><a href="javascript:;"><i class="fa fa-files-o"></i><span>Обо мне</span></a>
                             <ul class="acc-menu">
                                 <li><a href="{{ route('admin-about') }}">Просмотреть</a></li>
@@ -190,7 +193,7 @@
                                     </ul>
                                 </li>
                             </ul>
-                        </li>
+                        </li>--}}
                     </ul>
                 </nav>
             </div>

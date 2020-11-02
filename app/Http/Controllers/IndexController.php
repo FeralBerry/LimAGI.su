@@ -74,8 +74,6 @@ class IndexController extends Controller
     public function portfolio(){
         $title = 'One-Page - portfolio';
         $portfolio = DB::table('portfolio')->paginate($this->perpage);
-        $description = '';
-        $keywords = '';
         $data = [
             'title' => $title,
             'description' => $this->description,
@@ -136,11 +134,11 @@ class IndexController extends Controller
         foreach ($blog as $b){
             $tags = explode(',', $b->tags);
             $tag_page = explode(',', $b->tag_page);
-            $title = 'PWS - '.$b->title;
+            $title = 'One-Page - '.$b->title;
             $description = $b->brief;
             $tag = explode(',',$b->tags);
             $count_tags = count($tag);
-            $keywords = 'PWS';
+            $keywords = 'One-Page';
             $blog_tags = BlogTags::all();
             foreach ($blog_tags as $bt){
                 for($i=0;$i<$count_tags;$i++){
