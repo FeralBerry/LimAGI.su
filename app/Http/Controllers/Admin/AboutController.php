@@ -10,12 +10,8 @@ use App\Models\Blog;
 
 class AboutController extends Controller
 {
-    protected function chat(){
-        $chat = Chat::orderBy('id', 'desc')
-            ->limit(10)
-            ->get()
-            ->reverse();
-        return $chat;
+    public function __construct(){
+        parent::__construct();
     }
     protected $breadcrumb_about = 'Обо мне';
     public function index(){

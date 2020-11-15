@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Chat;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -23,20 +24,16 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    protected function chat(){
-        $chat = Chat::orderBy('id', 'desc')
-            ->limit(10)
-            ->get()
-            ->reverse();
-        return $chat;
-    }
     public function index()
     {
+        $users = User::all();
+        $count_users = count($users);
         if(Auth::user()->role == 'admin'){
             $title = 'One-Page';
             $data = [
                 'title' => $title,
                 'chat' => $this->chat(),
+                'count_users' => $count_users,
             ];
             return view('admin.index', $data);
         }
@@ -44,6 +41,7 @@ class HomeController extends Controller
         $data = [
             'title' => $title,
             'chat' => $this->chat(),
+            'count_users' => $count_users,
         ];
         return view('user.index', $data);
     }

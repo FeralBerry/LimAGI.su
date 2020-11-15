@@ -10,12 +10,8 @@ use DB;
 
 class PortfolioController extends Controller
 {
-    protected function chat(){
-        $chat = Chat::orderBy('id', 'desc')
-            ->limit(10)
-            ->get()
-            ->reverse();
-        return $chat;
+    public function __construct(){
+        parent::__construct();
     }
     protected $perpage = 10;
     protected $breadcrumb_portfolio = 'Портфолио';

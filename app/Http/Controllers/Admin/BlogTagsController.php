@@ -11,12 +11,8 @@ use DB;
 
 class BlogTagsController extends Controller
 {
-    protected function chat(){
-        $chat = Chat::orderBy('id', 'desc')
-            ->limit(10)
-            ->get()
-            ->reverse();
-        return $chat;
+    public function __construct(){
+        parent::__construct();
     }
     protected $breadcrumb_blog_tags = 'Теги блога';
     protected $perpage = 10;
