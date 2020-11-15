@@ -58,6 +58,9 @@
             @if(isset($breadcrumb_home))
                 {{ $breadcrumb_home }}
             @endif
+            @if(isset($index))
+                {{ $index }}
+            @endif
             @if(isset($breadcrumb_user))
                 {{ $breadcrumb_user }}
             @endif
@@ -70,6 +73,7 @@
             @if(isset($breadcrumb_portfolio))
                 {{ $breadcrumb_portfolio }}
             @endif
+
             @else
             {{ $second_breadcrumb }}
         @endif

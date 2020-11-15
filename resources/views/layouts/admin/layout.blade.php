@@ -9,6 +9,7 @@
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="description" content="One-Page Admin Theme">
     <meta name="author" content="One-Page">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     @include('layouts.admin.up_config')
 </head>
 <body class="infobar-offcanvas">

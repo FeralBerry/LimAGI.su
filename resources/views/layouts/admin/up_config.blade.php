@@ -18,7 +18,16 @@
     <link type="text/css" href="{{ asset('admin/plugins/form-daterangepicker/daterangepicker-bs3.css') }}" rel="stylesheet"> 	<!-- DateRangePicker -->
     <link type="text/css" href="{{ asset('admin/plugins/fullcalendar/fullcalendar.css') }}" rel="stylesheet"> 					<!-- FullCalendar -->
     <link type="text/css" href="{{ asset('admin/plugins/charts-chartistjs/chartist.min.css') }}" rel="stylesheet"> 				<!-- Chartist -->
-@elseif(route('admin-blog') == url()->current() || route('admin-blog-edit', $id ?? '') == url()->current() || route('admin-blog-add') == url()->current())
+@elseif(route('admin-blog') == url()->current() ||
+        route('admin-blog-edit', $id ?? '') == url()->current() ||
+        route('admin-blog-add') == url()->current() ||
+        route('admin-free-courses') == url()->current() ||
+        route('admin-free-courses-add') == url()->current() ||
+        route('admin-free-courses-edit', $id ?? '') == url()->current() ||
+        route('admin-pay-courses') == url()->current() ||
+        route('admin-pay-courses-add') == url()->current() ||
+        route('admin-pay-courses-edit', $id ?? '') == url()->current()
+        )
     <link type="text/css" href="{{ asset('admin/plugins/form-select2/select2.css') }}" rel="stylesheet">                        <!-- Select2 -->
     <link type="text/css" href="{{ asset('admin/plugins/form-multiselect/css/multi-select.css') }}" rel="stylesheet">           <!-- Multiselect -->
     <link type="text/css" href="{{ asset('admin/plugins/form-fseditor/fseditor.css') }}" rel="stylesheet">                      <!-- FullScreen Editor -->

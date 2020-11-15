@@ -111,6 +111,35 @@ class IndexController extends Controller
         ];
         return view('base.blog', $data);
     }
+    public function blogAlias($alias){
+        $blog = Blog::all();
+        $title = 'One-Page - blog';
+        foreach ($blog as $b) {
+            if(isset($alias) == $b->author) {
+                $blog_author = Blog::all()->where('author', $alias);
+            }
+            $tags = $b->tags;
+            $t = explode(',', $tags);
+            $count_t = count($t);
+            for($i=0;$i<$count_t;$i++){
+                if($alias == $t[$i]){
+                    $id[] = $b->id;
+                }
+            }
+        }
+        if(isset($id)){
+            $blog_author = DB::table('blog')->whereIn('id', $id)->get();
+        }
+        $data = [
+            'title' => $title,
+            'blog' => $blog_author,
+            'blog_cat' => $this->blogCat(),
+            'description' => $this->description,
+            'keywords' => $this->keywords,
+        ];
+        return view('base.blog', $data);
+    }
+
     public function blogPost(Request $request,$id){
         if($request->isMethod('post')){
             BlogComments::create([
@@ -121,6 +150,7 @@ class IndexController extends Controller
             ]);
             return back()->with(['msg' => 'Комментарий добавлени']);
         }
+        $title='';
         $blog_comments = DB::table('blog_comments')
             ->where('blog_post_id', $id)
             ->paginate($this->perpage);

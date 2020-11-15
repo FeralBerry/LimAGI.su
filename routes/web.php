@@ -17,8 +17,10 @@ Route::match(['GET','POST'],'/', ['uses' => 'IndexController@index', 'as' => 'in
 Route::match(['GET','POST'],'/contact', ['uses' => 'IndexController@contact', 'as' => 'contact']);
 Route::match(['GET','POST'],'/about', ['uses' => 'IndexController@about', 'as' => 'about']);
 Route::match(['GET','POST'],'/portfolio', ['uses' => 'IndexController@portfolio', 'as' => 'portfolio']);
+Route::match(['GET','POST'],'/blog/{alias}', ['uses' => 'IndexController@blogAlias', 'as' => 'blog-alias']);
 Route::match(['GET','POST'],'/blog', ['uses' => 'IndexController@blog', 'as' => 'blog']);
 Route::match(['GET','POST'],'/blog-post/{id}', ['uses' => 'IndexController@blogPost', 'as' => 'blog-post']);
+Route::match(['GET','POST'],'/blog-post/add-comment', ['uses' => 'IndexController@addComment', 'as' => 'add-comment']);
 Auth::routes();
 Route::group(['middleware' => ['auth', 'checkAdmin']], function(){
 $groupData = [
@@ -63,6 +65,23 @@ $groupData = [
         //About Admin
         Route::match(['GET','POST'],'/about', ['uses' => 'AboutController@index', 'as' => 'admin-about']);
         Route::match(['GET','POST'],'/about/edit/{id?}', ['uses' => 'AboutController@aboutEdit', 'as' => 'admin-about-edit']);
+        //Free Courses Admin
+        Route::match(['GET','POST'],'/free-courses', ['uses' => 'FreeCoursesController@index', 'as' => 'admin-free-courses']);
+        Route::match(['GET','POST'],'/free-courses/edit/{id?}', ['uses' => 'FreeCoursesController@coursesEdit', 'as' => 'admin-free-courses-edit']);
+        Route::match(['GET','POST'],'/free-courses/add', ['uses' => 'FreeCoursesController@coursesAdd', 'as' => 'admin-free-courses-add']);
+        Route::match(['GET','POST'],'/free-courses/delete/{id}', ['uses' => 'FreeCoursesController@coursesDelete', 'as' => 'admin-free-courses-delete']);
+        Route::match(['GET','POST'],'/free-courses/deleteVideo/{id}', ['uses' => 'FreeCoursesController@coursesVideoDelete', 'as' => 'admin-free-courses-video-delete']);
+        //Pay Courses Admin
+        Route::match(['GET','POST'],'/pay-courses', ['uses' => 'PayCoursesController@index', 'as' => 'admin-pay-courses']);
+        Route::match(['GET','POST'],'/pay-courses/edit/{id?}', ['uses' => 'PayCoursesController@coursesEdit', 'as' => 'admin-pay-courses-edit']);
+        Route::match(['GET','POST'],'/pay-courses/add', ['uses' => 'PayCoursesController@coursesAdd', 'as' => 'admin-pay-courses-add']);
+        Route::match(['GET','POST'],'/pay-courses/delete/{id}', ['uses' => 'PayCoursesController@coursesDelete', 'as' => 'admin-pay-courses-delete']);
+        Route::match(['GET','POST'],'/pay-courses/deleteVideo/{id}', ['uses' => 'PayCoursesController@coursesVideoDelete', 'as' => 'admin-pay-courses-video-delete']);
+        //Courses Name Admin
+        Route::match(['GET','POST'],'/courses-name', ['uses' => 'CoursesNameController@index', 'as' => 'admin-courses-name-index']);
+        Route::match(['GET','POST'],'/courses-name/edit/{id?}', ['uses' => 'CoursesNameController@coursesNameEdit', 'as' => 'admin-courses-name-edit']);
+        Route::match(['GET','POST'],'/courses-name/add', ['uses' => 'CoursesNameController@coursesNameAdd', 'as' => 'admin-courses-name-add']);
+        Route::match(['GET','POST'],'/courses-name/delete/{id}', ['uses' => 'CoursesNameController@coursesNameDelete', 'as' => 'admin-courses-name-delete']);
     });
 });
 Route::group(['middleware' => ['auth']], function() {
@@ -73,7 +92,10 @@ Route::group(['middleware' => ['auth']], function() {
     Route::group($groupData, function () {
         Route::match(['GET','POST'],'/', ['uses' => 'UserIndexController@index', 'as' => 'user-index']);
         Route::match(['GET','POST'],'/info', ['uses' => 'UserIndexController@info', 'as' => 'user-info']);
+        Route::match(['GET','POST'],'/chat', ['uses' => 'ChatController@chat', 'as' => 'chat']);
+        Route::match(['GET','POST'],'/add-chat', ['uses' => 'ChatController@addChat','as' => 'add-chat']);
     });
 });
 
 Route::match(['GET','POST'],'/home', 'HomeController@index')->name('home');
+

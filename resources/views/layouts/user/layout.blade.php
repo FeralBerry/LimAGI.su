@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    @if(Auth::user()->role == 'admin') <meta http-equiv="refresh" content="1;URL={{ route('admin-index') }}" /> @endif
     <meta charset="utf-8">
     <title>{{ $title ?? 'User One-Page' }}</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -9,6 +10,7 @@
     <meta name="apple-touch-fullscreen" content="yes">
     <meta name="description" content="One-Page Admin Theme">
     <meta name="author" content="One-Page">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     @include('layouts.user.up_config')
 </head>
 <body class="infobar-offcanvas">

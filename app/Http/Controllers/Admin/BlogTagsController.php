@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Chat;
 use Illuminate\Http\Request;
 use App\Models\BlogTags;
 use App\Models\Blog;
@@ -10,6 +11,13 @@ use DB;
 
 class BlogTagsController extends Controller
 {
+    protected function chat(){
+        $chat = Chat::orderBy('id', 'desc')
+            ->limit(10)
+            ->get()
+            ->reverse();
+        return $chat;
+    }
     protected $breadcrumb_blog_tags = 'Теги блога';
     protected $perpage = 10;
     public function index(){
@@ -19,6 +27,7 @@ class BlogTagsController extends Controller
             'title' => $title,
             'blog_tags' => $blog_tags,
             'breadcrumb_blog_tags' => $this->breadcrumb_blog_tags,
+            'chat' => $this->chat(),
         ];
         return view('admin.blog_tags', $data);
     }
@@ -40,6 +49,7 @@ class BlogTagsController extends Controller
             'blogTags' => $blogTags,
             'second_breadcrumb' => $second_breadcrumb,
             'breadcrumb_blog_tags' => $this->breadcrumb_blog_tags,
+            'chat' => $this->chat(),
         ];
         return view('admin.blog_tag_edit', $data);
     }
@@ -88,6 +98,7 @@ class BlogTagsController extends Controller
             'title' => $title,
             'second_breadcrumb' => $second_breadcrumb,
             'breadcrumb_blog_tags' => $this->breadcrumb_blog_tags,
+            'chat' => $this->chat(),
         ];
         return view('admin.blog_tag_add', $data);
     }

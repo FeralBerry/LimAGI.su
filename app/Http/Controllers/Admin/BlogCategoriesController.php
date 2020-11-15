@@ -3,12 +3,20 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Chat;
 use Illuminate\Http\Request;
 use App\Models\BlogCategories;
 use DB;
 
 class BlogCategoriesController extends Controller
 {
+    protected function chat(){
+        $chat = Chat::orderBy('id', 'desc')
+            ->limit(10)
+            ->get()
+            ->reverse();
+        return $chat;
+    }
     protected $perpage = 10;
     protected $breadcrumb_blog_cat = 'Категории блога';
     public function index(){
@@ -17,6 +25,7 @@ class BlogCategoriesController extends Controller
         $data = [
             'title' => $title,
             'blogCat' => $blogCat,
+            'chat' => $this->chat(),
         ];
         return view('admin.blog_categories', $data);
     }
@@ -37,6 +46,7 @@ class BlogCategoriesController extends Controller
             'blogCat' => $blogCat,
             'second_breadcrumb' => $second_breadcrumb,
             'breadcrumb_blog_cat' => $this->breadcrumb_blog_cat,
+            'chat' => $this->chat(),
         ];
         return view('admin.blog_categories_edit', $data);
     }
@@ -53,6 +63,7 @@ class BlogCategoriesController extends Controller
             'title' => $title,
             'second_breadcrumb' => $second_breadcrumb,
             'breadcrumb_blog_cat' => $this->breadcrumb_blog_cat,
+            'chat' => $this->chat(),
         ];
         return view('admin.blog_categories_add', $data);
     }

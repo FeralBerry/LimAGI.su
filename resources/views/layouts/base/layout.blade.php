@@ -17,6 +17,7 @@
     <meta name="description" content="{{ $description ?? 'One-Page - разработка выших сайтов любой сложности' }}">
     <meta name="keywords" content="{{ $keywords ?? '' }}">
     <meta name="author" content="{{ 'One-Page' }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Mobile Specific Metas
   ================================================== -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -136,6 +137,7 @@
     })(jQuery);
 </script>
 <script type="text/javascript" src="{{ asset('js/custom-blog.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/ajax.js') }}"></script>
 <!-- End Document
 ================================================== -->
 </body>

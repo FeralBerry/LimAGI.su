@@ -3,12 +3,20 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Chat;
 use Illuminate\Http\Request;
 use App\Models\About;
 use App\Models\Blog;
 
 class AboutController extends Controller
 {
+    protected function chat(){
+        $chat = Chat::orderBy('id', 'desc')
+            ->limit(10)
+            ->get()
+            ->reverse();
+        return $chat;
+    }
     protected $breadcrumb_about = 'Обо мне';
     public function index(){
         $blog = Blog::all();
@@ -19,6 +27,7 @@ class AboutController extends Controller
             'blog' => $blog,
             'title' => $title,
             'breadcrumb_about' => $this->breadcrumb_about,
+            'chat' => $this->chat(),
         ];
         return view('admin.about_index',$data);
     }
@@ -39,6 +48,7 @@ class AboutController extends Controller
             'about' => $about,
             'breadcrumb_about' => $this->breadcrumb_about,
             'second_breadcrumb' => $second_breadcrumb,
+            'chat' => $this->chat(),
         ];
         return view('admin.about_edit',$data);
     }

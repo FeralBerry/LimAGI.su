@@ -12,7 +12,7 @@
     @include('layouts.admin.breadcrumb')
 @endsection
 @section('content')
-    @include('admin.section.about.about_edit')
+    @include('admin.section.about.edit')
 @endsection
 @section('footer')
     @include('layouts.admin.footer')

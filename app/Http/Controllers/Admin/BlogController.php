@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Chat;
 use Illuminate\Http\Request;
 use App\Models\Blog;
 use App\Models\BlogTags;
@@ -13,6 +14,13 @@ use Illuminate\Support\Str;
 
 class BlogController extends Controller
 {
+    protected function chat(){
+        $chat = Chat::orderBy('id', 'desc')
+            ->limit(10)
+            ->get()
+            ->reverse();
+        return $chat;
+    }
     protected $perpage = 10;
     protected $breadcrumb_blog = 'Блог';
     protected function blogTags(){
@@ -32,12 +40,13 @@ class BlogController extends Controller
             'blog' => $blog,
             'blog_tags' => $this->blogTags(),
             'blog_cat' => $this->blogCat(),
+            'chat' => $this->chat(),
         ];
         return view('admin.blog',$data);
     }
     public function blogEdit(Request $request, $id){
+        $blog = Blog::all()->where('id', $id);
         if($request->isMethod('post')) {
-            $blog = Blog::all()->where('id', $id);
             $id = $request['id'];
             $tags_count = count($this->blogTags());
             $tag = 0;
@@ -106,7 +115,6 @@ class BlogController extends Controller
             ]);// перезапись значений в БД из масива пост
             return redirect()->route('admin-blog');
         }
-        $blog = Blog::all()->where('id', $id);
         $title = 'One-Page редактирование статьи блога';
         foreach ($blog as $item) {
             $second_breadcrumb = 'Редактирование статьи ' . $item->title;
@@ -119,6 +127,7 @@ class BlogController extends Controller
             'id' => $id,
             'blog_cat' => $this->blogCat(),
             'blog_tags' => $this->blogTags(),
+            'chat' => $this->chat(),
         ];
         return view('admin.blog_edit', $data);
     }
@@ -193,6 +202,7 @@ class BlogController extends Controller
             'blog_tags' => $this->blogTags(),
             'blog_cat' => $this->blogCat(),
             'id' => $max_id,
+            'chat' => $this->chat(),
         ];
         return view('admin.blog_add',$data);
     }

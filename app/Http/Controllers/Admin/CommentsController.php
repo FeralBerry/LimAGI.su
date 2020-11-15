@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Chat;
 use Illuminate\Http\Request;
 use App\Models\BlogComments;
 use App\Models\Blog;
@@ -10,6 +11,13 @@ use DB;
 
 class CommentsController extends Controller
 {
+    protected function chat(){
+        $chat = Chat::orderBy('id', 'desc')
+            ->limit(10)
+            ->get()
+            ->reverse();
+        return $chat;
+    }
     protected $perpage = 25;
     public function blogCommentsIndex(){
         $blog = Blog::all();
@@ -20,6 +28,7 @@ class CommentsController extends Controller
             'title' => $title,
             'blog_comments' => $blog_comments,
             'blog' => $blog,
+            'chat' => $this->chat(),
         ];
         return view('admin.blog_comments',$data);
     }
@@ -50,6 +59,7 @@ class CommentsController extends Controller
             'title' => $title,
             'blog_comment' => $blog_comment,
             'second_breadcrumb' => $second_breadcrumb,
+            'chat' => $this->chat(),
         ];
         return view('admin.blog_comments_edit',$data);
     }

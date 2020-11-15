@@ -22,19 +22,11 @@
                         </li>
                         <li class="nav-separator">Базовые настройки</li>
                         <li><a href="{{ route('admin-index') }}"><i class="fa fa-home"></i><span>На главную</span></a></li>
-                        <li>{{--<a href="javascript:;">--}}<a href="{{ route('admin-users') }}"><i class="fa fa-user"></i><span>Пользователи</span></a>
-                            {{--<ul class="acc-menu">
-                                <li><a href="sales-force.html">Sales Force</a></li>
-                                <li><a href="sales-performance.html">Sales Performance</a></li>
-                                <li><a href="kpi-dashboard.html">KPI Dashboard</a></li>
-                                <li><a href="shipping-status.html">Shipping Status</a></li>
-                                <li><a href="metrics-dashboard.html">Metrics Dashboard</a></li>
-                            </ul>--}}
-                        </li>
+                        <li><a href="{{ route('admin-users') }}"><i class="fa fa-user"></i><span>Пользователи</span></a></li>
                         <li class="nav-separator">Статьи</li>
                         <li>
                             <a href="javascript:;">
-                                <i class="fa fa-columns"></i><span>Блог</span>{{--<span class="badge badge-primary">8</span>--}}
+                                <i class="fa fa-columns"></i><span>Блог</span>
                             </a>
                             <ul class="acc-menu">
                                 <li><a href="{{ route('admin-blog') }}">Все статьи</a></li>
@@ -48,7 +40,7 @@
                         </li>
                         <li>
                             <a href="javascript:;">
-                                <i class="fa fa-briefcase"></i><span>Портфолио</span>{{--<span class="badge badge-primary">8</span>--}}
+                                <i class="fa fa-briefcase"></i><span>Портфолио</span>
                             </a>
                             <ul class="acc-menu">
                                 <li><a href="{{ route('admin-portfolio') }}">Всё портфолио</a></li>
@@ -61,31 +53,20 @@
                                 <li><a href="{{ route('admin-about') }}">Просмотреть</a></li>
                             </ul>
                         </li>
-                        <li><a href="javascript:;"><i class="fa fa-pencil"></i><span>Forms</span></a>
+                        <li class="nav-separator">Курсы</li>
+                        <li><a href="javascript:;"><i class="fa fa-pencil"></i><span>Бесплатные</span></a>
                             <ul class="acc-menu">
-                                <li><a href="#">Form Components</a></li>
-                                <li><a href="#">Pickers</a></li>
-                                <li><a href="#">Form Wizard</a></li>
-                                <li><a href="#">Form Validation</a></li>
-                                <li><a href="#">Form Masks</a></li>
-                                <li><a href="#">Dropzone Uploader</a></li>
-                                <li><a href="#">CKEditor</a></li>
-                                <li><a href="#">Summernote</a></li>
-                                <li><a href="#">Markdown Editor</a></li>
-                                <li><a href="#">Inline Editor</a></li>
-                                <li><a href="#">Image Cropping</a></li>
-                                <li><a href="#">Grid Forms</a></li>
+                                <li><a href="{{ route('admin-free-courses') }}">Просмотреть курсы</a></li>
+                                <li><a href="{{ route('admin-free-courses-add') }}">Добавить курсы</a></li>
                             </ul>
                         </li>
-                        <li><a href="javascript:;"><i class="fa fa-table"></i><span>Tables</span></a>
+                        <li><a href="javascript:;"><i class="fa fa-pencil-square-o"></i><span>Платные</span></a>
                             <ul class="acc-menu">
-                                <li><a href="#">Responsive Tables</a></li>
-                                <li><a href="#">Editable Tables</a></li>
-                                <li><a href="#">Data Tables</a></li>
-                                <li><a href="#">Advanced Data Tables</a></li>
-                                <li><a href="#">Fixed Header Tables</a></li>
+                                <li><a href="{{ route('admin-pay-courses') }}">Просмотреть курсы</a></li>
+                                <li><a href="{{ route('admin-pay-courses-add') }}">Добавить курсы</a></li>
                             </ul>
                         </li>
+                        <li class="nav-separator">Курсы</li>
                         <li><a href="#"><i class="fa fa-cog fa-spin"></i><span>Panels</span><span class="label label-alizarin">HOT!</span></a></li>
                         <li><a href="javascript:;"><i class="fa fa-bar-chart-o"></i><span>Analytics</span></a>
                             <ul class="acc-menu">

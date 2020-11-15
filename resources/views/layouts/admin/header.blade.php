@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-6 col-sm-2">
-                <a href="#" class="shortcut-tile tile-brown">
+                <a href="{{ route('admin-blog-add') }}" class="shortcut-tile tile-brown">
                     <div class="tile-body">
                         <div class="pull-left"><i class="fa fa-pencil"></i></div>
                     </div>

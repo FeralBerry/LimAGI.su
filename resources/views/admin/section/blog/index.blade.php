@@ -74,6 +74,7 @@
                         @endforeach
                         </tbody>
                     </table>
+                    @if($blog->isEmpty())<a href="{{ route('admin-blog-add') }}"><i class="fa fa-database" style="font-size:60px; color: green"></i></a>@endif
                     {{ $blog->links() }}
                 </div>
             </div>

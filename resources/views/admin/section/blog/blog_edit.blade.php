@@ -56,43 +56,6 @@
                             @endforeach
                         </div>
                     </div>
-                    {{--<div class="form-group">
-                        <label class="col-sm-2 control-label">Multiple Select with Search and Group select</label>
-                        <div class="col-sm-8">
-                            <select multiple="multiple" id="multi-select">
-                                <option>Lorem</option>
-                                <option>Unde</option>
-                                <option>Saepe</option>
-                                <option>Harum</option>
-                                <option>Enim</option>
-                                <option>Aliquid</option>
-                                <option>Recusandae</option>
-                                <option>Esse</option>
-                                <option>Laborum</option>
-                                <option>Quo</option>
-                                <option>Quo</option>
-                                <option>Maiores</option>
-                                <option>Architecto</option>
-                                <option>Sapiente</option>
-                                <option>Placeat</option>
-                                <option>Officiis</option>
-                                <option>Obcaecati</option>
-                                <option>Aliquid</option>
-                                <option>Explicabo</option>
-                                <option>Aliquam</option>
-                                <option>Vero</option>
-                                <option>Voluptates</option>
-                                <option>Similique</option>
-                                <option>Minima</option>
-                                <option>Ipsum</option>
-                                <option>Nemo</option>
-                                <option>Omnis</option>
-                                <option>Fuga</option>
-                                <option>Iste</option>
-                                <option>Possimus</option>
-                            </select>
-                        </div>
-                    </div>--}}
                     <div class="form-group">
                         <label class="col-sm-2 control-label">Автор статьи</label>
                         <div class="col-sm-8">

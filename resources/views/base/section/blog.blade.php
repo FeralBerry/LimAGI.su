@@ -5,6 +5,9 @@
                 <h2>Блог</h2>
                 <p>Последние новости!</p>
             </div>
+            @if($_SERVER["REQUEST_URI"] !== '/blog')
+                <a href="{{ route('blog') }}"><button class="button button--back-blog button--text-thick button--text-upper button--size-s">Сбросить все фильтры</button></a>
+            @endif
         </div>
     </div>
 </div>
@@ -26,7 +29,7 @@
     <div id="blog-grid">
         @foreach($blog as $b)
         <div class="blog-box-1 black-background @foreach($blog_cat as $category) @if($b->blog_cat_id == $category->id) {{ $category->cat_name }} @endif @endforeach">
-            <div class="date">@if(isset($b->updated_at)) <p><span> {{ date_format($b->updated_at, 'd') }}/</span>{{ date_format($b->updated_at, 'M.Y') }}<em>{{ $b->author }}</em></p> @else<p><span> {{ date_format($b->created_at, 'd') }}/</span>{{ date_format($b->created_at, 'M.Y') }}<em>{{ $b->author }}</em></p>@endif</div>
+            <div class="date">@if(isset($b->updated_at)) <p><span> {{ date_format(date_create($b->updated_at), 'd') }}/</span>{{ date_format(date_create($b->updated_at), 'M.Y') }}<em>{{ $b->author }}</em></p> @else<p><span> {{ date_format($b->created_at, 'd') }}/</span>{{ date_format($b->created_at, 'M.Y') }}<em>{{ $b->author }}</em></p>@endif</div>
             @if(isset($b->img))
                 @if(empty($b->img) !== true)
                     <a href="{{ route('blog-post', $b->id) }}" class="animsition-link">

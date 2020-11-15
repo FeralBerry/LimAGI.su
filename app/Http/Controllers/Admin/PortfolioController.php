@@ -3,12 +3,20 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Chat;
 use Illuminate\Http\Request;
 use App\Models\Portfolio;
 use DB;
 
 class PortfolioController extends Controller
 {
+    protected function chat(){
+        $chat = Chat::orderBy('id', 'desc')
+            ->limit(10)
+            ->get()
+            ->reverse();
+        return $chat;
+    }
     protected $perpage = 10;
     protected $breadcrumb_portfolio = 'Портфолио';
     public function index(){
@@ -18,6 +26,7 @@ class PortfolioController extends Controller
             'title' => $title,
             'portfolio' => $portfolio,
             'breadcrumb_portfolio' => $this->breadcrumb_portfolio,
+            'chat' => $this->chat(),
         ];
         return view('admin.portfolio', $data);
     }
@@ -52,6 +61,7 @@ class PortfolioController extends Controller
             'portfolio' => $portfolio,
             'second_breadcrumb' => $second_breadcrumb,
             'breadcrumb_portfolio' => $this->breadcrumb_portfolio,
+            'chat' => $this->chat(),
         ];
         return view('admin.portfolio_edit', $data);
     }
@@ -83,6 +93,7 @@ class PortfolioController extends Controller
             'second_breadcrumb' => $second_breadcrumb,
             'breadcrumb_portfolio' => $this->breadcrumb_portfolio,
             'id' => $max_id,
+            'chat' => $this->chat(),
         ];
         return view('admin.portfolio_add', $data);
     }

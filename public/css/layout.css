@@ -3179,5 +3179,15 @@ body.body--hidden .footer{
     border: 2px solid #060606;
     border-radius: 0px 0px 10px 10px;
 }
+.button--back-blog {
+    padding: 16px 30px;
+    border-radius: 50px;
+    text-align: center;
+    background: #000;
+    letter-spacing: 2px;
+    color: #fff;
+    -webkit-transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
+}
 
 

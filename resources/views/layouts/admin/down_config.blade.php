@@ -1,5 +1,6 @@
 <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js"></script> -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript" src="{{ asset('admin/js/jquery-1.10.2.min.js') }}"></script> 							        <!-- Load jQuery -->
 <script type="text/javascript" src="{{ asset('admin/js/jqueryui-1.9.2.min.js') }}"></script> 							        <!-- Load jQueryUI -->
 <script type="text/javascript" src="{{ asset('admin/js/bootstrap.min.js') }}"></script> 								        <!-- Load Bootstrap -->
@@ -19,6 +20,33 @@
 <script type="text/javascript" src="{{ asset('admin/demo/demo.js') }}"></script>
 <script type="text/javascript" src="{{ asset('admin/demo/demo-switcher.js') }}"></script>
 <script type="text/javascript" src="{{ asset('admin/plugins/wijets/wijets.js') }}"></script>     							    <!-- Wijet -->
+<script type="text/javascript">
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    $('#chat_send').click(function () {
+        var name = $('#name').val();
+        var message = $('#message').val();
+        var room = $('#chat_room').val();
+
+        $.ajax({
+            url: '{{ route("add-chat") }}',
+            type: 'POST',
+            cache: false,
+            data: {'name' : name, 'room' : room, 'message' : message,},
+            dataType: 'html',
+            success: function(data) {
+
+            }
+        });
+    });
+    var auto_refresh = setInterval(
+        function (){
+            $('#chat').load('{{ route('chat') }}');
+        }, 1000);
+</script>
 <!-- End loading site level scripts -->
 @if(route('admin-index') == url()->current())
     <script type="text/javascript" src="{{ asset('admin/plugins/fullcalendar/fullcalendar.min.js') }}"></script>   				<!-- FullCalendar -->
@@ -28,7 +56,17 @@
     <script type="text/javascript" src="{{ asset('admin/plugins/form-daterangepicker/daterangepicker.js') }}"></script>     	<!-- Date Range Picker -->
     <script type="text/javascript" src="{{ asset('admin/demo/demo-index.js') }}"></script> 										<!-- Initialize scripts for this page-->
 @endif
-@if(route('admin-blog') == url()->current() || route('admin-blog-edit', $id ?? '') == url()->current() || route('admin-blog-add') == url()->current())
+@if(
+    route('admin-blog') == url()->current() ||
+    route('admin-blog-edit', $id ?? '') == url()->current() ||
+    route('admin-blog-add') == url()->current() ||
+    route('admin-free-courses') == url()->current() ||
+    route('admin-free-courses-add') == url()->current() ||
+    route('admin-free-courses-edit', $id ?? '') == url()->current() ||
+    route('admin-pay-courses') == url()->current() ||
+    route('admin-pay-courses-add') == url()->current() ||
+    route('admin-pay-courses-edit', $id ?? '') == url()->current()
+)
     <script type="text/javascript" src="{{ asset('admin/plugins/form-multiselect/js/jquery.multi-select.min.js') }}"></script>  			    <!-- Multiselect Plugin -->
     <script type="text/javascript" src="{{ asset('admin/plugins/quicksearch/jquery.quicksearch.min.js') }}"></script>           			    <!-- Quicksearch to go with Multisearch Plugin -->
     <script type="text/javascript" src="{{ asset('admin/plugins/form-typeahead/typeahead.bundle.min.js') }}"></script>                 	    <!-- Typeahead for Autocomplete -->

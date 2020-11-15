@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Chat;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
@@ -10,12 +11,25 @@ use DB;
 
 class AdminIndexController extends Controller
 {
+    protected function chat(){
+        $chat = Chat::orderBy('id', 'desc')
+            ->limit(10)
+            ->get()
+            ->reverse();
+        return $chat;
+    }
     protected $perpage = 10;//количество выводимых записей
     protected $breadcrumb_user = 'Позьлователи';
     public function index(){
+        $users = User::all();
+        $count_users = count($users);
+        $index = 'Панель администратора';
         $title = 'One-Page admin panel';
         $data = [
             'title' => $title,
+            'count_users' => $count_users,
+            'index' => $index,
+            'chat' => $this->chat(),
         ];
         return view('admin.index', $data);
     }
@@ -26,6 +40,7 @@ class AdminIndexController extends Controller
             'title' => $title,
             'users' => $users,
             'breadcrumb_user' => $this->breadcrumb_user,
+            'chat' => $this->chat(),
         ];
         return view('admin.users', $data);
     }
@@ -54,6 +69,7 @@ class AdminIndexController extends Controller
             'breadcrumb_user' => $this->breadcrumb_user,
             'second_breadcrumb' => $second_breadcrumb,
             'id' => $id,
+            'chat' => $this->chat(),
         ];
         return view('admin.users_edit', $data);
     }

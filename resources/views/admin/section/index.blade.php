@@ -1,19 +1,20 @@
 <div data-widget-group="group1">
     <div class="row">
         <div class="col-md-3">
+            <a href="{{ route('admin-users') }}">
             <div class="amazo-tile tile-success">
                 <div class="tile-heading">
-                    <div class="title">Revenue</div>
-                    <div class="secondary">past 28 days</div>
+                    <div class="title">Количество пользователей</div>
                 </div>
                 <div class="tile-body">
-                    <div class="content">$75,800</div>
+                    <div class="content">{{ $count_users }}</div>
                 </div>
                 <div class="tile-footer">
-                    <span class="info-text text-right">13.4% <i class="fa fa-level-up"></i></span>
+                    <span class="info-text text-right"><i class="fa fa-level-up"></i></span>
                     <div id="sparkline-revenue" class="sparkline-line"></div>
                 </div>
             </div>
+            </a>
         </div>
         <div class="col-md-3">
             <div class="amazo-tile tile-info" href="#">
