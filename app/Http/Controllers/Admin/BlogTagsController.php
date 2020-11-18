@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\AppController;
 use App\Models\Chat;
 use Illuminate\Http\Request;
 use App\Models\BlogTags;
 use App\Models\Blog;
 use DB;
 
-class BlogTagsController extends Controller
+class BlogTagsController extends AppController
 {
     public function __construct(){
         parent::__construct();
@@ -23,7 +23,11 @@ class BlogTagsController extends Controller
             'title' => $title,
             'blog_tags' => $blog_tags,
             'breadcrumb_blog_tags' => $this->breadcrumb_blog_tags,
-            'chat' => $this->chat(),
+            'chat_admin' => $this->chatAdmin(),
+            'chat_html' => $this->chatHtml(),
+            'chat_php' => $this->chatPhp(),
+            'chat_js' => $this->chatJs(),
+            'chat_design' => $this->chatDesign(),
         ];
         return view('admin.blog_tags', $data);
     }
@@ -45,7 +49,11 @@ class BlogTagsController extends Controller
             'blogTags' => $blogTags,
             'second_breadcrumb' => $second_breadcrumb,
             'breadcrumb_blog_tags' => $this->breadcrumb_blog_tags,
-            'chat' => $this->chat(),
+            'chat_admin' => $this->chatAdmin(),
+            'chat_html' => $this->chatHtml(),
+            'chat_php' => $this->chatPhp(),
+            'chat_js' => $this->chatJs(),
+            'chat_design' => $this->chatDesign(),
         ];
         return view('admin.blog_tag_edit', $data);
     }
@@ -94,7 +102,11 @@ class BlogTagsController extends Controller
             'title' => $title,
             'second_breadcrumb' => $second_breadcrumb,
             'breadcrumb_blog_tags' => $this->breadcrumb_blog_tags,
-            'chat' => $this->chat(),
+            'chat_admin' => $this->chatAdmin(),
+            'chat_html' => $this->chatHtml(),
+            'chat_php' => $this->chatPhp(),
+            'chat_js' => $this->chatJs(),
+            'chat_design' => $this->chatDesign(),
         ];
         return view('admin.blog_tag_add', $data);
     }

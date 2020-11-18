@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\AppController;
 use App\Models\Chat;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
 use DB;
 
-class AdminIndexController extends Controller
+class AdminIndexController extends AppController
 {
     public function __construct(){
         parent::__construct();
@@ -25,7 +25,11 @@ class AdminIndexController extends Controller
             'title' => $title,
             'count_users' => $count_users,
             'index' => $index,
-            'chat' => $this->chat(),
+            'chat_admin' => $this->chatAdmin(),
+            'chat_html' => $this->chatHtml(),
+            'chat_php' => $this->chatPhp(),
+            'chat_js' => $this->chatJs(),
+            'chat_design' => $this->chatDesign(),
         ];
         return view('admin.index', $data);
     }
@@ -36,7 +40,11 @@ class AdminIndexController extends Controller
             'title' => $title,
             'users' => $users,
             'breadcrumb_user' => $this->breadcrumb_user,
-            'chat' => $this->chat(),
+            'chat_admin' => $this->chatAdmin(),
+            'chat_html' => $this->chatHtml(),
+            'chat_php' => $this->chatPhp(),
+            'chat_js' => $this->chatJs(),
+            'chat_design' => $this->chatDesign(),
         ];
         return view('admin.users', $data);
     }
@@ -65,7 +73,11 @@ class AdminIndexController extends Controller
             'breadcrumb_user' => $this->breadcrumb_user,
             'second_breadcrumb' => $second_breadcrumb,
             'id' => $id,
-            'chat' => $this->chat(),
+            'chat_admin' => $this->chatAdmin(),
+            'chat_html' => $this->chatHtml(),
+            'chat_php' => $this->chatPhp(),
+            'chat_js' => $this->chatJs(),
+            'chat_design' => $this->chatDesign(),
         ];
         return view('admin.users_edit', $data);
     }

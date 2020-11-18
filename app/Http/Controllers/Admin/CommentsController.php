@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\AppController;
 use App\Models\Chat;
 use Illuminate\Http\Request;
 use App\Models\BlogComments;
 use App\Models\Blog;
 use DB;
 
-class CommentsController extends Controller
+class CommentsController extends AppController
 {
     public function __construct(){
         parent::__construct();
@@ -24,7 +24,11 @@ class CommentsController extends Controller
             'title' => $title,
             'blog_comments' => $blog_comments,
             'blog' => $blog,
-            'chat' => $this->chat(),
+            'chat_admin' => $this->chatAdmin(),
+            'chat_html' => $this->chatHtml(),
+            'chat_php' => $this->chatPhp(),
+            'chat_js' => $this->chatJs(),
+            'chat_design' => $this->chatDesign(),
         ];
         return view('admin.blog_comments',$data);
     }
@@ -55,7 +59,11 @@ class CommentsController extends Controller
             'title' => $title,
             'blog_comment' => $blog_comment,
             'second_breadcrumb' => $second_breadcrumb,
-            'chat' => $this->chat(),
+            'chat_admin' => $this->chatAdmin(),
+            'chat_html' => $this->chatHtml(),
+            'chat_php' => $this->chatPhp(),
+            'chat_js' => $this->chatJs(),
+            'chat_design' => $this->chatDesign(),
         ];
         return view('admin.blog_comments_edit',$data);
     }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\User;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\AppController;
 use App\Models\Chat;
 use App\User;
 use Illuminate\Http\Request;
@@ -10,10 +10,10 @@ use App\Models\BlogCategories;
 use DB;
 use Auth;
 
-class UserIndexController extends Controller
+class UserIndexController extends AppController
 {
     public function __construct(){
-        parent::__construct();
+
     }
     protected $perpage = 5;
     public function index(){
@@ -26,7 +26,11 @@ class UserIndexController extends Controller
                 'title' => $title,
                 'count_users' => $count_users,
                 'index' => $index,
-                'chat' => $this->chat(),
+                'chat_admin' => $this->chatAdmin(),
+                'chat_html' => $this->chatHtml(),
+                'chat_php' => $this->chatPhp(),
+                'chat_js' => $this->chatJs(),
+                'chat_design' => $this->chatDesign(),
             ];
             return view('admin.index', $data);
         }
@@ -40,7 +44,11 @@ class UserIndexController extends Controller
             'blog' => $blog,
             'blogCat' => $blogCat,
             'second_breadcrumb' => $second_breadcrumb,
-            'chat' => $this->chat(),
+            'chat_admin' => $this->chatAdmin(),
+            'chat_html' => $this->chatHtml(),
+            'chat_php' => $this->chatPhp(),
+            'chat_js' => $this->chatJs(),
+            'chat_design' => $this->chatDesign(),
         ];
         return view('user.index', $data);
     }
@@ -50,7 +58,11 @@ class UserIndexController extends Controller
         $data = [
             'title' => $title,
             'breadcrumb_user_info' => $breadcrumb_user_info,
-            'chat' => $this->chat(),
+            'chat_admin' => $this->chatAdmin(),
+            'chat_html' => $this->chatHtml(),
+            'chat_php' => $this->chatPhp(),
+            'chat_js' => $this->chatJs(),
+            'chat_design' => $this->chatDesign(),
         ];
         return view('user.info', $data);
     }

@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\AppController;
 use App\Models\Chat;
 use App\Models\CoursesName;
 use Illuminate\Http\Request;
 use App\Models\PayCourses;
 use DB;
 
-class PayCoursesController extends Controller
+class PayCoursesController extends AppController
 {
     public function __construct(){
         parent::__construct();
@@ -26,7 +26,11 @@ class PayCoursesController extends Controller
             'title' => $title,
             'courses_name' => $this->coursesName(),
             'courses' => $pay_courses,
-            'chat' => $this->chat(),
+            'chat_admin' => $this->chatAdmin(),
+            'chat_html' => $this->chatHtml(),
+            'chat_php' => $this->chatPhp(),
+            'chat_js' => $this->chatJs(),
+            'chat_design' => $this->chatDesign(),
         ];
         return view('admin.pay_courses_index', $data);
     }
@@ -53,7 +57,11 @@ class PayCoursesController extends Controller
             'second_breadcrumb' => $second_breadcrumb,
             'courses_name' => $this->coursesName(),
             'title' => $title,
-            'chat' => $this->chat(),
+            'chat_admin' => $this->chatAdmin(),
+            'chat_html' => $this->chatHtml(),
+            'chat_php' => $this->chatPhp(),
+            'chat_js' => $this->chatJs(),
+            'chat_design' => $this->chatDesign(),
         ];
         return view('admin.pay_courses_edit', $data);
     }
@@ -74,7 +82,11 @@ class PayCoursesController extends Controller
             'second_breadcrumb' => $second_breadcrumb,
             'courses_name' => $this->coursesName(),
             'title' => $title,
-            'chat' => $this->chat(),
+            'chat_admin' => $this->chatAdmin(),
+            'chat_html' => $this->chatHtml(),
+            'chat_php' => $this->chatPhp(),
+            'chat_js' => $this->chatJs(),
+            'chat_design' => $this->chatDesign(),
         ];
         return view('admin.pay_courses_add', $data);
     }

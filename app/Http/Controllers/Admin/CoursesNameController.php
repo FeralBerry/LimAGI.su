@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\AppController;
 use App\Models\Chat;
 use Illuminate\Http\Request;
 
-class CoursesNameController extends Controller
+class CoursesNameController extends AppController
 {
     public function __construct(){
         parent::__construct();
@@ -15,7 +15,11 @@ class CoursesNameController extends Controller
         $title = '';
         $data = [
             'title' => $title,
-            'chat' => $this->chat(),
+            'chat_admin' => $this->chatAdmin(),
+            'chat_html' => $this->chatHtml(),
+            'chat_php' => $this->chatPhp(),
+            'chat_js' => $this->chatJs(),
+            'chat_design' => $this->chatDesign(),
         ];
         return view('admin.courses_name_index', $data);
     }
@@ -26,7 +30,11 @@ class CoursesNameController extends Controller
         $title = '';
         $data = [
             'title' => $title,
-            'chat' => $this->chat(),
+            'chat_admin' => $this->chatAdmin(),
+            'chat_html' => $this->chatHtml(),
+            'chat_php' => $this->chatPhp(),
+            'chat_js' => $this->chatJs(),
+            'chat_design' => $this->chatDesign(),
         ];
         return view('admin.courses_name_edit', $data);
     }
@@ -37,7 +45,11 @@ class CoursesNameController extends Controller
         $title = '';
         $data = [
             'title' => $title,
-            'chat' => $this->chat(),
+            'chat_admin' => $this->chatAdmin(),
+            'chat_html' => $this->chatHtml(),
+            'chat_php' => $this->chatPhp(),
+            'chat_js' => $this->chatJs(),
+            'chat_design' => $this->chatDesign(),
         ];
         return view('admin.courses_name_add', $data);
     }

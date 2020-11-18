@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\AppController;
 use App\Models\Chat;
 use Illuminate\Http\Request;
 use App\Models\Blog;
@@ -12,7 +12,7 @@ use DB;
 use Illuminate\Support\Str;
 
 
-class BlogController extends Controller
+class BlogController extends AppController
 {
     public function __construct(){
         parent::__construct();
@@ -38,7 +38,11 @@ class BlogController extends Controller
             'blog' => $blog,
             'blog_tags' => $this->blogTags(),
             'blog_cat' => $this->blogCat(),
-            'chat' => $this->chat(),
+            'chat_admin' => $this->chatAdmin(),
+            'chat_html' => $this->chatHtml(),
+            'chat_php' => $this->chatPhp(),
+            'chat_js' => $this->chatJs(),
+            'chat_design' => $this->chatDesign(),
         ];
         return view('admin.blog',$data);
     }
@@ -125,7 +129,11 @@ class BlogController extends Controller
             'id' => $id,
             'blog_cat' => $this->blogCat(),
             'blog_tags' => $this->blogTags(),
-            'chat' => $this->chat(),
+            'chat_admin' => $this->chatAdmin(),
+            'chat_html' => $this->chatHtml(),
+            'chat_php' => $this->chatPhp(),
+            'chat_js' => $this->chatJs(),
+            'chat_design' => $this->chatDesign(),
         ];
         return view('admin.blog_edit', $data);
     }
@@ -200,7 +208,11 @@ class BlogController extends Controller
             'blog_tags' => $this->blogTags(),
             'blog_cat' => $this->blogCat(),
             'id' => $max_id,
-            'chat' => $this->chat(),
+            'chat_admin' => $this->chatAdmin(),
+            'chat_html' => $this->chatHtml(),
+            'chat_php' => $this->chatPhp(),
+            'chat_js' => $this->chatJs(),
+            'chat_design' => $this->chatDesign(),
         ];
         return view('admin.blog_add',$data);
     }

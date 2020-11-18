@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\AppController;
 use App\Models\Chat;
 use Illuminate\Http\Request;
 use App\Models\Portfolio;
 use DB;
 
-class PortfolioController extends Controller
+class PortfolioController extends AppController
 {
     public function __construct(){
         parent::__construct();
@@ -22,7 +22,11 @@ class PortfolioController extends Controller
             'title' => $title,
             'portfolio' => $portfolio,
             'breadcrumb_portfolio' => $this->breadcrumb_portfolio,
-            'chat' => $this->chat(),
+            'chat_admin' => $this->chatAdmin(),
+            'chat_html' => $this->chatHtml(),
+            'chat_php' => $this->chatPhp(),
+            'chat_js' => $this->chatJs(),
+            'chat_design' => $this->chatDesign(),
         ];
         return view('admin.portfolio', $data);
     }
@@ -57,7 +61,11 @@ class PortfolioController extends Controller
             'portfolio' => $portfolio,
             'second_breadcrumb' => $second_breadcrumb,
             'breadcrumb_portfolio' => $this->breadcrumb_portfolio,
-            'chat' => $this->chat(),
+            'chat_admin' => $this->chatAdmin(),
+            'chat_html' => $this->chatHtml(),
+            'chat_php' => $this->chatPhp(),
+            'chat_js' => $this->chatJs(),
+            'chat_design' => $this->chatDesign(),
         ];
         return view('admin.portfolio_edit', $data);
     }
@@ -89,7 +97,11 @@ class PortfolioController extends Controller
             'second_breadcrumb' => $second_breadcrumb,
             'breadcrumb_portfolio' => $this->breadcrumb_portfolio,
             'id' => $max_id,
-            'chat' => $this->chat(),
+            'chat_admin' => $this->chatAdmin(),
+            'chat_html' => $this->chatHtml(),
+            'chat_php' => $this->chatPhp(),
+            'chat_js' => $this->chatJs(),
+            'chat_design' => $this->chatDesign(),
         ];
         return view('admin.portfolio_add', $data);
     }

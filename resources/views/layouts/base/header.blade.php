@@ -42,6 +42,15 @@
             </a>
         </div>
     </div>
+    <div class=" container-fluid nav">
+        <div class="container">
+            <a href="{{ route('index') }}" @if(Request::path() == '/')class="curent-nav-color"@endif>Главная</a>
+            <a href="{{ route('portfolio') }}" @if(Request::path() == 'portfolio')class="curent-nav-color"@endif>Портфолио</a>
+            <a href="{{ route('about') }}" @if(Request::path() == 'about')class="curent-nav-color"@endif>Обо мне</a>
+            <a href="{{ route('blog') }}" @if(Request::path() == 'blog')class="curent-nav-color"@endif>Блог</a>
+            <a href="{{ route('contact') }}" @if(Request::path() == 'contact')class="curent-nav-color"@endif>Контакты</a>
+        </div>
+    </div>
 </header>
 <nav>
     <div class="cd-primary-nav">

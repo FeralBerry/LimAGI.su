@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\AppController;
 use App\Models\Chat;
 use Illuminate\Http\Request;
 use App\Models\BlogCategories;
 use DB;
 
-class BlogCategoriesController extends Controller
+class BlogCategoriesController extends AppController
 {
     public function __construct(){
         parent::__construct();
@@ -21,7 +21,11 @@ class BlogCategoriesController extends Controller
         $data = [
             'title' => $title,
             'blogCat' => $blogCat,
-            'chat' => $this->chat(),
+            'chat_admin' => $this->chatAdmin(),
+            'chat_html' => $this->chatHtml(),
+            'chat_php' => $this->chatPhp(),
+            'chat_js' => $this->chatJs(),
+            'chat_design' => $this->chatDesign(),
         ];
         return view('admin.blog_categories', $data);
     }
@@ -42,7 +46,11 @@ class BlogCategoriesController extends Controller
             'blogCat' => $blogCat,
             'second_breadcrumb' => $second_breadcrumb,
             'breadcrumb_blog_cat' => $this->breadcrumb_blog_cat,
-            'chat' => $this->chat(),
+            'chat_admin' => $this->chatAdmin(),
+            'chat_html' => $this->chatHtml(),
+            'chat_php' => $this->chatPhp(),
+            'chat_js' => $this->chatJs(),
+            'chat_design' => $this->chatDesign(),
         ];
         return view('admin.blog_categories_edit', $data);
     }
@@ -59,7 +67,11 @@ class BlogCategoriesController extends Controller
             'title' => $title,
             'second_breadcrumb' => $second_breadcrumb,
             'breadcrumb_blog_cat' => $this->breadcrumb_blog_cat,
-            'chat' => $this->chat(),
+            'chat_admin' => $this->chatAdmin(),
+            'chat_html' => $this->chatHtml(),
+            'chat_php' => $this->chatPhp(),
+            'chat_js' => $this->chatJs(),
+            'chat_design' => $this->chatDesign(),
         ];
         return view('admin.blog_categories_add', $data);
     }

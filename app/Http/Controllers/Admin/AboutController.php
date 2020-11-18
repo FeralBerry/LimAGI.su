@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\AppController;
 use App\Models\Chat;
 use Illuminate\Http\Request;
 use App\Models\About;
 use App\Models\Blog;
 
-class AboutController extends Controller
+class AboutController extends AppController
 {
     public function __construct(){
         parent::__construct();
@@ -23,7 +23,11 @@ class AboutController extends Controller
             'blog' => $blog,
             'title' => $title,
             'breadcrumb_about' => $this->breadcrumb_about,
-            'chat' => $this->chat(),
+            'chat_admin' => $this->chatAdmin(),
+            'chat_html' => $this->chatHtml(),
+            'chat_php' => $this->chatPhp(),
+            'chat_js' => $this->chatJs(),
+            'chat_design' => $this->chatDesign(),
         ];
         return view('admin.about_index',$data);
     }
@@ -44,7 +48,11 @@ class AboutController extends Controller
             'about' => $about,
             'breadcrumb_about' => $this->breadcrumb_about,
             'second_breadcrumb' => $second_breadcrumb,
-            'chat' => $this->chat(),
+            'chat_admin' => $this->chatAdmin(),
+            'chat_html' => $this->chatHtml(),
+            'chat_php' => $this->chatPhp(),
+            'chat_js' => $this->chatJs(),
+            'chat_design' => $this->chatDesign(),
         ];
         return view('admin.about_edit',$data);
     }

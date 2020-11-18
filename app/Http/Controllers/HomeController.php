@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\AppController;
 use App\Models\Chat;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class HomeController extends Controller
+class HomeController extends AppController
 {
     /**
      * Create a new controller instance.
@@ -32,7 +33,11 @@ class HomeController extends Controller
             $title = 'One-Page';
             $data = [
                 'title' => $title,
-                'chat' => $this->chat(),
+                'chat_admin' => $this->chatAdmin(),
+                'chat_html' => $this->chatHtml(),
+                'chat_php' => $this->chatPhp(),
+                'chat_js' => $this->chatJs(),
+                'chat_design' => $this->chatDesign(),
                 'count_users' => $count_users,
             ];
             return view('admin.index', $data);
@@ -40,7 +45,11 @@ class HomeController extends Controller
         $title = 'One-Page';
         $data = [
             'title' => $title,
-            'chat' => $this->chat(),
+            'chat_admin' => $this->chatAdmin(),
+            'chat_html' => $this->chatHtml(),
+            'chat_php' => $this->chatPhp(),
+            'chat_js' => $this->chatJs(),
+            'chat_design' => $this->chatDesign(),
             'count_users' => $count_users,
         ];
         return view('user.index', $data);

@@ -229,7 +229,6 @@ Main components
 
 .cd-header {
   position: absolute;
-  padding-top:5px;
   top: 0;
   left: 0;
   background: rgba(0, 0, 0, 1);
@@ -1711,7 +1710,6 @@ video#video-background {
 	margin-top:25px;
 	margin-right:24px;
 	margin-bottom:25px;
-	margin-left:25px;
 	overflow:hidden;
 	padding:30px;
 	-webkit-transform: translate3d(1px,0,0);
@@ -2182,7 +2180,7 @@ body.body--hidden .cd-header{
 }
 
 .padding-top-bottom-title{
-	padding-top:90px;
+	padding-top:120px;
 	padding-bottom:25px;
 }
 .title-page-text{
@@ -2965,7 +2963,7 @@ body.body--hidden .footer{
 
 @media only screen and (max-width: 800px) {
 .blog-box-1{
-	width:calc(100% - 50px);
+	width:calc(100% - 0px);
 }
 }
 
@@ -3151,7 +3149,24 @@ body.body--hidden .footer{
         top: 10%;
         right: 20%;
     }
+    .trigger {
+        right: 0px !important;
+        top: 75px !important;
+    }
+    .cd-header{
+        height: 115px;
+    }
+    h2{
+        font-size: 36px;
+    }
+    .header-text p{
+        font-size: 14px;
+    }
+    h4{
+        font-size: 20px;
+    }
 }
+
 .login-form{
     width: 100%;
     margin-top:30%;
@@ -3188,6 +3203,35 @@ body.body--hidden .footer{
     color: #fff;
     -webkit-transition: background-color 0.3s, color 0.3s;
     transition: background-color 0.3s, color 0.3s;
+}
+
+.nav{
+    background: #0c0c0c;
+    padding-bottom: 10px;
+}
+.nav a{
+    color: #cfa144;
+    text-decoration: none;
+    margin: 0px;
+    border: 1px solid #cfa144;
+    padding: 10px;
+}
+.nav a:hover{
+    text-decoration: none;
+    color: #9d0006;
+    border: 1px solid #9d0006;
+}
+.nav .curent-nav-color{
+    color: #fff;
+    border: 1px solid #fff;
+}
+@media (max-width: 767px) {
+    .nav{
+        display: none;
+    }
+    .pre-logo{
+        display: none;
+    }
 }
 
 
