@@ -17,8 +17,6 @@ class BlogController extends AppController
     public function __construct(){
         parent::__construct();
     }
-
-
     protected $perpage = 10;
     protected $breadcrumb_blog = 'Блог';
     protected function blogTags(){
@@ -32,18 +30,13 @@ class BlogController extends AppController
     public function index(){
         $blog = DB::table('blog')->paginate($this->perpage);
         $title = 'One-Page редактирование статей блога';
-        $data = [
+        $data = array_merge($this->chat(),[
             'title' => $title,
             'breadcrumb_blog' => $this->breadcrumb_blog,
             'blog' => $blog,
             'blog_tags' => $this->blogTags(),
             'blog_cat' => $this->blogCat(),
-            'chat_admin' => $this->chatAdmin(),
-            'chat_html' => $this->chatHtml(),
-            'chat_php' => $this->chatPhp(),
-            'chat_js' => $this->chatJs(),
-            'chat_design' => $this->chatDesign(),
-        ];
+        ]);
         return view('admin.blog',$data);
     }
     public function blogEdit(Request $request, $id){
@@ -121,7 +114,7 @@ class BlogController extends AppController
         foreach ($blog as $item) {
             $second_breadcrumb = 'Редактирование статьи ' . $item->title;
         }
-        $data = [
+        $data = array_merge($this->chat(),[
             'blog' => $blog,
             'title' => $title,
             'breadcrumb_blog' => $this->breadcrumb_blog,
@@ -129,12 +122,7 @@ class BlogController extends AppController
             'id' => $id,
             'blog_cat' => $this->blogCat(),
             'blog_tags' => $this->blogTags(),
-            'chat_admin' => $this->chatAdmin(),
-            'chat_html' => $this->chatHtml(),
-            'chat_php' => $this->chatPhp(),
-            'chat_js' => $this->chatJs(),
-            'chat_design' => $this->chatDesign(),
-        ];
+        ]);
         return view('admin.blog_edit', $data);
     }
     public function blogDelete($id){
@@ -202,18 +190,13 @@ class BlogController extends AppController
         foreach ($blog as $item){
             $max_id = $item->id +1;
         }
-        $data = [
+        $data = array_merge($this->chat(),[
             'title' => $title,
             'second_breadcrumb' => $second_breadcrumb,
             'blog_tags' => $this->blogTags(),
             'blog_cat' => $this->blogCat(),
             'id' => $max_id,
-            'chat_admin' => $this->chatAdmin(),
-            'chat_html' => $this->chatHtml(),
-            'chat_php' => $this->chatPhp(),
-            'chat_js' => $this->chatJs(),
-            'chat_design' => $this->chatDesign(),
-        ];
+        ]);
         return view('admin.blog_add',$data);
     }
     public function deleteImg($id){

@@ -13,14 +13,10 @@ class CoursesNameController extends AppController
     }
     public function index(){
         $title = '';
-        $data = [
+        $data = array_merge($this->chat(),[
             'title' => $title,
-            'chat_admin' => $this->chatAdmin(),
-            'chat_html' => $this->chatHtml(),
-            'chat_php' => $this->chatPhp(),
-            'chat_js' => $this->chatJs(),
-            'chat_design' => $this->chatDesign(),
-        ];
+
+        ]);
         return view('admin.courses_name_index', $data);
     }
     public function coursesNameEdit(Request $request, $id){
@@ -28,14 +24,9 @@ class CoursesNameController extends AppController
             return redirect()->route('admin-courses-name-index');
         }
         $title = '';
-        $data = [
+        $data = array_merge($this->chat(),[
             'title' => $title,
-            'chat_admin' => $this->chatAdmin(),
-            'chat_html' => $this->chatHtml(),
-            'chat_php' => $this->chatPhp(),
-            'chat_js' => $this->chatJs(),
-            'chat_design' => $this->chatDesign(),
-        ];
+        ]);
         return view('admin.courses_name_edit', $data);
     }
     public function coursesNameAdd(Request $request){
@@ -43,14 +34,9 @@ class CoursesNameController extends AppController
             return redirect()->route('admin-courses-name-index');
         }
         $title = '';
-        $data = [
+        $data = array_merge($this->chat(),[
             'title' => $title,
-            'chat_admin' => $this->chatAdmin(),
-            'chat_html' => $this->chatHtml(),
-            'chat_php' => $this->chatPhp(),
-            'chat_js' => $this->chatJs(),
-            'chat_design' => $this->chatDesign(),
-        ];
+        ]);
         return view('admin.courses_name_add', $data);
     }
     public function coursesNameDelete($id){

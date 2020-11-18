@@ -22,16 +22,11 @@ class PayCoursesController extends AppController
     public function index(){
         $pay_courses = DB::table('pay_courses')->paginate($this->perpage);
         $title = 'One-Page - платные курсы';
-        $data = [
+        $data = array_merge($this->chat(),[
             'title' => $title,
             'courses_name' => $this->coursesName(),
             'courses' => $pay_courses,
-            'chat_admin' => $this->chatAdmin(),
-            'chat_html' => $this->chatHtml(),
-            'chat_php' => $this->chatPhp(),
-            'chat_js' => $this->chatJs(),
-            'chat_design' => $this->chatDesign(),
-        ];
+        ]);
         return view('admin.pay_courses_index', $data);
     }
     public function coursesEdit(Request $request, $id){
@@ -52,17 +47,12 @@ class PayCoursesController extends AppController
             $second_breadcrumb = 'Редактирование платного курса'.$courses->title;
         }
         $title = 'One-Page - платные курсы';
-        $data = [
+        $data = array_merge($this->chat(),[
             'courses' => $pay_courses,
             'second_breadcrumb' => $second_breadcrumb,
             'courses_name' => $this->coursesName(),
             'title' => $title,
-            'chat_admin' => $this->chatAdmin(),
-            'chat_html' => $this->chatHtml(),
-            'chat_php' => $this->chatPhp(),
-            'chat_js' => $this->chatJs(),
-            'chat_design' => $this->chatDesign(),
-        ];
+        ]);
         return view('admin.pay_courses_edit', $data);
     }
     public function coursesAdd(Request $request){
@@ -78,16 +68,11 @@ class PayCoursesController extends AppController
         }
         $second_breadcrumb = 'Добавление платного курса';
         $title = 'One-Page - платные курсы';
-        $data = [
+        $data = array_merge($this->chat(),[
             'second_breadcrumb' => $second_breadcrumb,
             'courses_name' => $this->coursesName(),
             'title' => $title,
-            'chat_admin' => $this->chatAdmin(),
-            'chat_html' => $this->chatHtml(),
-            'chat_php' => $this->chatPhp(),
-            'chat_js' => $this->chatJs(),
-            'chat_design' => $this->chatDesign(),
-        ];
+        ]);
         return view('admin.pay_courses_add', $data);
     }
     public function coursesDelete($id){

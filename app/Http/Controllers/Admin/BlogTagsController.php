@@ -19,16 +19,11 @@ class BlogTagsController extends AppController
     public function index(){
         $blog_tags = DB::table('blog_tags')->paginate($this->perpage);
         $title = 'One-Page - admin blog tags';
-        $data = [
+        $data = array_merge($this->chat(),[
             'title' => $title,
             'blog_tags' => $blog_tags,
             'breadcrumb_blog_tags' => $this->breadcrumb_blog_tags,
-            'chat_admin' => $this->chatAdmin(),
-            'chat_html' => $this->chatHtml(),
-            'chat_php' => $this->chatPhp(),
-            'chat_js' => $this->chatJs(),
-            'chat_design' => $this->chatDesign(),
-        ];
+        ]);
         return view('admin.blog_tags', $data);
     }
     public function blogTagsEdit(Request $request, $id){
@@ -43,18 +38,13 @@ class BlogTagsController extends AppController
         foreach ($blogTags as $item) {
             $second_breadcrumb = 'Редактирование тега ' . $item->name;
         }
-        $data = [
+        $data = array_merge($this->chat(),[
             'title' => $title,
             'id' => $id,
             'blogTags' => $blogTags,
             'second_breadcrumb' => $second_breadcrumb,
             'breadcrumb_blog_tags' => $this->breadcrumb_blog_tags,
-            'chat_admin' => $this->chatAdmin(),
-            'chat_html' => $this->chatHtml(),
-            'chat_php' => $this->chatPhp(),
-            'chat_js' => $this->chatJs(),
-            'chat_design' => $this->chatDesign(),
-        ];
+        ]);
         return view('admin.blog_tag_edit', $data);
     }
     public function blogTagsDelete($id){
@@ -98,16 +88,11 @@ class BlogTagsController extends AppController
         }
         $title = 'One-Page - blog tags add';
         $second_breadcrumb = 'Добавление тега ';
-        $data = [
+        $data = array_merge($this->chat(),[
             'title' => $title,
             'second_breadcrumb' => $second_breadcrumb,
             'breadcrumb_blog_tags' => $this->breadcrumb_blog_tags,
-            'chat_admin' => $this->chatAdmin(),
-            'chat_html' => $this->chatHtml(),
-            'chat_php' => $this->chatPhp(),
-            'chat_js' => $this->chatJs(),
-            'chat_design' => $this->chatDesign(),
-        ];
+        ]);
         return view('admin.blog_tag_add', $data);
     }
 }

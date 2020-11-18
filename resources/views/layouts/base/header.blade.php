@@ -42,7 +42,7 @@
             </a>
         </div>
     </div>
-    <div class=" container-fluid nav">
+    <div class=" container-fluid nav" style="padding: 12px;position: absolute;top: 70px;">
         <div class="container">
             <a href="{{ route('index') }}" @if(Request::path() == '/')class="curent-nav-color"@endif>Главная</a>
             <a href="{{ route('portfolio') }}" @if(Request::path() == 'portfolio')class="curent-nav-color"@endif>Портфолио</a>

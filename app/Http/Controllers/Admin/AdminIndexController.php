@@ -21,31 +21,21 @@ class AdminIndexController extends AppController
         $count_users = count($users);
         $index = 'Панель администратора';
         $title = 'One-Page admin panel';
-        $data = [
+        $data = array_merge($this->chat(),[
             'title' => $title,
             'count_users' => $count_users,
             'index' => $index,
-            'chat_admin' => $this->chatAdmin(),
-            'chat_html' => $this->chatHtml(),
-            'chat_php' => $this->chatPhp(),
-            'chat_js' => $this->chatJs(),
-            'chat_design' => $this->chatDesign(),
-        ];
+        ]);
         return view('admin.index', $data);
     }
     public function users(){
         $users = DB::table('users')->paginate($this->perpage);
         $title = 'One-Page admin panel table Users';
-        $data = [
+        $data = array_merge($this->chat(),[
             'title' => $title,
             'users' => $users,
             'breadcrumb_user' => $this->breadcrumb_user,
-            'chat_admin' => $this->chatAdmin(),
-            'chat_html' => $this->chatHtml(),
-            'chat_php' => $this->chatPhp(),
-            'chat_js' => $this->chatJs(),
-            'chat_design' => $this->chatDesign(),
-        ];
+        ]);
         return view('admin.users', $data);
     }
     public function usersEdit(Request $request, $id){
@@ -67,18 +57,13 @@ class AdminIndexController extends AppController
             $second_breadcrumb = 'Редактирование пользователя - '. $item->name;
         }
         $title = 'One-Page admin panel table Users';
-        $data = [
+        $data = array_merge($this->chat(),[
             'title' => $title,
             'user' => $user,
             'breadcrumb_user' => $this->breadcrumb_user,
             'second_breadcrumb' => $second_breadcrumb,
             'id' => $id,
-            'chat_admin' => $this->chatAdmin(),
-            'chat_html' => $this->chatHtml(),
-            'chat_php' => $this->chatPhp(),
-            'chat_js' => $this->chatJs(),
-            'chat_design' => $this->chatDesign(),
-        ];
+        ]);
         return view('admin.users_edit', $data);
     }
     public function deleteUser($id){

@@ -18,16 +18,11 @@ class PortfolioController extends AppController
     public function index(){
         $portfolio = DB::table('portfolio')->paginate($this->perpage);
         $title = 'One-Page - админ панель портфолио';
-        $data = [
+        $data = array_merge($this->chat(),[
             'title' => $title,
             'portfolio' => $portfolio,
             'breadcrumb_portfolio' => $this->breadcrumb_portfolio,
-            'chat_admin' => $this->chatAdmin(),
-            'chat_html' => $this->chatHtml(),
-            'chat_php' => $this->chatPhp(),
-            'chat_js' => $this->chatJs(),
-            'chat_design' => $this->chatDesign(),
-        ];
+        ]);
         return view('admin.portfolio', $data);
     }
     public function portfolioEdit(Request $request, $id){
@@ -56,17 +51,12 @@ class PortfolioController extends AppController
         foreach ($portfolio as $p){
             $second_breadcrumb = 'Редактирование портфолио'.$p->title;
         }
-        $data = [
+        $data = array_merge($this->chat(),[
             'title' => $title,
             'portfolio' => $portfolio,
             'second_breadcrumb' => $second_breadcrumb,
             'breadcrumb_portfolio' => $this->breadcrumb_portfolio,
-            'chat_admin' => $this->chatAdmin(),
-            'chat_html' => $this->chatHtml(),
-            'chat_php' => $this->chatPhp(),
-            'chat_js' => $this->chatJs(),
-            'chat_design' => $this->chatDesign(),
-        ];
+        ]);
         return view('admin.portfolio_edit', $data);
     }
     public function portfolioAdd(Request $request){
@@ -92,17 +82,12 @@ class PortfolioController extends AppController
         foreach ($portfolio as $item){
             $max_id = $item->id +1;
         }
-        $data = [
+        $data = array_merge($this->chat(),[
             'title' => $title,
             'second_breadcrumb' => $second_breadcrumb,
             'breadcrumb_portfolio' => $this->breadcrumb_portfolio,
             'id' => $max_id,
-            'chat_admin' => $this->chatAdmin(),
-            'chat_html' => $this->chatHtml(),
-            'chat_php' => $this->chatPhp(),
-            'chat_js' => $this->chatJs(),
-            'chat_design' => $this->chatDesign(),
-        ];
+        ]);
         return view('admin.portfolio_add', $data);
     }
     public function portfolioDelete($id){

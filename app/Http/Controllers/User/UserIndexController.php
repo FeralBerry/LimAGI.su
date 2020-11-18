@@ -22,16 +22,11 @@ class UserIndexController extends AppController
             $count_users = count($users);
             $index = 'Панель администратора';
             $title = 'One-Page admin panel';
-            $data = [
+            $data = array_merge($this->chat(),[
                 'title' => $title,
                 'count_users' => $count_users,
                 'index' => $index,
-                'chat_admin' => $this->chatAdmin(),
-                'chat_html' => $this->chatHtml(),
-                'chat_php' => $this->chatPhp(),
-                'chat_js' => $this->chatJs(),
-                'chat_design' => $this->chatDesign(),
-            ];
+            ]);
             return view('admin.index', $data);
         }
         $second_breadcrumb = '';
@@ -39,31 +34,22 @@ class UserIndexController extends AppController
         $blog = DB::table('blog')
             ->paginate($this->perpage);
         $title = 'Кабинет пользователя One-Page';
-        $data = [
+        $data = array_merge($this->chat(),[
             'title' => $title,
             'blog' => $blog,
             'blogCat' => $blogCat,
             'second_breadcrumb' => $second_breadcrumb,
-            'chat_admin' => $this->chatAdmin(),
-            'chat_html' => $this->chatHtml(),
-            'chat_php' => $this->chatPhp(),
-            'chat_js' => $this->chatJs(),
-            'chat_design' => $this->chatDesign(),
-        ];
+
+        ]);
         return view('user.index', $data);
     }
     public function info(){
         $breadcrumb_user_info = 'Настройки пользователя';
         $title = 'Кабинет информация пользователя One-Page';
-        $data = [
+        $data = array_merge($this->chat(),[
             'title' => $title,
             'breadcrumb_user_info' => $breadcrumb_user_info,
-            'chat_admin' => $this->chatAdmin(),
-            'chat_html' => $this->chatHtml(),
-            'chat_php' => $this->chatPhp(),
-            'chat_js' => $this->chatJs(),
-            'chat_design' => $this->chatDesign(),
-        ];
+        ]);
         return view('user.info', $data);
     }
 }

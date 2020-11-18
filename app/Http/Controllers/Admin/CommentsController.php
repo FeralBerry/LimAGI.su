@@ -20,16 +20,11 @@ class CommentsController extends AppController
         $blog_comments = DB::table('blog_comments')
             ->paginate($this->perpage);
         $title = 'One-Page - Комментарии к блогу';
-        $data = [
+        $data = array_merge($this->chat(),[
             'title' => $title,
             'blog_comments' => $blog_comments,
             'blog' => $blog,
-            'chat_admin' => $this->chatAdmin(),
-            'chat_html' => $this->chatHtml(),
-            'chat_php' => $this->chatPhp(),
-            'chat_js' => $this->chatJs(),
-            'chat_design' => $this->chatDesign(),
-        ];
+        ]);
         return view('admin.blog_comments',$data);
     }
     public function blogCommentsEdit(Request $request, $id){
@@ -55,16 +50,11 @@ class CommentsController extends AppController
             }
         }
         $title = 'One-Page - редактирование комментария к статье блога';
-        $data = [
+        $data = array_merge($this->chat(),[
             'title' => $title,
             'blog_comment' => $blog_comment,
             'second_breadcrumb' => $second_breadcrumb,
-            'chat_admin' => $this->chatAdmin(),
-            'chat_html' => $this->chatHtml(),
-            'chat_php' => $this->chatPhp(),
-            'chat_js' => $this->chatJs(),
-            'chat_design' => $this->chatDesign(),
-        ];
+        ]);
         return view('admin.blog_comments_edit',$data);
     }
     public function blogCommentsDelete($id){

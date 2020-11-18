@@ -5,7 +5,6 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\AppController;
 use App\Models\Chat;
 use Auth;
-use DateTime;
 use Illuminate\Http\Request;
 
 class ChatController extends AppController

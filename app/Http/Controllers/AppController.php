@@ -11,6 +11,16 @@ class AppController extends Controller
     public function __construct(){
 
     }
+    protected function chat(){
+        $data = [
+            'chat_admin' => $this->chatAdmin(),
+            'chat_html' => $this->chatHtml(),
+            'chat_php' => $this->chatPhp(),
+            'chat_js' => $this->chatJs(),
+            'chat_design' => $this->chatDesign(),
+        ];
+        return $data;
+    }
     protected function chatAdmin(){
         $chat_admin = Chat::orderBy('id', 'desc')
             ->where('room_id', 1)

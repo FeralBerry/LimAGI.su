@@ -18,17 +18,12 @@ class AboutController extends AppController
         $blog = Blog::all();
         $about = About::all();
         $title = 'One Page - admin about';
-        $data = [
+        $data = array_merge($this->chat(),[
             'about' => $about,
             'blog' => $blog,
             'title' => $title,
             'breadcrumb_about' => $this->breadcrumb_about,
-            'chat_admin' => $this->chatAdmin(),
-            'chat_html' => $this->chatHtml(),
-            'chat_php' => $this->chatPhp(),
-            'chat_js' => $this->chatJs(),
-            'chat_design' => $this->chatDesign(),
-        ];
+        ]);
         return view('admin.about_index',$data);
     }
     public function aboutEdit(Request $request, $id){
@@ -43,17 +38,12 @@ class AboutController extends AppController
         $about = About::all()->where('id', $id);
         $second_breadcrumb = 'Редактирование стариницы обо мне';
         $title = 'Редактирование страницы обо мне';
-        $data = [
+        $data = array_merge($this->chat(),[
             'title' => $title,
             'about' => $about,
             'breadcrumb_about' => $this->breadcrumb_about,
             'second_breadcrumb' => $second_breadcrumb,
-            'chat_admin' => $this->chatAdmin(),
-            'chat_html' => $this->chatHtml(),
-            'chat_php' => $this->chatPhp(),
-            'chat_js' => $this->chatJs(),
-            'chat_design' => $this->chatDesign(),
-        ];
+        ]);
         return view('admin.about_edit',$data);
     }
 }
