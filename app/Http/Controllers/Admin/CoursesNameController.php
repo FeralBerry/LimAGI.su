@@ -12,10 +12,9 @@ class CoursesNameController extends AppController
         parent::__construct();
     }
     public function index(){
-        $title = '';
+        $title = $this->title.'название курсов';
         $data = array_merge($this->chat(),[
             'title' => $title,
-
         ]);
         return view('admin.courses_name_index', $data);
     }
@@ -23,7 +22,7 @@ class CoursesNameController extends AppController
         if($request->isMethod('post')){
             return redirect()->route('admin-courses-name-index');
         }
-        $title = '';
+        $title = $this->title.'редактирование названия курсов';
         $data = array_merge($this->chat(),[
             'title' => $title,
         ]);
@@ -33,7 +32,7 @@ class CoursesNameController extends AppController
         if($request->isMethod('post')){
             return redirect()->route('admin-courses-name-index');
         }
-        $title = '';
+        $title = $this->title.'добавление названия курсов';
         $data = array_merge($this->chat(),[
             'title' => $title,
         ]);

@@ -18,7 +18,7 @@ class BlogTagsController extends AppController
     protected $perpage = 10;
     public function index(){
         $blog_tags = DB::table('blog_tags')->paginate($this->perpage);
-        $title = 'One-Page - admin blog tags';
+        $title = $this->title.'admin blog tags';
         $data = array_merge($this->chat(),[
             'title' => $title,
             'blog_tags' => $blog_tags,
@@ -33,7 +33,7 @@ class BlogTagsController extends AppController
             ]);
             return redirect()->route('admin-blogTags');
         }
-        $title = 'One-Page - blog tags edit';
+        $title = $this->title.'blog tags edit';
         $blogTags = BlogTags::all()->where('id', $id);
         foreach ($blogTags as $item) {
             $second_breadcrumb = 'Редактирование тега ' . $item->name;
@@ -86,7 +86,7 @@ class BlogTagsController extends AppController
             ]);
             return redirect()->route('admin-blogTags');
         }
-        $title = 'One-Page - blog tags add';
+        $title = $this->title.'blog tags add';
         $second_breadcrumb = 'Добавление тега ';
         $data = array_merge($this->chat(),[
             'title' => $title,

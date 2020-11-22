@@ -17,7 +17,7 @@ class AboutController extends AppController
     public function index(){
         $blog = Blog::all();
         $about = About::all();
-        $title = 'One Page - admin about';
+        $title = $this->title.'admin about';
         $data = array_merge($this->chat(),[
             'about' => $about,
             'blog' => $blog,
@@ -32,12 +32,13 @@ class AboutController extends AppController
                 'title' => $request['title'],
                 'desc' => $request['desc'],
                 'link' => $request['link'],
+                'icon' => $request['icon'],
             ]);
             return redirect()->route('admin-about');
         }
         $about = About::all()->where('id', $id);
         $second_breadcrumb = 'Редактирование стариницы обо мне';
-        $title = 'Редактирование страницы обо мне';
+        $title = $this->title.'Редактирование страницы обо мне';
         $data = array_merge($this->chat(),[
             'title' => $title,
             'about' => $about,

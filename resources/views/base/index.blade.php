@@ -2,9 +2,12 @@
 @section('header')
     @include('layouts.base.header')
 @endsection
+@section('slider')
+    @include('layouts.base.slider')
+@endsection
 @section('content')
     @include('base.section.main')
 @endsection
 @section('footer')
-
+    @include('layouts.base.footer')
 @endsection

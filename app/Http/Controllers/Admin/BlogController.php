@@ -29,7 +29,7 @@ class BlogController extends AppController
     }
     public function index(){
         $blog = DB::table('blog')->paginate($this->perpage);
-        $title = 'One-Page редактирование статей блога';
+        $title = $this->title.'редактирование статей блога';
         $data = array_merge($this->chat(),[
             'title' => $title,
             'breadcrumb_blog' => $this->breadcrumb_blog,
@@ -58,7 +58,7 @@ class BlogController extends AppController
             if ($request->hasFile('img')) {
                 $image = $request->file('img');
                 $img_name = time().'.'.$image->getClientOriginalExtension();
-                $destinationPath = public_path('/images/blog/img');
+                $destinationPath = public_path('base/img/blog/img');
                 $image->move($destinationPath, $img_name);
             } else {
                 foreach ($blog as $item){
@@ -68,7 +68,7 @@ class BlogController extends AppController
             if ($request->hasFile('videoImg')) {
                 $image = $request->file('videoImg');
                 $video_img_name = time().'.'.$image->getClientOriginalExtension();
-                $destinationPath = public_path('/images/blog/video-img/');
+                $destinationPath = public_path('base/img/blog/video-img/');
                 $image->move($destinationPath, $video_img_name);
             } else {
                 foreach ($blog as $item){
@@ -78,7 +78,7 @@ class BlogController extends AppController
             if ($request->hasFile('video')) {
                 $image = $request->file('video');
                 $video = time().'.'.$image->getClientOriginalExtension();
-                $destinationPath = public_path('/images/blog/video/');
+                $destinationPath = public_path('base/img/blog/video/');
                 $image->move($destinationPath, $video);
             } else {
                 foreach ($blog as $item){
@@ -88,7 +88,7 @@ class BlogController extends AppController
             if ($request->hasFile('title_img')) {
                 $image = $request->file('title_img');
                 $title_img = time().'.'.$image->getClientOriginalExtension();
-                $destinationPath = public_path('/images/blog/title_img/');
+                $destinationPath = public_path('base/img/blog/title_img/');
                 $image->move($destinationPath, $title_img);
             } else {
                 foreach ($blog as $item){
@@ -110,7 +110,7 @@ class BlogController extends AppController
             ]);// перезапись значений в БД из масива пост
             return redirect()->route('admin-blog');
         }
-        $title = 'One-Page редактирование статьи блога';
+        $title = $this->title.'редактирование статьи блога';
         foreach ($blog as $item) {
             $second_breadcrumb = 'Редактирование статьи ' . $item->title;
         }
@@ -148,25 +148,25 @@ class BlogController extends AppController
             if ($request->hasFile('img')) {
                 $image = $request->file('img');
                 $img_name = time().'.'.$image->getClientOriginalExtension();
-                $destinationPath = public_path('/images/blog/img');
+                $destinationPath = public_path('base/img/blog/img');
                 $image->move($destinationPath, $img_name);
             }
             if ($request->hasFile('title_img')) {
                 $image = $request->file('title_img');
                 $title_img = time().'.'.$image->getClientOriginalExtension();
-                $destinationPath = public_path('/images/blog/title_img/');
+                $destinationPath = public_path('base/img/blog/title_img/');
                 $image->move($destinationPath, $title_img);
             }
             if ($request->hasFile('videoImg')) {
                 $image = $request->file('videoImg');
                 $video_img_name = time().'.'.$image->getClientOriginalExtension();
-                $destinationPath = public_path('/images/blog/video-img/');
+                $destinationPath = public_path('base/img/blog/video-img/');
                 $image->move($destinationPath, $video_img_name);
             }
             if ($request->hasFile('video')) {
                 $image = $request->file('video');
                 $video = time().'.'.$image->getClientOriginalExtension();
-                $destinationPath = public_path('/images/blog/video');
+                $destinationPath = public_path('base/img/blog/video');
                 $image->move($destinationPath, $video);
             }
             Blog::create([
@@ -185,7 +185,7 @@ class BlogController extends AppController
             return redirect()->route('admin-blog');
         }
         $second_breadcrumb = 'Добавление статьи блога';
-        $title = 'One-Page добавление статьи блога';
+        $title = $this->title.'добавление статьи блога';
         $blog = Blog::all();
         foreach ($blog as $item){
             $max_id = $item->id +1;

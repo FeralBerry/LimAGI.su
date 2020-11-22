@@ -33,6 +33,12 @@
                             <input type="text" name="link" class="form-control" placeholder="Краткое описание" value="{{ $item->link }}">
                         </div>
                     </div>
+                    <div class="form-group">
+                        <label for="icon" class="col-sm-2 control-label">Иконка</label>
+                        <div class="col-sm-8">
+                            <input type="text" name="icon" class="form-control" placeholder="Иконка" value="{{ $item->icon }}">
+                        </div>
+                    </div>
                     <div class="panel-footer">
                         <div class="row">
                             <div class="col-sm-8 col-sm-offset-2">

@@ -12,9 +12,9 @@ use App\Models\Portfolio;
 use DB;
 use Mail;
 
-class IndexController extends Controller
+class IndexController extends AppController
 {
-    protected $perpage = 12;
+    protected $perpage = 8;
     protected $description = 'Разработка сайта под ключ. Уникальный дизайн. Современные технологии разработки. Анализ конкурентов вашего бизнеса.';
     protected $keywords = 'сайт, разработка, визитка, магазин, дизайн,современная, лучшая,лендинг';
     protected function blogTags(){
@@ -26,8 +26,11 @@ class IndexController extends Controller
         return $blog_cat;
     }
     public function index(Request $request){
-        $title = 'One-Page';
-        $cfg = 1;
+        $title = 'LimAGI';
+        $about = About::all();
+        $blog = DB::table('blog')
+            ->orderBy('updated_at','DESC')
+            ->paginate(2);
         if($request->isMethod('post')) {
             $messages = [
                 'required' => "Поле :attribute обязательное для заполнения",
@@ -41,8 +44,8 @@ class IndexController extends Controller
             $data_contact = $request->all();
             $result = Mail::send('emails.contact_email',['data_contact' => $data_contact], function($message) use ($data_contact){
                 $mail_admin = env('MAIL_ADMIN');
-                $message->from($mail_admin,$data_contact['name']);
-                $message->to($mail_admin)->subject('Заявка на рассчет сайта');
+                $message->from($data_contact['email'],$data_contact['name']);
+                $message->to($mail_admin)->subject('Заявка на сайт с главной страницы от'.$data_contact['name']);
             });
             $token_t = "807035350:AAFMLs54vlYmH5TJCo0If87EXhX-1zPmYRs";
             $chat_id_t = "-257049210";
@@ -65,14 +68,15 @@ class IndexController extends Controller
         }
         $data = [
             'title' => $title,
-            'cfg' => $cfg,
+            'about' => $about,
+            'blog' => $blog,
             'description' => $this->description,
             'keywords' => $this->keywords,
         ];
         return view('base.index', $data);
     }
     public function portfolio(){
-        $title = 'One-Page - portfolio';
+        $title = $this->title.'портфолио';
         $portfolio = DB::table('portfolio')->paginate($this->perpage);
         $data = [
             'title' => $title,
@@ -88,7 +92,7 @@ class IndexController extends Controller
         foreach ($about as $ab){
             $link = explode(',', $ab->link);
         }
-        $title = 'One-Page - about';
+        $title = $this->title.'обо мне';
         $data = [
             'blog' => $blog,
             'title' => $title,
@@ -100,11 +104,20 @@ class IndexController extends Controller
         return view('base.about', $data);
     }
     public function blog(){
-        $title = 'One-Page - blog';
-        $blog = Blog::orderBy('updated_at','DESC')->get();
+        $title = $this->title.'блог';
+        $recent = DB::table('blog')
+            ->latest('updated_at')
+            ->latest('created_at')
+            ->limit(6)
+            ->get();
+        $recents = $recent->SortByDesc('updated_at');
+        $blog = DB::table('blog')
+            ->orderBy('updated_at','DESC')
+            ->paginate($this->perpage);
         $data = [
             'title' => $title,
             'blog' => $blog,
+            'recents' => $recents,
             'blog_cat' => $this->blogCat(),
             'description' => $this->description,
             'keywords' => $this->keywords,
@@ -113,7 +126,6 @@ class IndexController extends Controller
     }
     public function blogAlias($alias){
         $blog = Blog::all();
-        $title = 'One-Page - blog';
         foreach ($blog as $b) {
             if(isset($alias) == $b->author) {
                 $blog_author = Blog::all()->where('author', $alias);
@@ -126,6 +138,7 @@ class IndexController extends Controller
                     $id[] = $b->id;
                 }
             }
+            $title = $this->title.$b->title;
         }
         if(isset($id)){
             $blog_author = DB::table('blog')->whereIn('id', $id)->get();
@@ -139,7 +152,6 @@ class IndexController extends Controller
         ];
         return view('base.blog', $data);
     }
-
     public function blogPost(Request $request,$id){
         if($request->isMethod('post')){
             BlogComments::create([
@@ -150,7 +162,7 @@ class IndexController extends Controller
             ]);
             return back()->with(['msg' => 'Комментарий добавлени']);
         }
-        $title='';
+        $title = $this->title;
         $blog_comments = DB::table('blog_comments')
             ->where('blog_post_id', $id)
             ->paginate($this->perpage);
@@ -164,11 +176,11 @@ class IndexController extends Controller
         foreach ($blog as $b){
             $tags = explode(',', $b->tags);
             $tag_page = explode(',', $b->tag_page);
-            $title = 'One-Page - '.$b->title;
+            $title = $this->title.$b->title;
             $description = $b->brief;
             $tag = explode(',',$b->tags);
             $count_tags = count($tag);
-            $keywords = 'One-Page';
+            $keywords = $title;
             $blog_tags = BlogTags::all();
             foreach ($blog_tags as $bt){
                 for($i=0;$i<$count_tags;$i++){
@@ -194,7 +206,7 @@ class IndexController extends Controller
         return view('base.blog-post', $data);
     }
     public function contact(Request $request){
-        $title = 'One-Page - contact';
+        $title = $this->title.'контакты';
         $data = [
             'title' => $title,
             'description' => $this->description,

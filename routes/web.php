@@ -102,6 +102,26 @@ Route::group(['middleware' => ['auth']], function() {
         Route::match(['GET','POST'],'/add-chat-js', ['uses' => 'ChatController@addChatJs','as' => 'add-chat-js']);
         Route::match(['GET','POST'],'/chat-design', ['uses' => 'ChatController@chatDesign', 'as' => 'chat-design']);
         Route::match(['GET','POST'],'/add-chat-design', ['uses' => 'ChatController@addChatDesign','as' => 'add-chat-design']);
+        Route::match(['GET','POST'],'/add-chat-design', ['uses' => 'ChatController@addChatDesign','as' => 'add-chat-design']);
+        Route::match(['GET','POST'],'/free-courses/html', ['uses' => 'FreeCoursesController@indexHtml','as' => 'free-courses-html']);
+        Route::match(['GET','POST'],'/free-courses/html/{id}', ['uses' => 'FreeCoursesController@articleHtml','as' => 'free-courses-html-article']);
+        Route::match(['GET','POST'],'/free-courses/css', ['uses' => 'FreeCoursesController@indexCss','as' => 'free-courses-css']);
+        Route::match(['GET','POST'],'/free-courses/css/{id}', ['uses' => 'FreeCoursesController@articleCss','as' => 'free-courses-css-article']);
+        Route::match(['GET','POST'],'/free-courses/php', ['uses' => 'FreeCoursesController@indexPhp','as' => 'free-courses-php']);
+        Route::match(['GET','POST'],'/free-courses/php/{id}', ['uses' => 'FreeCoursesController@articlePhp','as' => 'free-courses-php-article']);
+        Route::match(['GET','POST'],'/free-courses/js', ['uses' => 'FreeCoursesController@indexJs','as' => 'free-courses-javascript']);
+        Route::match(['GET','POST'],'/free-courses/js/{id}', ['uses' => 'FreeCoursesController@articleJs','as' => 'free-courses-javascript-article']);
+        Route::match(['GET','POST'],'/free-courses/github', ['uses' => 'FreeCoursesController@indexGithub','as' => 'free-courses-github']);
+        Route::match(['GET','POST'],'/free-courses/github/{id}', ['uses' => 'FreeCoursesController@articleGithub','as' => 'free-courses-github-article']);
+        Route::match(['GET','POST'],'/free-courses/laravel', ['uses' => 'FreeCoursesController@indexLaravel','as' => 'free-courses-laravel']);
+        Route::match(['GET','POST'],'/free-courses/laravel/{id}', ['uses' => 'FreeCoursesController@articleLaravel','as' => 'free-courses-laravel-article']);
+        Route::match(['GET','POST'],'/free-courses/wordpress', ['uses' => 'FreeCoursesController@indexWordpress','as' => 'free-courses-wordpress']);
+        Route::match(['GET','POST'],'/free-courses/wordpress/{id}', ['uses' => 'FreeCoursesController@articleWordpress','as' => 'free-courses-wordpress-article']);
+        Route::match(['GET','POST'],'/free-courses/photoshop', ['uses' => 'FreeCoursesController@indexPhotoshop','as' => 'free-courses-photoshop']);
+        Route::match(['GET','POST'],'/free-courses/photoshop/{id}', ['uses' => 'FreeCoursesController@articlePhotoshop','as' => 'free-courses-photoshop-article']);
+        Route::match(['GET','POST'],'/free-courses/bootstrap', ['uses' => 'FreeCoursesController@indexWordpress','as' => 'free-courses-bootstrap']);
+        Route::match(['GET','POST'],'/free-courses/bootstrap/{id}', ['uses' => 'FreeCoursesController@articleWordpress','as' => 'free-courses-bootstrap-article']);
+
     });
 });
 

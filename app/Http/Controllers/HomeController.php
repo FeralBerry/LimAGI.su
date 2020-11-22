@@ -30,7 +30,7 @@ class HomeController extends AppController
         $users = User::all();
         $count_users = count($users);
         if(Auth::user()->role == 'admin'){
-            $title = 'One-Page';
+            $title = $this->title.'домашняя';
             $data = [
                 'title' => $title,
                 'chat_admin' => $this->chatAdmin(),
@@ -42,7 +42,7 @@ class HomeController extends AppController
             ];
             return view('admin.index', $data);
         }
-        $title = 'One-Page';
+        $title = $this->title.'домашняя';
         $data = [
             'title' => $title,
             'chat_admin' => $this->chatAdmin(),

@@ -1,130 +1,116 @@
-<header class="cd-header">
-    <div class="container">
-        <div class="twelve columns" style="margin-top: 20px">
-            <div class="logo-wrap pre-logo">
-                <a href="{{ route('index') }}"><img style="width: 50px" src="{{ asset('images/logo.gif') }}" alt="One-Page"></a>
-            </div>
-            <div class="logo-wrap">
-                <a href="{{ route('index') }}"><img src="{{ asset('images/logo.png') }}" alt="One-Page"></a>
-            </div>
-            <div class="head_contact">
-                <a href="tel: 79687106270">Телефон: +7(968)710-62-70</a><br>
-                <a href="mailto:info@one-page.su">Email: info@one-page.su</a>
-            </div>
-            @guest
-                <a class="login" href="{{ route('login') }}">{{ __('Вход') }}</a>
-                @if (Route::has('register'))
-                    <a class="reg" href="{{ route('register') }}">{{ __('Регистрация') }}</a>
-                @endif
-            @else
-                <div class="accordion">
-                    <div class="trigger">
-                        <input type="checkbox" id="checkbox-1" name="checkbox-1" />
-                        <label for="checkbox-1" class="checkbox">
-                            {{ Auth::user()->name }} <i></i>
-                        </label>
-                        <div class="content">
-                            <a class="dropdown-item" href="{{ route('home') }}">В меню пользователя</a>
-                            <a class="dropdown-item" href="{{ route('logout') }}"
-                               onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                {{ __('Выйти') }}
-                            </a>
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                @csrf
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            @endguest
-            <a class="cd-primary-nav-trigger" href="#0">
-                <span class="cd-menu-text"></span><span class="cd-menu-icon"></span>
-            </a>
-        </div>
-    </div>
-    <div class=" container-fluid nav" style="padding: 12px;position: absolute;top: 70px;">
+<!-- Header -->
+<header class="header-main container-fluid no-padding">
+    <!-- Top Header -->
+    <div class="top-header container-fluid no-padding">
+        <!-- Container -->
         <div class="container">
-            <a href="{{ route('index') }}" @if(Request::path() == '/')class="curent-nav-color"@endif>Главная</a>
-            <a href="{{ route('portfolio') }}" @if(Request::path() == 'portfolio')class="curent-nav-color"@endif>Портфолио</a>
-            <a href="{{ route('about') }}" @if(Request::path() == 'about')class="curent-nav-color"@endif>Обо мне</a>
-            <a href="{{ route('blog') }}" @if(Request::path() == 'blog')class="curent-nav-color"@endif>Блог</a>
-            <a href="{{ route('contact') }}" @if(Request::path() == 'contact')class="curent-nav-color"@endif>Контакты</a>
-        </div>
-    </div>
-</header>
-<nav>
-    <div class="cd-primary-nav">
-        <ul class="cd-scndr-nav">
-            <li class="cd-label">
-                <a href="{{ route('index') }}" @if(Request::path() == '/')class="curent-nav-color"@endif>Главная</a>
-            </li>
-            <li class="cd-label">
-                <a href="{{ route('portfolio') }}" @if(Request::path() == 'portfolio')class="curent-nav-color"@endif>Портфолио</a>
-            </li>
-            <li class="cd-label">
-                <a href="{{ route('about') }}" @if(Request::path() == 'about')class="curent-nav-color"@endif>Обо мне</a>
-            </li>
-            <li class="cd-label">
-                <a href="{{ route('blog') }}" @if(Request::path() == 'blog')class="curent-nav-color"@endif>Блог</a>
-            </li>
-            <li class="cd-label">
-                <a href="{{ route('contact') }}" @if(Request::path() == 'contact')class="curent-nav-color"@endif>Контакты</a>
-            </li>
-        </ul>
-        <div class="social-nav">
-            <ul class="list-social-nav">
-                <li class="icon-soc-nav tipped" data-title="VK"  data-tipper-options='{"direction":"top","follow":"true"}'>
-                    <a href="https://vk.com/id338990548"><i class="fa fa-vk" aria-hidden="true"></i></a>
-                </li>
-                <li class="icon-soc-nav tipped" data-title="github"  data-tipper-options='{"direction":"top","follow":"true"}'>
-                    <a href="https://github.com/FeralBerry"><i class="fa fa-github" aria-hidden="true"></i></a>
-                </li>
-                <li class="icon-soc-nav tipped" data-title="google +"  data-tipper-options='{"direction":"top","follow":"true"}'>
-                    <a href="mailto:evakomarova90@gmail.com">&#xf0d5;</a>
-                </li>
-                <li class="icon-soc-nav tipped" data-title="mail"  data-tipper-options='{"direction":"top","follow":"true"}'>
-                    <a href="mailto:info@one-page.su"><i class="fa fa-envelope" aria-hidden="true"></i></a>
-                </li>
-                <li class="icon-soc-nav tipped" data-title="YouTube"  data-tipper-options='{"direction":"top","follow":"true"}'>
-                    <a href="#">&#xf16a;</a>
-                </li>
-                <li class="icon-soc tipped" data-title="WhatsApp"  data-tipper-options='{"direction":"top","follow":"true"}'>
-                    <a href="https://wa.me/79687106270"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
-                </li>
-                <li class="icon-soc tipped" data-title="One-Drive"  data-tipper-options='{"direction":"top","follow":"true"}'>
-                    <a href="https://yadi.sk/d/rf8--QuryZM9EA?w=1"><i class="fa fa-download" aria-hidden="true"></i></a>
-                </li>
-                {{--<li class="icon-soc-nav tipped" data-title="Vimeo"  data-tipper-options='{"direction":"top","follow":"true"}'>
-                    <a href="#">&#xf194;</a>
-                </li>
-                <li class="icon-soc-nav tipped" data-title="Tumblr"  data-tipper-options='{"direction":"top","follow":"true"}'>
-                    <a href="#">&#xf174;</a>
-                </li>
-                <li class="icon-soc-nav tipped" data-title="facebook"  data-tipper-options='{"direction":"top","follow":"true"}'>
-                    <a href="#">&#xf230;</a>
-                </li>--}}
-                {{--<li class="icon-soc-nav tipped" data-title="Skype"  data-tipper-options='{"direction":"top","follow":"true"}'>
-                    <a href="#">&#xf17e;</a>
-                </li>--}}
-                {{--<li class="icon-soc-nav tipped" data-title="soundcloud"  data-tipper-options='{"direction":"top","follow":"true"}'>
-                    <a href="#">&#xf1be;</a>
-                </li>
-                <li class="icon-soc-nav tipped" data-title="pinterest"  data-tipper-options='{"direction":"top","follow":"true"}'>
-                    <a href="#">&#xf231;</a>
-                </li>
-                <li class="icon-soc-nav tipped" data-title="linkedin"  data-tipper-options='{"direction":"top","follow":"true"}'>
-                    <a href="#">&#xf08c;</a>
-                </li>
-                <li class="icon-soc-nav tipped" data-title="lastfm"  data-tipper-options='{"direction":"top","follow":"true"}'>
-                    <a href="#">&#xf202;</a>
-                </li>--}}
-                {{--<li class="icon-soc-nav tipped" data-title="dropbox"  data-tipper-options='{"direction":"top","follow":"true"}'>
-                    <a href="#">&#xf16b;</a>
-                </li>
-                <li class="icon-soc-nav tipped" data-title="behance"  data-tipper-options='{"direction":"top","follow":"true"}'>
-                    <a href="#">&#xf1b4;</a>
-                </li>--}}
-            </ul>
-        </div>
-    </div>
-</nav>
+            <div class="row">
+                <!-- Social -->
+                <div class="col-md-4 col-sm-4 col-xs-6 social">
+                    <ul>
+                        <li><a title="Facebook" href="#"><i class="fa fa-github"></i></a></li>
+                        <li><a title="Mail" href="mailto:info@one-page.su"><i class="fa fa-envelope"></i></a></li>
+                        <li><a title="Google Plus" href="mailto:evakomarova90@gmail.com"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a title="WhatsApp" href="https://wa.me/79687106270"><i class="fa fa-whatsapp"></i></a></li>
+                        <li><a title="VK" href="https://vk.com/id338990548"><i class="fa fa-vk"></i></a></li>
+                    </ul>
+                </div><!-- Social /- -->
+                <!-- Register -->
+                <div class="col-md-4 col-sm-4 col-xs-6 register">
+                    @guest
+                        <a class="open_login">{{ __('Вход') }}</a>
+                        @if (Route::has('register'))
+                            <a class="open_reg">{{ __('Регистрация') }}</a>
+                        @endif
+                    @else
+                        <div class="accordion">
+                            <div class="trigger">
+                                <div class="content">
+                                    <a class="dropdown-item" href="{{ route('home') }}">{{ Auth::user()->name }}</a>
+                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Выйти') }}
+                                    </a>
+                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                        @csrf
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    @endguest
+                </div><!-- Register /- -->
+                <!-- Logo Block -->
+                <div class="col-md-4 col-sm-4 col-xs-12 logo-block">
+                    <a href="{{ route('index') }}" title="LimAGI">
+                        <img src="{{ asset('base/logo.png') }}" alt="LimAGI" width="70" height="60"/>
+                        <h3>LimAGI</h3>
+                    </a>
+                </div><!-- Logo Block /- -->
+            </div>
+        </div><!-- Container /- -->
+    </div><!-- Top Header /- -->
+    <!-- Menu Block -->
+    <div class="menu-block container-fluid no-padding">
+        <!-- Container -->
+        <div class="container">
+            <!-- User -->
+            <a @guest class="open_user user" @else href="{{ route('home') }}" class="user" @endguest title="User">
+                <i class="fa fa-user"></i>
+            </a><!-- User /- -->
+            <!-- Expanding Search -->
+            <div class="menu-search">
+                <div id="sb-search" class="sb-search">
+                    <form>
+                        <input class="sb-search-input" placeholder="Enter your search term..." type="text" value="" name="search" id="search" />
+                        <button class="sb-search-submit"><i class="fa fa-search"></i></button>
+                        <span class="sb-icon-search"></span>
+                    </form>
+                </div>
+            </div><!-- Expanding Search /- -->
+            <div class="col-md-10 col-sm-12">
+                <!-- Navigation -->
+                <nav class="navbar ow-navigation">
+                    <div class="navbar-header">
+                        <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a title="Logo" href="#" class="navbar-brand"><img src="{{ asset('base/logo.png')}}" alt="LimagI"/><span>LimagI</span></a>
+                    </div>
+                    <div class="navbar-collapse collapse" id="navbar">
+                        <ul class="nav navbar-nav menubar">
+                            <li @if(Request::path() == '/')class="active"@endif><a title="Главная" href="{{ route('index') }}">Главная</a></li>
+                            <li @if(Request::path() == 'about')class="active"@endif><a title="Обо мне" href="{{ route('about') }}">Обо мне</a></li>
+                            <li @if(Request::path() == 'portfolio')class="active"@endif><a title="Портфолио" href="{{ route('portfolio') }}">Портфолио</a></li>
+                            <li @if(Request::path() == 'blog')class="active"@endif><a title="Блог" href="{{ route('blog') }}">Блог</a></li>
+                            <li><a title="Расценки" href="#">Расценки</a></li>
+                            {{--
+                            <li class="dropdown">
+                                <a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" title="Pages" href="#">Блог</a>
+                                <i class="ddl-switch fa fa-angle-down"></i>
+                                <ul class="dropdown-menu">
+                                    <li><a title="Event Grid" href="eventgrid-page.html">Event Grid</a></li>
+                                    <li><a title="Event List" href="eventlist-page.html">Event List</a></li>
+                                    <li><a title="Event Single" href="eventsingle-page.html">Event Single</a></li>
+                                    <li><a title="404" href="404.html">404</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" title="Blog" href="#">Latest News</a>
+                                <i class="ddl-switch fa fa-angle-down"></i>
+                                <ul class="dropdown-menu">
+                                    <li><a title="Blog" href="blog-page.html">Blog</a></li>
+                                    <li><a title="Blog Post" href="blogpost-page.html">Blog Post</a></li>
+                                </ul>
+                            </li>--}}
+                            <li @if(Request::path() == 'contact')class="active"@endif><a title="Контакты" href="{{ route('contact') }}">Контакты</a></li>
+                        </ul>
+                    </div>
+                </nav><!-- Navigation /- -->
+            </div>
+        </div><!-- Container /- -->
+    </div><!-- Menu Block /- -->
+</header><!-- Header /- -->

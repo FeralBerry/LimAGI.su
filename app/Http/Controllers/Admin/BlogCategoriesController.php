@@ -17,7 +17,7 @@ class BlogCategoriesController extends AppController
     protected $breadcrumb_blog_cat = 'Категории блога';
     public function index(){
         $blogCat = DB::table('blog_category')->paginate($this->perpage);
-        $title = 'One-Page - категории блога';
+        $title = $this->title.'категории блога';
         $data = array_merge($this->chat(),[
             'title' => $title,
             'blogCat' => $blogCat,
@@ -35,7 +35,7 @@ class BlogCategoriesController extends AppController
         foreach ($blogCat as $item) {
             $second_breadcrumb = 'Редактирование категории ' . $item->name;
         }
-        $title = 'One-Page - редактирование категории блога';
+        $title = $this->title.'редактирование категории блога';
         $data = array_merge($this->chat(),[
             'title' => $title,
             'blogCat' => $blogCat,
@@ -51,7 +51,7 @@ class BlogCategoriesController extends AppController
             ]);
             return redirect()->route('admin-blogCat');
         }
-        $title = 'One-Page - категории блога';
+        $title = $this->title.'категории блога';
         $second_breadcrumb = 'Добавление новой категории блога';
         $data = array_merge($this->chat(),[
             'title' => $title,

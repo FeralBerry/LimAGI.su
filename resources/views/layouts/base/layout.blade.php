@@ -1,46 +1,37 @@
 <!DOCTYPE html>
-<!--[if IE 6]>
-<html id="ie6" lang="ru-RU">
-<![endif]-->
-<!--[if IE 7]>
-<html id="ie7" lang="ru-RU">
-<![endif]-->
-<!--[if IE 8]>
-<html id="ie8" lang="ru-RU">
-<![endif]-->
-<html class="no-js" lang="ru-RU">
+<!--[if lt IE 7 ]> <html class="ie6"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html class=""><!--<![endif]-->
 <head>
-    <!-- Basic Page Needs
-  ================================================== -->
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ $title ?? 'One-Page' }}</title>
     <meta name="description" content="{{ $description ?? 'One-Page - разработка выших сайтов любой сложности' }}">
     <meta name="keywords" content="{{ $keywords ?? '' }}">
     <meta name="author" content="{{ 'One-Page' }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <!-- Mobile Specific Metas
-  ================================================== -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <!-- Font
-  ================================================== -->
-    <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <!-- CSS
-  ================================================== -->
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/base.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/skeleton.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/font-awesome.css') }}" />
-    <link rel="stylesheet" href="{{ asset('css/retina.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/owl.carousel.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/owl.transitions.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/layout.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('css/usermenu.css') }}"/>
     <!-- Favicons
     ================================================== -->
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
     <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
     <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('apple-touch-icon-72x72.png') }}">
     <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('apple-touch-icon-114x114.png') }}">
+    <!-- Library - Bootstrap v3.3.5 -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('base/libraries/lib.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('base/libraries/Stroke-Gap-Icon/stroke-gap-icon.css') }}">
+    <!-- Custom - Common CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('base/css/plugins.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('base/css/navigation-menu.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('base/libraries/lightslider-master/lightslider.css') }}">
+    <!-- Custom - Theme CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ asset('base/css/style.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('base/css/shortcode.css') }}">
+    <!--[if lt IE 9]>
+    <script src="{{ asset('base/js/html5/respond.min.js') }}"></script>
+    <![endif]-->
     <script type="text/javascript" src="{{ asset('js/modernizr.custom.js') }}"></script>
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
@@ -56,22 +47,22 @@
     <noscript><div><img src="https://mc.yandex.ru/watch/68858455" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 </head>
-<!-- hijacking: on/off - animation: none/scaleDown/rotate/gallery/catch/opacity/fixed/parallax -->
-<body @if(isset($cfg))@if($cfg == 1)class="royal_loader" data-hijacking="on" data-animation="scaleDown" @endif @else class="royal_loader" @endif>
-
-<!-- Primary Page Layout
-================================================== -->
-
-
-<!-- Nav and Logo
-================================================== -->
+<body data-offset="200" data-spy="scroll" data-target=".ow-navigation">
+@include('auth.login')
+@include('auth.register')
+<!-- Loader -->
+<div id="site-loader" class="load-complete">
+    <div class="loader">
+        <div class="loader-inner ball-clip-rotate">
+            <div></div>
+        </div>
+    </div>
+</div><!-- Loader /- -->
 @yield('header')
+@yield('slider')
 @yield('content')
 @yield('footer')
-
-<!-- JAVASCRIPT
-================================================== -->
-<script type="text/javascript" src="{{ asset('js/jquery-2.1.1.js') }}"></script>
+{{--<script type="text/javascript" src="{{ asset('js/jquery-2.1.1.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/royal_preloader.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('js/UserMenu.js') }}"></script>
 <script type="text/javascript">
@@ -137,8 +128,18 @@
     })(jQuery);
 </script>
 <script type="text/javascript" src="{{ asset('js/custom-blog.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/ajax.js') }}"></script>
-<!-- End Document
-================================================== -->
+<script type="text/javascript" src="{{ asset('js/ajax.js') }}"></script>--}}
+<!-- JQuery v1.11.3 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="{{ asset('base/js/jquery.min.js') }}"></script>
+<!-- Library - Js -->
+<script src="{{ asset('base/libraries/lib.js') }}"></script><!-- Bootstrap JS File v3.3.5 -->
+<script src="{{ asset('base/libraries/jquery.countdown.min.js') }}"></script>
+<script src="{{ asset('base/libraries/lightslider-master/lightslider.js') }}"></script>
+<!-- Library - Google Map API -->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCn3Z6i1AYolP3Y2SGis5qhbhRwmxxo1wU"></script>
+<script src="{{ asset('base/js/functions.js') }}"></script>
+<script src="{{ asset('base/js/blog.js') }}"></script>
+<script src="{{ asset('base/js/modal.js') }}"></script>
 </body>
 </html>

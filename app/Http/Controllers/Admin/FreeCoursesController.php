@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\AppController;
 use App\Models\Chat;
-use App\Models\CoursesName;
+use App\Models\FreeCoursesName;
 use Illuminate\Http\Request;
 use App\Models\FreeCourses;
 use DB;
@@ -16,12 +16,12 @@ class FreeCoursesController extends AppController
     }
     protected $perpage = 10;
     protected function coursesName(){
-        $courses_name = CoursesName::all();
+        $courses_name = FreeCoursesName::all();
         return $courses_name;
     }
     public function index(){
         $free_courses = DB::table('free_courses')->paginate($this->perpage);
-        $title = 'One-Page - бесплатные курсы';
+        $title = $this->title.'бесплатные курсы';
         $data = array_merge($this->chat(),[
             'title' => $title,
             'courses_name' => $this->coursesName(),
@@ -45,7 +45,7 @@ class FreeCoursesController extends AppController
         foreach ($free_courses as $courses){
             $second_breadcrumb = 'Редактирование бесплатного курса '.$courses->title;
         }
-        $title = 'One-Page - бесплатные курсы';
+        $title = $this->title.'бесплатные курсы';
         $data = array_merge($this->chat(),[
             'second_breadcrumb' => $second_breadcrumb,
             'courses_name' => $this->coursesName(),
@@ -66,7 +66,7 @@ class FreeCoursesController extends AppController
             return redirect()->route('admin-free-courses');
         }
         $second_breadcrumb = 'Добавление бесплатного курса';
-        $title = 'One-Page - бесплатные курсы';
+        $title = $this->title.'бесплатные курсы';
         $data = array_merge($this->chat(),[
             'second_breadcrumb' => $second_breadcrumb,
             'courses_name' => $this->coursesName(),

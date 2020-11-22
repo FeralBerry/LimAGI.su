@@ -23,32 +23,14 @@
                         <li class="nav-separator">Базовые настройки</li>
                         <li><a href="{{ route('user-index') }}"><i class="fa fa-home"></i><span>На главную</span></a></li>
                         <li><a href="{{ route('user-info') }}"><i class="fa fa-user"></i><span>Настройки пользователи</span></a></li>
-                        {{--<li class="nav-separator">Статьи</li>
-                        <li>
-                            <a href="javascript:;">
-                                <i class="fa fa-columns"></i><span>Блог</span>--}}{{--<span class="badge badge-primary">8</span>--}}{{--
-                            </a>
-                            <ul class="acc-menu">
-                                <li><a href="{{ route('admin-blog') }}">Все статьи</a></li>
-                                <li><a href="{{ route('admin-blog-add') }}">Добавить статью блога</a></li>
-                                <li><a href="{{ route('admin-blogTags') }}">Просмотреть теги для блога</a></li>
-                                <li><a href="{{ route('admin-blogTags-add') }}">Добавить теги для блога</a></li>
-                                <li><a href="{{ route('admin-blogCat') }}">Просмотреть категории</a></li>
-                                <li><a href="{{ route('admin-blogCat-add') }}">Добавить категории</a></li>
-                                <li><a href="{{ route('admin-blog-comments') }}">Комментарии к статьям</a></li>
-                            </ul>
-                        </li>--}}
                         <li>
                             <a href="javascript:;">
                                 <i class="fa fa-briefcase"></i><span>Бесплатное курсы</span>
                             </a>
                             <ul class="acc-menu">
-                                <li><a href="#">HTML\CSS</a></li>
-                                <li><a href="#">PHP</a></li>
-                                <li><a href="#">Git\GitHub</a></li>
-                                <li><a href="#">JavaScript</a></li>
-                                <li><a href="#">Bootstrap</a></li>
-                                <li><a href="#">Laravel</a></li>
+                                @foreach($free_courses_menu as $menu)
+                                <li><a href="{{ route($menu->free_link_name) }}">{{ $menu->name }}</a></li>
+                                @endforeach
                             </ul>
                         </li>
                         {{--<li class="nav-separator">Статичные страницы</li>

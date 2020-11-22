@@ -5,13 +5,14 @@
             <a href="{{ route('user-info') }}">{{ $breadcrumb_user_info }}</a>
         </li>
     @endif
+    @if(isset($breadcrumb_free_courses_html))
+        <li @if(!isset($second_breadcrumb))class="active"@endif>
+            <a href="{{ route('free-courses-html') }}">{{ $breadcrumb_free_courses_html }}</a>
+        </li>
+    @endif
     @if(isset($second_breadcrumb))
         <li class="active">
-            <a href="
-            @if(isset($breadcrumb_user))
-                {{ route('admin-users-edit',$id) }}
-            @endif">
-                {{ $second_breadcrumb }}</a>
+            <a href="#">{{ $second_breadcrumb }}</a>
         </li>
     @endif
 </ol>
@@ -20,6 +21,12 @@
         @if(!isset($second_breadcrumb))
             @if(isset($breadcrumb_home))
                 {{ $breadcrumb_home }}
+            @endif
+            @if(isset($breadcrumb_user_info))
+                {{ $breadcrumb_user_info }}
+            @endif
+            @if(isset($breadcrumb_free_courses))
+                {{ $breadcrumb_free_courses }}
             @endif
             @else
             {{ $second_breadcrumb }}

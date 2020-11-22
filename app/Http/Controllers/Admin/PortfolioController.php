@@ -17,7 +17,7 @@ class PortfolioController extends AppController
     protected $breadcrumb_portfolio = 'Портфолио';
     public function index(){
         $portfolio = DB::table('portfolio')->paginate($this->perpage);
-        $title = 'One-Page - админ панель портфолио';
+        $title = $this->title.'админ панель портфолио';
         $data = array_merge($this->chat(),[
             'title' => $title,
             'portfolio' => $portfolio,
@@ -47,7 +47,7 @@ class PortfolioController extends AppController
             return redirect()->route('admin-portfolio');
         }
         $portfolio = Portfolio::all()->where('id', $id);
-        $title = 'One-Page - админ панель портфолио';
+        $title = $this->title.'админ панель портфолио';
         foreach ($portfolio as $p){
             $second_breadcrumb = 'Редактирование портфолио'.$p->title;
         }
@@ -76,7 +76,7 @@ class PortfolioController extends AppController
             ]);
             return redirect()->route('admin-portfolio');
         }
-        $title = 'One-Page - админ панель портфолио';
+        $title = $this->title.'админ панель портфолио';
         $second_breadcrumb = 'Добавление портфолио';
         $portfolio = Portfolio::all();
         foreach ($portfolio as $item){

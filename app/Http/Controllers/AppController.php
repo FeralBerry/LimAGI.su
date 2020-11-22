@@ -5,12 +5,15 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Chat;
+use App\Models\FreeCourses;
+use App\Models\FreeCoursesName;
 
 class AppController extends Controller
 {
     public function __construct(){
 
     }
+    protected $title = 'LimAGI - ';
     protected function chat(){
         $data = [
             'chat_admin' => $this->chatAdmin(),
@@ -18,6 +21,7 @@ class AppController extends Controller
             'chat_php' => $this->chatPhp(),
             'chat_js' => $this->chatJs(),
             'chat_design' => $this->chatDesign(),
+            'free_courses_menu' => $this->freeCoursesMenu(),
         ];
         return $data;
     }
@@ -60,5 +64,9 @@ class AppController extends Controller
             ->get()
             ->reverse();
         return $chat_disign;
+    }
+    protected function freeCoursesMenu(){
+        $free_courses_menu = FreeCoursesName::all();
+        return $free_courses_menu;
     }
 }

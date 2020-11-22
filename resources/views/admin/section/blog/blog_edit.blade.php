@@ -91,7 +91,7 @@
                         <div class="col-sm-8">
                             <input type="file" name="img" accept="image/*" onchange="loadFile(event)" >
                             <img class="col-sm-5" id="output"/>
-                            @if($item->img !== '')<img src="{{ asset('images/blog/img/') }}/{{ $item->img }}" class="col-sm-5">
+                            @if($item->img !== '')<img src="{{ asset('base/img/blog/img/') }}/{{ $item->img }}" class="col-sm-5">
                             <a href="{{ route('admin-blog-image-delete', $item->id) }}"><i class="fa fa-close" style="color: red; font-size: 50px"></i></a><br>@endif
                         </div>
                     </div>
@@ -100,7 +100,7 @@
                         <div class="col-sm-8">
                             <input type="file" name="title_img" accept="image/*" onchange="loadTitleImg(event)" >
                             <img class="col-sm-5" id="title_img"/>
-                            @if($item->title_img !== '')<img src="{{ asset('images/blog/title_img/') }}/{{ $item->title_img }}" class="col-sm-5">
+                            @if($item->title_img !== '')<img src="{{ asset('base/img/blog/title_img/') }}/{{ $item->title_img }}" class="col-sm-5">
                             <a href="{{ route('admin-blog-title-image-delete', $item->id) }}"><i class="fa fa-close" style="color: red; font-size: 50px"></i></a><br>@endif
                         </div>
                     </div>
@@ -109,7 +109,7 @@
                         <div class="col-sm-8">
                             <input type="file" name="videoImg" accept="image/*" onchange="loadFileVideoImg(event)">
                             <img class="col-sm-5" id="videoImg"/>
-                            @if($item->video_img !== '')<img src="{{ asset('images/blog/video-img/') }}/{{ $item->video_img }}" class="col-sm-5">
+                            @if($item->video_img !== '')<img src="{{ asset('base/img/blog/video-img/') }}/{{ $item->video_img }}" class="col-sm-5">
                             <a href="{{ route('admin-blog-videoImg-delete', $item->id) }}"><i class="fa fa-close" style="color: red; font-size: 50px"></i></a><br>@endif
                         </div>
                     </div>
@@ -117,7 +117,7 @@
                         <label class="col-sm-2 control-label">Видео для блога</label>
                         <div class="col-sm-8">
                             <input type="file" name="video" accept="video/*" onchange="loadVideoFile(event)">
-                            @if($item->video !== '')<iframe class="col-sm-11" src="{{ asset('images/blog/video/') }}/{{ $item->video }}" height="400px" width="300px" id="videoFile"></iframe>
+                            @if($item->video !== '')<iframe class="col-sm-11" src="{{ asset('base/img/blog/video/') }}/{{ $item->video }}" height="400px" width="300px" id="videoFile"></iframe>
                             <a href="{{ route('admin-blog-video-delete', $item->id) }}"><i class="fa fa-close" style="color: red; font-size: 50px"></i></a><br>@endif
                         </div>
                     </div>

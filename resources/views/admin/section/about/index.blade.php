@@ -14,7 +14,7 @@
                             <th>Заголовок</th>
                             <th>Краткое описание</th>
                             <th>Связаные страницы блога</th>
-                            <th>Изображение</th>
+                            <th>Иконка</th>
                             <th>Кнопки</th>
                         </tr>
                         </thead>
@@ -35,10 +35,10 @@
                                     @endforeach
                                 </td>
                                 <td>
-                                    @if($a->img == '')
+                                    @if($a->icon == '')
                                         Нет
                                     @else
-                                        Есть
+                                        <i class="fa {{ $a->icon }}" aria-hidden="true"></i>
                                     @endif
                                 </td>
                                 <td>
