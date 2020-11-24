@@ -8,14 +8,15 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ $title ?? 'One-Page' }}</title>
-    <meta name="description" content="{{ $description ?? 'One-Page - разработка выших сайтов любой сложности' }}">
-    <meta name="keywords" content="{{ $keywords ?? '' }}">
-    <meta name="author" content="{{ 'One-Page' }}">
+    <title>{{ $title ?? 'LimAGI' }}</title>
+    <meta name="description" content="{{ $description ?? 'LimAGI - разработка выших сайтов любой сложности' }}">
+    <meta name="keywords" content="{{ $keywords ?? 'LimAGI, разработка, сайт, под, ключ' }}">
+    <meta name="author" content="{{ 'LimAGI' }}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicons
     ================================================== -->
-    <link rel="shortcut icon" href="{{ asset('favicon.png') }}">
+
+    <link rel="shortcut icon" href="{{ asset('favicon.png') }}" type="image/png">
     <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
     <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('apple-touch-icon-72x72.png') }}">
     <link rel="apple-touch-icon" sizes="114x114" href="{{ asset('apple-touch-icon-114x114.png') }}">
@@ -48,8 +49,8 @@
 <!-- /Yandex.Metrika counter -->
 </head>
 <body data-offset="200" data-spy="scroll" data-target=".ow-navigation">
-@include('auth.login')
-@include('auth.register')
+@include('layouts.base.login_modal')
+@include('layouts.base.reg_modal')
 <!-- Loader -->
 <div id="site-loader" class="load-complete">
     <div class="loader">
@@ -57,78 +58,12 @@
             <div></div>
         </div>
     </div>
-</div><!-- Loader /- -->
+</div>
+<!-- Loader /- -->
 @yield('header')
 @yield('slider')
 @yield('content')
 @yield('footer')
-{{--<script type="text/javascript" src="{{ asset('js/jquery-2.1.1.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/royal_preloader.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/UserMenu.js') }}"></script>
-<script type="text/javascript">
-    (function($) { "use strict";
-        Royal_Preloader.config({
-            mode:           'text', // 'number', "text" or "logo"
-            text:           "One-Page",
-            timeout:        0,
-            showInfo:       true,
-            opacity:        1,
-            background:     ['#FFFFFF'],
-        });
-    })(jQuery);
-</script>
-<script type="text/javascript" src="{{ asset('js/jquery.easing.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/menu.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/velocity.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/velocity.ui.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/jquery.fs.tipper.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/owl.carousel.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/home-scroll.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/custom-home.js') }}"></script>
-@if(isset($cfg))
-    @if($cfg == 1)
-        <script type="text/javascript" src="{{ asset('js/canvas.js') }}"></script>
-    @endif
-@endif
-<script type="text/javascript" src="{{ asset('js/jquery.chaffle.min.js') }}"></script>
-<script type="text/javascript">
-    (function($) { "use strict";
-        $(document).ready(function() {
-            $('.chaffle').chaffle({
-                speed: 10,
-                time: 60
-            });
-        });
-    })(jQuery);
-</script>
-<script type="text/javascript" src="{{ asset('js/imagesloaded.pkgd.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/masonry.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/isotope.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/jquery.fitvids.js') }}"></script>
-<script type="text/javascript">
-    (function($) { "use strict";
-        $(".blog-box-1").fitVids();
-    })(jQuery);
-</script>
-<script type="text/javascript">
-    (function($) { "use strict";
-        $('.vimeo a,.youtube a').click(function (e) {
-            e.preventDefault();
-            var videoLink = $(this).attr('href');
-            var classeV = $(this).parent();
-            var PlaceV = $(this).parent();
-            if ($(this).parent().hasClass('youtube')) {
-                $(this).parent().wrapAll('<div class="video-wrapper">');
-                $(PlaceV).html('<iframe frameborder="0" height="333" src="' + videoLink + '?autoplay=1&showinfo=0" title="YouTube video player" width="547"></iframe>');
-            } else {
-                $(this).parent().wrapAll('<div class="video-wrapper">');
-                $(PlaceV).html('<iframe src="' + videoLink + '?title=0&amp;byline=0&amp;portrait=0&amp;autoplay=1&amp;color=cfa144" width="500" height="281" frameborder="0"></iframe>');
-            }
-        });
-    })(jQuery);
-</script>
-<script type="text/javascript" src="{{ asset('js/custom-blog.js') }}"></script>
-<script type="text/javascript" src="{{ asset('js/ajax.js') }}"></script>--}}
 <!-- JQuery v1.11.3 -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="{{ asset('base/js/jquery.min.js') }}"></script>
@@ -141,5 +76,8 @@
 <script src="{{ asset('base/js/functions.js') }}"></script>
 <script src="{{ asset('base/js/blog.js') }}"></script>
 <script src="{{ asset('base/js/modal.js') }}"></script>
+@if(Request::path() == '/')
+    <script src="{{ asset('base/js/timer.js') }}"></script>
+@endif
 </body>
 </html>

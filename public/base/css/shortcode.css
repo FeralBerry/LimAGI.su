@@ -1141,6 +1141,7 @@
 	display: inline-block;
 	width: 100%;
 	text-align: center;
+    min-height: 450px;
 }
 .hurryup-block .timer-box h3 {
 	margin: 0;
@@ -1179,6 +1180,7 @@
 	-webkit-transition: all 1s ease 0s;
 	-moz-transition: all 1s ease 0s;
 	-o-transition: all 1s ease 0s;
+    display: none;
 }
 .hurryup-block .carousel-control:hover {
 	background-color: #222;
@@ -1236,6 +1238,7 @@
 	display: inline-block;
 	width: 100%;
 	text-align: center;
+    min-height: 450px;
 }
 .booking-form-block h3 {
 	color: #fff;
@@ -1246,7 +1249,7 @@
 	line-height: 30px;
 	font-weight: 600;
 	text-align: left;
-	margin-bottom: 35px;
+	margin-bottom: 14px;
 }
 .booking-form-block .form-group {
 	margin-bottom: 20px;
@@ -2377,7 +2380,7 @@
 /* -- UpComing Event */
 .upcoming-event.latest-blog .type-post  {
 	position: relative;
-	margin-bottom: 40px;
+    margin-bottom: 170px;
 }
 .upcoming-event.latest-blog .type-post .entry-cover::before {
 	border: none;
@@ -2387,7 +2390,7 @@
 }
 .upcoming-event.latest-blog  .entry-block {
 	position: absolute;
-	top: 50%;
+	top: 100%;
 	left: 160px;
 	right: 50px;
 	-webkit-transform: translate(0, -50%);
@@ -2472,7 +2475,7 @@
 }
 .upcoming-event.latest-blog .post-location {
 	text-transform: capitalize;
-	color: #777;
+	color: #f7f8f9;
 	font-size: 13px;
 	padding-left: 16px;
 	text-align: left;
@@ -3220,6 +3223,7 @@
 	}
 	.booking-form-block {
 		padding: 40px 62px 63px;
+        padding-bottom: 20px;
 	}
 
 	/* -- EventSingle:: Schedule */
@@ -4100,7 +4104,20 @@
 	/* -- Slider Section */
 	.slider-content-box {
 		padding: 15px;
+        height: 370px !important;
 	}
+    .slider-section .carousel-caption {
+        margin-top: 230px;
+    }
+    .carousel-inner{
+        min-height: 600px;
+    }
+    .slider-section .carousel-control.left {
+         display: none;
+     }
+    .slider-section .carousel-control.right {
+        display: none;
+    }
 	.slider-content-box::after {
 		left: 5px;
 		right: 5px;
@@ -4134,7 +4151,7 @@
 		bottom: 15px;
 	}
 	.slider-section .carousel-inner > .item > img	{
-		height: 260px;
+		height: 200px;
 	}
 
 	/* -- Howwecan2 */
@@ -4143,7 +4160,7 @@
 	}
 	.howwecan-section.howwecan-section2 .howwecan-left {
 		margin-top: 0;
-		margin-left: 0;
+		margin-left: 60px;
 	}
 
 	/* -- Introduction Section */
@@ -4360,7 +4377,12 @@
 	.slider-section .container .col-xs-9 {
 		width: 100%;
 	}
-
+    .slider-section .carousel-caption{
+        margin-top: -10px;
+    }
+    .carousel-inner{
+        height: 550px;
+    }
 	/* -- Howwecan Section */
 	.howwecan-section .section-header {
 		margin-bottom: 0;
@@ -4693,6 +4715,28 @@
 /* --  max-width: 360 */
 @media (max-width: 360px) {
 	/* -- Slider Section */
+    .carousel-inner {
+        min-height: 550px;
+    }
+    .countdown-time{
+        height: 55px;
+        width: 90px;
+    }
+    .countdown-number{
+        margin-top: 10px;
+    }
+    .booking-form-block{
+        margin-top: -135px;
+    }
+    .slider-content-box{
+        margin-top: -30px;
+    }
+    .slider-section .carousel-caption{
+        margin-top: 200px;
+    }
+    .slider-section .carousel-inner > .item > img{
+        height: 180px;
+    }
 	.slider-content-box {
 		padding: 10px;
 		width: 100%;

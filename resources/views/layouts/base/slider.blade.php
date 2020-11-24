@@ -8,19 +8,19 @@
                         <div class="slider-content-box">
                             <div class="the-curb-inside">
                                 <div class="col-md-12 col-sm-12 col-xs-6 no-padding">
-                                    <h3 class="slider-title">Можите оставить заявку на сайте</h3>
+                                    <h3 class="slider-title">Можете оставить заявку здесь</h3>
                                     <p>Я перезвоню или спишусь с вами в ближайшее время</p>
                                 </div>
                                 <form action="{{ route('index') }}" method="post">
                                     @csrf
                                     <div class="form-group">
-                                        <input type="text" name="name" class="form-control" id="input_name" placeholder="Your Name*" required>
+                                        <input type="text" name="name" class="form-control" id="input_name" placeholder="Ваше имя*" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" name="phone" class="form-control" id="input_phone" placeholder="Phone*" required>
+                                        <input type="text" name="phone" class="form-control" id="input_phone" placeholder="Телефон*" required>
                                     </div>
                                     <div class="form-group">
-                                        <input type="email" name="email" class="form-control" id="input_email" placeholder="Your E-mail*" required>
+                                        <input type="email" name="email" class="form-control" id="input_email" placeholder="Ваш E-mail*" required>
                                     </div>
                                     <button type="submit" class="btn slider-btn">Отправить</button>
                                 </form>
@@ -34,9 +34,6 @@
                     <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
                         <i class="fa fa-angle-right"></i>
                     </a>
-                </div>
-                <div class="container">
-
                 </div>
             </div>
             <div class="item active">

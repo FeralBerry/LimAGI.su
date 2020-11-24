@@ -55,7 +55,6 @@ a {
 /* - Section Padding */
 .section-padding {
 	padding-top: 60px;
-	padding-bottom: 60px;
 }
 
 /* - Block Title */
@@ -578,6 +577,7 @@ a {
 	float: right;
 }
 .top-header .register a {
+    cursor: pointer;
 	background-color: #29363e;
     border-radius: 30px;
     color: #fff;
@@ -1154,6 +1154,13 @@ a {
 	}
 }
 @media (max-width: 479px) {
+    .no-display-width-max-479px{
+        display:none;
+    }
+    .comment-form input[type="submit"]{
+        padding: 10px 15px;
+        margin: 18px 0px 0;
+    }
 	.top-header .col-xs-6 {
 		width: 100%;
 		float: none;
@@ -1163,7 +1170,7 @@ a {
 		width: 210px;
 	}
 	.footer-about img {
-		max-width: 46px;
+        max-width: 80px;
 	}
 	.footer-main .logo-block {
 		position: relative;
@@ -1331,6 +1338,7 @@ a {
     letter-spacing: 1.56px;
     font-size: 30px;
     display: inline-block;
+    margin-top: -70px;
 }
 .close_modal_login:hover {
     color: #fff;
@@ -1367,4 +1375,60 @@ a {
 .introduction-section .col-md-12.no-padding.about6::before{
     background-image: url("../img/about/laravel.jpg");
     background-size: cover;
+}
+.countdown {
+    font-family: sans-serif;
+    color: #fff;
+    display: inline-block;
+    font-weight: 100;
+    text-align: center;
+    font-size: 30px;
+}
+
+.countdown-number {
+    border: 3px solid #fff;
+    padding: 10px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.countdown-time {
+    height: 50px;
+    width: 70px;
+    border-radius: 3px;
+    display: inline-block;
+}
+.countdown-text {
+    display: block;
+    padding-top: 5px;
+    font-size: 16px;
+}
+.login-form-section{
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+.login-form-section input[type="submit"]{
+    padding: 5px 36px;
+    border-radius: 0;
+    background-color: #feca16;
+    border: none;
+    color: #fff;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1.56px;
+    line-height: 30px;
+    transition: all 1s ease 0s;
+    -webkit-transition: all 1s ease 0s;
+    -moz-transition: all 1s ease 0s;
+    -o-transition: all 1s ease 0s;
+    margin-top: 10px;
+    -webkit-box-shadow: none;
+    -webkit-appearance: none;
+    box-shadow: none;
+    outline: none;
+}
+.login-form-section input[type="submit"]:hover {
+    background-color: #3a464d;
 }

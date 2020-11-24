@@ -33,7 +33,7 @@
                     <div class="col-sm-8">
                         <input type="file" name="img" accept="image/*" onchange="loadFile(event)" >
                         <img class="col-sm-5" id="output"/>
-                        @if($item->img !== '')<img src="{{ asset('images/portfolio/') }}/{{ $item->img }}" class="col-sm-5">
+                        @if($item->img !== '')<img src="{{ asset('base/img/portfolio/') }}/{{ $item->img }}" class="col-sm-5">
                         <a href="{{ route('admin-portfolio-image-delete', $item->id) }}"><i class="fa fa-close" style="color: red; font-size: 50px"></i></a><br>@endif
                     </div>
                 </div>

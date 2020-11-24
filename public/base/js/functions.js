@@ -1,36 +1,7 @@
-/*
-	Project Name : Mitri Events
-	
-	-- Google Map
-	-- Slider Content
-	
-	## Document Scroll		
-		
-	## Document Ready
-		-- Scrolling Navigation
-		-- Find all anchors
-		-- Add Easing Effect
-		-- Responsive Caret
-		-- Remove p empty tag for Shortcode
-		-- Expanding Search
-		-- ToolTip Toggle
-		-- Howwecan Section
-		-- Team Section
-		-- Introduction Section
-		-- Schedule Section
-		-- Testimonial Section
-		-- CountDown
-		-- Contact Map
-		-- Quick Contact Form
-
-	## Window Load
-		-- Site Loader
-*/
-
 (function($) {
 
-	"use strict"	
-	
+	"use strict"
+
 	/* -- Google Map */
 	function initialize(obj) {
 		var lat = $('#'+obj).attr("data-lat");
@@ -39,10 +10,10 @@
 		var myLatlng = new google.maps.LatLng(lat,lng);
 		var map, marker, infowindow;
 		var image = "images/marker.png";
-		var zoomLevel = parseInt($('#'+obj).attr("data-zoom") ,10);		
+		var zoomLevel = parseInt($('#'+obj).attr("data-zoom") ,10);
 		var styles = [{"featureType":"landscape","stylers":[{"saturation":" "},{"lightness":" "},{"visibility":"on"}]},{"featureType":"poi","stylers":[{"saturation":" "},{"lightness":" "},{"visibility":"simplified"}]},{"featureType":"road.highway","stylers":[{"saturation":" "},{"visibility":"simplified"}]},{"featureType":"road.arterial","stylers":[{"saturation":" "},{"lightness":" "},{"visibility":"on"}]},{"featureType":"road.local","stylers":[{"saturation":" "},{"lightness":" "},{"visibility":"on"}]},{"featureType":"transit","stylers":[{"saturation":" "},{"visibility":"simplified"}]},{"featureType":"administrative.province","stylers":[{"visibility":"off"}]},{"featureType":"water","elementType":"labels","stylers":[{"visibility":"on"},{"lightness":" "},{"saturation":" "}]},{"featureType":"water","elementType":"geometry","stylers":[{"hue":"#ffff00"},{"lightness":" "},{"saturation":" "}]}]
-		var styledMap = new google.maps.StyledMapType(styles,{name: "Styled Map"});	
-		
+		var styledMap = new google.maps.StyledMapType(styles,{name: "Styled Map"});
+
 		var mapOptions = {
 			zoom: zoomLevel,
 			disableDefaultUI: true,
@@ -52,16 +23,16 @@
             mapTypeIds: [google.maps.MapTypeId.ROADMAP, "map_style"]
 			}
 		}
-		
-		map = new google.maps.Map(document.getElementById(obj), mapOptions);	
-		
+
+		map = new google.maps.Map(document.getElementById(obj), mapOptions);
+
 		map.mapTypes.set("map_style", styledMap);
 		map.setMapTypeId("map_style");
-		
+
 		infowindow = new google.maps.InfoWindow({
 			content: contentString
-		});      
-	    
+		});
+
         marker = new google.maps.Marker({
 			position: myLatlng,
 			map: map,
@@ -70,16 +41,16 @@
 
 		google.maps.event.addListener(marker, "click", function() {
 			infowindow.open(map,marker);
-		});	
+		});
 	}
-	
+
 	/* -- Slider Content */
 	function slider_content() {
 		var s_height = $(".slider-section").height();
 		$(".slider-section .slider-content-box").css( "height", s_height ).delay( 2000 ).fadeIn();
 	}
-	
-	
+
+
 	/* ## Document scroll() - Scroll */
 	$( document ).on("scroll",function()
 	{
@@ -98,10 +69,10 @@
 		else
 		{
 			$(".menu-block").removeClass("navbar-fixed-top animated fadeInDown");
-		} 	
+		}
 
 		if ($(this).scrollTop() >= 50)
-		{			
+		{
 			$("#back-to-top").fadeIn(200);    /* Fade in the arrow */
 		}
 		else
@@ -109,15 +80,15 @@
 			$("#back-to-top").fadeOut(200);   /* Else fade out the arrow */
 		}
 	});
-		
+
 	/* ## Document Ready - Handler for ready() called */
 	$(document).on("ready",function() {
-		
+
 		/* -- Scrolling Navigation */
 		var scroll	=	$(window).scrollTop();
 		var width	=	$(window).width();
 		var height	=	$(window).height();
-		
+
 		/*** set sticky menu ***/
 		if( scroll >= height -500 )
 		{
@@ -131,7 +102,7 @@
 		{
 			$(".menu-block").removeClass("navbar-fixed-top");
 		} /* set sticky menu - end */
-		
+
 		/* local url of page (minus any hash, but including any potential query string) */
 		var url = location.href.replace(/#.*/,'');
 
@@ -164,8 +135,8 @@
 					return false;
 				}
 			}
-		});	
-		
+		});
+
 		/* -- Responsive Caret */
 		$(".ddl-switch").on("click", function() {
 
@@ -180,7 +151,7 @@
 				li.children(".dropdown-menu").slideDown();
 			}
 		});
-		
+
 		/* -- Remove p empty tag for Shortcode */
 		$( "p" ).each(function() {
 			var $this = $( this );
@@ -188,25 +159,25 @@
 				$this.remove();
 			}
 		});
-		
+
 		/* -- Expanding Search */
 		new UISearch( document.getElementById( "sb-search" ) );
-		
+
 		/* -- ToolTip Toggle */
-		$('[data-toggle="tooltip"]').tooltip({placement:"bottom"});				
-		
+		$('[data-toggle="tooltip"]').tooltip({placement:"bottom"});
+
 		/* -- Howwecan Section */
-		function howwecan_section(){			
-			var width	=	$(window).width();			
+		function howwecan_section(){
+			var width	=	$(window).width();
 			if( width <= 480 ){
 				$('.howwecan-right .nav-tabs li > a').on('click', function() {
 					$('html, body').animate({ scrollTop: $(".tab-content").offset().top - 125}, 2000 );
 				});
 			}
 		}
-		
+
 		/* -- Team Section */
-		if( $(".team-section").length ) {			
+		if( $(".team-section").length ) {
 			$("#team-carousel").lightSlider({
 				gallery: true,
 				loop: true,
@@ -220,9 +191,9 @@
 				vThumbHeight: 85,
 				thumbMargin: 20,
 				thumbItem: 4
-			});			
+			});
 		}
-				
+
 		/* -- Introduction Section */
 		if( $(".introduction-carousel").length ) {
 			$(".introduction-carousel").owlCarousel({
@@ -247,17 +218,17 @@
 
 			});
 		}
-		
+
 		/* -- Schedule Section  */
 		if($(".schedule-accordion").length){
-			
-			$(".panel-default .panel-title a").on( "click", function(){				
+
+			$(".panel-default .panel-title a").on( "click", function(){
 				$('.panel-default').addClass('intro');
 				return false;
 			});
-		}		
-		
-		/* -- Testimonial Section */		
+		}
+
+		/* -- Testimonial Section */
 		if( $(".testimonial-block").length ) {
 			$(".testimonial-carousel-left,.testimonial-carousel-right").owlCarousel({
 				loop: true,
@@ -279,29 +250,29 @@
 				}
 			});
 		}
-		
+
 		slider_content();
 		howwecan_section();
-			
-		/* -- CountDown */		
+
+		/* -- CountDown */
 		var ele_id = 0;
-		$( "[id*='clock-']" ).each(function () { 
+		$( "[id*='clock-']" ).each(function () {
 			ele_id = $(this).attr('id').split("-")[1];
 			var cnt_date = $(this).attr("data-date");
 			$("[id*='clock-"+ele_id+"']").countdown(cnt_date, function(event) {
-				var $this = $(this).html(event.strftime(''    
+				var $this = $(this).html(event.strftime(''
 				+ '<p>%D <span>Days</span></p>'
 				+ '<p>%H <span>Hours</span></p>'
 				+ '<p>%M <span>Mins</span></p>'
 				+ '<p>%S <span>Secs</span></p>'));
 		    });
 		});
-		
+
 		/* -- Contact Map */
 		if($("#map-canvas-contact").length==1){
 			initialize("map-canvas-contact");
 		}
-		
+
 		/* -- Quick Contact Form */
 		$( "#btn_submit" ).on( "click", function(event) {
 		  event.preventDefault();
@@ -320,13 +291,13 @@
 					} else {
 						$("#alert-msg").html(data["msg"]);
 						$("#alert-msg").addClass("alert-msg-success");
-						$("#alert-msg").removeClass("alert-msg-failure");					
-						$("#input_name").val("");						
-						$("#input_email").val("");						
-						$("#input_phone").val("");						
+						$("#alert-msg").removeClass("alert-msg-failure");
+						$("#input_name").val("");
+						$("#input_email").val("");
+						$("#input_phone").val("");
 						$("#textarea_message").val("");
-						$("#alert-msg").show();				
-					}			
+						$("#alert-msg").show();
+					}
 				},
 				error: function(xhr, textStatus, errorThrown) {
 					alert(textStatus);
@@ -335,20 +306,20 @@
 			return false;
 			$("#contact-form").attr("action", "saveQuery").submit();
 		});
-		
+
 	});	/* -- Document Ready /- */
-	
+
 	$(window).on( "resize", function () {
 		var width	=	$(window).width();
-		
+
 		slider_content()
-		
+
 		/* -- Howwecan Section */
 		if($(".howwecan_section").length) {
 			howwecan_section()
 		}
 	});
-		
+
 	/* ## Window Load - Handler for load() called */
 	$(window).on("load",function() {
 		/* -- Site Loader */

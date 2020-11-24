@@ -12,7 +12,7 @@
     @include('layouts.admin.breadcrumb')
 @endsection
 @section('content')
-    @include('admin.section.portfolio.edit.blade.php')
+    @include('admin.section.portfolio.edit')
 @endsection
 @section('footer')
     @include('layouts.admin.footer')

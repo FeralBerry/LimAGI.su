@@ -4,7 +4,7 @@
     <div class="container">
         <div class="banner-content-block">
             <div class="banner-content">
-                <h3>Recent Updates</h3>
+                <h3>Новости сайта</h3>
                 <ol class="breadcrumb">
                     <li><a href="{{ route('index') }}">На главную</a></li>
                     <li class="active">Блог</li>
@@ -13,7 +13,8 @@
         </div>
     </div>
     <div class="section-padding"></div>
-</div><!-- PageBanner /- -->
+</div>
+<!-- PageBanner /- -->
 <!-- Blog News -->
 <div class="container-fluid eventlist blog upcoming-event latest-blog no-padding">
     <div class="section-padding"></div>
@@ -127,17 +128,7 @@
                         @endforeach
                     </ul>
                 </aside>
-                <aside class="widget widget_event">
-                    <div class="event-block">
-                        <h3>January 03-07</h3>
-                        <p>09, Design Street, New York, United States </p>
-                        <div class="event-content">
-                            <img src="{{ asset('base/img/slider-thumb1.jpg') }}" alt="slider-thumb" width="74" height="74"/>
-                            <h4>Daniel Lesner<span>public speaker</span></h4>
-                        </div>
-                        <a title="Register now" href="#">Register Now</a>
-                    </div>
-                </aside>
+                @include('base.section.advertising_block')
                 @include('base.section.recent_news')
                 {{--<aside class="widget widget_archives widget_categories">
                     <div class="widget-title">

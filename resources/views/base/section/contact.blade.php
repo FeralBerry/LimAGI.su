@@ -1,52 +1,65 @@
-<div class="section">
-    <div class="container header-big-text">
-        <div class="twelve columns">
-            <div class="title-page-text padding-top-bottom-title">
-                <h2>Свяжитесь со мной</h2>
-                <p>постараюсь ответить в ближайший час</p>
+<!-- PageBanner -->
+<div class="container-fluid page-banner blogpost no-padding">
+    <div class="section-padding"></div>
+    <div class="container">
+        <div class="banner-content-block">
+            <div class="banner-content">
+                <h3>Контакты</h3>
+                <ol class="breadcrumb">
+                    <li><a href="{{ route('index') }}">На главную</a></li>
+                    <li class="active">Контакты</li>
+                </ol>
             </div>
         </div>
     </div>
+    <div class="section-padding"></div>
 </div>
-<div class="clear"></div>
-<div class="section">
-    <div class="container">
-        <form name="ajax-form" id="ajax-form" action="{{ route('contact') }}" method="post">
-            @csrf
-            <div class="six columns">
-                <label for="name">
-                    <span class="error" id="err-name">Пожалуйства введите ваше имя</span>
-                </label>
-                <input name="name" id="name" type="text"   placeholder="Ваше имя: *"/>
+<!-- PageBanner /- -->
+<div class="container">
+    <div class="row contact-form-section">
+        <div class="col-md-8 col-sm-8">
+            <div class="section-header">
+                <h3>Свяжитесь со мной</h3>
+                <span>постараюсь ответить в ближайший час</span>
             </div>
-            <div class="six columns">
-                <label for="email">
-                    <span class="error" id="err-email">пожалуйста введите ваш e-mail</span>
-                    <span class="error" id="err-emailvld">e-mail имеет не верный формат</span>
-                </label>
-                <input name="email" id="email" type="text"  placeholder="E-Mail: *"/>
-            </div>
-            <div class="six columns">
-                <label for="email">
-                    <span class="error" id="err-phone">Пожалуйста введите ваш телефон</span>
-                </label>
-                <input name="phone" id="phone" type="text"  placeholder="Телефон: *"/>
-            </div>
-            <div class="twelve columns">
-                <label for="message"></label>
-                <textarea name="message" id="message" placeholder="Опишите что вас интересует"></textarea>
-            </div>
-            <div class="twelve columns">
-                <div id="button-con"><button type="submit" class="send_message button button--moema button--text-thick button--text-upper button--size-s" id="send" data-lang="en">Отправить</button></div>
-            </div>
-            <div class="clear"></div>
-            <div class="error text-align-center" id="err-form">Проверьте правильность заполнения формы!</div>
-            <div class="error text-align-center" id="err-timedout">Время ожидания истекло!</div>
-            <div class="error" id="err-state"></div>
-        </form>
-        <div class="clear"></div>
-        <div id="ajaxsuccess">Успешно отправлено!!</div>
-        <div class="clear"></div>
+            <form id="contact-form" class="contactus-form" action="{{ route('contact') }}" method="post">
+                @csrf
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <input type="text" name="contact-name" class="form-control" id="input_name" placeholder="Ваше имя*" required/>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <input type="text" name="contact-phone" class="form-control" id="input_phone" placeholder="телефон"/>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <input type="email" name="contact-email" class="form-control" id="input_email" placeholder="Email*" required/>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                    <div class="form-group">
+                        <input type="text" name="contact-subject" class="form-control" id="input_subject" placeholder="Тема вопроса"/>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <textarea rows="10" name="contact-message" class="form-control" id="textarea_message" placeholder="Сообщение"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <input type="submit" value="Отправить" id="btn_submit" title="Отправить" name="post">
+                    </div>
+                </div>
+                <div id="alert-msg" class="alert-msg"></div>
+            </form>
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-6 widget-area">
+            @include('base.section.advertising_block')
+        </div>
     </div>
 </div>
 

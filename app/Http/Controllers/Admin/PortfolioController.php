@@ -31,7 +31,7 @@ class PortfolioController extends AppController
             if ($request->hasFile('img')) {
                 $image = $request->file('img');
                 $img_name = time().'.'.$image->getClientOriginalExtension();
-                $destinationPath = public_path('/images/portfolio/');
+                $destinationPath = public_path('/base/img/portfolio/');
                 $image->move($destinationPath, $img_name);
             } else {
                 foreach ($portfolio as $item){
@@ -65,7 +65,7 @@ class PortfolioController extends AppController
             if ($request->hasFile('img')) {
                 $image = $request->file('img');
                 $img_name = time().'.'.$image->getClientOriginalExtension();
-                $destinationPath = public_path('/images/portfolio/');
+                $destinationPath = public_path('/base/img/portfolio/');
                 $image->move($destinationPath, $img_name);
             }
             Portfolio::create([

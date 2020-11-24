@@ -25,7 +25,7 @@
                                 <td style="text-align: left">{{ $p->id }}</td>
                                 <td>{{ $p->title }}</td>
                                 <td>{{ $p->sub_title }}</td>
-                                <td><img style="max-width: 400px; max-height: 300px;" src="{{ asset('images/portfolio/') }}/{{ $p->img }}"></td>
+                                <td><img style="max-width: 400px; max-height: 300px;" src="{{ asset('base/img/portfolio/') }}/{{ $p->img }}"></td>
                                 <td>{{ $p->created_at }}</td>
                                 <td>{{ $p->updated_at }}</td>
                                 <td>

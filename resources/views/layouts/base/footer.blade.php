@@ -5,16 +5,17 @@
         <!-- Footer About -->
         <div class="footer-about">
             <div class="logo-block">
-                <img src="{{ asset('base/logo.png') }}" alt="LimagI" width="70" height="63"/>
+                <img src="{{ asset('base/logo.png') }}" alt="LimAGI" width="70" height="63"/>
                 <h3>LimAGI</h3>
             </div>
             <div class="footer-about-content">
-                <h3 class="block-title">Что такое LimagI</h3>
-                <p>Limit. Asterisk Gateway Interface</p>
-                <p>Предел шлюзового интерфейса Asterisk</p>
+                <h3 class="block-title">Что такое LimAGI</h3>
+                <a href="{{ route('blog-post', 0) }}">
+                    <p>Limit. Asterisk Gateway Interface(LAGI)</p>
+                    <p>Предел шлюзового интерфейса Asterisk</p>
+                </a>
             </div>
         </div><!-- Footer About /- -->
-
         <div class="row">
             <!-- Customer Service Widget -->
             <aside class="col-md-3 col-sm-6 col-xs-6 widget widget_customer_services">
@@ -55,8 +56,7 @@
                 <div class="contactinfo-box">
                     <i class="fa fa-map-marker"></i>
                     <p>
-                        <a href="mailto:info@one-page.com" title="info@one-page.com">info@one-page.com</a>
-                        <a href="mailto:support@one-page.com" title="support@one-page.com">support@one-page.com</a>
+                        <a href="mailto:limagi@limagi.su" title="limagi@limagi.su">limagi@limagi.su</a>
                     </p>
                 </div>
             </aside><!-- ContactUs Widget /- -->
