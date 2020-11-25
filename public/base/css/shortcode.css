@@ -2985,7 +2985,7 @@
 	outline: none;
 }
 .contact-form-section input[type="submit"]:hover {
-	background-color: #999;
+	background-color: #3a464d;
 }
 
 /* -- Alert Msg */
@@ -3334,6 +3334,20 @@
 
 /* -- max-width: 991 */
 @media (max-width: 991px) {
+    .naccs .menu div{
+        font-size: 10px;
+        font-weight:100;
+        padding:10px;
+    }
+    .naccs .menu div.active{
+        padding: 10px;
+    }
+    ul.nacc li p{
+        font-size: 16px;
+    }
+    .grid{
+        margin-left: 0;
+    }
 	/* -- Slider Section */
 	.slider-content-box {
 		padding: 25px;
@@ -3783,8 +3797,6 @@
 		left: 0;
 	}
 }
-
-
 /* -- max-width: 767 */
 @media (max-width: 767px) {
 	/* -- Section Header */
@@ -4360,20 +4372,31 @@
 		padding: 8px 20px;
 		font-size: 11px;
 	}
-
 	.widget-area,
 	.content-area {
 		width: 100%
 	}
-
 	.blog.upcoming-event.latest-blog .blog-box {
 		width: 100%;
 	}
 }
-
 /* --  max-width: 479 */
 @media (max-width: 479px) {
 	/* -- Slider Section */
+    .naccs .menu div{
+        font-size: 11px;
+        font-weight:100;
+        padding:10px;
+    }
+    .naccs .menu div.active{
+        padding: 10px;
+    }
+    ul.nacc li p{
+        font-size: 16px;
+    }
+    .grid{
+        margin-left: 0;
+    }
 	.slider-section .container .col-xs-9 {
 		width: 100%;
 	}
@@ -4715,6 +4738,20 @@
 /* --  max-width: 360 */
 @media (max-width: 360px) {
 	/* -- Slider Section */
+    .naccs .menu div{
+        font-size: 10px;
+        font-weight:100;
+        padding:10px;
+    }
+    .naccs .menu div.active{
+        padding: 10px;
+    }
+    ul.nacc li p{
+        font-size: 16px;
+    }
+    .grid{
+        margin-left: 0;
+    }
     .carousel-inner {
         min-height: 550px;
     }

@@ -15,7 +15,7 @@
     @include('user.index')
 @endsection
 @section('footer')
-    @include('layouts.user.footer')
+    @include('layouts.common_element.footer')
 @endsection
 @section('demo-options')
     {{--@include('layouts.user.demo-option')--}}

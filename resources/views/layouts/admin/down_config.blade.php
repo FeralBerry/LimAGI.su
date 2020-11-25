@@ -26,138 +26,43 @@
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+    <?php $chat_id = explode(',',Auth::user()->chat_id) ?>
+    @if(isset($chat_id))
+    @foreach($chat_room as $room)
+    @foreach($chat_id as $cid)
+    @if($cid == $room->id)
     $(document).ready(function(){
-        showChatAdmin();
-        setInterval('showChatAdmin()',1000);
-        showChatHtml();
-        setInterval('showChatHtml()',1000);
-        showChatPhp();
-        setInterval('showChatPhp()',1000);
-        showChatJs();
-        setInterval('showChatJs()',1000);
-        showChatDesign();
-        setInterval('showChatDesign()',1000);
+        showChat{{ $room->chat_name }}();
+        setInterval('showChat{{ $room->chat_name }}()',1000);
     });
-    function showChatAdmin() {
+    function showChat{{ $room->chat_name }}() {
         $.ajax({
-            url: '{{ route("chat-admin") }}',
+            url: '{{ route("chat-index",$room->id) }}',
             cache: false,
             success: function(html){
-                $("#chat_admin").html(html);
+                $("#chat_{{ $room->chat_name }}").html(html);
             }
         });
     }
-    function showChatHtml() {
+    $('#chat_send_{{ $room->chat_name }}').click(function () {
+        var name = $('#name_{{ $room->chat_name }}').val();
+        var message = $('#message_{{ $room->chat_name }}').val();
+        var room = $('#chat_room_{{ $room->chat_name }}').val();
         $.ajax({
-            url: '{{ route("chat-html") }}',
-            cache: false,
-            success: function(html){
-                $("#chat_html").html(html);
-            }
-        });
-    }
-    function showChatPhp() {
-        $.ajax({
-            url: '{{ route("chat-php") }}',
-            cache: false,
-            success: function(html){
-                $("#chat_php").html(html);
-            }
-        });
-    }
-    function showChatJs() {
-        $.ajax({
-            url: '{{ route("chat-js") }}',
-            cache: false,
-            success: function(html){
-                $("#chat_js").html(html);
-            }
-        });
-    }
-    function showChatDesign() {
-        $.ajax({
-            url: '{{ route("chat-design") }}',
-            cache: false,
-            success: function(html){
-                $("#chat_design").html(html);
-            }
-        });
-    }
-    $('#chat_send_admin').click(function () {
-        var name = $('#name_admin').val();
-        var message = $('#message_admin').val();
-        var room = $('#chat_room_admin').val();
-        $.ajax({
-            url: '{{ route("add-chat-admin") }}',
+            url: '{{ route("chat-index",$room->id ) }}',
             type: 'POST',
             cache: false,
-            data: {'name' : name, 'room' : room, 'message' : message,},
+            data: {'name' : name, 'id' : room, 'mess' : message,},
             dataType: 'html',
             success: function(data) {
-                $('#chat_admin').html(data);
+                $('#chat_{{ $room->chat_name }}').html(data);
             }
         });
     });
-    $('#chat_send_html').click(function () {
-        var name = $('#name_html').val();
-        var message = $('#message_html').val();
-        var room = $('#chat_room_html').val();
-        $.ajax({
-            url: '{{ route("add-chat-html") }}',
-            type: 'POST',
-            cache: false,
-            data: {'name' : name, 'room' : room, 'message' : message,},
-            dataType: 'html',
-            success: function(data) {
-                $('#chat_html').html(data);
-            }
-        });
-    });
-    $('#chat_send_php').click(function () {
-        var name = $('#name_php').val();
-        var message = $('#message_php').val();
-        var room = $('#chat_room_php').val();
-        $.ajax({
-            url: '{{ route("add-chat-php") }}',
-            type: 'POST',
-            cache: false,
-            data: {'name' : name, 'room' : room, 'message' : message,},
-            dataType: 'html',
-            success: function(data) {
-                $('#chat_php').html(data);
-            }
-        });
-    });
-    $('#chat_send_js').click(function () {
-        var name = $('#name_js').val();
-        var message = $('#message_js').val();
-        var room = $('#chat_room_js').val();
-        $.ajax({
-            url: '{{ route("add-chat-js") }}',
-            type: 'POST',
-            cache: false,
-            data: {'name' : name, 'room' : room, 'message' : message,},
-            dataType: 'html',
-            success: function(data) {
-                $('#chat_js').html(data);
-            }
-        });
-    });
-    $('#chat_send_design').click(function () {
-        var name = $('#name_design').val();
-        var message = $('#message_design').val();
-        var room = $('#chat_room_design').val();
-        $.ajax({
-            url: '{{ route("add-chat-design") }}',
-            type: 'POST',
-            cache: false,
-            data: {'name' : name, 'room' : room, 'message' : message,},
-            dataType: 'html',
-            success: function(data) {
-                $('#chat_design').html(data);
-            }
-        });
-    });
+    @endif
+    @endforeach
+    @endforeach
+    @endif
 </script>
 <!-- End loading site level scripts -->
 @if(route('admin-index') == url()->current())

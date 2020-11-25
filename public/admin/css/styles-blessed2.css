@@ -7347,17 +7347,17 @@ body.layout-boxed .infobar-wrapper {
   padding: 16px !important;
 }
 #topnav.navbar-default .navbar-brand {
-  background: url("../../images/logo.png") no-repeat -70px bottom;
+  background: url("../../base/logo.png") no-repeat -70px bottom;
 }
 #topnav .navbar-brand {
-    background: url('../../images/logo.png') no-repeat -10px top;
-    background-size: 200px;
+    background: url('../../base/logo.png') no-repeat 30px top;
+    background-size: 70px;
 }
 body.topnav-collapsed #topnav.navbar-default .navbar-brand {
-  background: url("../../images/logo.png") no-repeat -70px bottom;
+  background: url("../../base/logo.png") no-repeat -70px bottom;
 }
 body.topnav-collapsed #topnav .navbar-brand {
-  background: url("../../images/logo.png") no-repeat -70px top;
+  background: url("../../base/logo.png") no-repeat -70px top;
 }
 @media print {
   .static-sidebar-wrapper,
@@ -8262,7 +8262,7 @@ body.infobar-offcanvas #topnav {
   filter: alpha(opacity=50);
 }
 .infobar .widget-body {
-  padding: 24px;
+  padding: 10px;
 }
 .infobar .widget-body .more {
   margin-top: 24px;
@@ -8684,9 +8684,11 @@ ul.settings li > span {
   margin-top: -8px;
 }
 .recent-activities {
-  padding-left: 0;
-  list-style: none;
-  margin-bottom: 0;
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 0;
+    max-height: 700px;
+    overflow: auto;
 }
 .recent-activities li {
   color: #607d8b;
@@ -8742,7 +8744,7 @@ ul.settings li > span {
   background-color: #009688;
 }
 .recent-activities li .content {
-  margin-left: 48px;
+  margin-left: 40px;
 }
 .recent-activities li .msg .feedicon {
   margin-right: 4px;
@@ -8758,7 +8760,7 @@ ul.settings li > span {
   display: block;
   font-size: 11px;
   line-height: 16px;
-  padding: 8px 0 0;
+  padding: 0px 0 0;
   color: #90a4ae;
 }
 .recent-activities li .delete {

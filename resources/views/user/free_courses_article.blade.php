@@ -6,7 +6,7 @@
     @include('layouts.user.left_sidebar')
 @endsection
 @section('right_sidebar')
-    @include('layouts.user.right_sidebar')
+    @include('layouts.common_element.right_sidebar')
 @endsection
 @section('breadcrumb')
     @include('layouts.user.breadcrumb')
@@ -15,7 +15,7 @@
     @include('user.section.free-courses.article')
 @endsection
 @section('footer')
-    @include('layouts.user.footer')
+    @include('layouts.common_element.footer')
 @endsection
 @section('demo-options')
     @include('layouts.user.demo-option')

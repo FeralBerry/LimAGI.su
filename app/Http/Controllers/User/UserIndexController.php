@@ -4,6 +4,7 @@ namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\AppController;
 use App\Models\Chat;
+use App\Models\ChatRoom;
 use App\User;
 use Illuminate\Http\Request;
 use App\Models\BlogCategories;
@@ -39,7 +40,6 @@ class UserIndexController extends AppController
             'blog' => $blog,
             'blogCat' => $blogCat,
             'second_breadcrumb' => $second_breadcrumb,
-
         ]);
         return view('user.index', $data);
     }

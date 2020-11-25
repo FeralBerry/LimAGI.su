@@ -71,7 +71,7 @@
 	<span id="trigger-sidebar" class="toolbar-trigger toolbar-icon-bg">
 		<a data-toggle="tooltips" data-placement="right" title="Toggle Sidebar"><span class="icon-bg"><i class="fa fa-fw fa-bars"></i></span></a>
 	</span>
-    <a class="navbar-brand" href="{{ route('admin-index') }}">One-Page</a>
+    <a class="navbar-brand" href="{{ route('admin-index') }}">LimAGE</a>
     <span id="trigger-infobar" class="toolbar-trigger toolbar-icon-bg">
 		<a data-toggle="tooltips" data-placement="left" title="Toggle Infobar"><span class="icon-bg"><i class="fa fa-fw fa-bars"></i></span></a>
 	</span>

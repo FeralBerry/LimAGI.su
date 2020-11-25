@@ -6,7 +6,7 @@
     @include('layouts.admin.left_sidebar')
 @endsection
 @section('right_sidebar')
-    @include('layouts.admin.right_sidebar')
+    @include('layouts.common_element.right_sidebar')
 @endsection
 @section('breadcrumb')
     @include('layouts.admin.breadcrumb')
@@ -15,7 +15,7 @@
     @include('admin.section.blog.blog_edit')
 @endsection
 @section('footer')
-    @include('layouts.admin.footer')
+    @include('layouts.common_element.footer')
 @endsection
 @section('demo-options')
     @include('layouts.admin.demo-option')

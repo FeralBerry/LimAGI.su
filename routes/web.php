@@ -126,4 +126,4 @@ Route::group(['middleware' => ['auth']], function() {
 });
 
 Route::match(['GET','POST'],'/home', 'HomeController@index')->name('home');
-
+Route::match(['GET', 'POST'], '/chat/{id}', ['uses' => 'User\ChatController@indexChat', 'as' => 'chat-index']);
