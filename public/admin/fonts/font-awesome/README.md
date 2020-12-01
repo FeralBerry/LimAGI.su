@@ -1,22 +1,22 @@
-#[Font Awesome v4.2.0](http://fontawesome.io)
+#[Font Awesome v4.2.0](https://fontawesome.io)
 ###The iconic font and CSS framework
 
 Font Awesome is a full suite of 479 pictographic icons for easy scalable vector graphics on websites,
-created and maintained by [Dave Gandy](http://twitter.com/davegandy).
-Stay up to date [@fontawesome](http://twitter.com/fontawesome).
+created and maintained by [Dave Gandy](https://twitter.com/davegandy).
+Stay up to date [@fontawesome](https://twitter.com/fontawesome).
 
-Get started at http://fontawesome.io!
+Get started at https://fontawesome.io!
 
 ##License
 - The Font Awesome font is licensed under the SIL OFL 1.1:
-  - http://scripts.sil.org/OFL
+  - https://scripts.sil.org/OFL
 - Font Awesome CSS, LESS, and SASS files are licensed under the MIT License:
-  - http://opensource.org/licenses/mit-license.html
+  - https://opensource.org/licenses/mit-license.html
 - The Font Awesome documentation is licensed under the CC BY 3.0 License:
-  - http://creativecommons.org/licenses/by/3.0/
+  - https://creativecommons.org/licenses/by/3.0/
 - Attribution is no longer required as of Font Awesome 3.0, but much appreciated:
-  - `Font Awesome by Dave Gandy - http://fontawesome.io`
-- Full details: http://fontawesome.io/license
+  - `Font Awesome by Dave Gandy - https://fontawesome.io`
+- Full details: https://fontawesome.io/license
 
 ##Changelog
 - v3.0.0 - all icons redesigned from scratch, optimized for Bootstrap's 14px default
@@ -51,15 +51,15 @@ And constructed with the following guidelines:
 * New additions, including new icons, without breaking backward compatibility bumps the minor (and resets the patch)
 * Bug fixes and misc changes bumps the patch
 
-For more information on SemVer, please visit http://semver.org.
+For more information on SemVer, please visit https://semver.org.
 
 ##Author
 - Email: dave@fontawesome.io
-- Twitter: http://twitter.com/davegandy
+- Twitter: https://twitter.com/davegandy
 - GitHub: https://github.com/davegandy
 
 ##Component
-To include as a [component](http://github.com/component/component), just run
+To include as a [component](https://github.com/component/component), just run
 
     $ component install FortAwesome/Font-Awesome
 
@@ -80,6 +80,6 @@ Build the project and documentation:
 
     $ bundle exec jekyll build
 
-Or serve it on a local server on http://localhost:7998/Font-Awesome/:
+Or serve it on a local server on https://localhost:7998/Font-Awesome/:
 
     $ bundle exec jekyll serve

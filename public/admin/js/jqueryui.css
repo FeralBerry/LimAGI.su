@@ -1,7 +1,7 @@
 /*! jQuery UI - v1.10.3 - 2013-09-10
-* http://jqueryui.com
+* https://jqueryui.com
 * Includes: jquery.ui.core.css, jquery.ui.resizable.css, jquery.ui.selectable.css, jquery.ui.accordion.css, jquery.ui.autocomplete.css, jquery.ui.button.css, jquery.ui.datepicker.css, jquery.ui.dialog.css, jquery.ui.menu.css, jquery.ui.progressbar.css, jquery.ui.slider.css, jquery.ui.spinner.css, jquery.ui.tabs.css, jquery.ui.tooltip.css, jquery.ui.theme.css
-* To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=open%20sans&fwDefault=normal&fsDefault=1em&cornerRadius=0px&bgColorHeader=%23e3e4e6&bgTextureHeader=flat&bgImgOpacityHeader=0&borderColorHeader=%23cdced1&fcHeader=%231a1a1a&iconColorHeader=%231a1a1a&bgColorContent=%23ffffff&bgTextureContent=flat&bgImgOpacityContent=0&borderColorContent=%23cdced1&fcContent=%231a1a1a&iconColorContent=%231a1a1a&bgColorDefault=%23edeef0&bgTextureDefault=flat&bgImgOpacityDefault=0&borderColorDefault=%23cdced1&fcDefault=%231a1a1a&iconColorDefault=%231a1a1a&bgColorHover=%23f7f8fa&bgTextureHover=flat&bgImgOpacityHover=0&borderColorHover=%23cdced1&fcHover=%231a1a1a&iconColorHover=%231a1a1a&bgColorActive=%23ffffff&bgTextureActive=flat&bgImgOpacityActive=0&borderColorActive=%23cdced1&fcActive=%231a1a1a&iconColorActive=%231a1a1a&bgColorHighlight=%232b6bd9&bgTextureHighlight=flat&bgImgOpacityHighlight=0&borderColorHighlight=%232b6bd9&fcHighlight=%23ffffff&iconColorHighlight=%23ffffff&bgColorError=%23fef1ec&bgTextureError=glass&bgImgOpacityError=95&borderColorError=%23cd0a0a&fcError=%23cd0a0a&iconColorError=%23cd0a0a&bgColorOverlay=%23aaaaaa&bgTextureOverlay=flat&bgImgOpacityOverlay=0&opacityOverlay=30&bgColorShadow=%23aaaaaa&bgTextureShadow=flat&bgImgOpacityShadow=0&opacityShadow=30&thicknessShadow=8px&offsetTopShadow=-8px&offsetLeftShadow=-8px&cornerRadiusShadow=8px
+* To view and modify this theme, visit https://jqueryui.com/themeroller/?ffDefault=open%20sans&fwDefault=normal&fsDefault=1em&cornerRadius=0px&bgColorHeader=%23e3e4e6&bgTextureHeader=flat&bgImgOpacityHeader=0&borderColorHeader=%23cdced1&fcHeader=%231a1a1a&iconColorHeader=%231a1a1a&bgColorContent=%23ffffff&bgTextureContent=flat&bgImgOpacityContent=0&borderColorContent=%23cdced1&fcContent=%231a1a1a&iconColorContent=%231a1a1a&bgColorDefault=%23edeef0&bgTextureDefault=flat&bgImgOpacityDefault=0&borderColorDefault=%23cdced1&fcDefault=%231a1a1a&iconColorDefault=%231a1a1a&bgColorHover=%23f7f8fa&bgTextureHover=flat&bgImgOpacityHover=0&borderColorHover=%23cdced1&fcHover=%231a1a1a&iconColorHover=%231a1a1a&bgColorActive=%23ffffff&bgTextureActive=flat&bgImgOpacityActive=0&borderColorActive=%23cdced1&fcActive=%231a1a1a&iconColorActive=%231a1a1a&bgColorHighlight=%232b6bd9&bgTextureHighlight=flat&bgImgOpacityHighlight=0&borderColorHighlight=%232b6bd9&fcHighlight=%23ffffff&iconColorHighlight=%23ffffff&bgColorError=%23fef1ec&bgTextureError=glass&bgImgOpacityError=95&borderColorError=%23cd0a0a&fcError=%23cd0a0a&iconColorError=%23cd0a0a&bgColorOverlay=%23aaaaaa&bgTextureOverlay=flat&bgImgOpacityOverlay=0&opacityOverlay=30&bgColorShadow=%23aaaaaa&bgTextureShadow=flat&bgImgOpacityShadow=0&opacityShadow=30&thicknessShadow=8px&offsetTopShadow=-8px&offsetLeftShadow=-8px&cornerRadiusShadow=8px
 * Copyright 2013 jQuery Foundation and other contributors; Licensed MIT */
 
 [class*="ui-"] {
@@ -13,7 +13,7 @@
 .ui-widget-content {margin-top: 4px;}
 .ui-slider-horizontal {height: 6px !important;}
 .ui-slider-horizontal .ui-slider-handle {}
-.ui-slider-vertical {width: 6px !important;} 
+.ui-slider-vertical {width: 6px !important;}
 
 .ui-menu {padding: 0 !important;}
 

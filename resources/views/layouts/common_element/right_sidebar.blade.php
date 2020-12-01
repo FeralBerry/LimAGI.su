@@ -1,7 +1,9 @@
 <div class="infobar-wrapper scroll-pane">
     <div class="infobar scroll-content">
         <div id="widgetarea">
-            <?php $chat_id = explode(',',Auth::user()->chat_id) ?>
+            <?php
+                $chat_id = explode(',',Auth::user()->chat_id)
+            ?>
             @if(isset($chat_id))
                 @foreach($chat_room as $room)
                     @foreach($chat_id as $cid)
@@ -12,15 +14,15 @@
                             </div>
                             <div id="{{ $room->chat_name }}" class="collapse in">
                                 <div class="widget-body">
-                                    <ul class="recent-activities" id="chat_{{ $room->chat_name }}">
+                                    <ul class="recent-activities" id="chat_{{ $room->id }}">
 
                                     </ul>
                                     <form>
                                         @csrf
-                                        <input type="hidden" name="name_{{ $room->chat_name }}" id="name_{{ $room->chat_name }}" value="{{ Auth::user()->name }}">
-                                        <input type="hidden" name="chat_room_{{ $room->chat_name }}" id="chat_room_{{ $room->chat_name }}" value="{{ $room->id }}">
-                                        <input type="text" name="message_{{ $room->chat_name }}" id="message_{{ $room->chat_name }}" placeholder="Текст сообщения">
-                                        <a id="chat_send_{{ $room->chat_name }}">Написать</a>
+                                        <input type="hidden" name="name_{{ $room->id }}" id="name_{{ $room->id }}" value="{{ Auth::user()->name }}">
+                                        <input type="hidden" name="chat_room_{{ $room->id }}" id="chat_room_{{ $room->id }}" value="{{ $room->id }}">
+                                        <input type="text" name="message_{{ $room->id }}" id="message_{{ $room->id }}" placeholder="Текст сообщения">
+                                        <a id="chat_send_{{ $room->id }}">Написать</a>
                                     </form>
                                 </div>
                             </div>

@@ -56,7 +56,7 @@ class IndexController extends AppController
             //$phoneWhatsApp = 89687106270;
             //$whatsAppMessage = urlencode($txt_message);
             //$senToWhatsApp = fopen("https://api.whatsapp.com/send?phone={$phoneWhatsApp}?text={$whatsAppMessage}","r");
-            //$sendToTelegram = fopen("http://api.telegram.org/bot{$token_t}/sendMessage?chat_id={$chat_id_t}&parse_mode=html&text=Имя:{$txt_name}%0AЕмаил:{$txt_email}%0AТелефон:{$txt_phone}","r");
+            //$sendToTelegram = fopen("https://api.telegram.org/bot{$token_t}/sendMessage?chat_id={$chat_id_t}&parse_mode=html&text=Имя:{$txt_name}%0AЕмаил:{$txt_email}%0AТелефон:{$txt_phone}","r");
             if($result){
                 return redirect()->back()->with([
                     'status' =>'Ваши данные отправлены скоро с вами свяжется наш менеджер',
@@ -237,7 +237,7 @@ class IndexController extends AppController
             //$phoneWhatsApp = 89687106270;
             $whatsAppMessage = urlencode($txt_message);
             //$senToWhatsApp = fopen("https://api.whatsapp.com/send?phone={$phoneWhatsApp}?text={$whatsAppMessage}","r");
-            $sendToTelegram = fopen("http://api.telegram.org/bot{$token_t}/sendMessage?chat_id={$chat_id_t}&parse_mode=html&text=Имя:{$txt_name}%0AЕмаил:{$txt_email}%0AТелефон:{$txt_phone}%0AСообщение:{$txt_message}","r");
+            $sendToTelegram = fopen("https://api.telegram.org/bot{$token_t}/sendMessage?chat_id={$chat_id_t}&parse_mode=html&text=Имя:{$txt_name}%0AЕмаил:{$txt_email}%0AТелефон:{$txt_phone}%0AСообщение:{$txt_message}","r");
             if($result){
                 return redirect()->back()->with([
                     'status' =>'Ваши данные отправлены скоро с вами свяжется наш менеджер',

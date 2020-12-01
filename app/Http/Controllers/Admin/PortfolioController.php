@@ -91,10 +91,18 @@ class PortfolioController extends AppController
         return view('admin.portfolio_add', $data);
     }
     public function portfolioDelete($id){
+        $portfolio = Portfolio::where('id', $id);
+        foreach ($portfolio as $p){
+            unlink(public_path('/base/img/blog/img/'.$p->img));
+        }
         Portfolio::destroy($id);
         return redirect()->route('admin-portfolio');
     }
     public function deleteImg($id){
+        $portfolio = Portfolio::where('id', $id);
+        foreach ($portfolio as $p){
+            unlink(public_path('/base/img/blog/img/'.$p->img));
+        }
         Portfolio::where('id', $id)->update([
             'img' => '',
         ]);

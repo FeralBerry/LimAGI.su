@@ -20,50 +20,6 @@
 <script type="text/javascript" src="{{ asset('admin/demo/demo.js') }}"></script>
 <script type="text/javascript" src="{{ asset('admin/demo/demo-switcher.js') }}"></script>
 <script type="text/javascript" src="{{ asset('admin/plugins/wijets/wijets.js') }}"></script>     							    <!-- Wijet -->
-<script type="text/javascript">
-    $.ajaxSetup({
-        headers: {
-            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-        }
-    });
-    <?php $chat_id = explode(',',Auth::user()->chat_id) ?>
-    @if(isset($chat_id))
-    @foreach($chat_room as $room)
-    @foreach($chat_id as $cid)
-    @if($cid == $room->id)
-    $(document).ready(function(){
-        showChat{{ $room->chat_name }}();
-        setInterval('showChat{{ $room->chat_name }}()',1000);
-    });
-    function showChat{{ $room->chat_name }}() {
-        $.ajax({
-            url: '{{ route("chat-index",$room->id) }}',
-            cache: false,
-            success: function(html){
-                $("#chat_{{ $room->chat_name }}").html(html);
-            }
-        });
-    }
-    $('#chat_send_{{ $room->chat_name }}').click(function () {
-        var name = $('#name_{{ $room->chat_name }}').val();
-        var message = $('#message_{{ $room->chat_name }}').val();
-        var room = $('#chat_room_{{ $room->chat_name }}').val();
-        $.ajax({
-            url: '{{ route("chat-index",$room->id ) }}',
-            type: 'POST',
-            cache: false,
-            data: {'name' : name, 'id' : room, 'mess' : message,},
-            dataType: 'html',
-            success: function(data) {
-                $('#chat_{{ $room->chat_name }}').html(data);
-            }
-        });
-    });
-    @endif
-    @endforeach
-    @endforeach
-    @endif
-</script>
 <!-- End loading site level scripts -->
 @if(route('admin-index') == url()->current())
     <script type="text/javascript" src="{{ asset('admin/plugins/fullcalendar/fullcalendar.min.js') }}"></script>   				<!-- FullCalendar -->
@@ -134,5 +90,6 @@
                 URL.revokeObjectURL(title_img.src) // free memory
             }
         };
+
     </script>
 @endif

@@ -1,9 +1,9 @@
-@extends('layouts.admin.layout')
+@extends('layouts.common_element.layout')
 @section('header')
-    @include('layouts.admin.header')
+    @include('layouts.common_element.header')
 @endsection
 @section('left_sidebar')
-    @include('layouts.admin.left_sidebar')
+    @include('layouts.common_element.left_sidebar')
 @endsection
 @section('right_sidebar')
     @include('layouts.common_element.right_sidebar')
@@ -18,5 +18,5 @@
     @include('layouts.common_element.footer')
 @endsection
 @section('demo-options')
-    @include('layouts.admin.demo-option')
+    @include('layouts.common_element.demo-option')
 @endsection

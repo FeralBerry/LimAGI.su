@@ -200,24 +200,40 @@ class BlogController extends AppController
         return view('admin.blog_add',$data);
     }
     public function deleteImg($id){
+        $blog = Blog::where('id', $id);
+        foreach ($blog as $b){
+            unlink(public_path('/base/img/blog/img/'.$b->img));
+        }
         Blog::where('id', $id)->update([
             'img' => '',
         ]);
         return redirect()->route('admin-blog-edit', $id);
     }
     public function deleteVideoImg($id){
+        $blog = Blog::where('id', $id);
+        foreach ($blog as $b){
+            unlink(public_path('/base/img/blog/video_img/'.$b->video_img));
+        }
         Blog::where('id', $id)->update([
             'video_img' => '',
         ]);
         return redirect()->route('admin-blog-edit', $id);
     }
     public function deleteVideo($id){
+        $blog = Blog::where('id', $id);
+        foreach ($blog as $b){
+            unlink(public_path('/base/img/blog/video/'.$b->video));
+        }
         Blog::where('id', $id)->update([
             'video' => '',
         ]);
         return redirect()->route('admin-blog-edit', $id);
     }
     public function deleteTitleImg($id){
+        $blog = Blog::where('id', $id);
+        foreach ($blog as $b){
+            unlink(public_path('/base/img/blog/title_img/'.$b->title_img));
+        }
         Blog::where('id', $id)->update([
             'title_img' => '',
         ]);

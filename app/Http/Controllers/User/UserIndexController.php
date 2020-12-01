@@ -43,7 +43,22 @@ class UserIndexController extends AppController
         ]);
         return view('user.index', $data);
     }
-    public function info(){
+    public function info(Request $request){
+        if($request->isMethod('post')){
+            User::where('id', Auth::user()->id)->update([
+                'phone' => $request['phone'],
+                'address' => $request['address'],
+                'web_site' => $request['web_site'],
+                'facebook' => $request['facebook'],
+                'twitter' => $request['twitter'],
+                'github' => $request['github'],
+                'instagram' => $request['instagram'],
+                'motto' => $request['motto'],
+                'name' => $request['name'],
+                'email' => $request['email'],
+            ]);
+            return redirect()->route('user-info');
+        }
         $breadcrumb_user_info = 'Настройки пользователя';
         $title = $this->title.'кабинет информация пользователя';
         $data = array_merge($this->chat(),[
@@ -51,5 +66,27 @@ class UserIndexController extends AppController
             'breadcrumb_user_info' => $breadcrumb_user_info,
         ]);
         return view('user.info', $data);
+    }
+    public function avatarUpload(Request $request, $id){
+        if ($request->isMethod('post')){
+            $avatar = User::all()->where('id', $id);
+            foreach ($avatar as $item){
+                $ava = $item->avatar;
+            }
+            if($ava !== ''){
+                unlink('base/img/avatar/' . $ava);
+            }
+            if ($request->hasFile('ava')) {
+                $image = $request->file('ava');
+                $img_name = time() . '.' . $image->getClientOriginalExtension();
+                $destinationPath = public_path('/base/img/avatar/');
+                $image->move($destinationPath, $img_name);
+                User::where('id', $id)
+                    ->update([
+                        'avatar' => $img_name,
+                    ]);
+            }
+            return redirect()->route('user-info');
+        }
     }
 }

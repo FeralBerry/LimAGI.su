@@ -121,9 +121,9 @@ Route::group(['middleware' => ['auth']], function() {
         Route::match(['GET','POST'],'/free-courses/photoshop/{id}', ['uses' => 'FreeCoursesController@articlePhotoshop','as' => 'free-courses-photoshop-article']);
         Route::match(['GET','POST'],'/free-courses/bootstrap', ['uses' => 'FreeCoursesController@indexWordpress','as' => 'free-courses-bootstrap']);
         Route::match(['GET','POST'],'/free-courses/bootstrap/{id}', ['uses' => 'FreeCoursesController@articleWordpress','as' => 'free-courses-bootstrap-article']);
+        Route::match(['GET','POST'],'/avatar/upload/{id}', ['uses' => 'UserIndexController@avatarUpload','as' => 'avatar-upload']);
 
     });
 });
 
 Route::match(['GET','POST'],'/home', 'HomeController@index')->name('home');
-Route::match(['GET', 'POST'], '/chat/{id}', ['uses' => 'User\ChatController@indexChat', 'as' => 'chat-index']);

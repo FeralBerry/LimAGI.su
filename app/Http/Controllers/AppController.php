@@ -8,6 +8,7 @@ use App\Models\Chat;
 use App\Models\ChatRoom;
 use App\Models\FreeCourses;
 use App\Models\FreeCoursesName;
+use Auth;
 
 class AppController extends Controller
 {
@@ -20,8 +21,14 @@ class AppController extends Controller
         $data = [
             'chat_room' => $chat_room,
             'free_courses_menu' => $this->freeCoursesMenu(),
+            'count_chat' => $this->countChat(),
         ];
         return $data;
+    }
+    protected function countChat(){
+        $chat_room = ChatRoom::all();
+        $count_chat = count($chat_room);
+        return $count_chat;
     }
     protected function freeCoursesMenu(){
         $free_courses_menu = FreeCoursesName::all();
