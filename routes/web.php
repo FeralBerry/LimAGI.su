@@ -21,6 +21,13 @@ Route::match(['GET','POST'],'/blog/{alias}', ['uses' => 'IndexController@blogAli
 Route::match(['GET','POST'],'/blog', ['uses' => 'IndexController@blog', 'as' => 'blog']);
 Route::match(['GET','POST'],'/blog-post/{id}', ['uses' => 'IndexController@blogPost', 'as' => 'blog-post']);
 Route::match(['GET','POST'],'/blog-post/add-comment', ['uses' => 'IndexController@addComment', 'as' => 'add-comment']);
+Route::match(['GET','POST'],'/price', ['uses' => 'IndexController@price', 'as' => 'price']);
+Route::match(['GET','POST'],'/design-quiz', ['uses' => 'QuizController@quizDesign', 'as' => 'design-quiz']);
+Route::match(['GET','POST'],'/landing-quiz', ['uses' => 'QuizController@quizLanding', 'as' => 'landing-quiz']);
+Route::match(['GET','POST'],'/seo-quiz', ['uses' => 'QuizController@quizSeo', 'as' => 'seo-quiz']);
+Route::match(['GET','POST'],'/magazine-quiz', ['uses' => 'QuizController@quizMagazine', 'as' => 'magazine-quiz']);
+Route::match(['GET','POST'],'/card-quiz', ['uses' => 'QuizController@quizCard', 'as' => 'card-quiz']);
+Route::match(['GET','POST'],'/corp-quiz', ['uses' => 'QuizController@quizCorp', 'as' => 'corp-quiz']);
 Auth::routes();
 Route::group(['middleware' => ['auth', 'checkAdmin']], function(){
 $groupData = [

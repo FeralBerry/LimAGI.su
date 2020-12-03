@@ -6,13 +6,13 @@ A jQuery plugin which takes Twitter Bootstrap's already great pagination compone
 
 ![Bootstrap Date Paginator Default](https://raw.github.com/jonathandanielmiles/bootstrap-datepaginator/master/screenshot/default.PNG)
 
-For full documentation and examples, please visit [Bootstrap Date Paginator Website](http://www.jonathandanielmiles.com/bootstrap-datepaginator/ "Click to visit Bootstrap Date Paginator")
+For full documentation and examples, please visit [Bootstrap Date Paginator Website](https://www.jonathandanielmiles.com/bootstrap-datepaginator/ "Click to visit Bootstrap Date Paginator")
 
 ## Requirements
 
-- [Bootstrap v3.0.0](http://getbootstrap.com/)
-- [jQuery v1.8.2](http://jquery.com/)
-- [Moment.js v2.1.0](http://momentjs.com)
+- [Bootstrap v3.0.0](https://getbootstrap.com/)
+- [jQuery v1.8.2](https://jquery.com/)
+- [Moment.js v2.1.0](https://momentjs.com)
 - [bootstrap-datepicker.js](https://github.com/eternicode/bootstrap-datepicker) 
 
 Where provided these are the actual versions bootstrap-datepaginator has been tested against.  Other versions should work but you use them as your own risk.
@@ -222,7 +222,7 @@ Copyright 2013 Jonathan Miles
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
-You may obtain a copy of the License at <http://www.apache.org/licenses/LICENSE-2.0>
+You may obtain a copy of the License at <https://www.apache.org/licenses/LICENSE-2.0>
 
 Unless required by applicable law or agreed to in writing, software
 distributed under the License is distributed on an "AS IS" BASIS,

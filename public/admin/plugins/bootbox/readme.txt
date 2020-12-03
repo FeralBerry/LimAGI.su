@@ -1,1 +1,1 @@
-http://bootboxjs.com/
+https://bootboxjs.com/

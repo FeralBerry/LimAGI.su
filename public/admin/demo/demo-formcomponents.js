@@ -74,13 +74,13 @@ $(function() {
 	var substringMatcher = function(strs) {
 	  return function findMatches(q, cb) {
 	    var matches, substrRegex;
-	 
+
 	    // an array that will be populated with substring matches
 	    matches = [];
-	 
+
 	    // regex used to determine if a string contains the substring `q`
 	    substrRegex = new RegExp(q, 'i');
-	 
+
 	    // iterate through the pool of strings and for any string that
 	    // contains the substring `q`, add it to the `matches` array
 	    $.each(strs, function(i, str) {
@@ -90,11 +90,11 @@ $(function() {
 	        matches.push({ value: str });
 	      }
 	    });
-	 
+
 	    cb(matches);
 	  };
 	};
-	 
+
 	var states = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California',
 	  'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii',
 	  'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana',
@@ -105,7 +105,7 @@ $(function() {
 	  'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont',
 	  'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
 	];
-	 
+
 	$('.example-countries').typeahead({
 	  hint: true,
 	  highlight: true,
@@ -133,9 +133,9 @@ $(function() {
 	var engine = new Bloodhound({
 		local: [{value: 'red'}, {value: 'blue'}, {value: 'green'} , {value: 'yellow'}, {value: 'violet'}, {value: 'brown'}, {value: 'purple'}, {value: 'black'}, {value: 'white'}],
 		datumTokenizer: function(d) {
-			return Bloodhound.tokenizers.whitespace(d.value); 
+			return Bloodhound.tokenizers.whitespace(d.value);
 		},
-		queryTokenizer: Bloodhound.tokenizers.whitespace    
+		queryTokenizer: Bloodhound.tokenizers.whitespace
 	});
 
 	engine.initialize();
@@ -208,7 +208,7 @@ $(function() {
 
 	//SELECT2
 
-	//For detailed documentation, see: http://ivaynberg.github.io/select2/index.html
+	//For detailed documentation, see: https://ivaynberg.github.io/select2/index.html
 
 	//Populate all select boxes with from select#source
 	var opts=$("#source").html(), opts2="<option></option>"+opts;
@@ -249,7 +249,7 @@ $(function() {
 		minimumInputLength: 3,
 		width: '100%',
 		ajax: {
-			url: "http://api.rottentomatoes.com/api/public/v1.0/movies.json",
+			url: "https://api.rottentomatoes.com/api/public/v1.0/movies.json",
 			dataType: 'jsonp',
 			quietMillis: 100,
 					data: function (term, page) { // page is the one-based page number tracked by Select2

@@ -1233,6 +1233,66 @@ a {
     left: 0;
     z-index: 500;
 }
+.modals_corp {
+    color: #fff;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 500;
+}
+.modals_card {
+    color: #fff;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 500;
+}
+.modals_design {
+    color: #fff;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 500;
+}
+.modals_seo {
+    color: #fff;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 500;
+}
+.modals_magazine {
+    color: #fff;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 500;
+}
+.modals_landing {
+    color: #fff;
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 500;
+}
 .modals_reg.active .modal-drop {
     -webkit-transform-origin: 50%;
     transform-origin: 50%;
@@ -1245,12 +1305,78 @@ a {
     -webkit-transform: scale(1);
     transform: scale(1);
 }
+.modals_corp.active .modal-drop {
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+.modals_card.active .modal-drop {
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+.modals_design.active .modal-drop {
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+.modals_seo.active .modal-drop {
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+.modals_magazine.active .modal-drop {
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+.modals_landing.active .modal-drop {
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
 .modals_reg.active .modal-content {
     opacity: 1;
     -webkit-transition: 0.5s ease-in 1.5s;
     transition: 0.5s ease-in 1.5s;
 }
 .modals_login.active .modal-content {
+    opacity: 1;
+    -webkit-transition: 0.5s ease-in 1.5s;
+    transition: 0.5s ease-in 1.5s;
+}
+.modals_corp.active .modal-content {
+    opacity: 1;
+    -webkit-transition: 0.5s ease-in 1.5s;
+    transition: 0.5s ease-in 1.5s;
+}
+.modals_card.active .modal-content {
+    opacity: 1;
+    -webkit-transition: 0.5s ease-in 1.5s;
+    transition: 0.5s ease-in 1.5s;
+}
+.modals_design.active .modal-content {
+    opacity: 1;
+    -webkit-transition: 0.5s ease-in 1.5s;
+    transition: 0.5s ease-in 1.5s;
+}
+.modals_seo.active .modal-content {
+    opacity: 1;
+    -webkit-transition: 0.5s ease-in 1.5s;
+    transition: 0.5s ease-in 1.5s;
+}
+.modals_magazine.active .modal-content {
+    opacity: 1;
+    -webkit-transition: 0.5s ease-in 1.5s;
+    transition: 0.5s ease-in 1.5s;
+}
+.modals_landing.active .modal-content {
     opacity: 1;
     -webkit-transition: 0.5s ease-in 1.5s;
     transition: 0.5s ease-in 1.5s;
@@ -1272,9 +1398,8 @@ a {
     -webkit-transform-origin: 0 0;
     transform-origin: 0 0;
 }
-
 .modal-content {
-    background: #141221;
+    background: #29363e;
     position: fixed;
     top: 0;
     right: 0;
@@ -1294,7 +1419,6 @@ a {
     -ms-flex-pack: center;
     justify-content: center;
 }
-
 .modal-wrap {
     -webkit-box-flex: 1;
     -ms-flex: 1;
@@ -1302,7 +1426,12 @@ a {
     width: 100%;
     max-width: 50em;
 }
-
+.modal-wrap-quiz{
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    width: 100%;
+}
 /* Page Styling */
 ::-moz-selection {
     background: #ffc44d;
@@ -1312,7 +1441,6 @@ a {
     background: #ffc44d;
     color: #fff;
 }
-
 ::-moz-selection {
     background: #ffc44d;
     color: #fff;
@@ -1327,6 +1455,9 @@ a {
     font-weight: 600;
     letter-spacing: 1.56px;
     display: inline-block;
+    top: 0;
+    position: absolute;
+    right: 0;
 }
 .close_modal_reg{
     float: right;
@@ -1338,7 +1469,93 @@ a {
     letter-spacing: 1.56px;
     font-size: 30px;
     display: inline-block;
-    margin-top: -70px;
+    top: 0;
+    position: absolute;
+    right: 0;
+}
+.close_modal_corp{
+    float: right;
+    padding: 14px 29px;
+    text-decoration: none;
+    color: #feca16;
+    border: 1px solid transparent;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 1.56px;
+    display: inline-block;
+    top: 0;
+    position: absolute;
+    right: 0;
+}
+.close_modal_card{
+    float: right;
+    padding: 14px 29px;
+    text-decoration: none;
+    color: #feca16;
+    border: 1px solid transparent;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 1.56px;
+    display: inline-block;
+    top: 0;
+    position: absolute;
+    right: 0;
+}
+.close_modal_design{
+    float: right;
+    padding: 14px 29px;
+    text-decoration: none;
+    color: #feca16;
+    border: 1px solid transparent;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 1.56px;
+    display: inline-block;
+    top: 0;
+    position: absolute;
+    right: 0;
+}
+.close_modal_seo{
+    float: right;
+    padding: 14px 29px;
+    text-decoration: none;
+    color: #feca16;
+    border: 1px solid transparent;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 1.56px;
+    display: inline-block;
+    top: 0;
+    position: absolute;
+    right: 0;
+}
+.close_modal_magazine{
+    float: right;
+    padding: 14px 29px;
+    text-decoration: none;
+    color: #feca16;
+    border: 1px solid transparent;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 1.56px;
+    display: inline-block;
+    top: 0;
+    position: absolute;
+    right: 0;
+}
+.close_modal_landing{
+    float: right;
+    padding: 14px 29px;
+    text-decoration: none;
+    color: #feca16;
+    border: 1px solid transparent;
+    font-size: 30px;
+    font-weight: 600;
+    letter-spacing: 1.56px;
+    display: inline-block;
+    top: 0;
+    position: absolute;
+    right: 0;
 }
 .close_modal_login:hover {
     color: #fff;
@@ -1346,10 +1563,46 @@ a {
 .close_modal_reg:hover {
     color: #fff;
 }
+.close_modal_corp:hover {
+    color: #fff;
+}
+.close_modal_card:hover {
+    color: #fff;
+}
+.close_modal_design:hover {
+    color: #fff;
+}
+.close_modal_seo:hover {
+    color: #fff;
+}
+.close_modal_magazine:hover {
+    color: #fff;
+}
+.close_modal_landing:hover {
+    color: #fff;
+}
 .close_modal_login:hover::before {
     height: 75%;
 }
 .close_modal_reg:hover::before {
+    height: 75%;
+}
+.close_modal_corp:hover::before {
+    height: 75%;
+}
+.close_modal_card:hover::before {
+    height: 75%;
+}
+.close_modal_design:hover::before {
+    height: 75%;
+}
+.close_modal_seo:hover::before {
+    height: 75%;
+}
+.close_modal_magazine:hover::before {
+    height: 75%;
+}
+.close_modal_landing:hover::before {
     height: 75%;
 }
 .introduction-section .col-md-12.no-padding.about1::before{
@@ -1539,4 +1792,184 @@ ul.nacc li p {
     position: relative;
     z-index: 2;
     font-family: 'Work Sans', sans-serif;
+}
+
+.price {
+    margin: 14px 0 14px;
+    text-align: right;
+}
+a.price{
+    position: absolute;
+    bottom: 15px;
+    right: 20%;
+    cursor: pointer;
+    background-color: #29363e;
+    border-radius: 30px;
+    color: #fff;
+    margin-bottom: 5px;
+    display: inline-block;
+    font-family: "Myriad Pro Regular";
+    font-size: 12px;
+    letter-spacing: 2.4px;
+    line-height: 45px;
+    padding: 5px 41px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 1s ease 0s;
+    -webkit-transition: all 1s ease 0s;
+    -moz-transition: all 1s ease 0s;
+    -o-transition: all 1s ease 0s;
+}
+a.price:hover {
+    background-color: #feca16;
+    color: #000;
+}
+.modal-radio{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+.modal-checkbox{
+    margin-top: 10px;
+    font-size: 20px;
+}
+.modal-checkbox-input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+.modal-checkbox-input+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+    font-size: 20px;
+}
+.modal-checkbox-input+label::before {
+    content: '';
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #adb5bd;
+    border-radius: 0.25em;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
+.modal-checkbox-input:checked+label::before {
+    border-color: #feca16;
+    background-color: #feca16;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+/* стили при наведении курсора на checkbox */
+.modal-checkbox-input:not(:disabled):not(:checked)+label:hover::before {
+    border-color: #b3d7ff;
+}
+/* стили для активного состояния чекбокса (при нажатии на него) */
+.modal-checkbox-input:not(:disabled):active+label::before {
+    background-color: #b3d7ff;
+    border-color: #b3d7ff;
+}
+/* стили для чекбокса, находящегося в фокусе */
+.modal-checkbox-input:focus+label::before {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+/* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+.modal-checkbox-input:focus:not(:checked)+label::before {
+    border-color: #80bdff;
+}
+/* стили для чекбокса, находящегося в состоянии disabled */
+.modal-checkbox-input:disabled+label::before {
+    background-color: #e9ecef;
+}
+
+/* для элемента input c type="radio" */
+.modal-radio-input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+/* для элемента label связанного с .modal-design-radio-input */
+.modal-radio-input+label {
+    display: inline-flex;
+    align-items: center;
+    user-select: none;
+}
+/* создание в label псевдоэлемента  before со следующими стилями */
+.modal-radio-input+label::before {
+    content: '';
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 1px solid #adb5bd;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+}
+/* стили при наведении курсора на радио */
+.modal-radio-input:not(:disabled):not(:checked)+label:hover::before {
+    border-color: #b3d7ff;
+}
+/* стили для активной радиокнопки (при нажатии на неё) */
+.modal-radio-input:not(:disabled):active+label::before {
+    background-color: #b3d7ff;
+    border-color: #b3d7ff;
+}
+/* стили для радиокнопки, находящейся в фокусе */
+.modal-radio-input:focus+label::before {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+/* стили для радиокнопки, находящейся в фокусе и не находящейся в состоянии checked */
+.modal-radio-input:focus:not(:checked)+label::before {
+    border-color: #80bdff;
+}
+/* стили для радиокнопки, находящейся в состоянии checked */
+.modal-radio-input:checked+label::before {
+    border-color: #feca16;
+    background-color: #feca16;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+/* стили для радиокнопки, находящейся в состоянии disabled */
+.modal-radio-input:disabled+label::before {
+    background-color: #e9ecef;
+}
+.modal-btn {
+    background-color: #fff;
+    color: #222;
+    display: inline-block;
+    font-family: "Raleway",sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.2px;
+    line-height: 28px;
+    margin-top: 20px;
+    padding: 3.5px 26.5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 1s ease 0s;
+    -webkit-transition: all 1s ease 0s;
+    -moz-transition: all 1s ease 0s;
+    -o-transition: all 1s ease 0s;
+    position: relative;
+    z-index: 2;
+    border: 2px solid #feca16;
+    overflow: hidden;
+}
+.modal-btn:hover{
+    background: #feca16;
+    border: 1px solid #ffff;
+}
+.shadow-sm{
+    border: 1px solid #29363e;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 2px #29363e;
+    margin-bottom: 40px;
+    padding: 10px;
+    min-height: 350px;
 }

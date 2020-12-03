@@ -24,7 +24,7 @@ The plugin is:
 
 To use the easy pie chart plugin you need to load the current version of jQuery (tested with 1.6.4) and the source of the plugin.
 
-You can also use [bower](http://bower.io) to install the component:
+You can also use [bower](https://bower.io) to install the component:
 
 ```
 $ bower install jquery.easy-pie-chart
@@ -216,7 +216,7 @@ With [excanvas](https://code.google.com/p/explorercanvas/wiki/Instructions) poly
 
 ## Credits
 
-Thanks to [Rafal Bromirski](http://www.paranoida.com/) for designing [this dribble shot](http://drbl.in/ezuc) which inspired me building this plugin.
+Thanks to [Rafal Bromirski](https://www.paranoida.com/) for designing [this dribble shot](https://drbl.in/ezuc) which inspired me building this plugin.
 
 
 ## Changlog

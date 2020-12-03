@@ -34,9 +34,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "http://github.com/istvan-ujjmeszaros/bootstrap-touchspin.git"
+    "url": "https://github.com/istvan-ujjmeszaros/bootstrap-touchspin.git"
   },
-  "homepage": "http://www.virtuosoft.eu/code/bootstrap-touchspin/",
+  "homepage": "https://www.virtuosoft.eu/code/bootstrap-touchspin/",
   "version": "3.0.1",
   "devDependencies": {
     "grunt": "~0.4.1",

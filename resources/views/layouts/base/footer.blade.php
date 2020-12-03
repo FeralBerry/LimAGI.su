@@ -39,7 +39,7 @@
                     <li><a title="Портфолио" href="{{ route('portfolio') }}">Портфолио</a></li>
                     <li><a title="Обо мне" href="{{ route('about') }}">Обо мне</a></li>
                     <li><a title="Блог" href="{{ route('blog') }}">Блог</a></li>
-                    <li><a title="Расценки" href="#">Расценки</a></li>
+                    <li><a title="Расценки" href="{{ route('price') }}">Расценки</a></li>
                     <li><a title="Контакты" href="{{ route('contact') }}">Контакты</a></li>
                 </ul>
             </aside><!-- Quick Links Widget /- -->
@@ -104,7 +104,7 @@
                         <li><a title="Портфолио" href="{{ route('portfolio') }}">Портфолио</a></li>
                         <li><a title="Обо мне" href="{{ route('about') }}">Обо мне</a></li>
                         <li><a title="Блог" href="{{ route('blog') }}">Блог</a></li>
-                        <li><a title="Расценки" href="#">Расценки</a></li>
+                        <li><a title="Расценки" href="{{ route('price') }}">Расценки</a></li>
                         <li><a title="Контакты" href="{{ route('contact') }}">Контакты</a></li>
                     </ul>
                 </div>

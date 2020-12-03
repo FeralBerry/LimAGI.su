@@ -15,7 +15,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicons
     ================================================== -->
-
     <link rel="shortcut icon" href="{{ asset('favicon.png') }}" type="image/png">
     <link rel="apple-touch-icon" href="{{ asset('apple-touch-icon.png') }}">
     <link rel="apple-touch-icon" sizes="72x72" href="{{ asset('apple-touch-icon-72x72.png') }}">
@@ -30,6 +29,9 @@
     <!-- Custom - Theme CSS -->
     <link rel="stylesheet" type="text/css" href="{{ asset('base/css/style.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('base/css/shortcode.css') }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="{{ asset('base/js/jquery.maskedinput.min.js') }}"></script>
     <!--[if lt IE 9]>
     <script src="{{ asset('base/js/html5/respond.min.js') }}"></script>
     <![endif]-->
@@ -48,6 +50,11 @@
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/69701767" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
+    @if($country === 'RU')
+    <script>$(function($){$(".phone").mask("+9(999) 999-9999");});</script>
+    @elseif ($country === 'BY')
+    <script>$(function($){$(".phone").mask("+999(99) 999-9999");});</script>
+    @endif
 </head>
 <body data-offset="200" data-spy="scroll" data-target=".ow-navigation">
 @include('layouts.base.login_modal')
@@ -66,7 +73,6 @@
 @yield('content')
 @yield('footer')
 <!-- JQuery v1.11.3 -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="{{ asset('base/js/jquery.min.js') }}"></script>
 <!-- Library - Js -->
 <script src="{{ asset('base/libraries/lib.js') }}"></script><!-- Bootstrap JS File v3.3.5 -->
@@ -80,5 +86,9 @@
 @if(Request::path() == '/')
     <script src="{{ asset('base/js/timer.js') }}"></script>
 @endif
+@if(url()->full() == route('price'))
+    <script src="{{ asset('base/js/modal_quiz.js') }}"></script>
+@endif
+@include('base.script.ajax')
 </body>
 </html>

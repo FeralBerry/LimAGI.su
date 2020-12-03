@@ -18,12 +18,12 @@
     "licenses": [
         {
             "type": "Apache License v2.0",
-            "url": "http://www.apache.org/licenses/LICENSE-2.0"
+            "url": "https://www.apache.org/licenses/LICENSE-2.0"
         }
     ],
-    "homepage": "http://www.virtuosoft.eu/code/bootstrap-touchspin/",
-    "demo": "http://www.virtuosoft.eu/code/bootstrap-touchspin/",
-    "docs": "http://www.virtuosoft.eu/code/bootstrap-touchspin/",
+    "homepage": "https://www.virtuosoft.eu/code/bootstrap-touchspin/",
+    "demo": "https://www.virtuosoft.eu/code/bootstrap-touchspin/",
+    "docs": "https://www.virtuosoft.eu/code/bootstrap-touchspin/",
     "download": "https://github.com/istvan-ujjmeszaros/bootstrap-touchspin/archive/master.zip",
     "dependencies": {
         "jquery": ">=1.7"

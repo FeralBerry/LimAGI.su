@@ -2,7 +2,7 @@
 Clock-like timepicker for Twitter Bootstrap.
 
 ## Demo, Docs and Download
-See **http://vitalets.github.com/clockface**
+See **https://vitalets.github.com/clockface**
 
 ## Contribution
 Your support is appreciated. 

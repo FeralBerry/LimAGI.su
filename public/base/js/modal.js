@@ -27,6 +27,7 @@ closeBtnLogin.addEventListener('click',function(){
         modalContainerLogin.style.display = 'none';
     },3000);
 });
+///////////////////////////
 var modalBtnReg = document.querySelector('.open_reg');
 var closeBtnReg = document.querySelector('.close_modal_reg');
 var modalContainerReg = document.querySelector('.modals_reg');
@@ -40,7 +41,6 @@ for (var i = 0; i < num; i++) {
 }
 console.log();
 modalContainerReg.appendChild(holdModals);
-
 modalBtnReg.addEventListener('click',function(){
     modalContainerReg.style.display = 'block';
     window.setTimeout(function(){
@@ -54,6 +54,7 @@ closeBtnReg.addEventListener('click',function(){
         modalContainerReg.style.display = 'none';
     },3000);
 });
+///////////////////////////
 var modalBtnUser = document.querySelector('.open_user');
 var closeBtnUser = document.querySelector('.close_modal_login');
 var modalContainerUser = document.querySelector('.modals_login');
@@ -67,7 +68,6 @@ for (var i = 0; i < num; i++) {
 }
 console.log();
 modalContainerUser.appendChild(holdModals);
-
 modalBtnUser.addEventListener('click',function(){
     modalContainerUser.style.display = 'block';
     window.setTimeout(function(){
@@ -81,3 +81,4 @@ closeBtnUser.addEventListener('click',function(){
         modalContainerUser.style.display = 'none';
     },3000);
 });
+///////////////////////////

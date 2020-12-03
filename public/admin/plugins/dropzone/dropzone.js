@@ -359,20 +359,20 @@ module.exports = require("./lib/dropzone.js");
 require.register("dropzone/lib/dropzone.js", function(exports, require, module){
 /*
 #
-# More info at [www.dropzonejs.com](http://www.dropzonejs.com)
-# 
-# Copyright (c) 2012, Matias Meno  
-# 
+# More info at [www.dropzonejs.com](https://www.dropzonejs.com)
+#
+# Copyright (c) 2012, Matias Meno
+#
 # Permission is hereby granted, free of charge, to any person obtaining a copy
 # of this software and associated documentation files (the "Software"), to deal
 # in the Software without restriction, including without limitation the rights
 # to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 # copies of the Software, and to permit persons to whom the Software is
 # furnished to do so, subject to the following conditions:
-# 
+#
 # The above copyright notice and this permission notice shall be included in
 # all copies or substantial portions of the Software.
-# 
+#
 # THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 # IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 # FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -401,9 +401,9 @@ require.register("dropzone/lib/dropzone.js", function(exports, require, module){
 
     /*
     This is a list of all available events you can register on a dropzone object.
-    
+
     You can register an event handler like this:
-    
+
         dropzone.on("dragEnter", function() { });
     */
 
@@ -1686,8 +1686,8 @@ require.register("dropzone/lib/dropzone.js", function(exports, require, module){
   # Version: 1.2
   #
   # URL:
-  # http://javascript.nwbox.com/ContentLoaded/
-  # http://javascript.nwbox.com/ContentLoaded/MIT-LICENSE
+  # https://javascript.nwbox.com/ContentLoaded/
+  # https://javascript.nwbox.com/ContentLoaded/MIT-LICENSE
   */
 
 

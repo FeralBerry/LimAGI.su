@@ -78,7 +78,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a title="Logo" href="#" class="navbar-brand"><img src="{{ asset('base/logo.png')}}" alt="LimagI"/><span>LimagI</span></a>
+                        <a title="Logo" href="#" class="navbar-brand"><img src="{{ asset('base/logo.png')}}" alt="LimAGI"/><span>LimAGI</span></a>
                     </div>
                     <div class="navbar-collapse collapse" id="navbar">
                         <ul class="nav navbar-nav menubar">
@@ -86,7 +86,7 @@
                             <li @if(Request::path() == 'about')class="active"@endif><a title="Обо мне" href="{{ route('about') }}">Обо мне</a></li>
                             <li @if(Request::path() == 'portfolio')class="active"@endif><a title="Портфолио" href="{{ route('portfolio') }}">Портфолио</a></li>
                             <li @if(Request::path() == 'blog')class="active"@endif><a title="Блог" href="{{ route('blog') }}">Блог</a></li>
-                            <li><a title="Расценки" href="#">Расценки</a></li>
+                            <li @if(Request::path() == 'price')class="active"@endif><a title="Расценки" href="{{ route('price') }}">Расценки</a></li>
                             {{--
                             <li class="dropdown">
                                 <a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" title="Pages" href="#">Блог</a>
@@ -96,14 +96,6 @@
                                     <li><a title="Event List" href="eventlist-page.html">Event List</a></li>
                                     <li><a title="Event Single" href="eventsingle-page.html">Event Single</a></li>
                                     <li><a title="404" href="404.html">404</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown">
-                                <a aria-expanded="false" aria-haspopup="true" role="button" class="dropdown-toggle" title="Blog" href="#">Latest News</a>
-                                <i class="ddl-switch fa fa-angle-down"></i>
-                                <ul class="dropdown-menu">
-                                    <li><a title="Blog" href="blog-page.html">Blog</a></li>
-                                    <li><a title="Blog Post" href="blogpost-page.html">Blog Post</a></li>
                                 </ul>
                             </li>--}}
                             <li @if(Request::path() == 'contact')class="active"@endif><a title="Контакты" href="{{ route('contact') }}">Контакты</a></li>

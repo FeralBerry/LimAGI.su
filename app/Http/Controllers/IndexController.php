@@ -14,9 +14,20 @@ use Mail;
 
 class IndexController extends AppController
 {
+    public function __construct(){
+        parent::__construct();
+    }
     protected $perpage = 8;
     protected $description = 'Разработка сайта под ключ. Уникальный дизайн. Современные технологии разработки. Анализ конкурентов вашего бизнеса.';
     protected $keywords = 'сайт, разработка, визитка, магазин, дизайн,современная, лучшая,лендинг';
+    protected function DataWords(){
+        $data = [
+            'country' => $this->locateCountry(),
+            'keywords' => $this->keywords,
+            'description' => $this->description,
+        ];
+        return $data;
+    }
     protected function blogTags(){
         $blog_tags = BlogTags::all();
         return $blog_tags;
@@ -66,24 +77,20 @@ class IndexController extends AppController
                 ]);
             }
         }
-        $data = [
+        $data = array_merge($this->DataWords(),[
             'title' => $title,
             'about' => $about,
             'blog' => $blog,
-            'description' => $this->description,
-            'keywords' => $this->keywords,
-        ];
+        ]);
         return view('base.index', $data);
     }
     public function portfolio(){
         $title = $this->title.'портфолио';
         $portfolio = DB::table('portfolio')->paginate($this->perpage);
-        $data = [
+        $data = array_merge($this->DataWords(),[
             'title' => $title,
-            'description' => $this->description,
-            'keywords' => $this->keywords,
             'portfolio' => $portfolio,
-        ];
+        ]);
         return view('base.portfolio', $data);
     }
     public function about(){
@@ -93,14 +100,12 @@ class IndexController extends AppController
             $link = explode(',', $ab->link);
         }
         $title = $this->title.'обо мне';
-        $data = [
+        $data = array_merge($this->DataWords(),[
             'blog' => $blog,
             'title' => $title,
             'about' => $about,
             'link' => $link,
-            'description' => $this->description,
-            'keywords' => $this->keywords,
-        ];
+        ]);
         return view('base.about', $data);
     }
     public function blog(){
@@ -114,14 +119,12 @@ class IndexController extends AppController
         $blog = DB::table('blog')
             ->orderBy('updated_at','DESC')
             ->paginate($this->perpage);
-        $data = [
+        $data = array_merge($this->DataWords(),[
             'title' => $title,
             'blog' => $blog,
             'recents' => $recents,
             'blog_cat' => $this->blogCat(),
-            'description' => $this->description,
-            'keywords' => $this->keywords,
-        ];
+        ]);
         return view('base.blog', $data);
     }
     public function blogAlias($alias){
@@ -143,13 +146,11 @@ class IndexController extends AppController
         if(isset($id)){
             $blog_author = DB::table('blog')->whereIn('id', $id)->get();
         }
-        $data = [
+        $data = array_merge($this->DataWords(),[
             'title' => $title,
             'blog' => $blog_author,
             'blog_cat' => $this->blogCat(),
-            'description' => $this->description,
-            'keywords' => $this->keywords,
-        ];
+        ]);
         return view('base.blog', $data);
     }
     public function blogPost(Request $request,$id){
@@ -190,7 +191,7 @@ class IndexController extends AppController
                 }
             }
         }
-        $data = [
+        $data = array_merge($this->DataWords(),[
             'title' => $title,
             'blog' => $blog,
             'blog_cat' => $this->blogCat(),
@@ -199,19 +200,15 @@ class IndexController extends AppController
             'tags' => $tags,
             'tag_page' => $tag_page,
             'recents' => $recents,
-            'description' => $description,
-            'keywords' => $keywords,
             'id' => $id,
-        ];
+        ]);
         return view('base.blog-post', $data);
     }
     public function contact(Request $request){
         $title = $this->title.'контакты';
-        $data = [
+        $data = array_merge($this->DataWords(),[
             'title' => $title,
-            'description' => $this->description,
-            'keywords' => $this->keywords,
-        ];
+        ]);
         if($request->isMethod('post')) {
             $messages = [
                 'required' => "Поле :attribute обязательное для заполнения",
@@ -250,5 +247,12 @@ class IndexController extends AppController
             }
         }
         return view('base.contact', $data);
+    }
+    public function price(){
+        $title = $this->title.'расценки на создание сайта и платное обучение';
+        $data = array_merge($this->DataWords(),[
+            'title' => $title,
+        ]);
+        return view('base.price', $data);
     }
 }

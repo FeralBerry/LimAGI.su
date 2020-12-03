@@ -1,7 +1,7 @@
 /**
  * bootbox.js [v4.2.0]
  *
- * http://bootboxjs.com/license.txt
+ * https://bootboxjs.com/license.txt
  */
 
 // @see https://github.com/makeusabrew/bootbox/issues/180

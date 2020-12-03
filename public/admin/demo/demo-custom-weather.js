@@ -1,8 +1,8 @@
-// Docs at http://simpleweatherjs.com
+// Docs at https://simpleweatherjs.com
 
 /* Does your browser support geolocation? */
 if ("geolocation" in navigator) {
-  $('.js-geolocation').show(); 
+  $('.js-geolocation').show();
 } else {
   $('.js-geolocation').hide();
 }
@@ -14,7 +14,7 @@ $('.js-geolocation').on('click', function() {
   });
 });
 
-/* 
+/*
 * Test Locations
 * Austin lat/long: 30.2676,-97.74298
 * Austin WOEID: 2357536
@@ -32,8 +32,8 @@ function loadWeather(location, woeid) {
       html = '<h2><i class="ar ar-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp+'</h2>';
       html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
       html += '<li class="currently">'+weather.currently+'</li></ul>';
-      // html += '<li>'+weather.alt.temp+'&deg;F</li></ul>';  
-      
+      // html += '<li>'+weather.alt.temp+'&deg;F</li></ul>';
+
       $(".weather-widget").html(html);
     },
     error: function(error) {
