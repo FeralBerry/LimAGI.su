@@ -22,36 +22,36 @@
                 <h3>Свяжитесь со мной</h3>
                 <span>постараюсь ответить в ближайший час</span>
             </div>
-            <form id="contact-form" class="contactus-form" action="{{ route('contact') }}" method="post">
+            <form class="contactus-form" action="{{ route('contact') }}" method="post">
                 @csrf
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="form-group">
-                        <input type="text" name="contact-name" class="form-control" id="input_name" placeholder="Ваше имя*" required/>
+                        <input type="text" name="contact_name" class="form-control" id="input_name" placeholder="Ваше имя*" required/>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="form-group">
-                        <input type="text" name="contact-phone" class="form-control" id="input_phone" placeholder="телефон"/>
+                        <input type="text" name="contact_phone" class="form-control" id="input_phone" placeholder="телефон"/>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="form-group">
-                        <input type="email" name="contact-email" class="form-control" id="input_email" placeholder="Email*" required/>
+                        <input type="email" name="contact_email" class="form-control" id="input_email" placeholder="Email*" required/>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12">
                     <div class="form-group">
-                        <input type="text" name="contact-subject" class="form-control" id="input_subject" placeholder="Тема вопроса"/>
+                        <input type="text" name="contact_subject" class="form-control" id="input_subject" placeholder="Тема вопроса"/>
                     </div>
                 </div>
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="form-group">
-                        <textarea rows="10" name="contact-message" class="form-control" id="textarea_message" placeholder="Сообщение"></textarea>
+                        <textarea rows="10" name="contact_message" class="form-control" id="textarea_message" placeholder="Сообщение"></textarea>
                     </div>
                 </div>
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="form-group">
-                        <input type="submit" value="Отправить" id="btn_submit" title="Отправить" name="post">
+                        <input type="submit" value="Отправить" title="Отправить" name="post">
                     </div>
                 </div>
                 <div id="alert-msg" class="alert-msg"></div>

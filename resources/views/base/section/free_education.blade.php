@@ -6,9 +6,9 @@
         <span>Просто зарегистрируйтесь и получите</span>
     </div>
     <ul id="team-carousel">
-        <li data-thumb="{{ asset('base/img/team-thumb1.jpg') }}">
+        <li data-thumb="{{ asset('base/img/free_courses-thumb1.jpg') }}">
             <div class="col-md-6 no-padding larg-thumb">
-                <img src="{{ asset('base/img/team1.jpg') }}" width="960" height="670" alt="team1"/>
+                <img src="{{ asset('base/img/free_courses1.jpg') }}" width="960" height="670" alt="Бесплатные курсы по HTML\CSS"/>
             </div>
             <div class="container">
                 <div class="col-md-6 no-padding">
@@ -33,9 +33,9 @@
                 </div>
             </div>
         </li>
-        <li data-thumb="{{ asset('base/img/team-thumb2.jpg') }}">
+        <li data-thumb="{{ asset('base/img/free_courses-thumb2.jpg') }}">
             <div class="col-md-6 no-padding larg-thumb">
-                <img src="{{ asset('base/img/team2.jpg') }}" width="960" height="670" alt="team2"/>
+                <img src="{{ asset('base/img/free_courses2.jpg') }}" width="960" height="670" alt="Бесплатные курсы по PHP\SQL"/>
             </div>
             <div class="container">
                 <div class="col-md-6 no-padding">
@@ -60,9 +60,9 @@
                 </div>
             </div>
         </li>
-        <li data-thumb="{{ asset('base/img/team-thumb3.jpg') }}">
+        <li data-thumb="{{ asset('base/img/free_courses-thumb3.jpg') }}">
             <div class="col-md-6 no-padding larg-thumb">
-                <img src="{{ asset('base/img/team3.jpg') }}" width="960" height="670" alt="team3"/>
+                <img src="{{ asset('base/img/free_courses3.jpg') }}" width="960" height="670" alt="Бесплатные курсы по JavaScript и Jquery"/>
             </div>
             <div class="container">
                 <div class="col-md-6 no-padding">
@@ -86,9 +86,9 @@
                 </div>
             </div>
         </li>
-        <li data-thumb="{{ asset('base/img/team-thumb4.jpg') }}">
+        <li data-thumb="{{ asset('base/img/free_courses-thumb4.jpg') }}">
             <div class="col-md-6 no-padding larg-thumb">
-                <img src="{{ asset('base/img/team4.jpg') }}" width="960" height="670" alt="team4"/>
+                <img src="{{ asset('base/img/free_courses4.jpg') }}" width="960" height="670" alt="Бесплатное обучение базовым фреймворкам"/>
             </div>
             <div class="container">
                 <div class="col-md-6 no-padding">

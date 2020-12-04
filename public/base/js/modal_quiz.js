@@ -2,6 +2,7 @@ var num = 15;
 var modalBtnCorp = document.querySelector('.open_corp');
 var closeBtnCorp = document.querySelector('.close_modal_corp');
 var modalContainerCorp = document.querySelector('.modals_corp');
+var holdModals = document.createDocumentFragment();
 for (var i = 0; i < num; i++) {
     var div = document.createElement('div');
     div.classList.add('modal-drop');

@@ -53,21 +53,11 @@ class IndexController extends AppController
                 'phone' => 'required',
             ], $messages);
             $data_contact = $request->all();
-            $result = Mail::send('emails.contact_email',['data_contact' => $data_contact], function($message) use ($data_contact){
+            $result = Mail::send('emails.index_email',['data_contact' => $data_contact], function($message) use ($data_contact){
                 $mail_admin = env('MAIL_ADMIN');
-                $message->from($data_contact['email'],$data_contact['name']);
-                $message->to($mail_admin)->subject('Заявка на сайт с главной страницы от'.$data_contact['name']);
+                $message->from('limagi@limagi.su',$data_contact['name']);
+                $message->to($mail_admin)->subject('Заявка на сайт с главной страницы от '.$data_contact['name']);
             });
-            $token_t = "807035350:AAFMLs54vlYmH5TJCo0If87EXhX-1zPmYRs";
-            $chat_id_t = "-257049210";
-            $txt_name = $data_contact["name"];
-            $txt_email = $data_contact["email"];
-            $txt_phone = $data_contact["phone"];
-            //$txt_message = $data_contact["message"];
-            //$phoneWhatsApp = 89687106270;
-            //$whatsAppMessage = urlencode($txt_message);
-            //$senToWhatsApp = fopen("https://api.whatsapp.com/send?phone={$phoneWhatsApp}?text={$whatsAppMessage}","r");
-            //$sendToTelegram = fopen("https://api.telegram.org/bot{$token_t}/sendMessage?chat_id={$chat_id_t}&parse_mode=html&text=Имя:{$txt_name}%0AЕмаил:{$txt_email}%0AТелефон:{$txt_phone}","r");
             if($result){
                 return redirect()->back()->with([
                     'status' =>'Ваши данные отправлены скоро с вами свяжется наш менеджер',
@@ -210,41 +200,12 @@ class IndexController extends AppController
             'title' => $title,
         ]);
         if($request->isMethod('post')) {
-            $messages = [
-                'required' => "Поле :attribute обязательное для заполнения",
-                'email' => "Поле должно соответствовать email адресу"
-            ];
-            $this->validate($request, [
-                'contact_name' => 'required|max:255',
-                'contact_email' => 'required|email',
-                'contact_subject' => 'max:255',
-            ], $messages);
             $data_contact = $request->all();
             $result = Mail::send('emails.contact_email',['data_contact' => $data_contact], function($message) use ($data_contact){
                 $mail_admin = env('MAIL_ADMIN');
-                $message->from($mail_admin,$data_contact['contact_name']);
-                $message->to($mail_admin)->subject($data_contact['contact_message']);
+                $message->from('limagi@limagi.su',$data_contact['contact_name']);
+                $message->to($mail_admin)->subject('Заявка на сайт с главной страницы от '.$data_contact['contact_name']);
             });
-            $token_t = "807035350:AAFMLs54vlYmH5TJCo0If87EXhX-1zPmYRs";
-            $chat_id_t = "-257049210";
-            $txt_name = $data_contact["contact_name"];
-            $txt_email = $data_contact["contact_email"];
-            $txt_phone = $data_contact["contact_phone"];
-            $txt_message = $data_contact["contact_message"];
-            //$phoneWhatsApp = 89687106270;
-            $whatsAppMessage = urlencode($txt_message);
-            //$senToWhatsApp = fopen("https://api.whatsapp.com/send?phone={$phoneWhatsApp}?text={$whatsAppMessage}","r");
-            $sendToTelegram = fopen("https://api.telegram.org/bot{$token_t}/sendMessage?chat_id={$chat_id_t}&parse_mode=html&text=Имя:{$txt_name}%0AЕмаил:{$txt_email}%0AТелефон:{$txt_phone}%0AСообщение:{$txt_message}","r");
-            if($result){
-                return redirect()->back()->with([
-                    'status' =>'Ваши данные отправлены скоро с вами свяжется наш менеджер',
-                    'contact_name' => $data_contact['contact_name'],
-                    'contact_email' => $data_contact['contact_email'],
-                    'contact_phone' => $data_contact['contact_phone'],
-                    'contact_subject' => $data_contact['contact_subject'],
-                    'contact_message' => $data_contact['contact_message'],
-                ]);
-            }
         }
         return view('base.contact', $data);
     }

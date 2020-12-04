@@ -82,8 +82,8 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCn3Z6i1AYolP3Y2SGis5qhbhRwmxxo1wU"></script>
 <script src="{{ asset('base/js/functions.js') }}"></script>
 <script src="{{ asset('base/js/blog.js') }}"></script>
-@if(Auth::user() == '')
-    <script src="{{ asset('base/js/modal.js') }}"></script>
+@if(isset(Auth::user()->name) == '')
+<script src="{{ asset('base/js/modal.js') }}"></script>
 @endif
 @if(Request::path() == '/')
     <script src="{{ asset('base/js/timer.js') }}"></script>
