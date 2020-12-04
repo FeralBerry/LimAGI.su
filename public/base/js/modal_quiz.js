@@ -1,3 +1,4 @@
+var num = 15;
 var modalBtnCorp = document.querySelector('.open_corp');
 var closeBtnCorp = document.querySelector('.close_modal_corp');
 var modalContainerCorp = document.querySelector('.modals_corp');

@@ -5,12 +5,12 @@
     "author": {
         "name": "Mika Tuupola",
         "email": "tuupola@appelsiini.net",
-        "url": "http://www.appelsiini.net/"
+        "url": "https://www.appelsiini.net/"
     },
     "licenses": [
         {
             "type": "MIT",
-            "url": "http://www.opensource.org/licenses/mit-license.php"
+            "url": "https://www.opensource.org/licenses/mit-license.php"
         }
     ],
     "dependencies": {
@@ -23,10 +23,10 @@
         "ui",
         "form"
     ],
-    "homepage": "http://www.appelsiini.net/projects/chained",
+    "homepage": "https://www.appelsiini.net/projects/chained",
     "bugs": "https://github.com/tuupola/jquery_chained/issues",
-    "docs": "http://www.appelsiini.net/projects/chained",
-    "demo": "http://www.appelsiini.net/projects/chained/demo.html",
+    "docs": "https://www.appelsiini.net/projects/chained",
+    "demo": "https://www.appelsiini.net/projects/chained/demo.html",
     "files": [
         "jquery.chained.js",
         "jquery.chained.min.js",

@@ -4,7 +4,7 @@ This plugin makes it possible to edit the content of an element simply by double
 aside from other similar plugins is that the editable area **won't look like your plain old boring textarea** or 
 input field. Instead, it will look as if you're editing the actually page.
 
-[Live example can be viewed here](http://victorjonsson.se/168/jquery-editable/?from=github)
+[Live example can be viewed here](https://victorjonsson.se/168/jquery-editable/?from=github)
 
 ## How does it work?
 
@@ -98,14 +98,14 @@ $('.editable-area').editable(function(data) {
 
 <h2 id="tinymce-integration">Integrate plugin with tinyMCE</h2>
 
-Since version 1.3.1 it's possible to integrate this plugin with [tinyMCE](http://www.tinymce.com/).
+Since version 1.3.1 it's possible to integrate this plugin with [tinyMCE](https://www.tinymce.com/).
 
 ```html
 <div id="my-editable">
   <p>Lorem te ipsum...</p>
 </div>
 <script src="tinymce/jscript/tinymce.js"></script>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="js/jquery.editable.min.js"></script>
 <script>
   $('#my-ediable').editable({

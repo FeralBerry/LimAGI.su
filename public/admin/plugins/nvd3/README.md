@@ -6,7 +6,7 @@ As of mid April, 2014, NVD3 is undergoing a major internal refactoring. While we
 
 The code is on the branch at [refactor/2.0.0-dev](https://github.com/novus/nvd3/tree/refactor/2.0.0-dev). It is currently about 4/5ths functional, and we are working through finishing the tests for the last few parameters. The commonly used charts are there, and any outstanding or new pull requests will need to rebase and target that. Of course, if you want to implement some of those features, that would also be great!
 
-For more information on the refactored architecture and approach, please see the recent blog posts on  [architecture](http://nvd3.org/blog/2014/03/architecture/) and [chart drawing lifecycle](http://nvd3.org/blog/2014/03/nvd3-chart-drawing-lifecycle/).
+For more information on the refactored architecture and approach, please see the recent blog posts on  [architecture](https://nvd3.org/blog/2014/03/architecture/) and [chart drawing lifecycle](https://nvd3.org/blog/2014/03/nvd3-chart-drawing-lifecycle/).
 
 For now, any users of NVD3 still get 1.1.15-beta.
 
@@ -19,7 +19,7 @@ A reusable chart library for d3.js.
 
 NVD3 may change from its current state, but will always try to follow the style of d3.js.
 
-You can also check out the [examples page](http://nvd3.org/ghpages/examples.html).
+You can also check out the [examples page](https://nvd3.org/ghpages/examples.html).
 **Note:** The examples on nvd3.org are outdated.  For examples on how to use the latest NVD3, please checkout the **examples/** directory in the repository.
 
 ---
@@ -74,8 +74,8 @@ fork's root directory will rebuild both `nv.d3.js` and `nv.d3.min.js`.
 
 ### Using Grunt
 
-You can use grunt instead of makefile to build js file. See more about [grunt](http://gruntjs.com/).
-***[Nodejs](http://nodejs.org/) must be installed before you can use grunt.***
+You can use grunt instead of makefile to build js file. See more about [grunt](https://gruntjs.com/).
+***[Nodejs](https://nodejs.org/) must be installed before you can use grunt.***
 Run `npm install` in root dir to install grunt and it's dependencies.
 
 Then, you can use these commands:

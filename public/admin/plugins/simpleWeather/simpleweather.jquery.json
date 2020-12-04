@@ -14,7 +14,7 @@
   "author": {
     "name": "James Fleeting",
     "email": "hello@jamesfleeting.com",
-    "url": "http://jamesfleeting.com"
+    "url": "https://jamesfleeting.com"
   },
   "licenses": [
     {
@@ -23,10 +23,10 @@
     }
   ],
   "bugs": "https://github.com/monkeecreate/jquery.simpleWeather/issues",
-  "homepage": "http://simpleweatherjs.com",
-  "docs": "http://simpleweatherjs.com",
-  "download": "http://simpleweatherjs.com",
-  "demo": "http://simpleweatherjs.com",
+  "homepage": "https://simpleweatherjs.com",
+  "docs": "https://simpleweatherjs.com",
+  "download": "https://simpleweatherjs.com",
+  "demo": "https://simpleweatherjs.com",
   "dependencies": {
     "jquery": ">=1.2"
   },
@@ -34,7 +34,7 @@
     {
       "name": "James Fleeting",
       "email": "hello@jamesfleeting.com",
-      "url": "http://jamesfleeting.com"
+      "url": "https://jamesfleeting.com"
     }
   ]
 }

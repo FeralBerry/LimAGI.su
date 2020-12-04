@@ -36,7 +36,7 @@
                                       "<h3>Insert Link</h3>" +
                                   "</div>" +
                                   "<div class='modal-body'>" +
-                                      "<input value='http://' class='bootstrap-wysihtml5-insert-link-url form-control'>" +
+                                      "<input value='https://' class='bootstrap-wysihtml5-insert-link-url form-control'>" +
                                   "</div>" +
                                   "<div class='modal-footer'>" +
                                       "<a href='#' class='btn btn-default' data-dismiss='modal'>Cancel</a>" +
@@ -56,7 +56,7 @@
                                       "<h3>Insert Image</h3>" +
                                   "</div>" +
                                   "<div class='modal-body'>" +
-                                      "<input value='http://' class='bootstrap-wysihtml5-insert-image-url form-control'>" +
+                                      "<input value='https://' class='bootstrap-wysihtml5-insert-image-url form-control'>" +
                                   "</div>" +
                                   "<div class='modal-footer'>" +
                                       "<a href='#' class='btn btn-default' data-dismiss='modal'>Cancel</a>" +

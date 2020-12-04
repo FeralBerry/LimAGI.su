@@ -1,9 +1,9 @@
 /*!
  * FullCalendar v1.6.2 Google Calendar Plugin
- * Docs & License: http://arshaw.com/fullcalendar/
+ * Docs & License: https://arshaw.com/fullcalendar/
  * (c) 2013 Adam Shaw
  */
- 
+
 (function($) {
 
 
@@ -42,7 +42,7 @@ function transformOptions(sourceOptions, start, end) {
 		'singleevents': true,
 		'max-results': 9999
 	});
-	
+
 	var ctz = sourceOptions.currentTimezone;
 	if (ctz) {
 		data.ctz = ctz = ctz.replace(' ', '_');
@@ -94,7 +94,7 @@ function transformOptions(sourceOptions, start, end) {
 			return events;
 		}
 	});
-	
+
 }
 
 

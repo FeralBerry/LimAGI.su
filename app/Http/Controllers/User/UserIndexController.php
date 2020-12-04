@@ -71,10 +71,9 @@ class UserIndexController extends AppController
         if ($request->isMethod('post')){
             $avatar = User::all()->where('id', $id);
             foreach ($avatar as $item){
-                $ava = $item->avatar;
-            }
-            if($ava !== ''){
-                unlink('base/img/avatar/' . $ava);
+                if($item->avatar !== 'NULL'){
+                    unlink(public_path('base/img/avatar/') . $item->avatar);
+                }
             }
             if ($request->hasFile('ava')) {
                 $image = $request->file('ava');

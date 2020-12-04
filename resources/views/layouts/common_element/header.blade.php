@@ -351,27 +351,3 @@
         </li>
     </ul>
 </header>
-
-        <li class="dropdown toolbar-icon-bg">
-            <a href="#" class="dropdown-toggle" data-toggle='dropdown'><span class="icon-bg"><i class="fa fa-fw fa-user"></i></span></a>
-            <ul class="dropdown-menu userinfo arrow">
-
-                <li class="divider">Курсы</li>
-                <li><a href="#"><span class="pull-left">Бесплатные</span> <i class="pull-right fa fa-line-chart"></i></a></li>
-                {{--<li><a href="#"><span class="pull-left">Statement</span> <i class="pull-right fa fa-list-alt"></i></a></li>
-                <li><a href="#"><span class="pull-left">Withdrawals</span> <i class="pull-right fa fa-dollar"></i></a></li>--}}
-                <li class="divider"></li>
-                <li>
-                    <a class="dropdown-item" href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                        <span class="pull-left">{{ __('Выйти') }}</span><i class="pull-right fa fa-sign-out"></i>
-                    </a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                </li>
-            </ul>
-        </li>
-    </ul>
-</header>

@@ -6,14 +6,14 @@ license GPL/LGPL/MPL
 /*
  * ====== PNotify ======
  *
- * http://sciactive.com/pnotify/
+ * https://sciactive.com/pnotify/
  *
  * Copyright 2009-2014 Hunter Perrin
  *
  * Triple licensed under the GPL, LGPL, and MPL.
- * 	http://gnu.org/licenses/gpl.html
- * 	http://gnu.org/licenses/lgpl.html
- * 	http://mozilla.org/MPL/MPL-1.1.html
+ * 	https://gnu.org/licenses/gpl.html
+ * 	https://gnu.org/licenses/lgpl.html
+ * 	https://mozilla.org/MPL/MPL-1.1.html
  */
 
 // Uses AMD or browser globals to create a jQuery plugin.
@@ -743,7 +743,7 @@ license GPL/LGPL/MPL
 		}
 	});
 	/*
-	 * uses icons from http://fontawesome.io/
+	 * uses icons from https://fontawesome.io/
 	 * version 4.0.3
 	 */
 	PNotify.styling.fontawesome = $.extend({}, PNotify.styling.bootstrap3);
@@ -929,7 +929,7 @@ license GPL/LGPL/MPL
 			if (permission != 0)
 				return;
 			if (options.icon === null) {
-				options.icon = "http://sciactive.com/pnotify/includes/desktop/"+notice.options.type+".png";
+				options.icon = "https://sciactive.com/pnotify/includes/desktop/"+notice.options.type+".png";
 			} else if (options.icon === false) {
 				options.icon = null;
 			}

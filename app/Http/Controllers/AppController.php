@@ -20,6 +20,7 @@ class AppController extends Controller
     protected function chat(){
         $chat_room = ChatRoom::all();
         $data = [
+            'country' => $this->locateCountry(),
             'chat_room' => $chat_room,
             'free_courses_menu' => $this->freeCoursesMenu(),
             'count_chat' => $this->countChat(),

@@ -1,4 +1,4 @@
-![Switchery](http://i.imgur.com/xJAM3Jq.png)
+![Switchery](https://i.imgur.com/xJAM3Jq.png)
 
 ## Description
 
@@ -6,9 +6,9 @@ Switchery is a simple component that helps you turn your default HTML checkbox i
 
 Supported by all modern browsers: Chrome, Firefox, Opera, Safari, IE8+
 
-![Preview](http://i.imgur.com/0PcuTbO.jpg)
+![Preview](https://i.imgur.com/0PcuTbO.jpg)
 
-[Live Preview](http://abpetkov.github.io/switchery/)
+[Live Preview](https://abpetkov.github.io/switchery/)
 
 ## Installation
 
@@ -86,7 +86,7 @@ elems.forEach(function(html) {
 });
 ```
 
-![Multiple](http://i.imgur.com/Ip4xy4s.jpg)
+![Multiple](https://i.imgur.com/Ip4xy4s.jpg)
 
 ##### Multiple calls
 
@@ -114,7 +114,7 @@ You can change the primary color of the switch to fit your design perfectly:
 var switchery = new Switchery(elem, { color: '#41b7f1' });
 ```
 
-![Colored](http://i.imgur.com/qO0Pzub.jpg)
+![Colored](https://i.imgur.com/qO0Pzub.jpg)
 
 Or the secondary color, which will change the switch background color and border color:
 
@@ -161,13 +161,13 @@ for (var i = 0; i < elems.length; i++) {
 }
 ```
 
-Personally I recommend using [CSS3 PIE](http://css3pie.com/). For working example you can check out the demo page.
+Personally I recommend using [CSS3 PIE](https://css3pie.com/). For working example you can check out the demo page.
 
 ## Development
 
 If you've decided to go in development mode and tweak all of this a bit, there are few things you should do.
 
-After you clone the repository, do this in your terminal ([NPM](http://npmjs.org/) required):
+After you clone the repository, do this in your terminal ([NPM](https://npmjs.org/) required):
 
 ```shell
 $ npm install
@@ -197,7 +197,7 @@ Big thanks to:
 
 ## Contact
 
-If you like this component, share your appreciation by following me in [Twitter](https://twitter.com/abpetkov), [GitHub](https://github.com/abpetkov) or [Dribbble](http://dribbble.com/apetkov).
+If you like this component, share your appreciation by following me in [Twitter](https://twitter.com/abpetkov), [GitHub](https://github.com/abpetkov) or [Dribbble](https://dribbble.com/apetkov).
 
 ## License
 

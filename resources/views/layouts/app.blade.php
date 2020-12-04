@@ -48,14 +48,13 @@
     <div class="container">
         <div class="twelve columns" style="margin-top: 20px">
             <div class="logo-wrap">
-                <a href="{{ route('index') }}"><img style="width: 50px" src="{{ asset('images/logo.gif') }}" alt="One-Page"></a>
+                <a href="{{ route('index') }}"><img style="width: 50px" src="{{ asset('images/logo.gif') }}" alt="LimAGI"></a>
             </div>
             <div class="logo-wrap">
-                <a href="{{ route('index') }}"><img src="{{ asset('images/logo.png') }}" alt="One-Page"></a>
+                <a href="{{ route('index') }}"><img src="{{ asset('images/logo.png') }}" alt="LimAGI"></a>
             </div>
             <div class="head_contact">
                 <a href="tel: 79687106270">Телефон: +7(968)710-62-70</a><br>
-                <a href="mailto:info@one-page.su">Email: info@one-page.su</a>
             </div>
             @guest
                 <a class="login" href="{{ route('login') }}">{{ __('Вход') }}</a>
@@ -162,7 +161,7 @@
     (function($) { "use strict";
         Royal_Preloader.config({
             mode:           'text', // 'number', "text" or "logo"
-            text:           "One-Page",
+            text:           "LimAGI",
             timeout:        0,
             showInfo:       true,
             opacity:        1,

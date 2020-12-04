@@ -1,8 +1,8 @@
 /*
 Input Mask plugin extensions
-http://github.com/RobinHerbots/jquery.inputmask
+https://github.com/RobinHerbots/jquery.inputmask
 Copyright (c) 2010 - 2013 Robin Herbots
-Licensed under the MIT license (http://www.opensource.org/licenses/mit-license.php)
+Licensed under the MIT license (https://www.opensource.org/licenses/mit-license.php)
 Version: 0.0.0
 
 Optional extensions on the jquery.inputmask base
@@ -114,7 +114,7 @@ Optional extensions on the jquery.inputmask base
                         //strip groupseparator
                         var escapedGroupSeparator = $.inputmask.escapeRegex.call(this, opts.groupSeparator);
                         bufferStr = bufferStr.replace(new RegExp(escapedGroupSeparator, "g"), '');
-                        
+
                         var isValid = opts.regex.number(opts).test(bufferStr);
                         if (!isValid) {
                             //let's help the regex a bit

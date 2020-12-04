@@ -22,9 +22,9 @@ $('#my_elem').mousewheel(function(event, delta, deltaX, deltaY) {
 ```
 
 ## See it in action
-[See the tests on Github](http://brandonaaron.github.com/jquery-mousewheel/test).
+[See the tests on Github](https://brandonaaron.github.com/jquery-mousewheel/test).
 
-## Using with [Browserify](http://browserify.org)
+## Using with [Browserify](https://browserify.org)
 
 Support for browserify is baked in.
 
@@ -55,4 +55,4 @@ require('jquery-mousewheel')($);
 
 This plugin is licensed under the [MIT License](LICENSE.txt).
 
-Copyright (c) 2013 [Brandon Aaron](http://brandonaaron.net)
+Copyright (c) 2013 [Brandon Aaron](https://brandonaaron.net)

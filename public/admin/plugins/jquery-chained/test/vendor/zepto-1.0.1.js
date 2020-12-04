@@ -1327,7 +1327,7 @@ window.Zepto = Zepto
           result = xhr.responseText
 
           try {
-            // http://perfectionkills.com/global-eval-what-are-the-options/
+            // https://perfectionkills.com/global-eval-what-are-the-options/
             if (dataType == 'script')    (1,eval)(result)
             else if (dataType == 'xml')  result = xhr.responseXML
             else if (dataType == 'json') result = blankRE.test(result) ? null : $.parseJSON(result)

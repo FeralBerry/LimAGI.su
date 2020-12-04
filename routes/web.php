@@ -99,7 +99,7 @@ Route::group(['middleware' => ['auth']], function() {
     Route::group($groupData, function () {
         Route::match(['GET','POST'],'/', ['uses' => 'UserIndexController@index', 'as' => 'user-index']);
         Route::match(['GET','POST'],'/info', ['uses' => 'UserIndexController@info', 'as' => 'user-info']);
-        Route::match(['GET','POST'],'/chat-admin', ['uses' => 'ChatController@chatAdmin', 'as' => 'chat-admin']);
+        /*Route::match(['GET','POST'],'/chat-admin', ['uses' => 'ChatController@chatAdmin', 'as' => 'chat-admin']);
         Route::match(['GET','POST'],'/add-chat-admin', ['uses' => 'ChatController@addChatAdmin','as' => 'add-chat-admin']);
         Route::match(['GET','POST'],'/chat-html', ['uses' => 'ChatController@chatHtml', 'as' => 'chat-html']);
         Route::match(['GET','POST'],'/add-chat-html', ['uses' => 'ChatController@addChatHtml','as' => 'add-chat-html']);
@@ -108,8 +108,7 @@ Route::group(['middleware' => ['auth']], function() {
         Route::match(['GET','POST'],'/chat-js', ['uses' => 'ChatController@chatJs', 'as' => 'chat-js']);
         Route::match(['GET','POST'],'/add-chat-js', ['uses' => 'ChatController@addChatJs','as' => 'add-chat-js']);
         Route::match(['GET','POST'],'/chat-design', ['uses' => 'ChatController@chatDesign', 'as' => 'chat-design']);
-        Route::match(['GET','POST'],'/add-chat-design', ['uses' => 'ChatController@addChatDesign','as' => 'add-chat-design']);
-        Route::match(['GET','POST'],'/add-chat-design', ['uses' => 'ChatController@addChatDesign','as' => 'add-chat-design']);
+        Route::match(['GET','POST'],'/add-chat-design', ['uses' => 'ChatController@addChatDesign','as' => 'add-chat-design']);*/
         Route::match(['GET','POST'],'/free-courses/html', ['uses' => 'FreeCoursesController@indexHtml','as' => 'free-courses-html']);
         Route::match(['GET','POST'],'/free-courses/html/{id}', ['uses' => 'FreeCoursesController@articleHtml','as' => 'free-courses-html-article']);
         Route::match(['GET','POST'],'/free-courses/css', ['uses' => 'FreeCoursesController@indexCss','as' => 'free-courses-css']);

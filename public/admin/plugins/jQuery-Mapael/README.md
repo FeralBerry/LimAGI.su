@@ -1,19 +1,19 @@
 # jQuery Mapael - Build dynamic vector maps
 
-For more information and documentation, go to [Mapael website](http://neveldo.fr/mapael).
+For more information and documentation, go to [Mapael website](https://neveldo.fr/mapael).
 
 Additional maps are stored in the repository ['neveldo/mapael-maps'](https://github.com/neveldo/mapael-maps).
 
 ## Overview
 
-jQuery Mapael is a [jQuery](http://jquery.com/) plugin based on [raphael.js](http://raphaeljs.com/) that allows you to display dynamic vector maps.  
+jQuery Mapael is a [jQuery](https://jquery.com/) plugin based on [raphael.js](https://raphaeljs.com/) that allows you to display dynamic vector maps.  
 
 For example, with Mapael, you can display a map of the world with clickable countries. You can build simple dataviz by setting some parameters in order to automatically set a color to each area of your map and generate the legend. Moreover, you can plot cities on a map with their latitude and longitude.
 
-As Raphaël, Mapael supports Firefox 3.0+, Safari 3.0+, Chrome 5.0+, Opera 9.5+ and Internet Explorer 6.0+.
+As Raphaï¿½l, Mapael supports Firefox 3.0+, Safari 3.0+, Chrome 5.0+, Opera 9.5+ and Internet Explorer 6.0+.
 
-![Dataviz example](http://neveldo.fr/mapael/world-example.png)
-[See this example !](http://neveldo.fr/mapael/usecases/world)
+![Dataviz example](https://neveldo.fr/mapael/world-example.png)
+[See this example !](https://neveldo.fr/mapael/usecases/world)
 
 ## Key features
 
@@ -46,22 +46,22 @@ Here is the simplest example that shows how to display an empty map of the world
 
 ## Examples
 
-*   [Minimal example (France)](http://jsfiddle.net/neveldo/tn5AF/embedded/result/) - [Edit in JSFiddle](http://jsfiddle.net/neveldo/tn5AF/)
-*   [Refreshable map of France with coloured cities and areas labels and zoom buttons](http://jsfiddle.net/neveldo/TKUy4/embedded/result/) - [Edit in JSFiddle](http://jsfiddle.net/neveldo/TKUy4/)
-*   [Map with some overloaded parameters and 'onclick' callback on areas (France)](http://jsfiddle.net/neveldo/qGwWr/embedded/result/) - [Edit in JSFiddle](http://jsfiddle.net/neveldo/qGwWr/)
-*   [Population of France by department with a legend](http://jsfiddle.net/neveldo/TUYHN/embedded/result/) - [Edit in JSFiddle](http://jsfiddle.net/neveldo/TUYHN/)
-*   [Population of the 1000 more populated french cities with a legend](http://jsfiddle.net/neveldo/n6XyQ/embedded/result/) - [Edit in JSFiddle](http://jsfiddle.net/neveldo/n6XyQ/)
-*   [Map of the world with the population by country](http://jsfiddle.net/neveldo/VqwUZ/embedded/result/) - [Edit in JSFiddle](http://jsfiddle.net/neveldo/VqwUZ/)
-*   [Map of USA with some plotted cities](http://jsfiddle.net/neveldo/KeBTy/embedded/result/) - [Edit in JSFiddle](http://jsfiddle.net/neveldo/KeBTy/)
-*   [Open a link in a new tab](http://jsfiddle.net/neveldo/E4hqM/embedded/result/) - [Edit in JSFiddle](http://jsfiddle.net/neveldo/E4hqM/)
-*   [Setting an image as a plot](http://jsfiddle.net/neveldo/8Ke69/embedded/result/) - [Edit in JSFiddle](http://jsfiddle.net/neveldo/8Ke69/)
-*   [Playing with the zoom features : focus on specific areas, zoom on scroll](http://jsfiddle.net/neveldo/RahvT/embedded/result/) - [Edit in JSFiddle](http://jsfiddle.net/neveldo/RahvT/)
+*   [Minimal example (France)](https://jsfiddle.net/neveldo/tn5AF/embedded/result/) - [Edit in JSFiddle](https://jsfiddle.net/neveldo/tn5AF/)
+*   [Refreshable map of France with coloured cities and areas labels and zoom buttons](https://jsfiddle.net/neveldo/TKUy4/embedded/result/) - [Edit in JSFiddle](https://jsfiddle.net/neveldo/TKUy4/)
+*   [Map with some overloaded parameters and 'onclick' callback on areas (France)](https://jsfiddle.net/neveldo/qGwWr/embedded/result/) - [Edit in JSFiddle](https://jsfiddle.net/neveldo/qGwWr/)
+*   [Population of France by department with a legend](https://jsfiddle.net/neveldo/TUYHN/embedded/result/) - [Edit in JSFiddle](https://jsfiddle.net/neveldo/TUYHN/)
+*   [Population of the 1000 more populated french cities with a legend](https://jsfiddle.net/neveldo/n6XyQ/embedded/result/) - [Edit in JSFiddle](https://jsfiddle.net/neveldo/n6XyQ/)
+*   [Map of the world with the population by country](https://jsfiddle.net/neveldo/VqwUZ/embedded/result/) - [Edit in JSFiddle](https://jsfiddle.net/neveldo/VqwUZ/)
+*   [Map of USA with some plotted cities](https://jsfiddle.net/neveldo/KeBTy/embedded/result/) - [Edit in JSFiddle](https://jsfiddle.net/neveldo/KeBTy/)
+*   [Open a link in a new tab](https://jsfiddle.net/neveldo/E4hqM/embedded/result/) - [Edit in JSFiddle](https://jsfiddle.net/neveldo/E4hqM/)
+*   [Setting an image as a plot](https://jsfiddle.net/neveldo/8Ke69/embedded/result/) - [Edit in JSFiddle](https://jsfiddle.net/neveldo/8Ke69/)
+*   [Playing with the zoom features : focus on specific areas, zoom on scroll](https://jsfiddle.net/neveldo/RahvT/embedded/result/) - [Edit in JSFiddle](https://jsfiddle.net/neveldo/RahvT/)
 
 ## License
 
-Copyright (C) 2013 [Vincent Brouté](http://neveldo.fr)
+Copyright (C) 2013 [Vincent Broutï¿½](https://neveldo.fr)
 
-jQuery Mapael is licensed under the MIT license (http://www.opensource.org/licenses/mit-license.php).
+jQuery Mapael is licensed under the MIT license (https://www.opensource.org/licenses/mit-license.php).
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 

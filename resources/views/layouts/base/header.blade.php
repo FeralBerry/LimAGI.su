@@ -9,7 +9,7 @@
                 <div class="col-md-4 col-sm-4 col-xs-6 social">
                     <ul>
                         <li><a title="Facebook" href="#"><i class="fa fa-github"></i></a></li>
-                        <li><a title="Mail" href="mailto:info@one-page.su"><i class="fa fa-envelope"></i></a></li>
+                        <li><a title="Mail" href="mailto:limagi@limagi.su"><i class="fa fa-envelope"></i></a></li>
                         <li><a title="Google Plus" href="mailto:evakomarova90@gmail.com"><i class="fa fa-google-plus"></i></a></li>
                         <li><a title="WhatsApp" href="https://wa.me/79687106270"><i class="fa fa-whatsapp"></i></a></li>
                         <li><a title="VK" href="https://vk.com/id338990548"><i class="fa fa-vk"></i></a></li>

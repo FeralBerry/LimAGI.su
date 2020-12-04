@@ -5,7 +5,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-touch-fullscreen" content="yes">
 <meta name="description" content="{{ $description ?? 'Панель администратора сайта LimAGI.su' }}">
-<meta name="description" content="{{ $description ?? 'Панель администратора сайта LimAGI.su' }}">
+<meta name="keywords" content="{{ $description ?? 'Панель администратора сайта LimAGI.su' }}">
 <meta name="author" content="LimAGI">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <link href='https://fonts.googleapis.com/css?family=RobotoDraft:300,400,400italic,500,700' rel='stylesheet' type='text/css'>

@@ -27,13 +27,13 @@
 
 	// The text that appears on the upper part of the dialog box when
 	// entering links.
-	var linkDialogText = "<code>http://example.com/ \"optional title\"</code>";
-	var imageDialogText = "<code>http://example.com/images/diagram.jpg \"optional title\"</code>";
+	var linkDialogText = "<code>https://example.com/ \"optional title\"</code>";
+	var imageDialogText = "<code>https://example.com/images/diagram.jpg \"optional title\"</code>";
 
 	// The default text that appears in the dialog input box when entering
 	// links.
-	var imageDefaultText = "http://";
-	var linkDefaultText = "http://";
+	var imageDefaultText = "https://";
+	var linkDefaultText = "https://";
 
 	var defaultHelpHoverTitle = "Markdown Editing Help";
 
@@ -181,7 +181,7 @@
 		var regexText;
 		var replacementText;
 
-		// chrome bug ... documented at: http://meta.stackoverflow.com/questions/63307/blockquote-glitch-in-editor-in-chrome-6-and-7/65985#65985
+		// chrome bug ... documented at: https://meta.stackoverflow.com/questions/63307/blockquote-glitch-in-editor-in-chrome-6-and-7/65985#65985
 		if (navigator.userAgent.match(/Chrome/)) {
 			"X".match(/()./);
 		}
@@ -1008,7 +1008,7 @@
 				// Fixes common pasting errors.
 				text = text.replace(/^http:\/\/(https?|ftp):\/\//, '$1://');
 				if (!/^(?:https?|ftp):\/\//.test(text))
-					text = 'http://' + text;
+					text = 'https://' + text;
 			}
 
 			$(dialog).modal('hide');
@@ -1782,7 +1782,7 @@
 		//
 		// Since this is essentially a backwards-moving regex, it's susceptible to
 		// catstrophic backtracking and can cause the browser to hang;
-		// see e.g. http://meta.stackoverflow.com/questions/9807.
+		// see e.g. https://meta.stackoverflow.com/questions/9807.
 		//
 		// Hence we replaced this by a simple state machine that just goes through the
 		// lines and checks for a), b), and c).

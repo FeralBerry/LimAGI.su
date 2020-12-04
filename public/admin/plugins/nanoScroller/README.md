@@ -154,7 +154,7 @@ There are a few options that you can change when running nanoScroller, e.g. `$("
 
 #### iOSNativeScrolling
 
-Set to true if you want to use native scrolling in iOS 5+. This will disable your custom nanoScroller scrollbar in iOS 5+ and use the native one instead. While the native iOS scrollbar usually works much better, [there could possibly be bugs](http://github.com/scottjehl/Device-Bugs/issues) in certain situations.
+Set to true if you want to use native scrolling in iOS 5+. This will disable your custom nanoScroller scrollbar in iOS 5+ and use the native one instead. While the native iOS scrollbar usually works much better, [there could possibly be bugs](https://github.com/scottjehl/Device-Bugs/issues) in certain situations.
 
 Notice that `.pane` and `.slider` elements are *not generated/added* for devices that support iOS native scrolling when `iOSNativeScrolling` option is enabled.
 
@@ -276,12 +276,12 @@ We are still working on doing a horizontal scrolling feature. If you're interest
 
 To build nanoScroller from source you need the following libraries installed:
 
-* Node.js and npm: [homepage / download](http://nodejs.org/)
-* Grunt: [homepage](http://gruntjs.com/) | `npm install -g grunt-cli`
+* Node.js and npm: [homepage / download](https://nodejs.org/)
+* Grunt: [homepage](https://gruntjs.com/) | `npm install -g grunt-cli`
 
 #### How to build & contribute
 
-1. Make sure that you have [Grunt](http://gruntjs.com/) installed.
+1. Make sure that you have [Grunt](https://gruntjs.com/) installed.
 2. In terminal move to nanoscroller folder and run `npm install` to install all dependencies.
 3. Make all Javascript changes in Coffeescript file(s), CSS changes in CSS file(s).
 4. run `grunt` to build nanoScroller
@@ -289,7 +289,7 @@ To build nanoScroller from source you need the following libraries installed:
 
 #### How to run tests
 
-1. You need to have [PhantomJS](http://phantomjs.org/) installed. On Mac OS X the easiest way is to install [Homebrew](http://mxcl.github.com/homebrew/) and run `brew install phantomjs`.
+1. You need to have [PhantomJS](https://phantomjs.org/) installed. On Mac OS X the easiest way is to install [Homebrew](https://mxcl.github.com/homebrew/) and run `brew install phantomjs`.
 2. run `grunt test` in terminal
 
 ### Browser compatibility
@@ -360,5 +360,5 @@ Other people who have contributed code:
 - [Dlom](https://github.com/Dlom)
 
 ### Credits
-- Initially written by [James Florentino](http://jamesflorentino.com) in [CoffeeScript](http://coffeescript.org)
-- Released under [MIT License](http://www.opensource.org/licenses/mit-license.php)
+- Initially written by [James Florentino](https://jamesflorentino.com) in [CoffeeScript](https://coffeescript.org)
+- Released under [MIT License](https://www.opensource.org/licenses/mit-license.php)

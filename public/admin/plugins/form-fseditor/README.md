@@ -4,7 +4,7 @@ A lightweight jQuery plugin that prettifies and transforms text fields into full
 
 Demo
 ------------
- * [Click here to see the demo and documentation page](http://burakson.github.io/fseditor)
+ * [Click here to see the demo and documentation page](https://burakson.github.io/fseditor)
 
 Installation
 ------------
@@ -58,7 +58,7 @@ What's next?
 
 Acknowledgements
 ----------------
-© 2013, Burak Son. Released under the [MIT License](http://opensource.org/licenses/mit-license.php).
+© 2013, Burak Son. Released under the [MIT License](https://opensource.org/licenses/mit-license.php).
 
- * [Github](http://github.com/burakson) (@burakson)
- * [Twitter](http://twitter.com/burakson) (@burakson)
+ * [Github](https://github.com/burakson) (@burakson)
+ * [Twitter](https://twitter.com/burakson) (@burakson)

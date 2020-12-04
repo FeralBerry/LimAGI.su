@@ -11,7 +11,7 @@
   }
 
   // Implements a subset from:
-  // http://api.jquery.com/category/selectors/jquery-selector-extensions/
+  // https://api.jquery.com/category/selectors/jquery-selector-extensions/
   //
   // Each filter function receives the current index, all nodes in the
   // considered set, and a value if there were parentheses. The value

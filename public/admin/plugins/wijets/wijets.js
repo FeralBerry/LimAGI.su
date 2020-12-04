@@ -1,13 +1,13 @@
-/*! 
+/*!
  * wijets v0.1.2
- * http://ndevrstudios.com
- * 
+ * https://ndevrstudios.com
+ *
  * by Shifat Adnan
  * adnan.pri@gmail.com
  *
  * Copyright (c) 2014, Ndevr Studios Ltd.
- * All rights reserved 
- * 
+ * All rights reserved
+ *
  */
 
 $.wijets = function () {

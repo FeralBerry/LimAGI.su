@@ -7,7 +7,7 @@ $(function(){
 			, width : 250
 		}
 	});
-	
+
 	// Example #2
 	$(".maparea2").mapael({
 		map : {
@@ -23,39 +23,39 @@ $(function(){
 		},
 		areas: {
 			"department-56" : {
-				text : {content : "56"}, 
+				text : {content : "56"},
 				tooltip: {content : "Morbihan (56)"}
 			}
 		},
 		plots : {
 			'paris' : {
-				latitude : 48.86, 
+				latitude : 48.86,
 				longitude: 2.3444
 			},
 			'lyon' : {
 				type: "circle",
 				size:50,
-				latitude :45.758888888889, 
-				longitude: 4.8413888888889, 
-				value : 700000, 
-				href : "http://fr.wikipedia.org/wiki/Lyon",
+				latitude :45.758888888889,
+				longitude: 4.8413888888889,
+				value : 700000,
+				href : "https://fr.wikipedia.org/wiki/Lyon",
 				tooltip: {content : "<span style=\"font-weight:bold;\">City :</span> Lyon"},
 				text : {content : "Lyon"}
 			},
 			'rennes' : {
 				type :"square",
 				size :20,
-				latitude : 48.114166666667, 
-				longitude: -1.6808333333333, 
+				latitude : 48.114166666667,
+				longitude: -1.6808333333333,
 				tooltip: {content : "<span style=\"font-weight:bold;\">City :</span> Rennes"},
 				text : {content : "Rennes"},
-				href : "http://fr.wikipedia.org/wiki/Rennes"
+				href : "https://fr.wikipedia.org/wiki/Rennes"
 			}
 		}
 	});
-	
+
 	$('#refreshmaparea2').on('click', function() {
-	
+
 		// Update some plots and areas attributes ...
 		var updatedOptions = {'areas' : {}, 'plots' : {}};
 		updatedOptions.areas["department-56"] = {
@@ -77,7 +77,7 @@ $(function(){
 			, text : {position : "top"}
 			, size : 5
 		};
-		
+
 		// add some new plots ...
 		var newPlots = {
 			"Limoge" : {
@@ -97,16 +97,16 @@ $(function(){
 				}
 			}
 		}
-		
+
 		// and delete some others ...
 		var deletedPlots = ["paris", "lyon"];
 		$(".maparea2").trigger('update', [updatedOptions, newPlots, deletedPlots, {animDuration : 1000}]);
 	});
-	
+
 	// Example #3
 	$(".maparea3").mapael({
 		map : {
-			name : "france_departments", 
+			name : "france_departments",
 			zoom : {
 				enabled : true
 			},
@@ -152,7 +152,7 @@ $(function(){
 		},
 		areas: {
 			"department-29" : {
-				text : {content : "dblclick", position : "top"}, 
+				text : {content : "dblclick", position : "top"},
 				attrs : {
 					fill :"#0088db"
 				},
@@ -179,15 +179,15 @@ $(function(){
 				}
 			}
 		}
-	});	
-	
+	});
+
 	// Example #4
 	$(".maparea4").mapael({
 		map : {
 			name : "france_departments",
 			defaultArea: {
 				attrs : {
-					stroke : "#fff", 
+					stroke : "#fff",
 					"stroke-width" : 1
 				},
 				attrsHover : {
@@ -198,34 +198,34 @@ $(function(){
 		legend : {
 			area : {
 				display : true,
-				title :"Population of France by department", 
+				title :"Population of France by department",
 				labelAttrs : {title : "Hide the matching departments"},
 				slices : [
 					{
-						max :300000, 
+						max :300000,
 						attrs : {
 							fill : "#97e766"
 						},
 						label :"Less than de 300 000 inhabitants"
 					},
 					{
-						min :300000, 
-						max :500000, 
+						min :300000,
+						max :500000,
 						attrs : {
 							fill : "#7fd34d"
 						},
 						label :"Between 100 000 and 500 000 inhabitants"
 					},
 					{
-						min :500000, 
-						max :1000000, 
+						min :500000,
+						max :1000000,
 						attrs : {
 							fill : "#5faa32"
 						},
 						label :"Between 500 000 and 1 000 000 inhabitants"
 					},
 					{
-						min :1000000, 
+						min :1000000,
 						attrs : {
 							fill : "#3f7d1a"
 						},
@@ -736,8 +736,8 @@ $(function(){
 				tooltip: {content : "<span style=\"font-weight:bold;\">Lozère (48)</span><br />Population : 81281"}
 			}
 		}
-	});	
-	
+	});
+
 	// Example #5
 	$(".maparea5").mapael({
 		map : {
@@ -774,7 +774,7 @@ $(function(){
 					{
 						size: 4,
 						type :"circle",
-						max :20000, 
+						max :20000,
 						attrs : {
 							fill : "#89ff72"
 						},
@@ -783,8 +783,8 @@ $(function(){
 					{
 						size: 6,
 						type :"circle",
-						min :20000, 
-						max :100000, 
+						min :20000,
+						max :100000,
 						attrs : {
 							fill : "#fffd72"
 						},
@@ -793,8 +793,8 @@ $(function(){
 					{
 						size: 20,
 						type :"circle",
-						min :100000, 
-						max :200000, 
+						min :100000,
+						max :200000,
 						attrs : {
 							fill : "#ffbd54"
 						},
@@ -803,7 +803,7 @@ $(function(){
 					{
 						size: 40,
 						type :"circle",
-						min :200000, 
+						min :200000,
 						attrs : {
 							fill : "#ff5454"
 						},
@@ -7816,14 +7816,14 @@ $(function(){
 		}
 	});
 
-	
+
 	// Example #6
 	$(".maparea6").mapael({
 		map : {
 			name : "world_countries",
 			defaultArea: {
 				attrs : {
-					stroke : "#fff", 
+					stroke : "#fff",
 					"stroke-width" : 1
 				}
 			}
@@ -7831,33 +7831,33 @@ $(function(){
 		legend : {
 			area : {
 				display : true,
-				title :"Population by country", 
+				title :"Population by country",
 				slices : [
 					{
-						max :5000000, 
+						max :5000000,
 						attrs : {
 							fill : "#6aafe1"
 						},
 						label :"Less than de 5000000 inhabitants"
 					},
 					{
-						min :5000000, 
-						max :10000000, 
+						min :5000000,
+						max :10000000,
 						attrs : {
 							fill : "#459bd9"
 						},
 						label :"Between 5000000 and 10000000 inhabitants"
 					},
 					{
-						min :10000000, 
-						max :50000000, 
+						min :10000000,
+						max :50000000,
 						attrs : {
 							fill : "#2579b5"
 						},
 						label :"Between 10000000 and 50000000 inhabitants"
 					},
 					{
-						min :50000000, 
+						min :50000000,
 						attrs : {
 							fill : "#1a527b"
 						},
@@ -7870,40 +7870,40 @@ $(function(){
 				title: "Some cities ..."
 				, slices : [
 					{
-						max :500000, 
+						max :500000,
 						attrs : {
 							fill : "#f99200"
 						},
 						attrsHover :{
 							transform : "s1.5",
 							"stroke-width" : 1
-						}, 
-						label :"less than 500 000 inhabitants", 
+						},
+						label :"less than 500 000 inhabitants",
 						size : 10
 					},
 					{
-						min :500000, 
-						max :1000000, 
+						min :500000,
+						max :1000000,
 						attrs : {
 							fill : "#f99200"
 						},
 						attrsHover :{
 							transform : "s1.5",
 							"stroke-width" : 1
-						}, 
-						label :"Between 500 000 and 1 000 000 inhabitants", 
+						},
+						label :"Between 500 000 and 1 000 000 inhabitants",
 						size : 20
 					},
 					{
-						min :1000000, 
+						min :1000000,
 						attrs : {
 							fill : "#f99200"
 						},
 						attrsHover :{
 							transform : "s1.5",
 							"stroke-width" : 1
-						}, 
-						label :"More than 1 million inhabitants", 
+						},
+						label :"More than 1 million inhabitants",
 						size : 30
 					}
 				]
@@ -7911,33 +7911,33 @@ $(function(){
 		},
 		plots : {
 			'paris' : {
-				latitude :48.86, 
-				longitude :2.3444, 
-				value : 500000000, 
+				latitude :48.86,
+				longitude :2.3444,
+				value : 500000000,
 				tooltip: {content : "Paris<br />Population: 500000000"}
 			},
 			'newyork' : {
-				latitude :40.667, 
-				longitude :-73.833, 
-				value : 200001, 
+				latitude :40.667,
+				longitude :-73.833,
+				value : 200001,
 				tooltip: {content : "New york<br />Population: 200001"}
 			},
 			'sydney' : {
-				latitude :-33.917, 
-				longitude :151.167, 
-				value : 600000, 
+				latitude :-33.917,
+				longitude :151.167,
+				value : 600000,
 				tooltip: {content : "Sydney<br />Population: 600000"}
 			},
 			'brasilia' : {
-				latitude :-15.781682, 
-				longitude :-47.924195, 
-				value : 200000001, 
+				latitude :-15.781682,
+				longitude :-47.924195,
+				value : 200000001,
 				tooltip: {content : "Brasilia<br />Population: 200000001"}
 			},
 			'tokyo': {
-				latitude :35.687418, 
-				longitude :139.692306, 
-				value : 200001, 
+				latitude :35.687418,
+				longitude :139.692306,
+				value : 200001,
 				tooltip: {content : "Tokyo<br />Population: 200001"}
 			}
 		},
@@ -9681,7 +9681,7 @@ $(function(){
 			}
 		}
 	});
-	
+
 	// Example #7
 	$(".maparea7").mapael({
 		map : {
@@ -9694,7 +9694,7 @@ $(function(){
 				tooltip: {content : "New York"}
 			},
 			'an' : {
-				latitude: 61.2108398, 
+				latitude: 61.2108398,
 				longitude: -149.9019557,
 				tooltip: {content : "Anchorage"}
 			},

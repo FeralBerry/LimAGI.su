@@ -21,7 +21,7 @@
 // and `prefixed` to exist on the Modernizr object.
 if (typeof Modernizr !== 'object') {
   throw new Error('Shuffle.js requires Modernizr.\n' +
-      'http://vestride.github.io/Shuffle/#dependencies');
+      'https://vestride.github.io/Shuffle/#dependencies');
 }
 
 
@@ -178,7 +178,7 @@ Shuffle.prototype = {
     self._initItems();
 
     // Bind resize events
-    // http://stackoverflow.com/questions/1852751/window-resize-event-firing-in-internet-explorer
+    // https://stackoverflow.com/questions/1852751/window-resize-event-firing-in-internet-explorer
     self.$window.on('resize.' + SHUFFLE + '.' + self.unique, debouncedResize);
 
     // Get container css all in one request. Causes reflow
@@ -1294,7 +1294,7 @@ $.fn.sorted.defaults = {
 };
 
 
-// http://stackoverflow.com/a/962890/373422
+// https://stackoverflow.com/a/962890/373422
 $.fn.sorted.randomize = function( array ) {
   var top = array.length,
       tmp, current;

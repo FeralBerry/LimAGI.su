@@ -1,6 +1,6 @@
 jQuery.pulsate.js adds a pulsating effect to elements. Useful for drawing the users attention.
 
-http://jquerypulsate.kilianvalkhof.com
+https://jquerypulsate.kilianvalkhof.com
 
 
 $(element).pulsate({

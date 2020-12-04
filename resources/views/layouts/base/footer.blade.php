@@ -20,17 +20,17 @@
             <!-- Customer Service Widget -->
             <aside class="col-md-3 col-sm-6 col-xs-6 widget widget_customer_services">
                 <h3 class="block-title">Сервисы</h3>
+                <p style="color: #fff">(доступны авторизованным пользователям)</p>
                 <ul>
-                    {{--<li><a title="Online Earning" href="#">Online Earning</a></li>
-                    <li><a title="Materials" href="#">Materials</a></li>
-                    <li><a title="Presentation" href="#">Presentation</a></li>
-                    <li><a title="Printed materials" href="#">Printed materials</a></li>
+                    <li><a title="Курсы HTML" href="{{ route('free-courses-html') }}">Курсы HTML</a></li>
+                    <li><a title="Курсы CSS" href="{{ route('free-courses-css') }}">Курсы CSS</a></li>
+                    <li><a title="Курсы PHP" href="{{ route('free-courses-php') }}">Курсы PHP</a></li>
+                    {{--<li><a title="Printed materials" href="#">Printed materials</a></li>
                     <li><a title="Curriculum" href="#">curriculum</a></li>
                     <li><a title="Literature" href="#">literature</a></li>
                     <li><a title="Help & Faq" href="#">Help & Faq</a></li>--}}
                 </ul>
             </aside><!-- Customer Service Widget /- -->
-
             <!-- Quick Links Widget -->
             <aside class="col-md-2 col-sm-6 col-xs-6 widget widget_quick_links">
                 <h3 class="block-title">Ссылки</h3>
@@ -73,7 +73,7 @@
                 </div>
                 <ul>
                     <li><a title="Facebook" data-toggle="tooltip" href="#"><i class="fa fa-github"></i></a></li>
-                    <li><a title="Mail" data-toggle="tooltip" href="mailto:info@one-page.su"><i class="fa fa-envelope"></i></a></li>
+                    <li><a title="Mail" data-toggle="tooltip" href="mailto:limagi@limagi.su"><i class="fa fa-envelope"></i></a></li>
                     <li><a title="Google Plus" data-toggle="tooltip" href="mailto:evakomarova90@gmail.com"><i class="fa fa-google-plus"></i></a></li>
                     <li><a title="WhatsApp" data-toggle="tooltip" href="https://wa.me/79687106270"><i class="fa fa-whatsapp"></i></a></li>
                     <li><a title="VK" data-toggle="tooltip" href="https://vk.com/id338990548"><i class="fa fa-vk"></i></a></li>
