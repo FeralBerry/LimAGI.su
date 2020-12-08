@@ -198,4 +198,28 @@
             });
         });
     });
+    $(document).ready(function() {
+        $(".blog-likes").bind("click", function() {
+            var el = $(this);
+            var blog_id = el.data('id');
+            $.ajax({
+                type: "POST",
+                url: "{{ route('blog-likes') }}",
+                dataType: "html",
+                data: {
+                    'blog_id' : blog_id
+                },
+                success:function(data){
+                    if(data == "спасибо ваш голос учтен"){
+                        $('.like-num').each(function() {
+                            $(this).text(function() {
+                                return +this.textContent + 1;
+                            });
+                        })
+                    }
+                    alert(data)
+                }
+            });
+        });
+    });
 </script>

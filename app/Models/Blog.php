@@ -20,6 +20,7 @@ class Blog extends Model
         'title_img',
         'video',
         'video_img',
+        'likes',
         'created_at',
         'updated_at',
     ];

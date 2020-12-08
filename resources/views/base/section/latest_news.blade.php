@@ -58,10 +58,7 @@
                                     </a>
                                 </div>
                                 <div class="post-like">
-                                    <a href="#" title="Likes">
-                                        <i class="fa fa-heart-o" aria-hidden="true"></i>
-                                        <span>03 Likes</span>
-                                    </a>
+                                    <a class="blog-likes" title="Likes" data-id="{{ $b->id }}"><i class="fa fa-heart-o" aria-hidden="true"></i><span class="like-num">@if($b->likes == '') {{ 0 }} @else {{ $b->likes }} @endif</span><span> Like</span></a>
                                 </div>
                             </div>
                             <div class="entry-title">

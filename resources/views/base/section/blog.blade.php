@@ -67,10 +67,10 @@
                                         </a>
                                     </div>
                                     <div class="post-admin">
-                                        <a href="#" title="{{ $b->author }}"><i class="fa fa-user" aria-hidden="true"></i><span>by</span>{{ $b->author }}</a>
+                                        <a href="#" title="{{ $b->author }}"><i class="fa fa-user" aria-hidden="true"></i><span>by </span>{{ $b->author }}</a>
                                     </div>
                                     <div class="post-like">
-                                        <a href="#" title="Likes"><i class="fa fa-heart-o" aria-hidden="true"></i></a><span>03 Likes</span>
+                                        <a class="blog-likes" title="Likes" data-id="{{ $b->id }}"><i class="fa fa-heart-o" aria-hidden="true"></i><span class="like-num">@if($b->likes == '') {{ 0 }} @else {{ $b->likes }} @endif</span><span> Like</span></a>
                                     </div>
                                     {{--<div class="post-share">
                                         <a href="#" title="Share"><i class="fa fa-share-alt" aria-hidden="true"></i></a><span><a href="{{ route('blog-post', $b->id) }}" title="Share">Share Post</a></span>
@@ -88,10 +88,6 @@
                     </div>
                     @endforeach
                 </div>
-                <!-- Ow Pagination -->
-                <div class="ow-pagination">
-                    {{ $blog->links() }}
-                </div><!-- Ow Pagination /- -->
                 @endif
             </div>
             <div class="col-md-3 col-sm-6 col-xs-6 widget-area">
@@ -163,3 +159,10 @@
     </div>
     <div class="section-padding"></div>
 </div><!-- Latest News /- -->
+@if(isset($blog))
+<!-- Ow Pagination -->
+<div class="ow-pagination">
+    {{ $blog->links() }}
+</div>
+<!-- Ow Pagination /- -->
+@endif

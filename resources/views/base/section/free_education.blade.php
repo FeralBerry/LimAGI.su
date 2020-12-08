@@ -19,16 +19,11 @@
                                 различные теги для форматирования страницы. Научитесь быстрой верстке страницы и
                                 разбираться в верстке других разработчиков.</p>
                         <ul>
-                            <li class="fb"><a title="Facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li class="twt"><a title="Twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li class="gp"><a title="GooglePlus" href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li class="lnk"><a title="LinkedIn" href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li class="fb"><a title="GitHub" href="https://github.com/FeralBerry"><i class="fa fa-github"></i></a></li>
+                            <li class="twt"><a title="VK" href="https://vk.com/id338990548"><i class="fa fa-vk"></i></a></li>
+                            <li class="gp"><a title="GooglePlus" href="mailto:limagi@limagi.su"><i class="fa fa-google-plus"></i></a></li>
+                            <li class="lnk"><a title="WhatsApp" href="#"><i class="fa fa-whatsapp"></i></a></li>
                         </ul>
-                        <div class="team-event-carousel">
-                            <a href=""><img src="{{ asset('base/img/team-event1.jpg') }}" alt="team-event1" width="121" height="89"/></a>
-                            <a href=""><img src="{{ asset('base/img/team-event1.jpg') }}" alt="team-event1" width="121" height="89"/></a>
-                            <a href=""><img src="{{ asset('base/img/team-event1.jpg') }}" alt="team-event1" width="121" height="89"/></a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -46,16 +41,11 @@
                                 отправлять почту и сообщения с сайта в месенджеры, сохранять введеные данные пользователя.
                                 Получите краткий обзор работы с Cookie и сессиями.</p>
                         <ul>
-                            <li class="fb"><a title="Facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li class="twt"><a title="Twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li class="gp"><a title="GooglePlus" href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li class="lnk"><a title="LinkedIn" href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li class="fb"><a title="GitHub" href="https://github.com/FeralBerry"><i class="fa fa-github"></i></a></li>
+                            <li class="twt"><a title="VK" href="https://vk.com/id338990548"><i class="fa fa-vk"></i></a></li>
+                            <li class="gp"><a title="GooglePlus" href="mailto:limagi@limagi.su"><i class="fa fa-google-plus"></i></a></li>
+                            <li class="lnk"><a title="WhatsApp" href="#"><i class="fa fa-whatsapp"></i></a></li>
                         </ul>
-                        <div class="team-event-carousel">
-                            <a href=""><img src="{{ asset('base/img/team-event1.jpg') }}" alt="team-event1" width="121" height="89"/></a>
-                            <a href=""><img src="{{ asset('base/img/team-event1.jpg') }}" alt="team-event1" width="121" height="89"/></a>
-                            <a href=""><img src="{{ asset('base/img/team-event1.jpg') }}" alt="team-event1" width="121" height="89"/></a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -72,16 +62,11 @@
                             <p>Научитесь делать анимацию для сайта. Настраивать действия для различных объектов.
                             Настраивать реакцию браузера на определенные действия пользователя.</p>
                         <ul>
-                            <li class="fb"><a title="Facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li class="twt"><a title="Twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li class="gp"><a title="GooglePlus" href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li class="lnk"><a title="LinkedIn" href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li class="fb"><a title="GitHub" href="https://github.com/FeralBerry"><i class="fa fa-github"></i></a></li>
+                            <li class="twt"><a title="VK" href="https://vk.com/id338990548"><i class="fa fa-vk"></i></a></li>
+                            <li class="gp"><a title="GooglePlus" href="mailto:limagi@limagi.su"><i class="fa fa-google-plus"></i></a></li>
+                            <li class="lnk"><a title="WhatsApp" href="#"><i class="fa fa-whatsapp"></i></a></li>
                         </ul>
-                        <div class="team-event-carousel">
-                            <a href=""><img src="{{ asset('base/img/team-event1.jpg') }}" alt="team-event1" width="121" height="89"/></a>
-                            <a href=""><img src="{{ asset('base/img/team-event1.jpg') }}" alt="team-event1" width="121" height="89"/></a>
-                            <a href=""><img src="{{ asset('base/img/team-event1.jpg') }}" alt="team-event1" width="121" height="89"/></a>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -98,16 +83,11 @@
                         <p>Получете краткий обзор по установке и настройки работы домашнего сервера для работы. Получите
                         обзор по установке и настройке фреймворков таких как WordPress, Joomla, Laravel, Bootstrap.</p>
                         <ul>
-                            <li class="fb"><a title="Facebook" href="#"><i class="fa fa-facebook"></i></a></li>
-                            <li class="twt"><a title="Twitter" href="#"><i class="fa fa-twitter"></i></a></li>
-                            <li class="gp"><a title="GooglePlus" href="#"><i class="fa fa-google-plus"></i></a></li>
-                            <li class="lnk"><a title="LinkedIn" href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li class="fb"><a title="GitHub" href="https://github.com/FeralBerry"><i class="fa fa-github"></i></a></li>
+                            <li class="twt"><a title="VK" href="https://vk.com/id338990548"><i class="fa fa-vk"></i></a></li>
+                            <li class="gp"><a title="GooglePlus" href="mailto:limagi@limagi.su"><i class="fa fa-google-plus"></i></a></li>
+                            <li class="lnk"><a title="WhatsApp" href="#"><i class="fa fa-whatsapp"></i></a></li>
                         </ul>
-                        <div class="team-event-carousel">
-                            <a href=""><img src="{{ asset('base/img/team-event1.jpg') }}" alt="team-event1" width="121" height="89"/></a>
-                            <a href=""><img src="{{ asset('base/img/team-event1.jpg') }}" alt="team-event1" width="121" height="89"/></a>
-                            <a href=""><img src="{{ asset('base/img/team-event1.jpg') }}" alt="team-event1" width="121" height="89"/></a>
-                        </div>
                     </div>
                 </div>
             </div>

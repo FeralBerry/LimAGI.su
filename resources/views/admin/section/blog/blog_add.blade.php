@@ -52,7 +52,7 @@
                 <div class="form-group">
                     <label class="col-sm-2 control-label">Автор статьи</label>
                     <div class="col-sm-8">
-                        <input type="text" name="author" class="form-control" placeholder="Автор статьи" value="">
+                        <input type="hidden" name="author" class="form-control" placeholder="Автор статьи" value="{{ Auth::user()->name }}">
                     </div>
                 </div>
                 <div class="col-xs-12">

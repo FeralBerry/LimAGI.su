@@ -10,7 +10,9 @@ use App\Models\BlogComments;
 use App\Models\About;
 use App\Models\Portfolio;
 use DB;
+use App\User;
 use Mail;
+use Auth;
 
 class IndexController extends AppController
 {
@@ -172,6 +174,7 @@ class IndexController extends AppController
             $tag = explode(',',$b->tags);
             $count_tags = count($tag);
             $keywords = $title;
+            $author = $b->author;
             $blog_tags = BlogTags::all();
             foreach ($blog_tags as $bt){
                 for($i=0;$i<$count_tags;$i++){
@@ -181,6 +184,7 @@ class IndexController extends AppController
                 }
             }
         }
+        $author_name = User::all()->where('name', $author);
         $data = array_merge($this->DataWords(),[
             'title' => $title,
             'blog' => $blog,
@@ -188,6 +192,9 @@ class IndexController extends AppController
             'blog_tags' => $this->blogTags(),
             'blog_comments' => $blog_comments,
             'tags' => $tags,
+            'author_name' => $author_name,
+            'description' => $description,
+            'keywords' => $keywords,
             'tag_page' => $tag_page,
             'recents' => $recents,
             'id' => $id,
@@ -215,5 +222,45 @@ class IndexController extends AppController
             'title' => $title,
         ]);
         return view('base.price', $data);
+    }
+    public function blogLikes(Request $request){
+        $id = $request['blog_id'];
+        if(Auth::user() == true){
+            $not_like = false;
+            $user_like = explode(',', Auth::user()->blog_likes);
+            foreach ($user_like as $like => $value){
+                if($value == $id){
+                    $not_like = true;
+                }
+            }
+            if($not_like == false){
+                $blog = Blog::all()
+                    ->where('id', $id);
+                foreach ($blog as $b){
+                    $sum = $b->likes + 1;
+                    $updated_at = $b->updated_at;
+                }
+                Blog::where('id', $id)
+                    ->update([
+                        'likes' => $sum,
+                        'updated_at' => $updated_at,
+                    ]);
+                if(Auth::user()->blog_likes == ''){
+                    $likes = $id;
+                } else {
+                    $likes = Auth::user()->blog_likes.','.$id;
+                }
+                Auth::user()->update([
+                    'blog_likes' => $likes
+                ]);
+                $msg = "Спасибо ваш голос учтен";
+                return $msg;
+            } else {
+                $msg = "Вы уже голосовали";
+                return $msg;
+            }
+        } else {
+            echo 'Пожалуйста авторизуйтесь для добавления голоса';
+        }
     }
 }

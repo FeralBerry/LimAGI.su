@@ -28,6 +28,7 @@ Route::match(['GET','POST'],'/seo-quiz', ['uses' => 'QuizController@quizSeo', 'a
 Route::match(['GET','POST'],'/magazine-quiz', ['uses' => 'QuizController@quizMagazine', 'as' => 'magazine-quiz']);
 Route::match(['GET','POST'],'/card-quiz', ['uses' => 'QuizController@quizCard', 'as' => 'card-quiz']);
 Route::match(['GET','POST'],'/corp-quiz', ['uses' => 'QuizController@quizCorp', 'as' => 'corp-quiz']);
+Route::match(['GET','POST'],'/blog-likes', ['uses' => 'IndexController@blogLikes', 'as' => 'blog-likes']);
 Auth::routes();
 Route::group(['middleware' => ['auth', 'checkAdmin']], function(){
 $groupData = [

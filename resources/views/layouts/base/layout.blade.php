@@ -35,7 +35,6 @@
     <!--[if lt IE 9]>
     <script src="{{ asset('base/js/html5/respond.min.js') }}"></script>
     <![endif]-->
-    <script type="text/javascript" src="{{ asset('js/modernizr.custom.js') }}"></script>
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript" >
         (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};

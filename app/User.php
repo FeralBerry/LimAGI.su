@@ -21,6 +21,7 @@ class User extends Authenticatable
         'facebook',
         'twitter',
         'github',
+        'blog_likes',
         'motto',
         'instagram',
         'specialty',

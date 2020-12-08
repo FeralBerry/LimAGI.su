@@ -68,7 +68,7 @@
                                 <a href="#" title="{{ $b->author }}"><i class="fa fa-user" aria-hidden="true"></i><span>by</span> {{ $b->author }}</a>
                             </div>
                             <div class="post-like">
-                                <a href="#" title="Likes"><i class="fa fa-heart-o" aria-hidden="true"></i></a><span>03 Likes</span>
+                                <a class="blog-likes"  title="Likes" data-id="{{ $b->id }}"><i class="fa fa-heart-o" aria-hidden="true"></i><span class="like-num">@if($b->likes == '') {{ 0 }} @else {{ $b->likes }} @endif</span><span> Like</span></a>
                             </div>
                             {{--<div class="post-share">
                                 <a href="#" title="Share"><i class="fa fa-share-alt" aria-hidden="true"></i></a><span><a href="#" title="Share">Share Post</a></span>
@@ -97,7 +97,7 @@
                 </article>
                 <div class="about-author">
                     <div class="author-intro">
-                        <img alt="{{ $b->author }}" src="{{ asset('base/img/author.jpg') }}" width="150" height="150"/>
+                        <img alt="{{ $b->author }}" src="@foreach($author_name as $author)@if($author->avatar !== ''){{ asset('base/img/avatar/') }}/{{ $author->avatar }} @else {{ asset('/base/img/avatar/author.jpg') }} @endif @endforeach" width="150" height="150"/>
                         <a href="#" title="{{ $b->author }}">{{ $b->author }}</a>
                         @if(isset(Auth::user()->facebook) || isset(Auth::user()->twitter) || isset(Auth::user()->github) || isset(Auth::user()->instagram))
                             <ul>

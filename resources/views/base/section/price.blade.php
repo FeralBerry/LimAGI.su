@@ -37,7 +37,8 @@
                     </div>
                     <div class="card-body">
                         <h2 class="card-title pricing-card-title">от 1000<small>&#8381;</small></h2>
-                        <ul class="list-unstyled mt-3 mb-4">
+                        <img src="{{ asset('base/img/separator.png') }}" style="height: 15px; margin-bottom: 0px">
+                        <ul class="price-ul mt-3 mb-4">
                             <li>Уникальность</li>
                             <li>Подбор типографики</li>
                             <li>Подбор цвета компании</li>
@@ -54,7 +55,8 @@
                     </div>
                     <div class="card-body">
                         <h2 class="card-title pricing-card-title">от 3000<small>&#8381;</small></h2>
-                        <ul class="list-unstyled mt-3 mb-4">
+                        <img src="{{ asset('base/img/separator.png') }}" style="height: 15px; margin-bottom: 0px">
+                        <ul class="price-ul mt-3 mb-4">
                             <li>Разработка или доработка дизайна</li>
                             <li>Верстка под необходимые устройства</li>
                             <li>Создание необходимых эффектов</li>
@@ -71,7 +73,8 @@
                     </div>
                     <div class="card-body">
                         <h2 class="card-title pricing-card-title">от 5000<small>&#8381;</small></h2>
-                        <ul class="list-unstyled mt-3 mb-4">
+                        <img src="{{ asset('base/img/separator.png') }}" style="height: 15px; margin-bottom: 0px">
+                        <ul class="price-ul mt-3 mb-4">
                             <li>Создание фиксированого меню</li>
                             <li>Настройка якорных ссылок</li>
                             <li>Создание формы обратной связи</li>
@@ -88,7 +91,8 @@
                     </div>
                     <div class="card-body">
                         <h2 class="card-title pricing-card-title">от 15000<small>&#8381;</small></h2>
-                        <ul class="list-unstyled mt-3 mb-4">
+                        <img src="{{ asset('base/img/separator.png') }}" style="height: 15px; margin-bottom: 0px">
+                        <ul class="price-ul mt-3 mb-4">
                             <li>Создание форм авторизации</li>
                             <li>Содание административной панели</li>
                             <li>Создание корпаративного чата</li>
@@ -105,7 +109,8 @@
                     </div>
                     <div class="card-body">
                         <h2 class="card-title pricing-card-title">от 25000<small>&#8381;</small></h2>
-                        <ul class="list-unstyled mt-3 mb-4">
+                        <img src="{{ asset('base/img/separator.png') }}" style="height: 15px; margin-bottom: 0px">
+                        <ul class="price-ul mt-3 mb-4">
                             <li>Создание представления для пользователя</li>
                             <li>Создание административной панели</li>
                             <li>Добавление функций обратной связи</li>
@@ -122,7 +127,8 @@
                     </div>
                     <div class="card-body">
                         <h2 class="card-title pricing-card-title">от 5000<small>&#8381;</small></h2>
-                        <ul class="list-unstyled mt-3 mb-4">
+                        <img src="{{ asset('base/img/separator.png') }}" style="height: 15px; margin-bottom: 0px">
+                        <ul class="price-ul mt-3 mb-4">
                             <li>Составление семантического ядра</li>
                             <li>Настройка базовых метатегов</li>
                             <li>Подключение сервисов Yandex, Google Direct</li>
