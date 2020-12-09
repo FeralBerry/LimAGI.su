@@ -5,9 +5,19 @@
             <a href="{{ route('user-info') }}">{{ $breadcrumb_user_info }}</a>
         </li>
     @endif
-    @if(isset($breadcrumb_free_courses_html))
+    @if(isset($breadcrumb_free_courses))
         <li @if(!isset($second_breadcrumb))class="active"@endif>
-            <a href="{{ route('free-courses-html') }}">{{ $breadcrumb_free_courses_html }}</a>
+            <a href="
+            @if(isset($courses))
+                @foreach($courses as $course)
+                    @foreach($courses_name as $name)
+                        @if($name->id == $course->category_id)
+                            {{ route($name->free_link_name) }}
+                        @endif
+                    @endforeach
+                @endforeach
+            @endif
+                ">{{ $breadcrumb_free_courses }}</a>
         </li>
     @endif
     @if(isset($second_breadcrumb))

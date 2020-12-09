@@ -126,8 +126,8 @@ Route::group(['middleware' => ['auth']], function() {
         Route::match(['GET','POST'],'/free-courses/wordpress/{id}', ['uses' => 'FreeCoursesController@articleWordpress','as' => 'free-courses-wordpress-article']);
         Route::match(['GET','POST'],'/free-courses/photoshop', ['uses' => 'FreeCoursesController@indexPhotoshop','as' => 'free-courses-photoshop']);
         Route::match(['GET','POST'],'/free-courses/photoshop/{id}', ['uses' => 'FreeCoursesController@articlePhotoshop','as' => 'free-courses-photoshop-article']);
-        Route::match(['GET','POST'],'/free-courses/bootstrap', ['uses' => 'FreeCoursesController@indexWordpress','as' => 'free-courses-bootstrap']);
-        Route::match(['GET','POST'],'/free-courses/bootstrap/{id}', ['uses' => 'FreeCoursesController@articleWordpress','as' => 'free-courses-bootstrap-article']);
+        Route::match(['GET','POST'],'/free-courses/bootstrap', ['uses' => 'FreeCoursesController@indexBootstrap','as' => 'free-courses-bootstrap']);
+        Route::match(['GET','POST'],'/free-courses/bootstrap/{id}', ['uses' => 'FreeCoursesController@articleBootstrap','as' => 'free-courses-bootstrap-article']);
         Route::match(['GET','POST'],'/avatar/upload/{id}', ['uses' => 'UserIndexController@avatarUpload','as' => 'avatar-upload']);
 
     });

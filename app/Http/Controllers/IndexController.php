@@ -233,6 +233,36 @@ class IndexController extends AppController
                     $not_like = true;
                 }
             }
+            if($not_like == true){
+                $blog = Blog::all()
+                    ->where('id', $id);
+                foreach ($blog as $b){
+                    $sum = $b->likes - 1;
+                    $updated_at = $b->updated_at;
+                }
+                Blog::where('id', $id)
+                    ->update([
+                        'likes' => $sum,
+                        'updated_at' => $updated_at,
+                    ]);
+                $count_like = count($user_like);
+                for($i=0;$i<$count_like;$i++){
+                    if($i == $count_like-1){
+                        $like = str_replace($id,'',Auth::user()->blog_likes);
+                        $likes = str_replace(',,',',',$like);
+                    } else {
+                        $likes = str_replace($id.',',',',Auth::user()->blog_likes);
+                    }
+                }
+                Auth::user()->update([
+                    'blog_likes' => $likes
+                ]);
+                $data = [
+                    'msg' => "Спасибо ваш голос учтен",
+                    'id' => $id
+                ];
+                return $data;
+            }
             if($not_like == false){
                 $blog = Blog::all()
                     ->where('id', $id);
@@ -253,11 +283,11 @@ class IndexController extends AppController
                 Auth::user()->update([
                     'blog_likes' => $likes
                 ]);
-                $msg = "Спасибо ваш голос учтен";
-                return $msg;
-            } else {
-                $msg = "Вы уже голосовали";
-                return $msg;
+                $data = [
+                    'msg' => "Спасибо за ваш голос",
+                    'id' => $id
+                ];
+                return $data;
             }
         } else {
             echo 'Пожалуйста авторизуйтесь для добавления голоса';

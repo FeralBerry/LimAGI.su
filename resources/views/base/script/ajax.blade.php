@@ -210,14 +210,17 @@
                     'blog_id' : blog_id
                 },
                 success:function(data){
-                    if(data == "спасибо ваш голос учтен"){
-                        $('.like-num').each(function() {
-                            $(this).text(function() {
-                                return +this.textContent + 1;
-                            });
-                        })
+                    var json = JSON.parse(data);
+                    var span_text = document.getElementById(''+json.id+'').textContent;
+                    if(json.msg == "Спасибо за ваш голос"){
+                        document.getElementById(''+json.id+'').innerHTML = '<i class="fa fa-heart-o" aria-hidden="true"></i>'+(Number(span_text) + 1);
+                        document.getElementById(''+json.id+'').classList.add('likes');
                     }
-                    alert(data)
+                    if(json.msg == "Спасибо ваш голос учтен"){
+                        document.getElementById(''+json.id+'').innerHTML = '<i class="fa fa-heart-o" aria-hidden="true"></i>'+ (Number(span_text) - 1);
+                        document.getElementById(''+json.id+'').classList.remove('likes');
+                    }
+                    alert(json.msg);
                 }
             });
         });

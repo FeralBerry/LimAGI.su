@@ -69,11 +69,8 @@ class UserIndexController extends AppController
     }
     public function avatarUpload(Request $request, $id){
         if ($request->isMethod('post')){
-            $avatar = User::all()->where('id', $id);
-            foreach ($avatar as $item){
-                if($item->avatar !== 'NULL'){
-                    unlink(public_path('base/img/avatar/') . $item->avatar);
-                }
+            if(Auth::user()->avatar !== 'author.jpg'){
+                unlink(public_path('base/img/avatar/') . Auth::user()->avatar);
             }
             if ($request->hasFile('ava')) {
                 $image = $request->file('ava');

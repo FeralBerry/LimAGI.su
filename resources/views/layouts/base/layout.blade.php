@@ -74,6 +74,7 @@
 <!-- JQuery v1.11.3 -->
 <script src="{{ asset('base/js/jquery.min.js') }}"></script>
 <!-- Library - Js -->
+<script src="{{ asset('base/js/alert.js') }}"></script>
 <script src="{{ asset('base/libraries/lib.js') }}"></script><!-- Bootstrap JS File v3.3.5 -->
 <script src="{{ asset('base/libraries/jquery.countdown.min.js') }}"></script>
 <script src="{{ asset('base/libraries/lightslider-master/lightslider.js') }}"></script>

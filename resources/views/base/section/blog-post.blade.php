@@ -48,31 +48,7 @@
                     </div>
                     <div class="entry-block">
                         <div class="entry-meta">
-                            <div class="post-date">
-                                <a href="#" title="">
-                                    <i class="fa fa-calendar" aria-hidden="true"></i>
-                                    <span>
-                                        @if(isset($b->updated_at))
-                                            {{ date_format(date_create($b->updated_at), 'd') }}
-                                            /
-                                            {{ date_format(date_create($b->updated_at), 'M.Y') }}
-                                        @else
-                                            {{ date_format($b->created_at, 'd') }}
-                                            /
-                                            {{ date_format($b->created_at, 'M.Y') }}
-                                        @endif
-                                    </span>
-                                </a>
-                            </div>
-                            <div class="post-admin">
-                                <a href="#" title="{{ $b->author }}"><i class="fa fa-user" aria-hidden="true"></i><span>by</span> {{ $b->author }}</a>
-                            </div>
-                            <div class="post-like">
-                                <a class="blog-likes"  title="Likes" data-id="{{ $b->id }}"><i class="fa fa-heart-o" aria-hidden="true"></i><span class="like-num">@if($b->likes == '') {{ 0 }} @else {{ $b->likes }} @endif</span><span> Like</span></a>
-                            </div>
-                            {{--<div class="post-share">
-                                <a href="#" title="Share"><i class="fa fa-share-alt" aria-hidden="true"></i></a><span><a href="#" title="Share">Share Post</a></span>
-                            </div>--}}
+                            @include('base.section.post_info')
                             <div class="post-tag">
                                 @foreach($blog_cat as $cat)
                                     @if($cat->id == $b->blog_cat_id)
@@ -82,7 +58,6 @@
                                         </ul>
                                     @endif
                                 @endforeach
-
                             </div>
                         </div>
                         <div class="entry-title">

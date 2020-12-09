@@ -1,4 +1,4 @@
-<aside class="widget widget_event">
+{{--<aside class="widget widget_event">
     <div class="event-block">
         <h3>January 03-07</h3>
         <p>09, Design Street, New York, United States </p>
@@ -8,4 +8,4 @@
         </div>
         <a title="Register now" href="#">Register Now</a>
     </div>
-</aside>
+</aside>--}}

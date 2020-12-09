@@ -35,31 +35,7 @@
                         </div>
                         <div class="col-md-6 col-sm-6 col-xs-6">
                             <div class="entry-meta">
-                                <div class="post-date">
-                                    <a href="#" title="">
-                                        <i class="fa fa-calendar" aria-hidden="true"></i>
-                                        <span>
-                                        @if(isset($b->updated_at))
-                                                {{ date_format(date_create($b->updated_at), 'd') }}
-                                                /
-                                                {{ date_format(date_create($b->updated_at), 'M.Y') }}
-                                            @else
-                                                {{ date_format($b->created_at, 'd') }}
-                                                /
-                                                {{ date_format($b->created_at, 'M.Y') }}
-                                            @endif
-                                    </span>
-                                    </a>
-                                </div>
-                                <div class="post-admin">
-                                    <a href="#" title="{{ $b->author }}">
-                                        <i class="fa fa-user" aria-hidden="true"></i>
-                                        <span>by</span> {{ $b->author }}
-                                    </a>
-                                </div>
-                                <div class="post-like">
-                                    <a class="blog-likes" title="Likes" data-id="{{ $b->id }}"><i class="fa fa-heart-o" aria-hidden="true"></i><span class="like-num">@if($b->likes == '') {{ 0 }} @else {{ $b->likes }} @endif</span><span> Like</span></a>
-                                </div>
+                                @include('base.section.post_info')
                             </div>
                             <div class="entry-title">
                                 <a href="{{ route('blog-post', $b->id) }}" title="{{ $b->title }}">
