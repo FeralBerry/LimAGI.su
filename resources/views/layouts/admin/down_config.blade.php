@@ -56,10 +56,6 @@
     <script type="text/javascript" src="{{ asset('admin/plugins/jquery-chained/jquery.chained.min.js') }}"></script> 						    <!-- Chained Select Boxes -->
     <script type="text/javascript" src="{{ asset('admin/plugins/jquery-mousewheel/jquery.mousewheel.min.js') }}"></script>                    <!-- MouseWheel Support -->
     <script type="text/javascript" src="{{ asset('admin/demo/demo-formcomponents.js') }}"></script>
-    <script>
-        //Fix since CKEditor can't seem to find it's own relative basepath
-        CKEDITOR_BASEPATH  =  {{ asset('admin/plugins/form-ckeditor/') }};
-    </script>
     <script type="text/javascript" src="{{ asset('admin/plugins/form-ckeditor/ckeditor.js') }}"></script>  	<!-- CKEditor -->
     <script>
         var loadFile = function(event) {

@@ -167,7 +167,6 @@
 				</span>
             </a>
         </li>
-
         <li class="dropdown toolbar-icon-bg demo-search-hidden">
             <a href="#" class="dropdown-toggle tooltips" data-toggle="dropdown"><span class="icon-bg"><i class="fa fa-fw fa-search"></i></span></a>
             <div class="dropdown-menu dropdown-alternate arrow search dropdown-menu-form">
@@ -252,7 +251,7 @@
         </li>
         @endif
         @if(Auth::user()->role == 'admin')
-        <li class="dropdown toolbar-icon-bg hidden-xs">
+        {{--<li class="dropdown toolbar-icon-bg hidden-xs">
             <a href="#" class="hasnotifications dropdown-toggle" data-toggle='dropdown'><span class="icon-bg"><i class="fa fa-fw fa-envelope"></i></span></a>
             <div class="dropdown-menu dropdown-alternate messages arrow">
                 <div class="dd-header">
@@ -325,7 +324,7 @@
                 </div>
                 <div class="dd-footer"><a href="#">View all messages</a></div>
             </div>
-        </li>
+        </li>--}}
         @endif
         <li class="dropdown toolbar-icon-bg">
             <a href="#" class="dropdown-toggle" data-toggle='dropdown'><span class="icon-bg"><i class="fa fa-fw fa-user"></i></span></a>

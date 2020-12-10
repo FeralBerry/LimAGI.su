@@ -10,4 +10,8 @@ Homestead.yaml
 npm-debug.log
 yarn-error.log
 /html baze/
+/public/admin/
 /admin html/
+/vendor/
+/storage/
+/tests/

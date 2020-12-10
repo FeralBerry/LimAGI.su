@@ -4395,6 +4395,36 @@
 }
 /* --  max-width: 479 */
 @media (max-width: 479px) {
+    a.price{
+        bottom: -30px;
+        right: 16%;
+    }
+    .modal-radio {
+        font-size: 16px;
+    }
+    .modal-checkbox-input+label {
+        font-size: 16px;
+    }
+    .modal-radio-input+label::before {
+        width: 1em;
+        height: 1em;
+    }
+    .modal-checkbox-input+label::before {
+        width: 1em;
+        height: 1em;
+    }
+    .modal-content {
+        font-size: 16px;
+    }
+    .modal-content h1{
+        font-size: 24px;
+    }
+    .form-control {
+        height: 25px;
+    }
+    .close_modal_design{
+        top:60px;
+    }
     .lSSlideWrapper{
         height: 600px !important;
     }
@@ -4450,7 +4480,6 @@
 		font-size: 14px;
 		line-height: 26px;
 	}
-
 	/* -- Schedule Section */
 	.schedule-section .section-header h3 {
 		font-size: 20px;
@@ -4505,7 +4534,6 @@
 	.schedule-block .panel-default .panel-body .author-content {
 		margin-left: 0;
 	}
-
 	/* -- Team Section */
 	.team-section .lSPager.lSGallery {
 		margin-top: 20px !important;
@@ -4525,7 +4553,6 @@
 		margin: 0 auto;
 		padding: 0;
 	}
-
 	/* -- Testimonial Section */
 	.testimonial-box img {
 		max-width: 100px;
@@ -4536,7 +4563,6 @@
 	.testimonial-box.testimonial-right {
 		padding-left: 115px;
 	}
-
 	/* -- Latest Blog */
 	.latest-blog .section-header h3 {
 		font-size: 26px;
@@ -4566,7 +4592,6 @@
 	.recent-content > a {
 		display: block;
 	}
-
 	/* -- UpComing Event */
 	.upcoming-event.latest-blog .entry-block {
 		padding: 30px 15px 20px;
@@ -4574,7 +4599,6 @@
 	.upcoming-event.latest-blog .post-location {
 		padding-left: 15px;
 	}
-
 	/* -- Blog */
 	.blog.upcoming-event.latest-blog .type-post .entry-meta [class*="post-"] {
 		width: 100%;
@@ -4586,7 +4610,6 @@
 	.blog.upcoming-event.latest-blog .post-date {
 		text-align: left;
 	}
-
 	/* -- BlogPost */
 	.blogpost .about-author {
 		padding: 24px 12px 20px;
@@ -4614,12 +4637,10 @@
 	.post-comment .media-body .media-heading a {
 		margin-top: 10px;
 	}
-
 	/* -- EventList */
 	.eventlist.latest-blog .section-header h3{
 		font-size: 20px;
 	}
-
 	/* -- Widget */
 	.widget_similar_event ul {
 		padding: 30px 18px 20px;
@@ -4629,14 +4650,12 @@
 		margin-bottom: 10px;
 		margin-right: 10px;
 	}
-
 	/* -- UpComing Event */
 	.upcoming-event.latest-blog .type-post .entry-title a,
 	.upcoming-event.latest-blog .type-post .entry-title h3 {
 		font-size: 15px;
 		letter-spacing: 0;
 	}
-
 	/* -- Event List */
 	.event-select-option {
 		margin-bottom: 10px;
@@ -4649,7 +4668,6 @@
 		width: 100%;
 		text-align: center;
 	}
-
 	/* -- EventSingle */
 	.eventsingle .schedule-block .panel-group {
 		padding: 50px 20px;
@@ -4661,7 +4679,6 @@
 		margin-right: 0;
 		padding: 5px 15px;
 	}
-
 	/* -- Error Page */
 	.error-page .error-msg h3 {
 		font-size: 139px;
@@ -4683,7 +4700,6 @@
 		padding: 4px 15px;
 		letter-spacing: 1px;
 	}
-
 	/* -- Contact Us */
 	/* -- Contact: Slide Contact Box */
 	.contact-form-section .slider-content-box {
@@ -4703,7 +4719,6 @@
 		font-size: 12px;
 		line-height: 20px;
 	}
-
 	.contact-form-section .slider-content-box span {
 		font-size: 13px;
 		margin-bottom: 5px;
@@ -4734,7 +4749,6 @@
 	.contactus-form .col-xs-12{
 		padding: 0;
 	}
-
 	.event-categories {
 		margin-left: 0;
 		margin-right: 0;
@@ -4743,16 +4757,43 @@
 	.event-select-option {
 		padding: 0;
 	}
-
 	.post-comment .media-body .media-heading a {
 		display: block;
 		float: none;
 	}
 }
-
-
 /* --  max-width: 360 */
 @media (max-width: 360px) {
+    a.price{
+        bottom: -30px;
+        right: 13%;
+    }
+    .modal-radio {
+        font-size: 14px;
+    }
+    .modal-checkbox-input+label {
+        font-size: 14px;
+    }
+    .modal-radio-input+label::before {
+        width: 1em;
+        height: 1em;
+    }
+    .modal-checkbox-input+label::before {
+        width: 1em;
+        height: 1em;
+    }
+    .modal-content {
+        font-size: 14px;
+    }
+    .modal-content h1{
+        font-size: 20px;
+    }
+    .form-control {
+        height: 25px;
+    }
+    .close_modal_design{
+        top:40px;
+    }
 	/* -- Slider Section */
     .naccs .menu div{
         font-size: 10px;
@@ -4856,4 +4897,36 @@
 	.post-comment .media-body .media-heading span::before {
 		display: none;
 	}
+}
+@media (max-width: 320px){
+    a.price{
+        bottom: -30px;
+        right: 7%;
+    }
+    .modal-radio {
+        font-size: 12px;
+    }
+    .modal-checkbox-input+label {
+        font-size: 12px;
+    }
+    .modal-radio-input+label::before {
+        width: 1em;
+        height: 1em;
+    }
+    .modal-checkbox-input+label::before {
+        width: 1em;
+        height: 1em;
+    }
+    .modal-content {
+        font-size: 12px;
+    }
+    .modal-content h1{
+        font-size: 20px;
+    }
+    .form-control {
+        height: 25px;
+    }
+    .close_modal_design{
+        top:20px;
+    }
 }
