@@ -22,7 +22,7 @@ class FreeCoursesController extends AppController
     public function index(){
         $free_courses = DB::table('free_courses')->paginate($this->perpage);
         $title = $this->title.'бесплатные курсы';
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'title' => $title,
             'courses_name' => $this->coursesName(),
             'courses' => $free_courses,
@@ -46,7 +46,7 @@ class FreeCoursesController extends AppController
             $second_breadcrumb = 'Редактирование бесплатного курса '.$courses->title;
         }
         $title = $this->title.'бесплатные курсы';
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'second_breadcrumb' => $second_breadcrumb,
             'courses_name' => $this->coursesName(),
             'courses' => $free_courses,
@@ -67,7 +67,7 @@ class FreeCoursesController extends AppController
         }
         $second_breadcrumb = 'Добавление бесплатного курса';
         $title = $this->title.'бесплатные курсы';
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'second_breadcrumb' => $second_breadcrumb,
             'courses_name' => $this->coursesName(),
             'title' => $title,

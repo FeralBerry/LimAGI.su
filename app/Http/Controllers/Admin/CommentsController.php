@@ -20,7 +20,7 @@ class CommentsController extends AppController
         $blog_comments = DB::table('blog_comments')
             ->paginate($this->perpage);
         $title = $this->title.'Комментарии к блогу';
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'title' => $title,
             'blog_comments' => $blog_comments,
             'blog' => $blog,
@@ -50,7 +50,7 @@ class CommentsController extends AppController
             }
         }
         $title = $this->title.'редактирование комментария к статье блога';
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'title' => $title,
             'blog_comment' => $blog_comment,
             'second_breadcrumb' => $second_breadcrumb,

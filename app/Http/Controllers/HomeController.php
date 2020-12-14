@@ -32,14 +32,14 @@ class HomeController extends AppController
         $count_users = count($users);
         if(Auth::user()->role == 'admin'){
             $title = $this->title.'домашняя';
-            $data = array_merge($this->chat(),[
+            $data = array_merge($this->variableData(),[
                 'title' => $title,
                 'count_users' => $count_users,
             ]);
             return view('admin.index', $data);
         }
         $title = $this->title.'домашняя';
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'title' => $title,
             'count_users' => $count_users,
         ]);

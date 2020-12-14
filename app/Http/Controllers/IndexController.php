@@ -293,4 +293,15 @@ class IndexController extends AppController
             echo 'Пожалуйста авторизуйтесь для добавления голоса';
         }
     }
+    public function footerEmail(Request $request){
+        if($request->isMethod('post')){
+            $data_contact = $request->all();
+            Mail::send('emails.lk_email',['data_contact' => $data_contact], function($message) use ($data_contact){
+                $mail_admin = env('MAIL_ADMIN');
+                $message->from('limagi@limagi.su',$data_contact['email']);
+                $message->to($mail_admin)->subject('Из подвала сайта '.$data_contact['email']);
+            });
+            echo 'Спасибо за обращение скоро с Вами свяжусь.';
+        }
+    }
 }

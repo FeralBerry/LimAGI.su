@@ -19,7 +19,7 @@ class BlogTagsController extends AppController
     public function index(){
         $blog_tags = DB::table('blog_tags')->paginate($this->perpage);
         $title = $this->title.'admin blog tags';
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'title' => $title,
             'blog_tags' => $blog_tags,
             'breadcrumb_blog_tags' => $this->breadcrumb_blog_tags,
@@ -38,7 +38,7 @@ class BlogTagsController extends AppController
         foreach ($blogTags as $item) {
             $second_breadcrumb = 'Редактирование тега ' . $item->name;
         }
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'title' => $title,
             'id' => $id,
             'blogTags' => $blogTags,
@@ -88,7 +88,7 @@ class BlogTagsController extends AppController
         }
         $title = $this->title.'blog tags add';
         $second_breadcrumb = 'Добавление тега ';
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'title' => $title,
             'second_breadcrumb' => $second_breadcrumb,
             'breadcrumb_blog_tags' => $this->breadcrumb_blog_tags,

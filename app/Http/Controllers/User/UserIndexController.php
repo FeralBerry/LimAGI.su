@@ -23,7 +23,7 @@ class UserIndexController extends AppController
             $count_users = count($users);
             $index = 'Панель администратора';
             $title = $this->title.'admin panel';
-            $data = array_merge($this->chat(),[
+            $data = array_merge($this->variableData(),[
                 'title' => $title,
                 'count_users' => $count_users,
                 'index' => $index,
@@ -35,7 +35,7 @@ class UserIndexController extends AppController
         $blog = DB::table('blog')
             ->paginate($this->perpage);
         $title = $this->title.'кабинет пользователя';
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'title' => $title,
             'blog' => $blog,
             'blogCat' => $blogCat,
@@ -61,7 +61,7 @@ class UserIndexController extends AppController
         }
         $breadcrumb_user_info = 'Настройки пользователя';
         $title = $this->title.'кабинет информация пользователя';
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'title' => $title,
             'breadcrumb_user_info' => $breadcrumb_user_info,
         ]);

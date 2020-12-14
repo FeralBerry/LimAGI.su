@@ -12,7 +12,6 @@
                 <h3 class="block-title">Что такое LimAGI</h3>
                 <a href="{{ route('blog-post', 0) }}">
                     <p>Limit. Asterisk Gateway Interface(LAGI)</p>
-                    <p>Предел шлюзового интерфейса Asterisk</p>
                 </a>
             </div>
         </div><!-- Footer About /- -->
@@ -25,10 +24,6 @@
                     <li><a title="Курсы HTML" href="{{ route('free-courses-html') }}">Курсы HTML</a></li>
                     <li><a title="Курсы CSS" href="{{ route('free-courses-css') }}">Курсы CSS</a></li>
                     <li><a title="Курсы PHP" href="{{ route('free-courses-php') }}">Курсы PHP</a></li>
-                    {{--<li><a title="Printed materials" href="#">Printed materials</a></li>
-                    <li><a title="Curriculum" href="#">curriculum</a></li>
-                    <li><a title="Literature" href="#">literature</a></li>
-                    <li><a title="Help & Faq" href="#">Help & Faq</a></li>--}}
                 </ul>
             </aside><!-- Customer Service Widget /- -->
             <!-- Quick Links Widget -->
@@ -66,9 +61,9 @@
                 <h3 class="block-title">Обратная связь</h3>
                 <p>Оставьте свои данные и я с вами свяжусь</p>
                 <div class="input-group">
-                    <input type="text" name="footer" placeholder="Email или телефон" class="form-control">
+                    <input type="text" name="footer" id="footer" placeholder="Email или телефон" class="form-control">
                     <span class="input-group-btn">
-                        <button type="button" title="Subscribe" class="btn">Go</button>
+                        <button type="button" id="footer_btn" title="Subscribe" class="btn">Go</button>
                     </span>
                 </div>
                 <ul>

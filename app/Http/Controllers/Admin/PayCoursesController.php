@@ -22,7 +22,7 @@ class PayCoursesController extends AppController
     public function index(){
         $pay_courses = DB::table('pay_courses')->paginate($this->perpage);
         $title = $this->title.'платные курсы';
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'title' => $title,
             'courses_name' => $this->coursesName(),
             'courses' => $pay_courses,
@@ -47,7 +47,7 @@ class PayCoursesController extends AppController
             $second_breadcrumb = 'Редактирование платного курса'.$courses->title;
         }
         $title = $this->title.'платные курсы';
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'courses' => $pay_courses,
             'second_breadcrumb' => $second_breadcrumb,
             'courses_name' => $this->coursesName(),
@@ -68,7 +68,7 @@ class PayCoursesController extends AppController
         }
         $second_breadcrumb = 'Добавление платного курса';
         $title = $this->title.'платные курсы';
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'second_breadcrumb' => $second_breadcrumb,
             'courses_name' => $this->coursesName(),
             'title' => $title,

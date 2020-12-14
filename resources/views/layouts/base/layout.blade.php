@@ -49,9 +49,9 @@
     </script>
     <noscript><div><img src="https://mc.yandex.ru/watch/69701767" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
     <!-- /Yandex.Metrika counter -->
-    @if($country === 'RU')
+    @if(isset($country) === 'RU')
     <script>$(function($){$(".phone").mask("+9(999) 999-9999");});</script>
-    @elseif ($country === 'BY')
+    @elseif (isset($country) === 'BY')
     <script>$(function($){$(".phone").mask("+999(99) 999-9999");});</script>
     @endif
 </head>
@@ -92,5 +92,23 @@
     <script src="{{ asset('base/js/modal_quiz.js') }}"></script>
 @endif
 @include('base.script.ajax')
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#footer_btn").click( function() {
+            var footer = document.getElementById('footer').value;
+            $.ajax({
+                type: "POST",
+                url: "{{ route('footer-email') }}",
+                dataType: "html",
+                data: {
+                    'footer' : footer
+                },
+                success:function(data){
+                    alert(data)
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>

@@ -18,7 +18,7 @@ class PortfolioController extends AppController
     public function index(){
         $portfolio = DB::table('portfolio')->paginate($this->perpage);
         $title = $this->title.'админ панель портфолио';
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'title' => $title,
             'portfolio' => $portfolio,
             'breadcrumb_portfolio' => $this->breadcrumb_portfolio,
@@ -51,7 +51,7 @@ class PortfolioController extends AppController
         foreach ($portfolio as $p){
             $second_breadcrumb = 'Редактирование портфолио'.$p->title;
         }
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'title' => $title,
             'portfolio' => $portfolio,
             'second_breadcrumb' => $second_breadcrumb,
@@ -82,7 +82,7 @@ class PortfolioController extends AppController
         foreach ($portfolio as $item){
             $max_id = $item->id +1;
         }
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'title' => $title,
             'second_breadcrumb' => $second_breadcrumb,
             'breadcrumb_portfolio' => $this->breadcrumb_portfolio,

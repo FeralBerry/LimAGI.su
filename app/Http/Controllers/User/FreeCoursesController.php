@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\User;
 
 use App\Http\Controllers\AppController;
+use App\Models\FreeCoursesComment;
 use App\Models\FreeCoursesName;
 use App\Models\FreeCourses;
+use App\User;
 use Illuminate\Http\Request;
 use DB;
 
@@ -13,14 +15,22 @@ class FreeCoursesController extends AppController
     public function __construct(){
 
     }
-    protected $perpage = 5;
-    protected function coursesName(){
+    protected $perpage = 10;
+    protected function freeCoursesName(){
         $courses_name = FreeCoursesName::all();
         return $courses_name;
     }
     protected function DataWords(){
-        $data = array_merge($this->chat(),[
-            'courses_name' => $this->coursesName(),
+        $all_free_courses = FreeCourses::all();
+        $free_courses_comment = DB::table('free_courses_comments')
+            ->orderBy('created_at','asc')
+            ->paginate($this->perpage);
+        $users = User::all();
+        $data = array_merge($this->variableData(),[
+            'courses_name' => $this->freeCoursesName(),
+            'all_free_courses' => $all_free_courses,
+            'free_courses_comment' => $free_courses_comment,
+            'users' => $users,
         ]);
         return $data;
     }
@@ -38,7 +48,8 @@ class FreeCoursesController extends AppController
         return view('user.free_courses_index', $data);
     }
     public function articleHtml($id){
-        $free_courses = FreeCourses::all()->where('id', $id);
+        $free_courses = FreeCourses::all()
+            ->where('id', $id);
         foreach ($free_courses as $item){
             if($item->id == $id) {
                 $title = $this->title. 'бесплатный курс по '. $item->title;
@@ -320,5 +331,26 @@ class FreeCoursesController extends AppController
             'second_breadcrumb' => $second_breadcrumb,
         ]);
         return view('user.free_courses_article', $data);
+    }
+    public function freeCoursesComment(Request $request){
+        if($request->isMethod('post')){
+            FreeCoursesComment::create([
+                'user_id' => $request['user'],
+                'free_courses_id' => $request['course'],
+                'comment' => $request['comment'],
+            ]);
+            return redirect($request['url']);
+        }
+    }
+    public function freeCoursesOffers(Request $request){
+        if($request->isMethod('post')){
+            $data_contact = $request->all();
+            Mail::send('emails.lk_email',['data_contact' => $data_contact], function($message) use ($data_contact){
+                $mail_admin = env('MAIL_ADMIN');
+                $message->from('limagi@limagi.su',$data_contact['email']);
+                $message->to($mail_admin)->subject('Из ЛК вопрос '.$data_contact['email']);
+            });
+            echo 'Спасибо за обращение скоро с Вами свяжусь.';
+        }
     }
 }

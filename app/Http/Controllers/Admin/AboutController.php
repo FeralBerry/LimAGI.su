@@ -18,7 +18,7 @@ class AboutController extends AppController
         $blog = Blog::all();
         $about = About::all();
         $title = $this->title.'admin about';
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'about' => $about,
             'blog' => $blog,
             'title' => $title,
@@ -39,7 +39,7 @@ class AboutController extends AppController
         $about = About::all()->where('id', $id);
         $second_breadcrumb = 'Редактирование стариницы обо мне';
         $title = $this->title.'Редактирование страницы обо мне';
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'title' => $title,
             'about' => $about,
             'breadcrumb_about' => $this->breadcrumb_about,

@@ -14,6 +14,7 @@ class FreeCourses extends Model
         'category',
         'link_courses',
         'link_materials',
+        'author',
         'created_at',
         'updated_at',
     ];

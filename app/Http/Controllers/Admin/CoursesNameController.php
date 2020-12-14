@@ -13,7 +13,7 @@ class CoursesNameController extends AppController
     }
     public function index(){
         $title = $this->title.'название курсов';
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'title' => $title,
         ]);
         return view('admin.courses_name_index', $data);
@@ -23,7 +23,7 @@ class CoursesNameController extends AppController
             return redirect()->route('admin-courses-name-index');
         }
         $title = $this->title.'редактирование названия курсов';
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'title' => $title,
         ]);
         return view('admin.courses_name_edit', $data);
@@ -33,7 +33,7 @@ class CoursesNameController extends AppController
             return redirect()->route('admin-courses-name-index');
         }
         $title = $this->title.'добавление названия курсов';
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'title' => $title,
         ]);
         return view('admin.courses_name_add', $data);

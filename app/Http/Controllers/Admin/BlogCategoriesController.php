@@ -18,7 +18,7 @@ class BlogCategoriesController extends AppController
     public function index(){
         $blogCat = DB::table('blog_category')->paginate($this->perpage);
         $title = $this->title.'категории блога';
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'title' => $title,
             'blogCat' => $blogCat,
         ]);
@@ -36,7 +36,7 @@ class BlogCategoriesController extends AppController
             $second_breadcrumb = 'Редактирование категории ' . $item->name;
         }
         $title = $this->title.'редактирование категории блога';
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'title' => $title,
             'blogCat' => $blogCat,
             'second_breadcrumb' => $second_breadcrumb,

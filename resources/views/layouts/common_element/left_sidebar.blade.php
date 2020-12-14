@@ -82,22 +82,29 @@
                                     </a>
                                     <ul class="acc-menu">
                                         @foreach($free_courses_menu as $menu)
-                                            <li><a href="{{ route($menu->free_link_name) }}">{{ $menu->name }}</a></li>
+                                            <li><a href="{{ route($menu->free_link_name) }}">{{ strtoupper($menu->name) }}</a></li>
                                         @endforeach
                                     </ul>
                                 </li>
                             @endif
                             @if(isset($pay_courses_menu))
+                                @if(Auth::user()->specialty !== '')
                                 <li>
                                     <a href="javascript:;">
-                                        <i class="fa fa-briefcase"></i><span>Платные курсы</span>
+                                        <i class="fa fa-cog fa-spin"></i><span>Платные курсы</span>
                                     </a>
                                     <ul class="acc-menu">
+                                        <?php $specialty = explode(',', Auth::user()->specialty) ?>
                                         @foreach($pay_courses_menu as $menu)
-                                            <li><a href="{{ route($menu->pay_link_name) }}">{{ $menu->name }}</a></li>
+                                            @foreach($specialty as $item => $value)
+                                                @if($value == $menu->id)
+                                                    <li><a href="{{ route($menu->pay_link_name) }}">{{ strtoupper($menu->name) }}</a></li>
+                                                @endif
+                                            @endforeach
                                         @endforeach
                                     </ul>
                                 </li>
+                                @endif
                             @endif
                         @endif
                         {{--<li class="nav-separator">Курсы</li>

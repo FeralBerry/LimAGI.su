@@ -30,7 +30,7 @@ class BlogController extends AppController
     public function index(){
         $blog = DB::table('blog')->paginate($this->perpage);
         $title = $this->title.'редактирование статей блога';
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'title' => $title,
             'breadcrumb_blog' => $this->breadcrumb_blog,
             'blog' => $blog,
@@ -114,7 +114,7 @@ class BlogController extends AppController
         foreach ($blog as $item) {
             $second_breadcrumb = 'Редактирование статьи ' . $item->title;
         }
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'blog' => $blog,
             'title' => $title,
             'breadcrumb_blog' => $this->breadcrumb_blog,
@@ -190,7 +190,7 @@ class BlogController extends AppController
         foreach ($blog as $item){
             $max_id = $item->id +1;
         }
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'title' => $title,
             'second_breadcrumb' => $second_breadcrumb,
             'blog_tags' => $this->blogTags(),

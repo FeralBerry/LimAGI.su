@@ -1,7 +1,8 @@
 <?php
 
+use App\Models\FreeCoursesName;
+use App\Models\PayCoursesName;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,6 +30,7 @@ Route::match(['GET','POST'],'/magazine-quiz', ['uses' => 'QuizController@quizMag
 Route::match(['GET','POST'],'/card-quiz', ['uses' => 'QuizController@quizCard', 'as' => 'card-quiz']);
 Route::match(['GET','POST'],'/corp-quiz', ['uses' => 'QuizController@quizCorp', 'as' => 'corp-quiz']);
 Route::match(['GET','POST'],'/blog-likes', ['uses' => 'IndexController@blogLikes', 'as' => 'blog-likes']);
+Route::match(['GET','POST'],'/footer-email', ['uses' => 'IndexController@footerEmail', 'as' => 'footer-email']);
 Auth::routes();
 Route::group(['middleware' => ['auth', 'checkAdmin']], function(){
 $groupData = [
@@ -98,8 +100,12 @@ Route::group(['middleware' => ['auth']], function() {
         'prefix' => 'user',
     ];
     Route::group($groupData, function () {
+        $free_courses_menu = FreeCoursesName::all();
+        $pay_courses_menu = PayCoursesName::all();
+        //User setting
         Route::match(['GET','POST'],'/', ['uses' => 'UserIndexController@index', 'as' => 'user-index']);
         Route::match(['GET','POST'],'/info', ['uses' => 'UserIndexController@info', 'as' => 'user-info']);
+        Route::match(['GET','POST'],'/avatar/upload/{id}', ['uses' => 'UserIndexController@avatarUpload','as' => 'avatar-upload']);
         /*Route::match(['GET','POST'],'/chat-admin', ['uses' => 'ChatController@chatAdmin', 'as' => 'chat-admin']);
         Route::match(['GET','POST'],'/add-chat-admin', ['uses' => 'ChatController@addChatAdmin','as' => 'add-chat-admin']);
         Route::match(['GET','POST'],'/chat-html', ['uses' => 'ChatController@chatHtml', 'as' => 'chat-html']);
@@ -110,26 +116,18 @@ Route::group(['middleware' => ['auth']], function() {
         Route::match(['GET','POST'],'/add-chat-js', ['uses' => 'ChatController@addChatJs','as' => 'add-chat-js']);
         Route::match(['GET','POST'],'/chat-design', ['uses' => 'ChatController@chatDesign', 'as' => 'chat-design']);
         Route::match(['GET','POST'],'/add-chat-design', ['uses' => 'ChatController@addChatDesign','as' => 'add-chat-design']);*/
-        Route::match(['GET','POST'],'/free-courses/html', ['uses' => 'FreeCoursesController@indexHtml','as' => 'free-courses-html']);
-        Route::match(['GET','POST'],'/free-courses/html/{id}', ['uses' => 'FreeCoursesController@articleHtml','as' => 'free-courses-html-article']);
-        Route::match(['GET','POST'],'/free-courses/css', ['uses' => 'FreeCoursesController@indexCss','as' => 'free-courses-css']);
-        Route::match(['GET','POST'],'/free-courses/css/{id}', ['uses' => 'FreeCoursesController@articleCss','as' => 'free-courses-css-article']);
-        Route::match(['GET','POST'],'/free-courses/php', ['uses' => 'FreeCoursesController@indexPhp','as' => 'free-courses-php']);
-        Route::match(['GET','POST'],'/free-courses/php/{id}', ['uses' => 'FreeCoursesController@articlePhp','as' => 'free-courses-php-article']);
-        Route::match(['GET','POST'],'/free-courses/js', ['uses' => 'FreeCoursesController@indexJs','as' => 'free-courses-javascript']);
-        Route::match(['GET','POST'],'/free-courses/js/{id}', ['uses' => 'FreeCoursesController@articleJs','as' => 'free-courses-javascript-article']);
-        Route::match(['GET','POST'],'/free-courses/github', ['uses' => 'FreeCoursesController@indexGithub','as' => 'free-courses-github']);
-        Route::match(['GET','POST'],'/free-courses/github/{id}', ['uses' => 'FreeCoursesController@articleGithub','as' => 'free-courses-github-article']);
-        Route::match(['GET','POST'],'/free-courses/laravel', ['uses' => 'FreeCoursesController@indexLaravel','as' => 'free-courses-laravel']);
-        Route::match(['GET','POST'],'/free-courses/laravel/{id}', ['uses' => 'FreeCoursesController@articleLaravel','as' => 'free-courses-laravel-article']);
-        Route::match(['GET','POST'],'/free-courses/wordpress', ['uses' => 'FreeCoursesController@indexWordpress','as' => 'free-courses-wordpress']);
-        Route::match(['GET','POST'],'/free-courses/wordpress/{id}', ['uses' => 'FreeCoursesController@articleWordpress','as' => 'free-courses-wordpress-article']);
-        Route::match(['GET','POST'],'/free-courses/photoshop', ['uses' => 'FreeCoursesController@indexPhotoshop','as' => 'free-courses-photoshop']);
-        Route::match(['GET','POST'],'/free-courses/photoshop/{id}', ['uses' => 'FreeCoursesController@articlePhotoshop','as' => 'free-courses-photoshop-article']);
-        Route::match(['GET','POST'],'/free-courses/bootstrap', ['uses' => 'FreeCoursesController@indexBootstrap','as' => 'free-courses-bootstrap']);
-        Route::match(['GET','POST'],'/free-courses/bootstrap/{id}', ['uses' => 'FreeCoursesController@articleBootstrap','as' => 'free-courses-bootstrap-article']);
-        Route::match(['GET','POST'],'/avatar/upload/{id}', ['uses' => 'UserIndexController@avatarUpload','as' => 'avatar-upload']);
-
+        //Free Courses
+        foreach ($free_courses_menu as $free_menu){
+            Route::match(['GET','POST'],'/free-courses/'.mb_strtolower($free_menu->name), ['uses' => 'FreeCoursesController@index'.ucFirst(mb_strtolower($free_menu->name)),'as' => 'free-courses-'.mb_strtolower($free_menu->name)]);
+            Route::match(['GET','POST'],'/free-courses/'.mb_strtolower($free_menu->name).'/{id}', ['uses' => 'FreeCoursesController@article'.ucFirst(mb_strtolower($free_menu->name)),'as' => 'free-courses-'.mb_strtolower($free_menu->name).'-article']);
+        }
+        Route::match(['GET','POST'],'/free-courses-comment', ['uses' => 'FreeCoursesController@freeCoursesComment','as' => 'free-courses-comment']);
+        Route::match(['GET','POST'],'/free-courses-offers', ['uses' => 'FreeCoursesController@freeCoursesOffers','as' => 'free-courses-offers']);
+        //Pay Courses
+        foreach ($pay_courses_menu as $pay_menu) {
+            Route::match(['GET', 'POST'], '/pay-courses/'.mb_strtolower($pay_menu->name), ['uses' => 'PayCoursesController@index'.ucFirst(mb_strtolower($pay_menu->name)), 'as' => 'pay-courses-'.mb_strtolower($pay_menu->name)]);
+            Route::match(['GET', 'POST'], '/pay-courses/'.mb_strtolower($pay_menu->name).'/{id}', ['uses' => 'PayCoursesController@article'.ucFirst(mb_strtolower($pay_menu->name)), 'as' => 'pay-courses-'.mb_strtolower($pay_menu->name).'-article']);
+        }
     });
 });
 

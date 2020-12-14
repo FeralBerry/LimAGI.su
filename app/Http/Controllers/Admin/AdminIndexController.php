@@ -21,7 +21,7 @@ class AdminIndexController extends AppController
         $count_users = count($users);
         $index = 'Панель администратора';
         $title = $this->title.'admin panel';
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'title' => $title,
             'count_users' => $count_users,
             'index' => $index,
@@ -31,7 +31,7 @@ class AdminIndexController extends AppController
     public function users(){
         $users = DB::table('users')->paginate($this->perpage);
         $title = $this->title.'admin panel table Users';
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'title' => $title,
             'users' => $users,
             'breadcrumb_user' => $this->breadcrumb_user,
@@ -57,7 +57,7 @@ class AdminIndexController extends AppController
             $second_breadcrumb = 'Редактирование пользователя - '. $item->name;
         }
         $title = $this->title.'admin panel table Users';
-        $data = array_merge($this->chat(),[
+        $data = array_merge($this->variableData(),[
             'title' => $title,
             'user' => $user,
             'breadcrumb_user' => $this->breadcrumb_user,

@@ -20,6 +20,15 @@
 <script type="text/javascript" src="{{ asset('admin/demo/demo.js') }}"></script>
 <script type="text/javascript" src="{{ asset('admin/demo/demo-switcher.js') }}"></script>
 <script type="text/javascript" src="{{ asset('admin/plugins/wijets/wijets.js') }}"></script>     							    <!-- Wijet -->
+<script type="text/javascript">
+    $(function(){
+        $("a[href^='#']").click(function(){
+            var _href = $(this).attr("href");
+            $("html, body").animate({scrollTop: $(_href).offset().top+"px"});
+            return false;
+        });
+    });
+</script>
 <!-- End loading site level scripts -->
 @if(route('admin-index') == url()->current())
     <script type="text/javascript" src="{{ asset('admin/plugins/fullcalendar/fullcalendar.min.js') }}"></script>   				<!-- FullCalendar -->
@@ -86,6 +95,5 @@
                 URL.revokeObjectURL(title_img.src) // free memory
             }
         };
-
     </script>
 @endif
